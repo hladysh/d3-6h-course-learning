@@ -1,0 +1,392 @@
+1
+00:00:06,840 --> 00:00:12,340
+In this lecture I'll be adding in two more visualizations to a graph and I'll be showing you how to
+
+2
+00:00:12,340 --> 00:00:18,180
+deal with event listeners that should affect more than one element on the page to do this.
+
+3
+00:00:18,190 --> 00:00:23,710
+I'll be writing events inside a manger file which will act as the controller file that communicates
+
+4
+00:00:23,710 --> 00:00:29,770
+between all of the visualizations on the page at the end of this lecture we should have a more advanced
+
+5
+00:00:29,770 --> 00:00:36,360
+page where visualizations can seamlessly communicate with one another.
+
+6
+00:00:36,400 --> 00:00:42,610
+Here's how I want our sites to work when we want to link multiple visualizations on the same page.
+
+7
+00:00:42,610 --> 00:00:48,790
+Each event listener that we register inside one of visualizations is going to map to an event handler
+
+8
+00:00:49,090 --> 00:00:52,140
+which will live inside a mange s file.
+
+9
+00:00:52,300 --> 00:00:56,630
+This will allow us to update the state of multiple visualizations at once.
+
+10
+00:00:56,830 --> 00:01:04,490
+Since that all accessible from our main js file these event handlers inside a major file will act as
+
+11
+00:01:04,490 --> 00:01:05,850
+a go between.
+
+12
+00:01:05,900 --> 00:01:11,840
+Meaning that we can make events happen inside the visualization impact all sorts of visualizations on
+
+13
+00:01:11,840 --> 00:01:18,240
+the page structuring our code like this will make it easier for us to express what each of these events
+
+14
+00:01:18,240 --> 00:01:23,420
+should be doing so that we can read facts or events to work as efficiently as possible.
+
+15
+00:01:25,450 --> 00:01:28,870
+Here's what I want us to end up with at the end of this lecture.
+
+16
+00:01:29,290 --> 00:01:35,560
+I want us to have two donut charts which will show the market capitalization 24 hour trading volume
+
+17
+00:01:35,980 --> 00:01:38,870
+of each of our coins in the present day.
+
+18
+00:01:38,920 --> 00:01:45,790
+If I click on any one of these slices then I want my graph to update to show that coin I'll be changing
+
+19
+00:01:45,790 --> 00:01:47,180
+the fill opacity.
+
+20
+00:01:47,290 --> 00:01:52,780
+Each of these slices whenever the selection gets changed and I still want to have the same effect when
+
+21
+00:01:52,780 --> 00:01:56,370
+changing the coins using the select box at the top of the screen.
+
+22
+00:01:56,530 --> 00:02:02,730
+So I also want that event update the correct coins color color to start off with.
+
+23
+00:02:03,010 --> 00:02:06,790
+I'm going to draw the two donut charts that we'll be using.
+
+24
+00:02:06,790 --> 00:02:12,430
+I've created a new file here which contains all of us Donat CHUGG code and I've included this in my
+
+25
+00:02:12,490 --> 00:02:14,250
+index page to nail file down.
+
+26
+00:02:14,250 --> 00:02:15,540
+Hit.
+
+27
+00:02:15,650 --> 00:02:20,630
+I've also changed of the structure of my age to male so that two thirds of the page will be taken up
+
+28
+00:02:20,630 --> 00:02:25,130
+by a line chart with the remaining third allocated to Donat charts.
+
+29
+00:02:26,370 --> 00:02:32,270
+Here is the file that I'm using to define the donut shop class which will be using created down charts
+
+30
+00:02:33,050 --> 00:02:34,420
+in the constructor function.
+
+31
+00:02:34,430 --> 00:02:42,060
+This time I'm passing in this variable argument and just telling charts what variable it should be showing.
+
+32
+00:02:42,150 --> 00:02:47,880
+We're also using this value in this method when assessing the value method for a pilot.
+
+33
+00:02:48,270 --> 00:02:53,850
+So this is just an access a function that the value method will use to tell which field it should look
+
+34
+00:02:53,850 --> 00:02:57,360
+at in the Wrangel data method.
+
+35
+00:02:57,430 --> 00:03:01,890
+Just grabbing the name of the coin that we're looking at from a coin select box.
+
+36
+00:03:02,110 --> 00:03:09,350
+Then I update this method we're using the same update function that we saw back in Section 7 for our
+
+37
+00:03:09,350 --> 00:03:15,640
+data join this time we're using a global data array called donor data which I've put together in a major
+
+38
+00:03:15,640 --> 00:03:18,330
+s file.
+
+39
+00:03:18,350 --> 00:03:24,140
+Here's where we are setting up the data to be fed into a donut chards we're making use of this for loop
+
+40
+00:03:24,140 --> 00:03:28,810
+that we already made to loop through every coin and we're just pushing an object.
+
+41
+00:03:28,820 --> 00:03:35,420
+This Donat dates here which we defined at the top of the file within passing in the most recent data
+
+42
+00:03:35,420 --> 00:03:41,240
+point that we have for each coin in the data field and in making a log down here to show you what this
+
+43
+00:03:41,240 --> 00:03:42,080
+looks like.
+
+44
+00:03:43,110 --> 00:03:47,760
+We can see here that our data is now in a format that we can use without Pylades.
+
+45
+00:03:48,150 --> 00:03:54,500
+We have an array of objects one for each field and can access different values using this data field.
+
+46
+00:03:55,510 --> 00:04:01,570
+Now that we have all of this set up I'm going to add in two new instances of the donut shop.
+
+47
+00:04:01,750 --> 00:04:02,850
+I'll add one chart.
+
+48
+00:04:02,890 --> 00:04:08,090
+Each of the diff that we setup passing in the field should display.
+
+49
+00:04:08,110 --> 00:04:09,250
+I also need to remember.
+
+50
+00:04:09,280 --> 00:04:14,530
+And these variables in at the top of the file so that we can access them later when you add events to
+
+51
+00:04:14,520 --> 00:04:15,890
+them.
+
+52
+00:04:16,000 --> 00:04:21,260
+One last change that I'll make is that at the same color scheme we're using for a donor chart.
+
+53
+00:04:21,450 --> 00:04:26,300
+The color path in a line show that is more obvious which coin we're looking at.
+
+54
+00:04:26,590 --> 00:04:32,470
+To do this or remove the color scale that we defined in our donor chart and I'll add it to the list
+
+55
+00:04:32,470 --> 00:04:35,750
+of global variables in our mange file.
+
+56
+00:04:35,770 --> 00:04:43,090
+We also need to change its name when the calling here or otherwise will again error and then in a line
+
+57
+00:04:43,170 --> 00:04:49,810
+of file I'm just going to make the color line come from this same color scale passing in the coin that
+
+58
+00:04:49,810 --> 00:04:56,380
+we're looking at once we refresh the page we can see that we now have three visualizations on the same
+
+59
+00:04:56,380 --> 00:05:01,810
+page and that the color of our line should match whichever coin we're looking at.
+
+60
+00:05:01,810 --> 00:05:07,490
+Now let's think about which events we want to add to our site to link the visualizations together.
+
+61
+00:05:07,800 --> 00:05:13,720
+Here's a list of all the new events that we need to incorporate whenever an artist gets clicked on one
+
+62
+00:05:13,720 --> 00:05:18,530
+of the charts then that we selected should become active.
+
+63
+00:05:18,640 --> 00:05:25,870
+For a visualization This should also trigger an update to a line chart to show the new coin and it should
+
+64
+00:05:25,870 --> 00:05:34,080
+also update the value of select bugs then we also want to add an event to a coin select box so the active
+
+65
+00:05:34,080 --> 00:05:37,800
+coin is not doing that chart of dates when we change the value here.
+
+66
+00:05:38,890 --> 00:05:43,140
+Of starts off by adding a click event for my donor charts.
+
+67
+00:05:43,240 --> 00:05:45,410
+I'm using that method as usual.
+
+68
+00:05:45,490 --> 00:05:50,790
+Added listen to each of these paths as they entered and I'll just call a function called.
+
+69
+00:05:50,830 --> 00:05:53,330
+Clicked which are right in the main file.
+
+70
+00:05:55,300 --> 00:06:00,550
+If I just leave it like this then I should be able to get a hold the item in data that is associated
+
+71
+00:06:00,550 --> 00:06:02,580
+with each of us slices.
+
+72
+00:06:03,250 --> 00:06:10,060
+So going back to a main file now after I've written out this function with an argument then this de-value
+
+73
+00:06:10,150 --> 00:06:14,480
+will give that item in its own data array as we can see here.
+
+74
+00:06:15,040 --> 00:06:19,530
+I'm going to be using the name of each point form the updates that we're looking for.
+
+75
+00:06:20,400 --> 00:06:26,980
+Firstly I want to update the value of our select box with the coin that it should show Next they want
+
+76
+00:06:27,000 --> 00:06:30,660
+to trigger an update to both of my Donat charts.
+
+77
+00:06:30,660 --> 00:06:33,720
+And finally I want this to update all line jobs.
+
+78
+00:06:35,580 --> 00:06:38,500
+Once we refresh the page we can see how this is working.
+
+79
+00:06:40,130 --> 00:06:42,950
+The final thing we need to do now is also up.
+
+80
+00:06:42,950 --> 00:06:46,390
+They don't add charts whenever a select box gets updated.
+
+81
+00:06:48,010 --> 00:06:52,830
+We can do this by simply copy and pasting these two lines in our event handler.
+
+82
+00:06:55,370 --> 00:07:00,020
+You might think that repeating yourself a little here since we're calling at least 3 update functions
+
+83
+00:07:00,020 --> 00:07:02,060
+in two different places.
+
+84
+00:07:02,240 --> 00:07:07,550
+We can do some refactoring at this point to clean things up a little by just bringing these lines into
+
+85
+00:07:07,550 --> 00:07:09,620
+a separate function.
+
+86
+00:07:09,710 --> 00:07:15,350
+I'm calling this function color change to make it obvious what it's doing and I'm firing it and each
+
+87
+00:07:15,350 --> 00:07:17,970
+of these places.
+
+88
+00:07:18,010 --> 00:07:23,290
+So now once we go back to a browser you can see that all of the events are working as we wanted them
+
+89
+00:07:23,320 --> 00:07:25,310
+to at the start of this lecture.
+
+90
+00:07:26,440 --> 00:07:31,540
+After this lecture you should be starting to get the hang of converting visualizations into the object
+
+91
+00:07:31,600 --> 00:07:36,200
+oriented style that we using to structure a pages.
+
+92
+00:07:36,270 --> 00:07:41,580
+You'll often find yourself going through this process from working with new visualizations but the payoff
+
+93
+00:07:41,580 --> 00:07:46,460
+is huge Once you already have these visualizations in the format that you want them in.
+
+94
+00:07:46,470 --> 00:07:51,690
+I've also taken me through the process of adding in events to update things between different visualizations
+
+95
+00:07:51,990 --> 00:07:59,060
+creating event handlers within Manger's file which coordinate things across a visualisations in the
+
+96
+00:07:59,060 --> 00:07:59,900
+next lecture.
+
+97
+00:07:59,900 --> 00:08:05,560
+I'll be talking about brushes and D-3 which allow us to select ranges in a different way than we've
+
+98
+00:08:05,570 --> 00:08:07,080
+been doing so far.
+

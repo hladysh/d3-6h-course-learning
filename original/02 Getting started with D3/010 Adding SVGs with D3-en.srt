@@ -1,0 +1,359 @@
+0
+00:06.330 --> 00:10.870
+Now that we know a little bit more about SVGs, I'm going to show you how to add them in with D3, rather
+
+1
+00:10.940 --> 00:11.880
+than in your HTML.
+
+2
+00:11.950 --> 00:19.120
+I'll be introducing you to D3 select, D3 append, and D3 attr, which will be using together to make
+
+3
+00:19.120 --> 00:20.470
+new shapes on the screen.
+
+4
+00:21.250 --> 00:24.530
+I'll also be making sure that you understand how method chaining works in
+
+5
+00:24.530 --> 00:26.250
+JavaScript, since it comes up a lot in
+
+6
+00:26.250 --> 00:32.750
+D3. Here we have a simple template folder that I'll be giving you to practice with over the course
+
+7
+00:32.750 --> 00:35.930
+of this section. For everything that we'll do in this course,
+
+8
+00:35.930 --> 00:38.870
+you'll be writing all of your code in a separate JavaScript file
+
+9
+00:38.880 --> 00:44.650
+to your HTML. For a small project, it might make sense to put everything in one HTML file,
+
+10
+00:45.080 --> 00:51.980
+but to make things a little cleaner, you'll be writing in the main.js file in your js folder.
+
+11
+00:52.060 --> 00:57.210
+I have included this file with script tags in our HTML file.
+
+12
+00:57.270 --> 01:00.560
+Here's the file that will be writing. At the moment,
+
+13
+01:00.570 --> 01:04.920
+there's nothing in it as you can see, but we'll be adding to it in this lecture.
+
+14
+01:06.960 --> 01:10.450
+Let me show you how a first D3 function works.
+
+15
+01:11.400 --> 01:20.000
+D3 select uses CSS selectors to return page elements, in a similar way to how jQuery works.
+
+16
+01:20.080 --> 01:26.800
+This gives us an object that we can then manipulate with D3 commands, such as binding data to shapes.
+
+17
+01:27.490 --> 01:33.790
+The regular select function will return one element, and selectAll will return all of the matching
+
+18
+01:33.790 --> 01:35.450
+elements on the page.
+
+19
+01:36.810 --> 01:45.760
+For example, here we have an SVG canvas with three rectangles. On the far left, calling D3 select on the
+
+20
+01:45.760 --> 01:50.200
+retc tag will return the first rectangle that D3 finds on the page -
+
+21
+01:50.230 --> 01:51.730
+the one on the left.
+
+22
+01:52.000 --> 01:58.360
+Next we're using a CSS selector to grab the rectangle with the ID of center, which gets the one in the
+
+23
+01:58.360 --> 02:07.930
+middle. Next, we're using selectAll on every rectangle on the page, which gives us all three, and finally we're using
+
+24
+02:07.930 --> 02:16.460
+selectAll to grab all the rectangles with the class of outside, which gives us the outer two rectangles.
+
+25
+02:16.490 --> 02:22.660
+Once we have an element selected, we can use D3's append method to add something to it.
+
+26
+02:23.510 --> 02:28.690
+Here we've selected the SVG canvas in our HTML, and we're adding a shape to it.
+
+27
+02:29.760 --> 02:36.090
+Append takes one argument, which is the type of element that we want to add to the screen.
+
+28
+02:36.150 --> 02:43.420
+In this example we're adding a rect tag, passing in the string of rect. To set the attributes of
+
+29
+02:43.420 --> 02:44.780
+an SVG,
+
+30
+02:44.780 --> 02:51.270
+we can pass values in with the attr method, which is a special D3 function that can alter attributes.
+
+31
+02:52.590 --> 02:58.980
+We pass in the attribute we want to set as the first argument to this attr method, and the value that we want
+
+32
+02:58.980 --> 03:01.020
+to give it as the second argument.
+
+33
+03:03.170 --> 03:08.720
+Something to note at this point is that, although we could write our code as it is on the left, in D3
+
+34
+03:08.720 --> 03:13.930
+we will almost always be writing it out as it is on the right.
+
+35
+03:13.970 --> 03:19.610
+If you haven't had much experience in JavaScript yet, then what we're doing here is called method chaining.
+
+36
+03:20.620 --> 03:22.030
+We're passing the result of our
+
+37
+03:22.040 --> 03:29.150
+first method call onto our second method call, which we're then passing on to our third method call, and so on...
+
+38
+03:30.240 --> 03:37.530
+Our call to D3 select here returns SVG canvas, and we're calling our append method on this, which
+
+39
+03:37.530 --> 03:39.680
+returns a blank rect tag.
+
+40
+03:40.240 --> 03:46.260
+We're then calling our attr method on that rect tag, which returns the same red tag with an x value of
+
+41
+03:46.260 --> 03:52.000
+25, which we're then passing on to our next method, which is going to be setting.
+
+42
+03:52.080 --> 03:59.560
+the y attribute. The indents here are useful to break up our code, and to show which methods are being applied
+
+43
+03:59.560 --> 04:02.200
+to which D3 selection.
+
+44
+04:02.250 --> 04:07.800
+This makes it clear that we're setting attributes of a rectangle, rather than assessing attributes of
+
+45
+04:07.810 --> 04:09.390
+our SVG canvas.
+
+46
+04:11.160 --> 04:16.520
+Here is another way that we could have expressed the same chain of methods.
+
+47
+04:16.550 --> 04:25.230
+The first part returns our SVG canvas which we stored in a variable called svg earlier. We're then appending
+
+48
+04:25.230 --> 04:31.960
+a blank rect tag to that canvas, which we were storing in a variable called rect before. Then, after
+
+49
+04:31.960 --> 04:36.250
+that, we're setting the different attributes of this rect tag with these attr methods.
+
+50
+04:38.850 --> 04:45.850
+Something that might not be obvious is that each of these method calls returns something. We are only
+
+51
+04:45.850 --> 04:51.380
+able to chain these methods together because each of the attr methods are returning the element that
+
+52
+04:51.390 --> 04:52.210
+they're changing.
+
+53
+04:53.390 --> 04:56.480
+If one of these methods return something different,
+
+54
+04:56.480 --> 05:04.010
+for example if we decided to use D3 append again to add a text SVG to the rectangle, then any attr methods
+
+55
+05:04.010 --> 05:10.850
+that follow would set the attributes of text, rather than rectangle.
+
+56
+05:10.870 --> 05:15.710
+Let's work through a simple example to see how we'd usually use select and append in D3.
+
+57
+05:15.820 --> 05:23.530
+I want to select the div element that I've labeled with the ID of "chart-area" in my index file,
+
+58
+05:23.540 --> 05:29.240
+append and SVG canvas to it, and then write a shape onto that canvas.
+
+59
+05:29.290 --> 05:33.840
+Notice that we don't already have a canvas set up in our HTML this time,
+
+60
+05:34.090 --> 05:42.680
+so we'll be adding that with D3. So, I'll start out by selecting our div with the D3 select function
+
+61
+05:43.130 --> 05:46.140
+using the CSS tag "#chart-area".
+
+62
+05:47.140 --> 05:55.030
+Next, I'll use D3's append method to attach an SVG canvas to it using the string of SVG to show
+
+63
+05:55.030 --> 05:57.680
+that we're adding in an SVG tag.
+
+64
+05:57.910 --> 06:04.330
+Once we have that to work with, I'm going to give the SVG canvas its dimensions of width the height using
+
+65
+06:04.330 --> 06:05.670
+the attr method.
+
+66
+06:06.130 --> 06:10.810
+So the first argument to this attr method is the attribute we want to set,
+
+67
+06:10.810 --> 06:17.480
+so in this case I'll start with the width, and the second argument is the value that we want to give it,
+
+68
+06:17.480 --> 06:24.800
+so in this case I'll make it 400px wide. To keep things simple, I'll set the height attribute with
+
+69
+06:24.800 --> 06:28.500
+the same value of 400.
+
+70
+06:28.510 --> 06:33.000
+Next, I'm going to store this as a variable so we can add to it later.
+
+71
+06:33.060 --> 06:38.820
+Now that we have a hold of this canvas that we just drew with the svg variable, I'm going to add a
+
+72
+06:38.820 --> 06:41.470
+circle to it.
+
+73
+06:41.500 --> 06:47.460
+First, I'm going to add a circle SVG with D3's append method, passing the circle tag.
+
+74
+06:47.890 --> 06:54.100
+Once we have that, I'll use a few attr methods to give it some sensible dimensions based on the size
+
+75
+06:54.100 --> 06:55.680
+of the canvas.
+
+76
+06:55.690 --> 06:59.980
+I'll give it a cx and cy attribute of 200,
+
+77
+07:00.040 --> 07:02.710
+so it should be in the middle of the canvas.
+
+78
+07:02.860 --> 07:10.280
+I'll give it a radius attribute of 100 and I'll give it a fill attribute of blue.
+
+79
+07:10.300 --> 07:16.630
+Now, if we go to our browser window, we'll see that this code has run, and we have a nice shiny blue circle
+
+80
+07:16.630 --> 07:19.420
+on the screen. Just as a sanity check,
+
+81
+07:19.420 --> 07:23.860
+Let's change some of these values around to make sure that the circles update.
+
+82
+07:24.720 --> 07:35.710
+I'm going to change the cx attribute to 100, the cy attribute to 50, the r value to 70, and I'll change
+
+83
+07:35.710 --> 07:39.350
+the fill to gray.
+
+84
+07:39.460 --> 07:44.120
+So, as we can see, once we refresh the page the circle has updated as expected.
+
+85
+07:45.080 --> 07:50.530
+So now you know how to use D3 select, append, and attr to add shapes to the screen.
+
+86
+07:51.370 --> 07:57.400
+In the next activity, I want you to replicate the code that I just wrote, and try to add a rectangle to
+
+87
+07:57.400 --> 08:00.220
+the screen, instead of a circle.
+
+88
+08:00.220 --> 08:06.520
+Feel free to play around with a different attribute values of the SVG canvas and the rectangle, to really
+
+89
+08:06.520 --> 08:08.810
+get to grips with how everything is working.

@@ -1,0 +1,288 @@
+1
+00:00:05,370 --> 00:00:12,930
+In this lecture I'll be introducing you to the circle packing lab that comes with three this type of
+
+2
+00:00:12,930 --> 00:00:19,800
+visualization is really similar to a treatment and you'll see parallels in our code and you'll see parallels
+
+3
+00:00:19,800 --> 00:00:23,830
+in how our code is written between this lecture and the previous lecture.
+
+4
+00:00:24,920 --> 00:00:29,690
+We're once again using the D-3 stratify lay out to set up data.
+
+5
+00:00:29,960 --> 00:00:33,310
+And this time I'll be introducing you to the D-3 packed Ladd's
+
+6
+00:00:36,340 --> 00:00:42,980
+circle packing can be used in any situation where you might think about using a tree map instead.
+
+7
+00:00:43,120 --> 00:00:49,460
+You could argue that the circle packing offers a more unique and interesting design than a regular treatment.
+
+8
+00:00:49,480 --> 00:00:55,720
+It all three groups is categories more explicitly than just by using a single color scheme.
+
+9
+00:00:55,720 --> 00:01:01,440
+However to play devil's advocate here you could also argue that it's more difficult for our brains to
+
+10
+00:01:01,450 --> 00:01:09,200
+text areas between different circles than it is for us to pick apart the areas of rectangles.
+
+11
+00:01:09,380 --> 00:01:15,140
+It's really just a personal design decision that you'll have to make by yourself as to which visualization
+
+12
+00:01:15,140 --> 00:01:16,500
+you want to use.
+
+13
+00:01:17,710 --> 00:01:24,040
+On the left you can see the same data that we saw in The Last Lecture visualize with circle packing
+
+14
+00:01:24,070 --> 00:01:26,340
+instead of the treatment.
+
+15
+00:01:26,480 --> 00:01:32,450
+Again the areas of each of these shapes represent the population of different countries which are split
+
+16
+00:01:32,510 --> 00:01:36,520
+up into regions the example on the right.
+
+17
+00:01:36,520 --> 00:01:37,910
+Here is a visualization.
+
+18
+00:01:37,940 --> 00:01:42,920
+I'll be walking through in this lecture to keep things simple.
+
+19
+00:01:42,920 --> 00:01:48,740
+Here we have another visualization that I found blocks using the exact same dataset that we've seen
+
+20
+00:01:48,740 --> 00:01:50,780
+in the last two lectures.
+
+21
+00:01:50,930 --> 00:01:54,290
+This time data is in the format of a table again.
+
+22
+00:01:54,290 --> 00:01:59,240
+So we'll be using D-3 stratified Wrotham deep hierarchy.
+
+23
+00:01:59,410 --> 00:02:04,550
+We have a nice effect here where we can hover over each of these circles and the stroke gets changed
+
+24
+00:02:04,550 --> 00:02:08,700
+so we can clearly see which packages inherits from.
+
+25
+00:02:08,730 --> 00:02:14,380
+We're also using a nice color scheme where the darkness of each of these circles represents the height
+
+26
+00:02:14,490 --> 00:02:15,650
+of each node.
+
+27
+00:02:16,080 --> 00:02:22,210
+So our root node on the outside representing the entire floor library has the darkest color.
+
+28
+00:02:22,710 --> 00:02:28,390
+And these leaf nodes over here with the most ancestors have the lightest color.
+
+29
+00:02:28,540 --> 00:02:32,210
+So let's start looking through this code to see how everything is working.
+
+30
+00:02:32,980 --> 00:02:39,190
+The way that we're getting our color scale to work for this visualization is by using a sequential scale
+
+31
+00:02:39,640 --> 00:02:47,220
+together with this interpolator for colors that D-3 gives us basically the zero value for this interpreter
+
+32
+00:02:47,240 --> 00:02:49,850
+is in the middle of this set of colors.
+
+33
+00:02:49,930 --> 00:02:55,630
+And since we're saying the domain between minus four plus four we'll be using some of these colors in
+
+34
+00:02:55,630 --> 00:02:57,090
+the middle of the chart.
+
+35
+00:02:58,050 --> 00:03:02,360
+So next we're using the stratify layout suggest hierarchical order.
+
+36
+00:03:02,370 --> 00:03:08,880
+Each of the rows in our dataset all this line is doing is providing the access a function to each node
+
+37
+00:03:08,880 --> 00:03:16,600
+in a network to connect with its parent here we're setting up a pact that we're just passing in the
+
+38
+00:03:16,600 --> 00:03:22,000
+size that we wanted to take up and the padding value which represents a bit of padding that we want
+
+39
+00:03:22,000 --> 00:03:25,420
+to surround inside and the outside of every circle.
+
+40
+00:03:26,050 --> 00:03:30,080
+Again I'll make some console logs here to show you what layouts are doing.
+
+41
+00:03:31,340 --> 00:03:37,510
+First of all we have the raw data that we're loading it all the way we have to start with an ID for
+
+42
+00:03:37,510 --> 00:03:43,690
+each package which we're used in first position in the hierarchy and the value sharing the sides of
+
+43
+00:03:43,690 --> 00:03:44,720
+each package.
+
+44
+00:03:45,700 --> 00:03:50,990
+Next we're setting up our written word here by passing in our data to a stratified function.
+
+45
+00:03:51,940 --> 00:03:57,740
+We're summing up our values based on each element value field and we're sorting out elements by this
+
+46
+00:03:57,740 --> 00:03:59,740
+size to.
+
+47
+00:03:59,820 --> 00:04:06,000
+So this spits out hierarchy format that we now know and love which we'll be able to pass on to any of
+
+48
+00:04:06,000 --> 00:04:07,390
+our layout functions.
+
+49
+00:04:08,830 --> 00:04:16,420
+Once we call our pack layer on this Ruge object data we add in x y and our attributes which we use to
+
+50
+00:04:16,420 --> 00:04:18,800
+position our circles.
+
+51
+00:04:18,840 --> 00:04:24,730
+We're performing our data join here on the descendants of our root node which gives us this array here.
+
+52
+00:04:25,890 --> 00:04:30,980
+For every descendant we're adding in a group which we're translating according to that it's X and Y
+
+53
+00:04:31,020 --> 00:04:33,520
+about these lines.
+
+54
+00:04:33,660 --> 00:04:39,560
+Setting up a nice hover effect where we get to see all of the nodes ancestors whenever we mouse over
+
+55
+00:04:39,560 --> 00:04:46,440
+it then we're adding a circle to each of these groups setting the radius with the value the layout function
+
+56
+00:04:46,440 --> 00:04:47,690
+provided us with.
+
+57
+00:04:48,060 --> 00:04:54,810
+And we're saying Phil accordant the depth in the hierarchy again this code here is just making sure
+
+58
+00:04:54,810 --> 00:05:01,050
+that we have some tidy labels that we can use for each of our nodes and we're leaving at the leaf nodes
+
+59
+00:05:01,050 --> 00:05:04,760
+because they're too small to read labels from.
+
+60
+00:05:04,800 --> 00:05:09,710
+Here again we are using the same simple tool tip from a treatment.
+
+61
+00:05:09,770 --> 00:05:16,280
+And finally this is the function that we're using to set the hover effect of each of us circles when
+
+62
+00:05:16,280 --> 00:05:17,870
+we mouseover a circle.
+
+63
+00:05:17,870 --> 00:05:19,480
+This how the value gets set.
+
+64
+00:05:19,490 --> 00:05:20,210
+True.
+
+65
+00:05:20,600 --> 00:05:27,100
+So for all of the nodes ancestors we're setting a class of node Hubner using this class method.
+
+66
+00:05:27,250 --> 00:05:33,340
+And then when we miss out the hover argument takes on a value of false and then we can remove the class
+
+67
+00:05:33,340 --> 00:05:36,070
+that we gave to these ancestors.
+
+68
+00:05:36,070 --> 00:05:41,530
+After this lecture you should feel comfortable working with the circle packing lab that Dietrich Gibbs's
+
+69
+00:05:41,820 --> 00:05:45,320
+for making this type of hierarchical visualization.
+
+70
+00:05:45,640 --> 00:05:51,610
+In the next lecture I'll be taking you through your final crash course in this class where I'll be introducing
+
+71
+00:05:51,610 --> 00:05:58,180
+you to the sunders plot which is a unique display of data to show splits in the hierarchies of multiple
+
+72
+00:05:58,180 --> 00:05:58,730
+levels.
+

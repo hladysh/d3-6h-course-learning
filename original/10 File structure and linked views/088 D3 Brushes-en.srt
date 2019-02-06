@@ -1,0 +1,460 @@
+1
+00:00:06,480 --> 00:00:12,550
+In this lecture I'll be introducing brushes and D-3 which offer as a way to make a selection by the
+
+2
+00:00:12,550 --> 00:00:19,060
+drag of the mouse for this course we'll be using brushes to create a context and focus effect for our
+
+3
+00:00:19,060 --> 00:00:25,570
+visualizations allowing users to get a closer look at a particular part of that data while keeping track
+
+4
+00:00:25,570 --> 00:00:28,510
+of how it fits with the rest of the graph.
+
+5
+00:00:28,720 --> 00:00:33,130
+By the end of this lecture we'll have added a connotates graphed the line shot that we've been working
+
+6
+00:00:33,130 --> 00:00:39,360
+with in this section this lecture should also give you some experience with handling events across objects
+
+7
+00:00:39,570 --> 00:00:44,940
+as well as adding some more events and uprush selection links to each of the components on the page.
+
+8
+00:00:46,900 --> 00:00:52,380
+Here's what we're trying to build with a brush by the end of this lecture we've added in this smaller
+
+9
+00:00:52,380 --> 00:00:57,500
+area charts at the bottom of the screen which is showing the same data as a line graph.
+
+10
+00:00:57,880 --> 00:01:04,070
+When we drag a mouse over this area we can select a range of data that we want to show a mange.
+
+11
+00:01:04,540 --> 00:01:11,500
+We can also pan this box over the extensive graph to pick a certain possible data to show and we can
+
+12
+00:01:11,500 --> 00:01:15,360
+change the size of this box by dragging its corners.
+
+13
+00:01:15,370 --> 00:01:21,600
+This is a nice interactive way to pick a date range for a graph which is more playful and interesting
+
+14
+00:01:21,650 --> 00:01:25,450
+just using a regular Jane queery you slider.
+
+15
+00:01:25,570 --> 00:01:30,220
+You'll often see this graph at the bottom referred to as the context graph.
+
+16
+00:01:30,670 --> 00:01:36,160
+Since it's fixed axis means that it will always show the broader context of what our charts are telling
+
+17
+00:01:36,160 --> 00:01:37,190
+us.
+
+18
+00:01:37,300 --> 00:01:43,840
+The main graph is then referred to as the focus graph since it shows a focused view of the data at a
+
+19
+00:01:43,840 --> 00:01:53,410
+particular range and time we put this graph together by using D-3 brush generator after creating an
+
+20
+00:01:53,410 --> 00:01:56,820
+empty group and calling a rush function on it.
+
+21
+00:01:56,830 --> 00:01:59,870
+D-3 will add these elements onto our charts.
+
+22
+00:02:00,280 --> 00:02:05,060
+We have an overlay which we can drag a mouse over to reposition our brush.
+
+23
+00:02:05,320 --> 00:02:09,710
+We have a selection area which is the shaded box that shows what we have selected.
+
+24
+00:02:10,240 --> 00:02:15,760
+And we have two handles which we can play around with on either side of our selection to fine tune the
+
+25
+00:02:15,760 --> 00:02:22,310
+parts of the graph that should be shown in focus chaat for this course will only be using one dimensional
+
+26
+00:02:22,310 --> 00:02:29,510
+brushes meaning that they're only selecting an area on the X axis of a context chart we can follow a
+
+27
+00:02:29,510 --> 00:02:34,670
+simple three step process to add a brush on to any chart that we using.
+
+28
+00:02:34,770 --> 00:02:40,950
+Firstly we need to clear out brush generators somewhere in our code where we can select properties like
+
+29
+00:02:40,950 --> 00:02:46,290
+the size and position of the brush and how we want the brush handles to look next.
+
+30
+00:02:46,430 --> 00:02:51,630
+We need to run our brush generates it by calling it on the context of our visualization.
+
+31
+00:02:51,660 --> 00:02:57,540
+This should look similar to how we created our axes and G-3 as we'll just be adding a group Halman onto
+
+32
+00:02:57,540 --> 00:03:05,030
+our visualization and then calling the brush function on that finally we'll need to add an event handler
+
+33
+00:03:05,070 --> 00:03:12,230
+onto the brush event so that whenever the brush change position so that whenever the brush changes positions
+
+34
+00:03:12,380 --> 00:03:16,430
+we can update our focus chart to show the data that we've selected.
+
+35
+00:03:16,430 --> 00:03:21,260
+Starting off with the code that we had from the end of last lecture or shared the steps that we need
+
+36
+00:03:21,260 --> 00:03:28,230
+to take to add in this other graph to our visualization I've made a few changes already in the index
+
+37
+00:03:28,230 --> 00:03:34,980
+file I've added in another div after a line chart to contain a context chart which I'm referring to
+
+38
+00:03:34,980 --> 00:03:37,360
+as our timeline area.
+
+39
+00:03:37,470 --> 00:03:43,430
+I've also included the javascript file in O.J.'s directory which is going to set up the context chart
+
+40
+00:03:45,710 --> 00:03:47,170
+in my line of file.
+
+41
+00:03:47,180 --> 00:03:51,740
+I've decreased the height of the visualization a little so that everything fits on the page.
+
+42
+00:03:52,680 --> 00:03:57,600
+And in mange as file I've added an instance of a timeline onto a graph.
+
+43
+00:03:58,230 --> 00:04:01,150
+Let's take a look at our timeline file looks like.
+
+44
+00:04:02,030 --> 00:04:07,700
+This should all seem pretty similar to the code we wrote for our line up we giving the show a width
+
+45
+00:04:07,700 --> 00:04:13,760
+of 800 pixels which matches the width that we set for our line shown in the other file and I'm keeping
+
+46
+00:04:13,760 --> 00:04:20,360
+the left and right margins the same so that our graphs will line up vertically on the page we're adding
+
+47
+00:04:20,360 --> 00:04:28,370
+in some simple axes We're adding up paths for the first time and then in our update method we're updating
+
+48
+00:04:28,370 --> 00:04:30,320
+our scales and redrawing area.
+
+49
+00:04:30,320 --> 00:04:36,490
+Pat The main difference with our line chart is that we're not filtering out data based on the position
+
+50
+00:04:36,520 --> 00:04:42,500
+of update rate slider meaning the X-axis will always show the full extent of our data.
+
+51
+00:04:42,520 --> 00:04:44,420
+The coin that we're looking at.
+
+52
+00:04:44,920 --> 00:04:48,480
+Let me take you through the process of how we would add brush to this chart.
+
+53
+00:04:50,420 --> 00:04:56,930
+Firstly have written out the brush generator that I want to use the fact that we are using brush ex-school
+
+54
+00:04:57,080 --> 00:05:02,750
+rather than the Jaric brush cool means that we're explicitly telling D-3 that we wanted to create a
+
+55
+00:05:02,750 --> 00:05:05,910
+one dimensional brush that goes in the x direction.
+
+56
+00:05:06,780 --> 00:05:12,740
+And using the extent method here to define the minimum maximum coordinates the brush run between.
+
+57
+00:05:13,240 --> 00:05:19,690
+So this means that D-3 will create an overlay for a brush that runs from zero zero points of our visualization
+
+58
+00:05:19,690 --> 00:05:20,320
+area.
+
+59
+00:05:21,160 --> 00:05:24,800
+All the way down to the bottom right corner of the SPG grid.
+
+60
+00:05:26,170 --> 00:05:32,470
+This means that the user is able to draw a brush over any part of the visualisation area.
+
+61
+00:05:32,510 --> 00:05:37,540
+The next step is that we need to call the brush in the context of our visualization.
+
+62
+00:05:37,660 --> 00:05:43,080
+I've done this in the same way that we usually call the Xs generators on that visualization.
+
+63
+00:05:43,210 --> 00:05:49,300
+I just attached a group to our visualization area giving a color brush and I'm using the call method
+
+64
+00:05:49,300 --> 00:05:52,010
+to run uprush generator.
+
+65
+00:05:52,150 --> 00:05:58,120
+If we go back to a browser now we can see that this brush has been added to a context graph but it isn't
+
+66
+00:05:58,120 --> 00:06:04,600
+doing anything to a page yet we still need to add an event handler to a brush so that we can update
+
+67
+00:06:04,600 --> 00:06:08,020
+a line chart when the brush moves around.
+
+68
+00:06:08,230 --> 00:06:14,280
+I've added in this event handler to get the behavior that we're looking for whenever the brushes moved
+
+69
+00:06:14,460 --> 00:06:21,750
+we getting hold of the pixel values of brushless selected using this selection variable if the selection
+
+70
+00:06:21,750 --> 00:06:27,120
+is empty as it would be if the user clears the brush by clicking inside the brush area.
+
+71
+00:06:27,420 --> 00:06:30,670
+Then this value will equal the whole range of our scale.
+
+72
+00:06:31,760 --> 00:06:37,860
+We then calling the invert method of our timeline's X scale to give us the date values that this points
+
+73
+00:06:37,860 --> 00:06:44,650
+relate to then we're changing the values of our slider to match these dates and updating our line of
+
+74
+00:06:45,790 --> 00:06:51,130
+recall that the Rangle data method of our line job is sorting out which dates to show based on these
+
+75
+00:06:51,130 --> 00:06:53,040
+values for our slide.
+
+76
+00:06:53,080 --> 00:06:57,050
+So we don't need to do anything else to get the focus effect that we're looking for.
+
+77
+00:06:57,830 --> 00:07:04,280
+Finally all that's left to do is to go back and add in a call to brushed whenever a brush event fires
+
+78
+00:07:04,280 --> 00:07:05,450
+on a brush.
+
+79
+00:07:06,190 --> 00:07:12,300
+We're attaching the on events or the brush generator rather than the physical brush component here just
+
+80
+00:07:12,310 --> 00:07:15,080
+the brush component actually returns the entire group.
+
+81
+00:07:15,100 --> 00:07:21,660
+The brush gets added to once we refresh the page we can see that our line chart is now automatically
+
+82
+00:07:21,660 --> 00:07:25,230
+updating based on the selection that we're choosing.
+
+83
+00:07:25,230 --> 00:07:29,500
+However we still need to add in a few more events to a page.
+
+84
+00:07:29,590 --> 00:07:34,990
+For one thing a timeline chart should redraw its path whenever we change the coin or the variable that
+
+85
+00:07:34,990 --> 00:07:36,160
+we want to look at.
+
+86
+00:07:37,030 --> 00:07:42,950
+I also want to say that our brush component should update when we move the position of a query slider.
+
+87
+00:07:43,260 --> 00:07:49,780
+Since these controls are doing the same thing to the domain of a line chart to update context chart.
+
+88
+00:07:49,790 --> 00:07:55,510
+Whenever a coin or a variable changes it's as simple as adding in a call to our timelines Rangle data
+
+89
+00:07:55,510 --> 00:07:56,580
+method.
+
+90
+00:07:56,720 --> 00:08:03,000
+Whenever either of these events get fired I'll add in one call right here inside of variable listener
+
+91
+00:08:04,180 --> 00:08:08,030
+and I'll add another one down here in our coin change function which will up.
+
+92
+00:08:08,030 --> 00:08:14,970
+They are chart when Iraq coin select boxes change or when a tuna char X gets clicked.
+
+93
+00:08:15,040 --> 00:08:20,800
+Finally it's a little tricky it's updates up brush component whenever we want to but they slide around
+
+94
+00:08:22,120 --> 00:08:26,410
+here we're calling out is move method on the group that it was attached to.
+
+95
+00:08:26,800 --> 00:08:32,560
+We need to pass in a set of values which match the pixel positions that the brush selection should run
+
+96
+00:08:32,560 --> 00:08:33,780
+between.
+
+97
+00:08:33,910 --> 00:08:39,310
+We're starting off with our date values which we had originally and we're using this map function to
+
+98
+00:08:39,310 --> 00:08:41,530
+feed each of them into our timelines.
+
+99
+00:08:41,650 --> 00:08:49,290
+Scale this spits out the pixel values that these dates would take on a timeline and then we using those
+
+100
+00:08:49,290 --> 00:08:57,160
+to set the values of a brush I've then move the current dates date labels into the brushed function
+
+101
+00:08:57,670 --> 00:09:03,030
+since this quarter the brushes move and also fire the brushed event.
+
+102
+00:09:03,160 --> 00:09:07,390
+Once we refresh the page we can see that everything is working as expected.
+
+103
+00:09:07,840 --> 00:09:14,170
+Adding in this brush with the context chart lets our users keep hold of the bigger picture was still
+
+104
+00:09:14,170 --> 00:09:17,420
+able to zoom in on a particular point in that graph.
+
+105
+00:09:17,530 --> 00:09:22,230
+There are many other interesting uses for brushes that exist within the world of D-3.
+
+106
+00:09:22,450 --> 00:09:28,200
+But this effect is a particularly powerful tool which can often take a simple chart to the next level.
+
+107
+00:09:28,390 --> 00:09:34,180
+After this lecture you should understand how to use the D-3 brush function to implement a focus and
+
+108
+00:09:34,180 --> 00:09:37,360
+context effect for your visualization.
+
+109
+00:09:37,420 --> 00:09:42,490
+You'll be making one of these yourself and your final project as part of the data dashboard then you'll
+
+110
+00:09:42,490 --> 00:09:44,090
+be building.
+
+111
+00:09:44,200 --> 00:09:48,850
+You should also be starting to feel more comfortable working with visualizations that are spread across
+
+112
+00:09:48,850 --> 00:09:56,500
+multiple different files linking these views together to form a more fully interactive page in the next
+
+113
+00:09:56,500 --> 00:09:56,970
+lecture.
+
+114
+00:09:56,980 --> 00:10:02,470
+I'll be helping you to get set up with your final class project where you'll be creating a data dashboard
+
+115
+00:10:02,470 --> 00:10:07,660
+to help a company to keep tabs on employee performance across different sales teams.
+

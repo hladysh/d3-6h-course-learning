@@ -1,0 +1,452 @@
+1
+00:00:07,000 --> 00:00:11,810
+By now you should have a good feel for the general scaffolding which is involved for writing a java
+
+2
+00:00:11,830 --> 00:00:13,900
+script file with D-3.
+
+3
+00:00:13,930 --> 00:00:19,430
+And most of the time in DS3 you won't be making a new visualization from scratch but instead you'll
+
+4
+00:00:19,430 --> 00:00:24,350
+be adapting existing code that somebody else has written already in this lecture.
+
+5
+00:00:24,350 --> 00:00:30,760
+I'll be introducing you to line graphs and D-3 by walking you through an example the found on line.
+
+6
+00:00:30,790 --> 00:00:38,140
+This will be the approach that I'll be using in Section 7 8 and 9 to rapidly integer to rapidly introduce
+
+7
+00:00:38,140 --> 00:00:42,880
+you to a broad range of visualizations that D-3 lets you create.
+
+8
+00:00:43,100 --> 00:00:48,260
+I'll explain anything new that comes up in the example code and I'll be walking you through what the
+
+9
+00:00:48,260 --> 00:00:49,310
+code is doing.
+
+10
+00:00:50,260 --> 00:00:56,290
+In this lecture I'll be introducing you to the D-3 line function which will be the first path generator
+
+11
+00:00:56,290 --> 00:00:58,270
+that you'll be using in this course.
+
+12
+00:01:01,060 --> 00:01:07,180
+For your third project I'm adapting this example code from somebody in the D-3 community called Alan
+
+13
+00:01:07,180 --> 00:01:08,700
+Dunning.
+
+14
+00:01:08,790 --> 00:01:15,470
+This is a Web site that we'll be using repeatedly in the next two sections to source our example code.
+
+15
+00:01:15,510 --> 00:01:21,120
+I've chosen this visualization process to start with because it implements a nice tool tip for a line
+
+16
+00:01:21,120 --> 00:01:23,010
+graph.
+
+17
+00:01:23,090 --> 00:01:28,400
+I've made a few tweaks to this code to fit the coding style that we've been working with and I'm giving
+
+18
+00:01:28,400 --> 00:01:35,540
+you this code to start off with a project 3 I'm going to walk through this code line by line so they
+
+19
+00:01:35,540 --> 00:01:37,360
+can see what everything is doing.
+
+20
+00:01:39,380 --> 00:01:45,350
+At the top of our file we have the usual margin setter that we've seen in previous lectures where attaching
+
+21
+00:01:45,350 --> 00:01:49,020
+an SPG canvas to an empty div tag on a page.
+
+22
+00:01:49,250 --> 00:01:54,380
+And then we're appending a group onto that to conform with the magic convention we are using a parse
+
+23
+00:01:54,380 --> 00:02:01,210
+function which is just using this directive here to interpret four digit streams it's years.
+
+24
+00:02:01,300 --> 00:02:07,070
+We're also declaring this function bisect date which we'll be using for a tooltip.
+
+25
+00:02:07,300 --> 00:02:12,680
+What this function does is to return the index that a date would fit into a array.
+
+26
+00:02:12,850 --> 00:02:21,130
+If it was added in order here we're setting the range for x and y scales we're defining two Access generators
+
+27
+00:02:21,250 --> 00:02:25,800
+which we'll call them we have some domains available for us scales.
+
+28
+00:02:26,010 --> 00:02:31,680
+In this example there's a simple formatting function for a y axis ticks which we're using to show the
+
+29
+00:02:31,680 --> 00:02:34,410
+data in thousands.
+
+30
+00:02:34,440 --> 00:02:41,060
+Next we're adding two groups which will contain axes we'll call the generators on these groups later
+
+31
+00:02:41,130 --> 00:02:46,160
+run we're adding a text SVGA to a Y axis here.
+
+32
+00:02:46,480 --> 00:02:54,650
+So that label will sit on the y axis where we're defining a path generator for creating a line chart
+
+33
+00:02:55,190 --> 00:02:57,230
+which I'll talk about more later on.
+
+34
+00:02:58,660 --> 00:03:02,200
+We load in the data from our data set as usual using D-3.
+
+35
+00:03:02,210 --> 00:03:10,520
+Jason and we are using a four inch loop to coerce our data values that we can work with.
+
+36
+00:03:10,620 --> 00:03:13,090
+Here we have a past time function being called.
+
+37
+00:03:13,090 --> 00:03:13,750
+Not yet.
+
+38
+00:03:13,770 --> 00:03:20,160
+Give us a javascript Date object and here we are converting a string of a number to an integer using
+
+39
+00:03:20,160 --> 00:03:21,050
+a plus sign.
+
+40
+00:03:22,620 --> 00:03:29,370
+Now that we have a data loaded properly we can set the domains for us Gayles for our X domain.
+
+41
+00:03:29,400 --> 00:03:36,870
+This extend function is returning the minimum and maximum dates in our data for the Y domain for the
+
+42
+00:03:36,870 --> 00:03:44,970
+minimum with dividing our lowest population value by 1 point 0 0 5 to give as a slight buffer.
+
+43
+00:03:45,120 --> 00:03:51,430
+And similarly for the maximum with timesink the largest population value by 1.00.
+
+44
+00:03:51,450 --> 00:03:54,260
+5 to give us some space at the top.
+
+45
+00:03:55,210 --> 00:04:03,010
+For your line chart I want the minimum of your wide domain to be zero because a broken Y-axis is generally
+
+46
+00:04:03,010 --> 00:04:09,970
+frowned upon in data visualization because it exaggerates the impact of minor changes in values.
+
+47
+00:04:09,970 --> 00:04:16,260
+Now that our scales have a domain we're calling on Access generators in the context of our access groups
+
+48
+00:04:17,950 --> 00:04:21,970
+in terms of attaching our actual line to grab this block of code.
+
+49
+00:04:21,970 --> 00:04:24,270
+Here is where all the magic is happening.
+
+50
+00:04:25,180 --> 00:04:31,660
+Notice that for a line chart because we're only appending one path SPG we don't need to worry about
+
+51
+00:04:31,660 --> 00:04:38,840
+using that D-3 update pattern all that will be doing is changing this D attribute whenever a line needs
+
+52
+00:04:38,840 --> 00:04:40,070
+to a date.
+
+53
+00:04:40,490 --> 00:04:46,880
+We won't need to worry about using Enter Exit because there should always be just one line on the page
+
+54
+00:04:46,910 --> 00:04:48,260
+at all times.
+
+55
+00:04:48,530 --> 00:04:52,180
+Let's take a closer look at what this block of code is doing.
+
+56
+00:04:54,050 --> 00:05:01,220
+Remember way back in Section 2 when I mentioned the final type of SPG called the path this is way it
+
+57
+00:05:01,250 --> 00:05:08,060
+looked like this D attribute contains a complex set of symbols that defines how a path gets grown by
+
+58
+00:05:08,060 --> 00:05:09,840
+our browser.
+
+59
+00:05:09,880 --> 00:05:16,030
+We don't need to know how to write these attributes by ourselves because D-3 comes packed with path
+
+60
+00:05:16,030 --> 00:05:18,110
+generators that we can use to create them.
+
+61
+00:05:19,040 --> 00:05:25,340
+Namely in this instance we can use D-3 line function.
+
+62
+00:05:25,530 --> 00:05:30,610
+Looking back at our code from earlier these are the sections that we're using to draw a line.
+
+63
+00:05:30,720 --> 00:05:36,960
+The top section here is defining a line generator a line generator expects to be given an array of data
+
+64
+00:05:37,410 --> 00:05:42,380
+and for each element in that array we're telling a line generator how to interpret the data point is
+
+65
+00:05:42,480 --> 00:05:47,100
+X and Y coordinate feeding the right now using scales to get pixels
+
+66
+00:05:50,270 --> 00:05:56,510
+in the bottom section with calling a line generator with an array of data each data point in this array
+
+67
+00:05:56,510 --> 00:06:02,210
+is an object with both the Year and de-value field which a line function will interpret as a set of
+
+68
+00:06:02,210 --> 00:06:09,240
+coordinates calling this line function with an array of data spits out a complicated string of characters
+
+69
+00:06:09,480 --> 00:06:13,350
+which we're plugging in as that should be for the path that we're appending.
+
+70
+00:06:13,740 --> 00:06:18,660
+The end result is that our browser will draw this path on that screen to connect between these different
+
+71
+00:06:18,660 --> 00:06:22,670
+coordinates.
+
+72
+00:06:22,710 --> 00:06:26,150
+Here's what the result looks like in the wage mail.
+
+73
+00:06:26,550 --> 00:06:32,550
+This string is just a fancy combination of symbols the line generator created to express the path between
+
+74
+00:06:32,550 --> 00:06:34,200
+each of the points of a line.
+
+75
+00:06:35,240 --> 00:06:41,470
+Finally we have some code at the bottom of our file here to add a different kind of tooltip to grab
+
+76
+00:06:42,620 --> 00:06:43,210
+this tool.
+
+77
+00:06:43,210 --> 00:06:49,250
+It consists of a circle which surrounds the point but looking at two dotted lines that we can follow
+
+78
+00:06:49,250 --> 00:06:51,650
+to each axis and a text.
+
+79
+00:06:51,650 --> 00:06:55,440
+SVGA the display is the y value.
+
+80
+00:06:55,510 --> 00:07:00,720
+First we're appending a group which we can use to hide or shared the whole tilted.
+
+81
+00:07:00,760 --> 00:07:07,220
+Next we're adding a vertical line to connect to our x axis and a horizontal line to connect to the y
+
+82
+00:07:07,220 --> 00:07:09,060
+axis.
+
+83
+00:07:09,150 --> 00:07:11,150
+We're adding a circle here.
+
+84
+00:07:12,220 --> 00:07:15,790
+And then we're adding our text as Fiji.
+
+85
+00:07:15,820 --> 00:07:22,090
+Finally we're adding an invisible rectangle as an overlay for our visualization which we'll be attaching
+
+86
+00:07:22,090 --> 00:07:27,410
+our events to when our mouse moves inside the oberl area.
+
+87
+00:07:27,420 --> 00:07:32,810
+We're making the tooltip visible by setting the display of our group to know.
+
+88
+00:07:33,020 --> 00:07:39,080
+And then when our mouse moves outside the oberl we're hiding the tooltip by setting its display to
+
+89
+00:07:39,170 --> 00:07:46,810
+non finally this mouse move function here is doing all the heavy lifting to update each part of our
+
+90
+00:07:46,810 --> 00:07:47,370
+tooltip.
+
+91
+00:07:47,370 --> 00:07:54,670
+When a mouse moves around if you remember from a lecture on scale's we using the invert method on a
+
+92
+00:07:54,940 --> 00:08:00,550
+scale here to find the time value that matches the coordinate position of the mouse.
+
+93
+00:08:01,760 --> 00:08:08,230
+The bisect date function is returning the index in our data array where this time value would belong
+
+94
+00:08:08,270 --> 00:08:10,080
+if it was its own data point.
+
+95
+00:08:11,290 --> 00:08:18,130
+So this line here is comparing the date that America is looking at to the closest to time values in
+
+96
+00:08:18,130 --> 00:08:23,540
+our array and returning the data point that it's closest to.
+
+97
+00:08:23,620 --> 00:08:28,490
+Next we're shifting the whole tooltip so that it's centered around the point that we're looking at.
+
+98
+00:08:29,910 --> 00:08:34,620
+Then we're updating the text of our tooltip with the y value that we're looking at.
+
+99
+00:08:36,280 --> 00:08:42,410
+Here we're adjusting the second point of our x axis line so that it moves to the new Y value.
+
+100
+00:08:43,050 --> 00:08:47,010
+And finally we're doing the same with Y-axis line.
+
+101
+00:08:47,100 --> 00:08:53,580
+All of this tooltip code is pretty complicated and it's not at all obvious what this smooth function
+
+102
+00:08:53,580 --> 00:08:54,750
+is doing.
+
+103
+00:08:54,750 --> 00:09:00,540
+The good news is that realistically you don't really need to know what this code is doing to use it
+
+104
+00:09:00,540 --> 00:09:06,180
+in your files as long as you're getting the behavior that you're looking for from a piece of community
+
+105
+00:09:06,180 --> 00:09:13,040
+code then you only really need to understand which pieces you need to alter to fit your own visualization.
+
+106
+00:09:15,880 --> 00:09:21,050
+This lecture was your first crash course through some example code helping you to understand where a
+
+107
+00:09:21,040 --> 00:09:28,180
+line graph looks like and D 3 I'll be following this format in Section 7 8 and 9 to give you a good
+
+108
+00:09:28,180 --> 00:09:34,210
+breadth of knowledge into D-3 and to gauge the process of understanding and adapting visualizations
+
+109
+00:09:34,210 --> 00:09:35,220
+by yourself.
+
+110
+00:09:36,020 --> 00:09:41,810
+You'll need to make a few more edits to this code and project 3 so that fits with your data and to make
+
+111
+00:09:41,810 --> 00:09:44,350
+it interactive in the next lecture.
+
+112
+00:09:44,360 --> 00:09:49,490
+I'll be helping to get acquainted with the project template files I'm giving you and I'll be explaining
+
+113
+00:09:49,490 --> 00:09:50,330
+what you'll be building.
+

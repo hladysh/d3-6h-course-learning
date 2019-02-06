@@ -1,0 +1,52 @@
+1
+00:00:06,250 --> 00:00:11,380
+The visualization that we ended up with at the end of last section lets us see a nice overview of how
+
+2
+00:00:11,380 --> 00:00:13,480
+this data is changed over time.
+
+3
+00:00:14,540 --> 00:00:20,030
+However the visualization will be far more useful if the user could explore the data with some more
+
+4
+00:00:20,030 --> 00:00:23,930
+advanced features over the course of this section.
+
+5
+00:00:23,960 --> 00:00:29,510
+I'll be introducing you to a variety of extra components that will gradually allow the user to do more
+
+6
+00:00:29,510 --> 00:00:30,850
+without visualization.
+
+7
+00:00:31,850 --> 00:00:36,830
+We'll be using event handlers and listeners to update the visualization as they use it interacts with
+
+8
+00:00:36,830 --> 00:00:38,670
+different elements on the page.
+
+9
+00:00:40,380 --> 00:00:45,940
+And by the end of this section you should feel comfortable with implementing a host of that interactions
+
+10
+00:00:46,600 --> 00:00:51,550
+and attaching event listeners to SVGA use on the screen.
+
+11
+00:00:51,550 --> 00:00:57,940
+Finally will use your new skills to develop an interactive line up your third class project.
+
+12
+00:00:57,940 --> 00:01:03,670
+The project involves displaying historical prices at different crypto currencies and gives you a chance
+
+13
+00:01:03,670 --> 00:01:07,790
+to really experiment with some common interactive components.
+

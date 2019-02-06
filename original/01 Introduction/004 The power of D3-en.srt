@@ -1,0 +1,243 @@
+0
+00:04.900 --> 00:11.570
+In this lecture I'll be introducing you to what you can do with D3 - the world's premiere data
+
+1
+00:11.570 --> 00:13.710
+visualization library.
+
+2
+00:13.830 --> 00:18.600
+I'll be talking about why I believe the D3 is the best library to learn if you want to know how to
+
+3
+00:18.600 --> 00:24.210
+visualize data on the web, and I'll be showing you some cool examples of the kinds of visualizations
+
+4
+00:24.210 --> 00:30.150
+that you can make with D3. Although D3 has quickly grown to be the Web's favorite choice for displaying
+
+5
+00:30.150 --> 00:31.520
+data online,
+
+6
+00:31.530 --> 00:38.120
+there are a number of alternatives out there for developers to use. Fusion Charts, High Charts, Chartjs,
+
+7
+00:38.130 --> 00:44.800
+and even Google Charts can all be seen as competitors to D3.
+
+8
+00:44.830 --> 00:50.700
+So why am I teaching this course in D3, rather than any other data visualization tool out there?
+
+9
+00:51.490 --> 00:57.360
+For me there are three main reasons why D3 blows any of these alternatives out of the water.
+
+10
+00:57.640 --> 01:06.360
+D3's flexibility, the elegance of how it's written, and the active community that supports it.
+
+11
+01:06.360 --> 01:13.440
+The first reason is flexibility. D3 lets you load in your own data and do whatever you want with it.
+
+12
+01:13.440 --> 01:18.610
+It doesn't just come with a set of predefined templates for making different common graphs like many
+
+13
+01:18.610 --> 01:25.260
+other libraries. D3 gives you the tools to make these charts yourself, and you can do so much more on
+
+14
+01:25.260 --> 01:26.080
+top of it.
+
+15
+01:27.040 --> 01:30.080
+D3 stands for Data Driven Documents.
+
+16
+01:30.160 --> 01:33.930
+It's all about connecting elements on the page to pieces of data.
+
+17
+01:34.060 --> 01:39.970
+This data can be absolutely anything, and it allows for lots of interesting use cases, especially for
+
+18
+01:39.970 --> 01:42.300
+interactive visualizations.
+
+19
+01:42.500 --> 01:47.260
+If you can imagine something as a way of displaying data, then you can build it in D3.
+
+20
+01:47.270 --> 01:48.200
+Simple as that.
+
+21
+01:50.650 --> 01:53.420
+Check out this chart I made earlier this year.
+
+22
+01:53.800 --> 01:59.610
+It's displaying how the income distribution has been changing in the US over the last 50 years.
+
+23
+01:59.650 --> 02:04.570
+There isn't a template that you could use to make this in any other system, because there's no name for
+
+24
+02:04.570 --> 02:06.670
+this type of visualization.
+
+25
+02:06.700 --> 02:12.280
+It's a pie chart but part of the storytelling message comes from how it changes over time.
+
+26
+02:12.280 --> 02:17.980
+This was something that I made just by thinking about how this data could be displayed in D3.
+
+27
+02:17.980 --> 02:23.110
+Once I had that, and once I sketched out how it should look, then it was easy to move things around and
+
+28
+02:23.110 --> 02:24.050
+make it work.
+
+29
+02:25.880 --> 02:31.480
+A good analogy to consider here is the idea of building a model house with either clay or Lego.
+
+30
+02:31.910 --> 02:36.830
+It might seem easier to build the house out of Lego, because all of the building blocks click together
+
+31
+02:36.860 --> 02:43.590
+really easily. However, if you want to make something more custom, or if you don't like the design of the
+
+32
+02:43.590 --> 02:49.250
+few different pieces that you have to choose from, then it would be better to make it out of clay.
+
+33
+02:49.290 --> 02:54.930
+This is the kind of option that D3 gives us.
+
+34
+02:54.980 --> 03:00.710
+The second reason for using D3 is that you can create beautiful visualizations in a quick and easy
+
+35
+03:00.710 --> 03:01.980
+way.
+
+36
+03:02.030 --> 03:08.690
+The D3 source code is written impeccably, and it's easy to visualize a huge volume of data with little to
+
+37
+03:08.690 --> 03:10.830
+no lag between updates.
+
+38
+03:11.210 --> 03:16.970
+D3 also comes built with a sophisticated transition suite, which seamlessly allows us to switch up the
+
+39
+03:16.970 --> 03:19.210
+position of shapes on the screen.
+
+40
+03:19.670 --> 03:25.970
+Once we get the hang of how a D-3 script should work, it's also really easy to figure out exactly what
+
+41
+03:25.970 --> 03:31.340
+each line is doing, as community code usually follows the same naming conventions.
+
+42
+03:32.890 --> 03:35.340
+I'll show you a simple example that I found online
+
+43
+03:35.350 --> 03:40.180
+which uses D3, and show you what it's doing behind the scenes with the console inspector here.
+
+44
+03:41.280 --> 03:47.490
+Look at how each of these elements are changing so smoothly as the browser runs. D3 is rapidly
+
+45
+03:47.490 --> 03:53.220
+changing the attributes of the different pie slices so that every time the graph updates, the updates
+
+46
+03:53.220 --> 03:59.980
+are incredibly smooth. We can add transitions like this with just a couple of lines of code in D3, and
+
+47
+04:00.000 --> 04:04.120
+D3 handles the heavy lifting of bringing about the different updates.
+
+48
+04:07.100 --> 04:13.400
+My last reason for using D3 is the community behind it. With D3 growing more and more popular every
+
+49
+04:13.400 --> 04:14.100
+year,
+
+50
+04:14.300 --> 04:20.210
+there is a vast ecosystem which you can use to find pre-built code to use in your own projects.
+
+51
+04:20.210 --> 04:25.790
+D3 is completely open source, and you can use any of this community code without needing to worry about
+
+52
+04:25.820 --> 04:27.710
+any licensing.
+
+53
+04:27.710 --> 04:32.400
+This course will be tailored to helping you to access this community as easily as possible.
+
+54
+04:33.500 --> 04:38.070
+I'll be taking you through real examples of how I would pull other people's code from the community,
+
+55
+04:38.490 --> 04:44.800
+and I'll be helping you to understand it. As D3 also boasts a wide user base, which is growing every
+
+56
+04:44.800 --> 04:51.100
+day, it's becoming a hot skill to know in web development roles, especially since understanding and presenting
+
+57
+04:51.100 --> 04:58.410
+data is such a vital component of so many business strategies.
+
+58
+04:58.410 --> 05:03.870
+At this point, I hope that you're excited to get stuck in with programming in D3. In the next lecture,
+
+59
+05:03.870 --> 05:07.680
+I'll be walking through a broad overview of how this course is structured,
+
+60
+05:07.680 --> 05:11.390
+before diving into the building blocks of D-3 in the next section.

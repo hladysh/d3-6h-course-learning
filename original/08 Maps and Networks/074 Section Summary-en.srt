@@ -1,0 +1,44 @@
+1
+00:00:07,170 --> 00:00:12,270
+At the end of this section you now know how to build two of the most impressive visualizations that
+
+2
+00:00:12,270 --> 00:00:17,530
+D-3 lets us create these visualizations for showing maps and networks.
+
+3
+00:00:17,530 --> 00:00:24,470
+A pretty tough to create in most other systems but they're actually fairly easy to build with D-3.
+
+4
+00:00:24,480 --> 00:00:29,700
+You've also had more experience interpretating some boilerplate code from the community as I've been
+
+5
+00:00:29,700 --> 00:00:35,440
+going through our examples line by line again to understand how everything is working.
+
+6
+00:00:35,550 --> 00:00:42,090
+You will find yourself using the D-3 Q module a lot if you keep doing D-3 development because you always
+
+7
+00:00:42,090 --> 00:00:48,450
+want to use it when you want to work with data which is spread across multiple different files.
+
+8
+00:00:48,460 --> 00:00:52,840
+The next section will be the final crash course section that I'll be taking you through.
+
+9
+00:00:53,350 --> 00:00:59,140
+I'll be covering everything to do with hierarchical data and I'll be showing you how to build for new
+
+10
+00:00:59,140 --> 00:01:04,670
+visualizations which will express something about hierarchical systems.
+
+11
+00:01:04,750 --> 00:01:08,710
+I'll be helping you to format your data so that it will work with these layouts that will use.
+

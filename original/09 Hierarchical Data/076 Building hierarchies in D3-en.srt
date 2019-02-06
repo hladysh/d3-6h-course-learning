@@ -1,0 +1,212 @@
+1
+00:00:06,550 --> 00:00:13,770
+In this lecture I'll be talking about deathrays hierarchy stratified lamp's which we can use to structure
+
+2
+00:00:13,770 --> 00:00:15,760
+our data as a hierarchy.
+
+3
+00:00:16,640 --> 00:00:21,740
+We'll be using these labs throughout this section to build visualizations that reflect hierarchical
+
+4
+00:00:21,740 --> 00:00:22,630
+system.
+
+5
+00:00:25,680 --> 00:00:31,380
+Before I dive in with the description of these two lads I want to clear up some of the terminology that
+
+6
+00:00:31,380 --> 00:00:33,680
+will be coming out over the next section.
+
+7
+00:00:34,750 --> 00:00:40,380
+All of these terms on the left come up repeatedly whenever we talk about data structures.
+
+8
+00:00:40,600 --> 00:00:47,620
+We always want to talk about different pieces of data nodes being connected with one another in a chart
+
+9
+00:00:47,620 --> 00:00:48,610
+like this.
+
+10
+00:00:49,590 --> 00:00:56,160
+Nodes are connected and network like this by links and you can have a number of notes that they connect
+
+11
+00:00:56,160 --> 00:00:56,480
+to.
+
+12
+00:00:56,480 --> 00:01:05,660
+Beneath them called child nodes or nodes are they linked to above them called parent knows the root
+
+13
+00:01:05,660 --> 00:01:14,060
+node represents the first node in data which all of them would spawn from the root node is the only
+
+14
+00:01:14,060 --> 00:01:16,620
+note that has no parent nodes.
+
+15
+00:01:16,970 --> 00:01:21,550
+Think of it like a tree where the root starts everything up.
+
+16
+00:01:21,650 --> 00:01:28,370
+There's also the term leafnode which represents any node that doesn't have a child node of its own.
+
+17
+00:01:28,400 --> 00:01:34,430
+Again the tree analogy works well-head because a leaf hangs off at the end of a fully grown tree.
+
+18
+00:01:35,360 --> 00:01:37,090
+With nothing else attached to it.
+
+19
+00:01:39,640 --> 00:01:47,600
+Whenever we want to visualize some kind of hierarchy D-3 we need to provide our data in the right format.
+
+20
+00:01:47,650 --> 00:01:54,070
+Specifically we need to pass in root element which is connected to a number of children which are in
+
+21
+00:01:54,070 --> 00:01:59,800
+turn connected to more children up until the point where we have expressed every single node in the
+
+22
+00:01:59,800 --> 00:02:01,450
+hierarchy.
+
+23
+00:02:01,690 --> 00:02:07,060
+Whenever we're working with data that doesn't quite express all of this already we'll need to use the
+
+24
+00:02:07,060 --> 00:02:17,270
+D-3 hierarchy or T-3 stratify layouts to make this conversion for us for D-3 is hierarchy lay out our
+
+25
+00:02:17,270 --> 00:02:22,340
+data should already look like this image on the left before we pass it into this function.
+
+26
+00:02:23,470 --> 00:02:29,320
+We have a javascript object here which is an object that contains an array of children who live at a
+
+27
+00:02:29,320 --> 00:02:31,550
+level below it in the hierarchy.
+
+28
+00:02:32,260 --> 00:02:37,010
+We just need to pass in an array of data like this to D-3 hierarchy.
+
+29
+00:02:37,210 --> 00:02:42,760
+And we can also provide an optional access function which will tell a function where to find the array
+
+30
+00:02:42,760 --> 00:02:46,250
+of children for every node in our network.
+
+31
+00:02:46,310 --> 00:02:53,600
+You can see here all the fields of hierarchy that will add to our data depth represents how far down
+
+32
+00:02:53,600 --> 00:03:00,280
+from the root node is nowadays whereas PI communicates the further distance and node is above the leaf
+
+33
+00:03:01,710 --> 00:03:07,470
+for every node the hierarchy level also attaches a field that shows the parent knows that it belongs
+
+34
+00:03:07,470 --> 00:03:14,480
+to as well as a field containing an array of every child that the node is connected to.
+
+35
+00:03:14,490 --> 00:03:21,460
+We can also feed in an optional method to find some of the values of all than those descendants or we
+
+36
+00:03:21,470 --> 00:03:29,830
+can count how many descendants each node has saurians in the value field we want to use to stratify
+
+37
+00:03:29,900 --> 00:03:35,350
+layouts when our data isn't already structured neatly into a tree format.
+
+38
+00:03:35,410 --> 00:03:41,760
+For instance we have the same data that we were communicating in the last example here except this time
+
+39
+00:03:41,770 --> 00:03:48,130
+we just have every name in our dataset showing which parent that person belongs to.
+
+40
+00:03:48,270 --> 00:03:53,580
+We can turn this into a hierarchy by using the stratified function.
+
+41
+00:03:53,770 --> 00:04:00,250
+We need to pass in an access function to show an unique ID to each element in the array holds.
+
+42
+00:04:00,430 --> 00:04:06,280
+In this case the name field and another access a function to show the item is parent.
+
+43
+00:04:06,340 --> 00:04:13,870
+In this case the parent field in this scenario we store this data in a variable called table and we
+
+44
+00:04:13,870 --> 00:04:18,080
+can pass that in as an argument to this root function here.
+
+45
+00:04:18,130 --> 00:04:24,220
+The result is the same data that is returned by the hierarchy lay out in the last example so we can
+
+46
+00:04:24,220 --> 00:04:29,970
+see here from this console log that this will return the root node which connects to each of its children
+
+47
+00:04:29,970 --> 00:04:30,710
+with the children.
+
+48
+00:04:30,710 --> 00:04:31,470
+Right.
+
+49
+00:04:31,990 --> 00:04:38,930
+And again we have the data depth ID and parent fields attached for use with a hierarchy.
+
+50
+00:04:40,400 --> 00:04:47,330
+At the end of this lecture you know how to use the three hierarchy D-3 stratify layouts to format your
+
+51
+00:04:47,330 --> 00:04:50,310
+data to be used with the layers in this section.
+
+52
+00:04:51,360 --> 00:04:55,860
+In the next lecture we'll be putting this knowledge into practice as I'll be walking you through the
+
+53
+00:04:55,860 --> 00:05:02,930
+code to create the tree diagram which offers a nice high level perspective on the structure of a hierarchy.
+

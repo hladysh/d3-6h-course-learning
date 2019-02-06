@@ -1,0 +1,176 @@
+1
+00:00:06,040 --> 00:00:09,460
+In this lecture I'm going to be talking about some best practices.
+
+2
+00:00:09,490 --> 00:00:13,270
+Think about before you start to design any visualization.
+
+3
+00:00:13,450 --> 00:00:19,560
+We'll be talking about tough to design principles which emphasize making clear and easy to read visualizations
+
+4
+00:00:20,260 --> 00:00:25,350
+and we'll be giving some examples of visualizations that do this well and others that do this badly.
+
+5
+00:00:26,550 --> 00:00:32,490
+A key aim for data visualization needs to be to make the data as easy to interpret as possible.
+
+6
+00:00:32,850 --> 00:00:38,490
+You want your visualizations to be credible because the last thing that you want as a designer is to
+
+7
+00:00:38,490 --> 00:00:45,300
+have your entire project discredited because the data was displayed misleadingly visualizations should
+
+8
+00:00:45,300 --> 00:00:51,300
+also achieve the aim of drawing attention to the data rather than anything decorative that surrounds
+
+9
+00:00:51,300 --> 00:00:51,670
+it.
+
+10
+00:00:54,530 --> 00:01:00,200
+This approach is embodied by the work of Ed Wood who is an American statistician the pioneer in the
+
+11
+00:01:00,200 --> 00:01:06,080
+field of data visualization tough to emphasize four main principles that we should follow to craft a
+
+12
+00:01:06,080 --> 00:01:11,910
+clear and readable data visualizations all of which focus on staying honest to the data eliminating
+
+13
+00:01:11,910 --> 00:01:19,540
+distracting elements in terms of graphical integrity data can easily be skewed by its presentation.
+
+14
+00:01:20,350 --> 00:01:26,140
+Here we have a famous example in Fox News where they are using a distorted Y-axis to exaggerate the
+
+15
+00:01:26,140 --> 00:01:29,430
+difference between 35 and 40 percent.
+
+16
+00:01:29,470 --> 00:01:34,680
+The graph on the right conveys the data more truthfully and the effect isn't quite as shocking.
+
+17
+00:01:35,630 --> 00:01:39,920
+It's generally considered to be bad practice not to start your waxes from zero.
+
+18
+00:01:39,920 --> 00:01:46,280
+For this reason it gives an instant shock impact but it throws the whole argument into question when
+
+19
+00:01:46,280 --> 00:01:47,920
+it's viewed in a critical light.
+
+20
+00:01:50,670 --> 00:01:56,570
+Tough to define the life factor as the size of an effect shown in the graphic divided by the size of
+
+21
+00:01:56,570 --> 00:01:59,710
+the effect as it's measured in the actual data.
+
+22
+00:01:59,880 --> 00:02:06,000
+For a church with high graphical integrity this figure should be as close to one as possible and there
+
+23
+00:02:06,000 --> 00:02:13,070
+shouldn't be any inherent bias that skews perception a good example is shown here from a keynote speech
+
+24
+00:02:13,070 --> 00:02:16,070
+from Steve Jobs back in 2002 8.
+
+25
+00:02:16,370 --> 00:02:23,600
+The tilting Fredy pie chart makes the section at the bottom representing Apple's market share seem WAY
+
+26
+00:02:23,600 --> 00:02:24,950
+bigger than it really is
+
+27
+00:02:27,900 --> 00:02:28,270
+turf.
+
+28
+00:02:28,320 --> 00:02:33,990
+Coined the term chart junk to mean any elements on the screen that distract the viewer from the data
+
+29
+00:02:34,470 --> 00:02:37,400
+whilst adding no extra information.
+
+30
+00:02:37,440 --> 00:02:41,790
+We have another good example from Fox News here to illustrate a point.
+
+31
+00:02:41,790 --> 00:02:48,210
+In general anything Fredy background graphics or any of that unnecessary framing elements would be considered
+
+32
+00:02:48,240 --> 00:02:55,810
+as chaat junk according to the two if to uses the term data in Gratiot to measure the amount of charging
+
+33
+00:02:55,870 --> 00:03:02,470
+the visualization has here we have two expressions of the same data each which have different data to
+
+34
+00:03:02,470 --> 00:03:08,080
+anguishes top that would argue that the chart on the right here is far clearer as it gets the point
+
+35
+00:03:08,080 --> 00:03:12,720
+across more successfully than the chart on the left.
+
+36
+00:03:12,830 --> 00:03:17,510
+After this lecture you should feel primed to weigh different visualizations according to some common
+
+37
+00:03:17,510 --> 00:03:19,290
+rules for design.
+
+38
+00:03:19,310 --> 00:03:23,450
+This is an important skill to develop as a data visualization engineer.
+
+39
+00:03:23,840 --> 00:03:28,160
+You should be able to justify your design decisions that you make to people who we are working with
+
+40
+00:03:28,670 --> 00:03:33,980
+and should have the vocabulary to constructively critique visualizations that can be proved.
+
+41
+00:03:34,370 --> 00:03:37,590
+However it's important to note that these are just guidelines.
+
+42
+00:03:37,630 --> 00:03:40,500
+Design is always a highly subjective matter.
+
+43
+00:03:40,940 --> 00:03:46,030
+In the next lecture I'll be making a counterpoint that these principles aren't always essential to make
+
+44
+00:03:46,040 --> 00:03:46,740
+visualization.
+

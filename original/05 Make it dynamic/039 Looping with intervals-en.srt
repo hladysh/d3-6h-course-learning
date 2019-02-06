@@ -1,0 +1,104 @@
+1
+00:00:06,790 --> 00:00:12,250
+If we want to add in some interactivity to our visualization class section we'll need to have some way
+
+2
+00:00:12,250 --> 00:00:18,160
+of refreshing the page to change something with chalk or react to specifically in this section will
+
+3
+00:00:18,190 --> 00:00:24,920
+be switching our dataset between two different data sources and having a bunch of data in this lecture
+
+4
+00:00:24,920 --> 00:00:30,070
+or running through the syntax between decrease interval function as well as the closely related set
+
+5
+00:00:30,070 --> 00:00:31,000
+interval function.
+
+6
+00:00:31,000 --> 00:00:37,810
+Jay Querrey at the end of this lecture will have a loop running on a page that simply was a text console.
+
+7
+00:00:40,080 --> 00:00:45,550
+An easy way for us to replicate and update and D-3 is for us to use an interval.
+
+8
+00:00:45,720 --> 00:00:51,480
+We basically want to run some code repeatedly every few seconds changing the data that we're looking
+
+9
+00:00:51,480 --> 00:00:51,870
+at.
+
+10
+00:00:52,840 --> 00:00:59,860
+D-3 provides its own integral function for doing this which takes two arguments a function to run continuously
+
+11
+00:01:00,160 --> 00:01:02,740
+and the delay in milliseconds.
+
+12
+00:01:02,740 --> 00:01:08,020
+The code inside this callback will run every five hundred milliseconds starting as soon as the browser
+
+13
+00:01:08,020 --> 00:01:11,850
+sees this code.
+
+14
+00:01:11,850 --> 00:01:15,310
+Let's take a look at how we would add an interval like this to our code.
+
+15
+00:01:16,240 --> 00:01:22,090
+To start off I'm just going to write out the D-3 integral code at the end of our data loading function.
+
+16
+00:01:25,110 --> 00:01:31,570
+For now just to make sure that our loop is working I'm just going to make a console log for every time
+
+17
+00:01:31,570 --> 00:01:35,080
+the loop runs.
+
+18
+00:01:35,140 --> 00:01:41,770
+The second the argument of 1000 here means the program is going to wait 1000 milliseconds a one second
+
+19
+00:01:42,130 --> 00:01:42,440
+between.
+
+20
+00:01:42,460 --> 00:01:50,560
+Every time it runs let's refresh the page and take a look at the console as expected.
+
+21
+00:01:50,560 --> 00:01:55,720
+We can see that our callback function is outputting the same Hello World to the console every second
+
+22
+00:01:57,310 --> 00:01:58,070
+in this lecture.
+
+23
+00:01:58,090 --> 00:02:04,840
+You learn the syntax to a really simple but powerful function in day which is going to help us to demonstrate
+
+24
+00:02:04,840 --> 00:02:06,820
+a lot of concepts in this section.
+
+25
+00:02:07,720 --> 00:02:13,120
+Next lecture I'll be adding in an update function which will be calling in this interval to continually
+
+26
+00:02:13,120 --> 00:02:15,100
+update the state of our visualization.
+

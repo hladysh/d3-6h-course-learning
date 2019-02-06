@@ -1,0 +1,244 @@
+1
+00:00:06,240 --> 00:00:11,510
+So far the data from visualisations has always been coming from one unified file.
+
+2
+00:00:11,510 --> 00:00:17,120
+However a lot of the time your interfaces will need to display data from multiple different sources.
+
+3
+00:00:17,210 --> 00:00:22,670
+For example in the next lecture we'll be combining a metafile like we store in our last lecture with
+
+4
+00:00:22,670 --> 00:00:25,820
+some information about unemployment rates in the US.
+
+5
+00:00:26,210 --> 00:00:32,600
+In this lecture I'll be introducing you to Kyus in D-3 which Let's do this before version 5 and then
+
+6
+00:00:32,600 --> 00:00:37,730
+I'll be showing you how we can load more than one data set using premises that latest version of the
+
+7
+00:00:37,730 --> 00:00:42,250
+three before D-3 version 5.
+
+8
+00:00:42,270 --> 00:00:46,830
+If you need it to load into different data sets you might have thought that we could use one of these
+
+9
+00:00:46,830 --> 00:00:48,260
+two snippets of code.
+
+10
+00:00:48,570 --> 00:00:54,700
+But neither of these work well in the example on the left we're setting two global variables.
+
+11
+00:00:54,750 --> 00:01:01,050
+Map data and example data and then we're setting them to the value of two different ways.
+
+12
+00:01:01,050 --> 00:01:06,560
+The problem here is that any code that we cite below these two functions will execute immediately because
+
+13
+00:01:06,560 --> 00:01:11,910
+it's likely going to take at least a few hundred milliseconds for both files to be loaded in and it's
+
+14
+00:01:11,910 --> 00:01:17,460
+pretty likely that we won't be able to access or arrays by the time our code tries to use these variables
+
+15
+00:01:18,390 --> 00:01:19,140
+on the right.
+
+16
+00:01:19,140 --> 00:01:21,430
+This code actually would work.
+
+17
+00:01:21,540 --> 00:01:28,050
+We can access a map file using the map variable and the example data using the example variable we can
+
+18
+00:01:28,050 --> 00:01:33,870
+be sure that inside our D-3 CSP function all the data will have been loaded in properly.
+
+19
+00:01:33,870 --> 00:01:39,530
+However the downside of this is that it will take longer for the data to load in because the page can't
+
+20
+00:01:39,530 --> 00:01:44,580
+start loading the second file before the first file has been completely loaded.
+
+21
+00:01:44,610 --> 00:01:50,430
+If we have a massive file that took 10 seconds to load in and then we would much rather start the process
+
+22
+00:01:50,430 --> 00:01:52,620
+of loading as soon as possible.
+
+23
+00:01:52,690 --> 00:01:59,640
+No need to wait until all the files before have been loaded in before version 5.
+
+24
+00:01:59,650 --> 00:02:07,210
+We used to get around this with the 3Q module we had access to the data that D-3 loaded down with the
+
+25
+00:02:07,210 --> 00:02:13,780
+map and example arguments to the callback our program would then start making these file requests as
+
+26
+00:02:13,780 --> 00:02:15,320
+soon as it saw them.
+
+27
+00:02:15,520 --> 00:02:18,530
+But it wouldn't start executing any code before.
+
+28
+00:02:18,550 --> 00:02:22,610
+All the files had been loaded in.
+
+29
+00:02:22,640 --> 00:02:28,840
+You can see the effect that this had from the output of the chrome dev tools here the data files here
+
+30
+00:02:28,840 --> 00:02:34,840
+are the map TS for the file in the US ten file at the bottom of these images.
+
+31
+00:02:34,850 --> 00:02:41,510
+In both cases the map tears the files taking about 1 seconds to load in the US 10 files taking about
+
+32
+00:02:41,510 --> 00:02:43,540
+1.5 seconds.
+
+33
+00:02:43,760 --> 00:02:50,000
+However because we are using a Q in the Boston example these files are requested at the same time so
+
+34
+00:02:50,000 --> 00:02:56,120
+we don't need to wait until map Chia's fee was completely loaded before we started loading the US 10
+
+35
+00:02:56,120 --> 00:02:57,260
+file.
+
+36
+00:02:57,260 --> 00:03:02,210
+This means that we essentially saved ourselves from waiting a whole second when our visualization loaded
+
+37
+00:03:02,210 --> 00:03:06,910
+for the first time which is a pretty significant improvement for our users.
+
+38
+00:03:09,200 --> 00:03:14,410
+Indy 3 version 5 cents of data loading functions are structured as premises.
+
+39
+00:03:14,570 --> 00:03:19,470
+We no longer need to write queues when we want to load in multiple data sets.
+
+40
+00:03:19,490 --> 00:03:25,640
+Instead we write code like this where we're setting up an array with each of the promises that we want
+
+41
+00:03:25,640 --> 00:03:32,590
+to use and then we can use the Ben method on the result of passing this array into Promises dogs all
+
+42
+00:03:33,850 --> 00:03:37,710
+this gives us access to a new array with each item.
+
+43
+00:03:37,720 --> 00:03:41,210
+Now holding the data from the file could be one to look at.
+
+44
+00:03:41,560 --> 00:03:43,750
+So here we're accessing on that data.
+
+45
+00:03:43,810 --> 00:03:48,170
+The first item of the output array and we're grabbing our example data.
+
+46
+00:03:48,190 --> 00:03:50,410
+The second item of that array.
+
+47
+00:03:50,710 --> 00:03:56,680
+The great thing about this syntax with promises is that any code that we write beyond this won't have
+
+48
+00:03:56,680 --> 00:04:03,820
+to wait for both of these files to get loaded in before our code starts to execute as soon as our browser
+
+49
+00:04:03,820 --> 00:04:05,470
+sees this code.
+
+50
+00:04:05,470 --> 00:04:13,580
+It can just talk about these promises as if the actual values before they have the data loaded in we
+
+51
+00:04:13,580 --> 00:04:17,600
+get the same kind of effect by using promises as we had with the D-3.
+
+52
+00:04:17,630 --> 00:04:24,050
+Q We don't need to wait for a premise to evaluate before we can start throwing it around in our code.
+
+53
+00:04:24,050 --> 00:04:28,790
+Both of these files will start loading at the same time which will cause our page to render and much
+
+54
+00:04:28,790 --> 00:04:29,300
+faster
+
+55
+00:04:31,900 --> 00:04:32,830
+after this lecture.
+
+56
+00:04:32,830 --> 00:04:38,400
+You have a good idea of why we need to be careful when loading in more than one data set into a file.
+
+57
+00:04:38,800 --> 00:04:43,370
+And you know had to do this properly using promise to all.
+
+58
+00:04:43,430 --> 00:04:49,370
+I've also introduced you of the legacy syntax of using the D-3 Q module to do the same thing which will
+
+59
+00:04:49,370 --> 00:04:53,660
+probably come across in examples on line in the next lecture.
+
+60
+00:04:53,660 --> 00:04:57,680
+I'll be walking me through chloroplast map which involves color coding.
+
+61
+00:04:57,680 --> 00:05:03,710
+One of the map projections I covered in the last lecture to show something about some geographical data.
+

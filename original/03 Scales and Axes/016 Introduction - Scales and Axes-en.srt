@@ -1,0 +1,55 @@
+0
+00:06.590 --> 00:12.040
+At the end of last section we ended up with something that actually looked like a real visualization.
+
+1
+00:12.390 --> 00:17.330
+We were communicating some data using rectangles on the screen to represent the heights at different
+
+2
+00:17.330 --> 00:18.410
+buildings.
+
+3
+00:19.040 --> 00:22.430
+But where did the height values for those rectangles come from.
+
+4
+00:23.990 --> 00:28.870
+I actually just gave you some real numbers that will be the right size to fit on your ass Ficci.
+
+5
+00:28.890 --> 00:35.400
+Candace over the course of this section will gradually expand on the visualization that you ended up
+
+6
+00:35.400 --> 00:40.420
+with at the end of last section to turn it into a bar chart.
+
+7
+00:40.470 --> 00:45.930
+I'll be teaching at to use scales in D-3 to take in more data and spits out some values that we can
+
+8
+00:45.930 --> 00:47.440
+work with.
+
+9
+00:47.520 --> 00:52.470
+We'll also be adding in some axes and labels to make it look more like a typical bar chart.
+
+10
+00:52.770 --> 00:57.540
+And are we making the rectangles rise up from the bottom of the canvas rather than hanging down from
+
+11
+00:57.540 --> 01:03.640
+the top at the end of the section you'll be ready to take on our first project in this class.
+
+12
+01:03.680 --> 01:09.290
+You'll be helping a friend who owns a burgeoning coffee chain to make a simple bar chart communicates
+
+13
+01:09.290 --> 01:11.090
+his sales figures to investors.

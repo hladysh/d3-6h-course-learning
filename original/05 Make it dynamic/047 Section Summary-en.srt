@@ -1,0 +1,60 @@
+1
+00:00:06,490 --> 00:00:12,460
+Congratulations to finishing this section you created a powerful visualization that communicates an
+
+2
+00:00:12,460 --> 00:00:14,190
+important message.
+
+3
+00:00:14,260 --> 00:00:20,230
+You've had your first experience using the complete D-3 uptake Baten which is gradually starting to
+
+4
+00:00:20,230 --> 00:00:21,520
+make more sense.
+
+5
+00:00:22,030 --> 00:00:27,060
+And you've had experience using D-3 transition to seamlessly update the data.
+
+6
+00:00:27,220 --> 00:00:33,710
+You also now know how to use in topos and D-3 to create loops in your visualizations.
+
+7
+00:00:33,830 --> 00:00:39,590
+The concepts that we covered in this section are some of the most difficult to understand in D-3 if
+
+8
+00:00:39,590 --> 00:00:44,330
+you're feeling comfortable with the update pattern syntax that we've explored so far then you're well
+
+9
+00:00:44,330 --> 00:00:46,770
+on your way to becoming a D-3 master.
+
+10
+00:00:47,090 --> 00:00:50,660
+But if this all doesn't make much sense yet then don't worry.
+
+11
+00:00:50,660 --> 00:00:55,580
+With practice you gradually come to understand how the different parts of the data reliably come together
+
+12
+00:00:55,910 --> 00:00:59,860
+to afford you a powerful level of flexibility in what you're able to do.
+
+13
+00:01:01,880 --> 00:01:06,740
+We'll be building on this project in our next section to add interactive features so that users can
+
+14
+00:01:06,740 --> 00:01:08,390
+pause the visualization.
+
+15
+00:01:08,510 --> 00:01:13,230
+Choose the time that they're looking at with a slider and filter out different continents.
+

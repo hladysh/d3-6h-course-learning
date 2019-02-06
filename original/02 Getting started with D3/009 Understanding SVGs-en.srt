@@ -1,0 +1,327 @@
+0
+00:06.270 --> 00:13.810
+In this lecture, I'm going to go over some of the basics of SVGs, which D3 uses to visualize data
+
+1
+00:13.810 --> 00:14.830
+on the screen.
+
+2
+00:15.930 --> 00:22.560
+I'll be teaching you about how they're positioned, I'll show you some rules about placing SVGs, and I'll show
+
+3
+00:22.560 --> 00:32.440
+you what the syntax looks like in HTML. Basically, SVGs, which stand for Scalable Vector Graphics,
+
+4
+00:33.120 --> 00:41.280
+are shapes that we can make in a browser window with code. All that we need to do is pass in some simple
+
+5
+00:41.280 --> 00:47.340
+information, such where we want to position a shape and how big it should be, and we'll be using some
+
+6
+00:47.340 --> 00:51.590
+familiar syntax and HTML to do this.
+
+7
+00:51.590 --> 00:59.690
+The reason why D3 uses as SVGs rather than images to display data is that they don't lose any quality
+
+8
+00:59.690 --> 01:03.690
+if they're resized, and they don't take up much space.
+
+9
+01:03.710 --> 01:08.960
+This means that we can have thousands of these SVGs render on the screen in seconds,
+
+10
+01:09.290 --> 01:12.610
+and there isn't a huge lag when you want to move them all around at once.
+
+11
+01:12.630 --> 01:22.040
+You'll sometimes find that companies will use an SVGs file to contain their logo on their websites
+
+12
+01:22.310 --> 01:24.180
+for similar reasons.
+
+13
+01:24.590 --> 01:28.010
+For example, you can see here how Google's logo
+
+14
+01:28.160 --> 01:35.000
+is put together using an SVG file of simple shapes fitted together. On the left,
+
+15
+01:35.000 --> 01:43.170
+we have an older JPEG logo, and on the right, we have a new version which is made with SVGs.
+
+16
+01:43.170 --> 01:53.300
+The new logo will look crisp on any screen size, and it takes up about 170th of the space of the old logo.
+
+17
+01:53.310 --> 01:57.080
+So what does SVG markup look like?
+
+18
+01:57.090 --> 02:04.860
+You can either include SVGs directly in an HTML file as you can see here, or you can add them in with
+
+19
+02:04.860 --> 02:08.990
+JavaScript, as we'll do later and throughout most of the course.
+
+20
+02:10.380 --> 02:16.170
+Something that you'll notice about this code is that you need to define this SVG tag to surround
+
+21
+02:16.230 --> 02:18.100
+everything that we want to render.
+
+22
+02:19.060 --> 02:27.920
+That SVG tag represents the "canvas" that we'll be drawing on. Any SVG that we try to draw outside of
+
+23
+02:27.920 --> 02:30.670
+the canvas won't appear on the screen.
+
+24
+02:32.040 --> 02:36.870
+Let's take a closer look at this code.
+
+25
+02:36.940 --> 02:45.620
+Firstly, we're defining an SVG canvas with a width of 400px and a height of 60px. Inside the
+
+26
+02:45.620 --> 02:53.480
+canvas, we position our SVGs based their x and y coordinates starting from (0, 0) and the top-left hand
+
+27
+02:53.510 --> 02:54.130
+corner.
+
+28
+02:55.660 --> 02:56.780
+For a rectangle,
+
+29
+02:56.800 --> 03:03.000
+we need to supply an x- and y-position, which corresponds to the top left corner of the shape.
+
+30
+03:03.850 --> 03:08.660
+Here we're giving the rectangle an x value of zero and y value zero,
+
+31
+03:08.980 --> 03:15.510
+so the top-left corner of the shape will appear at the (0, 0) coordinates in our imaginary grid.
+
+32
+03:15.940 --> 03:22.510
+We also need to provide width and height attributes, and we can color our shape using the "fill" attribute.
+
+33
+03:23.930 --> 03:29.900
+Something to mention here is that, if we have a shape whose coordinates like outside of our canvas, then
+
+34
+03:29.900 --> 03:31.950
+it won't appear on the screen.
+
+35
+03:32.000 --> 03:39.500
+For example if the coordinates were (0, 70), then although the shape should really exist down here, we
+
+36
+03:39.500 --> 03:43.540
+actually won't see anything, because it's outside the SVG
+
+37
+03:43.580 --> 03:50.870
+canvas. Another thing that you might find is that shapes can appear clipped from the how they're supposed
+
+38
+03:50.870 --> 03:55.190
+to look if they stick out over the edge of the canvas.
+
+39
+03:55.250 --> 04:03.040
+So here, if placed our rectangle at (375, 0), then only half of the shape would show on the screen.
+
+40
+04:04.880 --> 04:13.010
+We can also give shapes an outline by passing in a stroke attribute. This takes a color, and we need
+
+41
+04:13.010 --> 04:17.750
+to define how wide the outline is with the "stroke-width" attribute.
+
+42
+04:17.750 --> 04:23.540
+It's important to note that, technically, a stroke of a shape is drawn as a border around the outside,
+
+43
+04:24.080 --> 04:26.570
+rather than appearing on the inside.
+
+44
+04:27.430 --> 04:33.880
+This means that, in this particular example, we would only actually see the right and bottom border on
+
+45
+04:33.880 --> 04:34.680
+the screen.
+
+46
+04:36.250 --> 04:43.030
+For creating circle SVGs, the process is pretty similar, except we provide the coordinates to the
+
+47
+04:43.030 --> 04:46.140
+center of the circle, rather than the top-left.
+
+48
+04:47.000 --> 04:50.420
+So here, we provide a cx attribute of 90
+
+49
+04:50.690 --> 04:57.130
+and a cy attribute of 25, which is where the circle's center will be.
+
+50
+04:57.350 --> 05:04.490
+We also need to give it a radius value using the r attribute, which will determine how big the
+
+51
+05:04.490 --> 05:05.570
+circle is,
+
+52
+05:05.570 --> 05:13.250
+and again we're using the fill attribute here to color the shape. The next SVG is in an ellipse,
+
+53
+05:13.790 --> 05:21.680
+which is identical to a circle, except that it needs both an x-radius value and a y-radius value, which
+
+54
+05:21.680 --> 05:30.020
+we provide with the rx and ry attributes. Again, the coordinates for an ellipse correspond with the center
+
+55
+05:30.230 --> 05:33.700
+as opposed to the top left.
+
+56
+05:33.710 --> 05:41.000
+We can also draw a straight line as an SVG. To do this, we need to provide two sets of coordinates,
+
+57
+05:41.270 --> 05:47.720
+which represent the two points that the line should run between. Here our code is drawing a line between
+
+58
+05:47.720 --> 06:00.210
+(185, 5), our x1 and y1 values, and (230, 40) our x2 and y2 values. Something to note about lines
+
+59
+06:00.210 --> 06:01.910
+is that applying a fill to them
+
+60
+06:01.950 --> 06:04.090
+doesn't affect that color.
+
+61
+06:04.200 --> 06:13.160
+We set the color with the stroke attribute, and the width of the line with the stroke-width attribute.
+
+62
+06:13.190 --> 06:19.430
+We can also render text as an SVG, which we'll frequently need to do for creating things like
+
+63
+06:19.520 --> 06:21.270
+axis labels.
+
+64
+06:21.830 --> 06:29.080
+By default, the x and y attribute give us the top left position of the text, but we can change this behavior
+
+65
+06:29.150 --> 06:35.910
+using the text-anchor attribute. Here, the text anchor is middle,
+
+66
+06:35.970 --> 06:42.870
+so the coordinates match the top-middle of the text... And then here the text anchor is end,
+
+67
+06:42.940 --> 06:50.090
+so the coordinates match the top-right of the text. The default value of the text anchor attribute
+
+68
+06:50.140 --> 07:00.100
+is called "start". The final type of SVG that D3 uses is called a path. A path is the most powerful
+
+69
+07:00.100 --> 07:09.700
+kind of SVG that we have available, and it can be used to create lines, curves, arcs and all kinds of complex
+
+70
+07:09.700 --> 07:18.670
+shapes. Later on in the course, we'll be using paths to create maps, line charts, area charts, and pie charts
+
+71
+07:20.130 --> 07:21.140
+The "d" attribute
+
+72
+07:21.140 --> 07:23.540
+here is what gives the path its shape.
+
+73
+07:24.400 --> 07:30.310
+This attribute contains a set of different letters and numbers which our browser can decode to figure
+
+74
+07:30.310 --> 07:33.780
+out how the path should look. For this course,
+
+75
+07:33.790 --> 07:37.020
+you don't need to know what the d attribute is doing.
+
+76
+07:37.600 --> 07:45.130
+D3 provides us with a set of different path generators, which will take in data and create these d attributes
+
+77
+07:45.130 --> 07:45.970
+for us.
+
+78
+07:47.670 --> 07:54.370
+Although we've defined SVGs in this example using HTML-like syntax, when we use them in D3,
+
+79
+07:54.390 --> 07:59.760
+we'll almost always be adding them to the canvas with JavaScript.
+
+80
+08:00.000 --> 08:04.640
+Learning how to do this will give you your first few steps in the D3 world,
+
+81
+08:04.830 --> 08:07.380
+and it's what we'll be covering in the next video.

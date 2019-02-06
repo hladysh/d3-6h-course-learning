@@ -1,0 +1,236 @@
+1
+00:00:06,130 --> 00:00:12,760
+In this lecture I'm going to be introducing you to lab functions and D-3 which can be used to quickly
+
+2
+00:00:12,760 --> 00:00:16,070
+create all kinds of different visualizations.
+
+3
+00:00:16,210 --> 00:00:21,610
+I'll be walking through two different examples that will see over the next three sections to show you
+
+4
+00:00:21,610 --> 00:00:23,260
+how these functions work.
+
+5
+00:00:24,120 --> 00:00:29,670
+It's good to understand what these functions are doing because they give us the power to create a whole
+
+6
+00:00:29,670 --> 00:00:34,830
+host of common visualizations that would otherwise take a lot longer to figure out.
+
+7
+00:00:37,400 --> 00:00:43,480
+The basic idea behind the lay out is that you can call it on the set of data and the magic of the layout
+
+8
+00:00:43,490 --> 00:00:48,600
+function will spits out the same data with a new set of fields for each data point.
+
+9
+00:00:48,770 --> 00:00:55,180
+So just where this particular item should be placed on the screen we can then use these values generated
+
+10
+00:00:55,180 --> 00:01:01,720
+by our lab function to set attributes of a SVGA is all we can plug them into some kind of path generator
+
+11
+00:01:01,720 --> 00:01:03,540
+to draw something on the screen.
+
+12
+00:01:06,100 --> 00:01:12,250
+If you ever find yourself looking at some legacy code from the trees version 3 then you should be aware
+
+13
+00:01:12,250 --> 00:01:19,080
+of the difference in the syntax that exists in version for the only difference is that version of four
+
+14
+00:01:19,080 --> 00:01:21,960
+transitionary used a flat namespace.
+
+15
+00:01:21,960 --> 00:01:30,960
+So D-3 layer PI became D-3 pi the three layer force became the three fourths J2EE last stack became
+
+16
+00:01:30,960 --> 00:01:35,470
+D-3 stack and did really trim it became just D-3 trauma.
+
+17
+00:01:36,470 --> 00:01:41,780
+This final one here which we're covered towards the end of the section is a plug in lay out from our
+
+18
+00:01:41,780 --> 00:01:49,940
+community that generates word clouds this namespace didn't change between version 3 and version 4 because
+
+19
+00:01:49,940 --> 00:01:53,770
+it's maintained outside of the main D-3 library.
+
+20
+00:01:53,780 --> 00:01:56,550
+So what do these lab functions do exactly.
+
+21
+00:01:58,810 --> 00:02:04,450
+Here's an example that we'll cover later in this section where we're formatting our data using D-3 is
+
+22
+00:02:04,500 --> 00:02:05,630
+pilot.
+
+23
+00:02:06,190 --> 00:02:10,150
+We're starting off with an array of data in this format here on the left.
+
+24
+00:02:10,480 --> 00:02:16,750
+If we initialize a pi function in our code and call it on this data and this gives us the output on
+
+25
+00:02:16,740 --> 00:02:22,320
+the right we still have access to our original item in the data field.
+
+26
+00:02:22,340 --> 00:02:27,900
+So here again we can see accounts of 200 fruits of oranges and the rest region of east.
+
+27
+00:02:28,280 --> 00:02:32,210
+But now we also have a set of new values attached to each item in our
+
+28
+00:02:35,000 --> 00:02:40,880
+So here are pi function is looking at the Campfield for each of these items in the data and it works
+
+29
+00:02:40,880 --> 00:02:43,520
+out what the start and angle need to be.
+
+30
+00:02:43,550 --> 00:02:49,970
+Each of these values to make a full pie chart will then be plugging these values into a path generator
+
+31
+00:02:50,030 --> 00:02:56,610
+to draw each of the arcs of pi if we wanted to figure out the value of these parks ourselves.
+
+32
+00:02:56,670 --> 00:02:59,860
+Then this could have been a pretty tedious process.
+
+33
+00:02:59,900 --> 00:03:05,870
+We need to write some special kind of functions that looped over our array added these values together
+
+34
+00:03:05,900 --> 00:03:12,230
+found the ratio of each of these values to the total and then converted these values to be read in radians
+
+35
+00:03:12,950 --> 00:03:15,180
+for a graph as common as a pie chart.
+
+36
+00:03:15,200 --> 00:03:22,680
+It's helpful that D-3 comes with an easy way to figure out these values for us.
+
+37
+00:03:22,690 --> 00:03:29,080
+Here's another example that will cover in section 9 where we're making a treatment we're passing in
+
+38
+00:03:29,080 --> 00:03:35,890
+the data in this format on the left and our treatment plan is spitting out the values on the right.
+
+39
+00:03:35,980 --> 00:03:40,940
+Each of these 220 browes is representing a category that we want to display.
+
+40
+00:03:41,260 --> 00:03:47,020
+This time the data that we're providing on the left is actually the output from a different layout function
+
+41
+00:03:47,500 --> 00:03:50,320
+which formats the data into a hierarchy.
+
+42
+00:03:51,020 --> 00:03:54,550
+We can see that feeding this array of values into the treatment function.
+
+43
+00:03:54,590 --> 00:04:01,910
+We set up gives the same array of values just with some x 0 x one y one and why one feels
+
+44
+00:04:04,720 --> 00:04:09,670
+for this visualization all that we need to do is to append the rectangle for each of the rows in our
+
+45
+00:04:09,670 --> 00:04:16,450
+data and set that positions based on the coordinates the treatment function at it and for us it will
+
+46
+00:04:16,450 --> 00:04:21,340
+be a nightmare to try to figure out how to make each one of these on your own.
+
+47
+00:04:21,610 --> 00:04:26,080
+It really matters that rectangle rectangles in the same category a place together and there's a lot
+
+48
+00:04:26,080 --> 00:04:30,200
+of complex math going in to formulate the position of these areas.
+
+49
+00:04:31,090 --> 00:04:34,790
+This is the kind of chod the D-3 layouts are really useful.
+
+50
+00:04:35,020 --> 00:04:40,540
+Somebody has already done the hard work of implementing this layout already which handles all the complicated
+
+51
+00:04:40,540 --> 00:04:44,440
+stuff like figuring out the right spacing out for them is to use.
+
+52
+00:04:44,650 --> 00:04:50,380
+We just need to understand format the data should be in and get the syntax right for using them.
+
+53
+00:04:50,390 --> 00:04:57,670
+You know visualisations at the end of this lecture you should have a basic understanding of what let's
+
+54
+00:04:57,670 --> 00:04:58,120
+do it.
+
+55
+00:04:58,120 --> 00:05:03,980
+The three I've shown you some examples of how these functions mutate the data that we pass into them
+
+56
+00:05:04,460 --> 00:05:09,860
+and you'll be well-prepared to encounter some of these different labs in the next few sections in the
+
+57
+00:05:09,860 --> 00:05:10,720
+next lecture.
+
+58
+00:05:10,730 --> 00:05:16,670
+I'll be giving you a crash course on area charts and giving you a walkthrough of an example in notation
+
+59
+00:05:16,880 --> 00:05:18,870
+from somebody in the D-3 community.
+

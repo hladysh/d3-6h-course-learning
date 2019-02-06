@@ -1,0 +1,608 @@
+1
+00:00:06,690 --> 00:00:13,950
+In this lecture I'll be covering two different example implementations of stacked area Cha's and D-3.
+
+2
+00:00:14,070 --> 00:00:19,290
+Again I'll be explaining anything that shows up that we haven't covered already and I'll be showing
+
+3
+00:00:19,290 --> 00:00:20,930
+you how to use the D-3 stack.
+
+4
+00:00:20,940 --> 00:00:23,830
+Lay out formant this data in the right way.
+
+5
+00:00:26,390 --> 00:00:33,370
+Stex charts can be really useful because they can show overall value and a category value of a variable
+
+6
+00:00:33,380 --> 00:00:34,720
+at the same time.
+
+7
+00:00:35,580 --> 00:00:42,050
+A classic example is to show how a company's market share has changed over time relative to its competitors.
+
+8
+00:00:42,930 --> 00:00:48,570
+Stack charts have a lot of explanatory power here because on the one hand they can show how ratios are
+
+9
+00:00:48,570 --> 00:00:50,280
+changing over time.
+
+10
+00:00:50,280 --> 00:00:55,800
+For example we could look at the question of how is Samsung been doing compared to Apple in the U.S.
+
+11
+00:00:55,800 --> 00:00:57,390
+smartphone market.
+
+12
+00:00:57,870 --> 00:01:04,430
+But equally the graph also illustrates how the entire market's value has been changing at the same time.
+
+13
+00:01:04,710 --> 00:01:10,740
+So we could also use that look at the question of how is the market for smartphones grown in the U.S.
+
+14
+00:01:10,830 --> 00:01:11,600
+recently.
+
+15
+00:01:12,810 --> 00:01:16,290
+I'll be walking through stacks area charts from this lecture.
+
+16
+00:01:16,400 --> 00:01:23,850
+Or you could also use the same stack that I'll be covering two mega stacks but not here's the first
+
+17
+00:01:23,850 --> 00:01:28,300
+example they'll be walking you through from might bust up again.
+
+18
+00:01:28,440 --> 00:01:36,120
+It's showing the shift in market share of different web browsers over time as a percentage.
+
+19
+00:01:36,170 --> 00:01:43,580
+We have an index file and the is Theophile which I'm copying into my folder again the data is in a format
+
+20
+00:01:43,580 --> 00:01:49,600
+where each row is a point in time with different numbers for each of these different browsers.
+
+21
+00:01:51,340 --> 00:01:56,080
+Here's the second example that'll cover from somebody called Maggie.
+
+22
+00:01:56,160 --> 00:02:00,110
+It's showing the change in oil consumption per country over time.
+
+23
+00:02:01,130 --> 00:02:07,250
+Notice that with this one the overall value is changing over time as well as the proportion between
+
+24
+00:02:07,250 --> 00:02:09,250
+different areas.
+
+25
+00:02:09,320 --> 00:02:14,840
+I found both of these blocks pages from a simple Google search and they were two of the top results
+
+26
+00:02:14,840 --> 00:02:18,380
+for stack area charts.
+
+27
+00:02:18,460 --> 00:02:21,550
+I'll start off with our first example here.
+
+28
+00:02:21,660 --> 00:02:28,110
+A lot of this code is actually pretty much identical to our last area chart example with setting the
+
+29
+00:02:28,110 --> 00:02:34,710
+SPG and I Jamail and we set in the exact same variables at the top of our javascript file to sort out
+
+30
+00:02:34,710 --> 00:02:43,200
+our margin convention we have time on the x axis again and you can see that our specifier is in a slightly
+
+31
+00:02:43,200 --> 00:02:46,210
+different order to match the format of the data.
+
+32
+00:02:47,310 --> 00:02:52,170
+Next we're making a call here to do three stack which I'll explain a little later.
+
+33
+00:02:53,310 --> 00:02:59,580
+We're creating a similar path generator again for this area variable but this time we're accessing some
+
+34
+00:02:59,580 --> 00:03:01,540
+different fields.
+
+35
+00:03:01,650 --> 00:03:05,950
+We'll get all of these values using our stack layout.
+
+36
+00:03:06,170 --> 00:03:12,350
+We're setting this G variable as usual although for some reason this is a little out of order from normal
+
+37
+00:03:13,830 --> 00:03:17,800
+then here's our data loading function this time.
+
+38
+00:03:17,800 --> 00:03:24,430
+Here is the name of a function at the bottom of the file which is transforming every data point in our
+
+39
+00:03:24,430 --> 00:03:25,170
+array.
+
+40
+00:03:26,400 --> 00:03:32,100
+We're converting all of our data straight we're converting all of our date strings into jobs script
+
+41
+00:03:32,100 --> 00:03:39,540
+data objects with a parser again and this line here is just diving into all about objects values and
+
+42
+00:03:39,540 --> 00:03:47,670
+this line here is just dividing all of our objects values by a hundred so that we have them as a percentage.
+
+43
+00:03:47,680 --> 00:03:52,020
+Next we're getting hold of this list of column headers again in a similar way.
+
+44
+00:03:52,810 --> 00:03:58,810
+Whenever we load in data using one of the three data loading functions we have access to our column
+
+45
+00:03:58,810 --> 00:04:00,780
+headers by this column field
+
+46
+00:04:03,650 --> 00:04:07,690
+slicing this array index one again removes the date heading.
+
+47
+00:04:07,700 --> 00:04:11,990
+So we just get an array for our browser names.
+
+48
+00:04:12,050 --> 00:04:18,560
+We're setting up X scale domain for here but where is why scales their main.
+
+49
+00:04:18,760 --> 00:04:26,730
+It turns out that the scales domain defaults to a value between 0 and 1 in this example because trigraph
+
+50
+00:04:26,860 --> 00:04:32,990
+is measuring between zero and 100 percent on the y axis we don't actually need to separate the main
+
+51
+00:04:34,330 --> 00:04:38,710
+within then using this list of browser names as the domain for a color scale.
+
+52
+00:04:38,780 --> 00:04:43,560
+And we're also passing this list as the kids method to us stack.
+
+53
+00:04:43,740 --> 00:04:51,340
+Next we're doing a data joint on the stack of data matching elements where the class of Leya within
+
+54
+00:04:51,340 --> 00:04:58,160
+appending one of these layers which turned out to be SVGA groups for each of these items in the array.
+
+55
+00:04:59,380 --> 00:05:06,760
+Then for each of these groups we're attaching a path using our area generating function this block of
+
+56
+00:05:06,760 --> 00:05:13,450
+code here is responsible for adding the text labels to the chart because we're writing the labels at
+
+57
+00:05:13,450 --> 00:05:19,480
+the far right of the chart we're filtering out browsers that don't really exist in the most recent date
+
+58
+00:05:19,930 --> 00:05:23,350
+because otherwise they might all pile up in the same place.
+
+59
+00:05:24,230 --> 00:05:30,020
+Overall I'd say that it's a pretty bad design decision to write the chart this way because you always
+
+60
+00:05:30,020 --> 00:05:35,270
+have a danger that these labels could overlap and it doesn't look particularly nice.
+
+61
+00:05:35,660 --> 00:05:41,600
+If I was rewriting this visualization now then I would instead choose to make a legend for each of these
+
+62
+00:05:41,600 --> 00:05:42,480
+browsers.
+
+63
+00:05:44,380 --> 00:05:50,070
+Finally again we're adding in the axes at the end of this data loading function.
+
+64
+00:05:50,130 --> 00:05:54,070
+So let's figure out what's going on with this D-3 stack function.
+
+65
+00:05:56,190 --> 00:06:01,530
+If you ever come across something that you haven't seen in D-3 before then a great place to look is
+
+66
+00:06:01,530 --> 00:06:07,490
+in the D-3 API reference which you can find on the D-3 page.
+
+67
+00:06:07,530 --> 00:06:13,450
+This gives a really thorough explanation of all the different parts of T-3 here.
+
+68
+00:06:13,470 --> 00:06:16,860
+I'm looking at the entry for D-3 stack.
+
+69
+00:06:16,980 --> 00:06:22,370
+We can see that our stack expects input data to be in specific format.
+
+70
+00:06:22,420 --> 00:06:28,210
+Here we have a table with columns for different fruit's with every row giving us values for these foods
+
+71
+00:06:28,240 --> 00:06:29,530
+at different times.
+
+72
+00:06:30,560 --> 00:06:38,120
+We'll be passing this data in an array of objects just like data loading functions return.
+
+73
+00:06:38,200 --> 00:06:43,840
+We need to provide an array of strings to this case method which aspect function will match with the
+
+74
+00:06:43,840 --> 00:06:46,850
+field names for each of our objects.
+
+75
+00:06:46,870 --> 00:06:53,230
+We can also provide an optional order method which can be used to sort these keys and there's also an
+
+76
+00:06:53,230 --> 00:06:58,500
+optional offset method which you can use to shift the path around the set point.
+
+77
+00:06:58,560 --> 00:07:04,840
+For example you courageous stacked craft where a positive value set over the base line a negative value
+
+78
+00:07:04,840 --> 00:07:07,170
+set below the baseline.
+
+79
+00:07:07,170 --> 00:07:12,480
+Once we've set up this stack function if we pass in our data in the right format and it will give us
+
+80
+00:07:12,480 --> 00:07:20,340
+an array like this for every column we have an array for every line in data containing a lower end of
+
+81
+00:07:20,350 --> 00:07:22,010
+value.
+
+82
+00:07:22,010 --> 00:07:28,340
+The idea is that for each line of data we now have a stack between all of these different Cullens which
+
+83
+00:07:28,340 --> 00:07:30,070
+will stay in order.
+
+84
+00:07:30,080 --> 00:07:38,450
+So here in our first period apples go from zero to three thousand eight hundred forty then bananas goes
+
+85
+00:07:38,450 --> 00:07:44,340
+from 3000 aged 40 to five thousand seven hundred sixty.
+
+86
+00:07:44,390 --> 00:07:52,460
+Then Cherrie's goes until six thousand seven hundred twenty and then dates go until seven thousand one
+
+87
+00:07:52,460 --> 00:07:55,350
+hundred twenty.
+
+88
+00:07:55,460 --> 00:08:00,280
+We can then pass on these values to us scales to use them in our visualization.
+
+89
+00:08:01,600 --> 00:08:07,750
+Going back to our code I'll make a couple of console logs to help us understand what's going on here.
+
+90
+00:08:07,750 --> 00:08:13,060
+I'm logging in the data that we're loading in from a file and the result of a step function on this
+
+91
+00:08:13,060 --> 00:08:17,370
+data which we're passing into our data join.
+
+92
+00:08:17,370 --> 00:08:19,790
+So let's take a look at the format of this data.
+
+93
+00:08:20,740 --> 00:08:25,260
+We have an array of 367 rows of data.
+
+94
+00:08:25,270 --> 00:08:30,820
+You can also see the columns field data loading function gives us which has the header names that we're
+
+95
+00:08:30,820 --> 00:08:33,280
+using to get our array of browsers.
+
+96
+00:08:34,630 --> 00:08:40,840
+Each row is an object which has a field for each of our web browsers and the date field which contains
+
+97
+00:08:40,840 --> 00:08:43,140
+a j as Date object.
+
+98
+00:08:43,270 --> 00:08:47,750
+Recall that this is the right format the data should be in before it gets passed to us.
+
+99
+00:08:47,750 --> 00:08:52,450
+That function after we pass this array into a stack.
+
+100
+00:08:52,500 --> 00:08:59,730
+This is what we get we have an array of eight different items to one for every browser name from Akis.
+
+101
+00:08:59,740 --> 00:09:08,180
+Ray for each item we see the column name it relates to with this key variable that the stack gives us
+
+102
+00:09:09,490 --> 00:09:11,650
+then for every row in our dataset.
+
+103
+00:09:11,680 --> 00:09:17,930
+We have our array of two values which are stack function has prepared for is showing its lower end up
+
+104
+00:09:17,980 --> 00:09:20,600
+value in our stack.
+
+105
+00:09:20,670 --> 00:09:28,520
+We can then access the original row of data that this item relates to using this data field.
+
+106
+00:09:28,580 --> 00:09:32,900
+Looking back at our code now we can see how it's all fitting together.
+
+107
+00:09:33,560 --> 00:09:40,170
+Firstly we're passing an array of 8 browsers for my stack function to our data join on this legislation
+
+108
+00:09:41,410 --> 00:09:47,150
+then with Enter we're appending a group for each of them since we're giving out groups a class of Leya
+
+109
+00:09:47,150 --> 00:09:48,200
+here.
+
+110
+00:09:48,200 --> 00:09:54,500
+This means that if we wanted to update that data then a selection will match on these groups updating
+
+111
+00:09:54,500 --> 00:09:58,780
+them with a new data rather than adding new groups every time.
+
+112
+00:09:59,940 --> 00:10:06,030
+Then for each of these groups we're adding a path and giving a fail by calling an ordinal scale on the
+
+113
+00:10:06,030 --> 00:10:08,280
+name of our browser from the key field.
+
+114
+00:10:10,300 --> 00:10:16,610
+Next we're saying the idea should be of these paths with an area generator this passes the array of
+
+115
+00:10:16,610 --> 00:10:21,630
+data that we associated with each of our groups to every function.
+
+116
+00:10:21,650 --> 00:10:27,490
+So this is what we're passing to our area generator for each of our browsers.
+
+117
+00:10:27,500 --> 00:10:33,670
+We're writing an area path between the lower and upper values from our stack running across each of
+
+118
+00:10:33,670 --> 00:10:37,550
+the 367 points in our dataset.
+
+119
+00:10:37,790 --> 00:10:43,040
+We're setting the x coordinates here through the data field which gives us access to the data objects
+
+120
+00:10:43,040 --> 00:10:44,040
+for each row.
+
+121
+00:10:45,100 --> 00:10:50,650
+We also need to remember to pass each of these values to us scales as usual so that the face on our
+
+122
+00:10:50,650 --> 00:10:57,900
+chart I'll also give you a quick run through of this other example just to show you what would be different
+
+123
+00:10:57,920 --> 00:11:01,160
+when these values don't all add up to 1.
+
+124
+00:11:01,340 --> 00:11:06,220
+The way that this graph has turned there is a really good argument for using a legend set of labels
+
+125
+00:11:06,260 --> 00:11:11,340
+but these because we can't tell what any of these labels at the top is supposed to say.
+
+126
+00:11:12,400 --> 00:11:17,500
+The only real difference between this code and the code to my other example is that we need to work
+
+127
+00:11:17,500 --> 00:11:24,640
+at the right maximum domain for a wide scale usually with set the maximum for a domain based on the
+
+128
+00:11:24,640 --> 00:11:28,280
+maximum y value that we want to display.
+
+129
+00:11:28,300 --> 00:11:34,690
+However in this case because we're stacking our White values the maximum of our domain should be the
+
+130
+00:11:34,780 --> 00:11:41,360
+largest total value of adding these categories values together in a given row of data.
+
+131
+00:11:41,530 --> 00:11:47,960
+For example in this graph the largest total value of oil consumption came in 2015.
+
+132
+00:11:48,250 --> 00:11:52,750
+So we need to end up with the value of the total oil consumption in that year.
+
+133
+00:11:53,860 --> 00:12:01,470
+We're working this out with this Max date function first we're using the DS3 max function on our array
+
+134
+00:12:01,470 --> 00:12:04,780
+of data which loops through every period.
+
+135
+00:12:05,900 --> 00:12:10,910
+Here's the access a function that we're using which will return the values that D-3 should find the
+
+136
+00:12:10,910 --> 00:12:18,740
+maximum between We're using a map function on the head and names for data returning each of the values
+
+137
+00:12:18,740 --> 00:12:21,610
+into this array called vals.
+
+138
+00:12:21,710 --> 00:12:25,310
+If we're looking at the date field the value will be zero.
+
+139
+00:12:26,130 --> 00:12:31,470
+Then we're returning the results of adding each of these values together which is provided by the D-3
+
+140
+00:12:31,470 --> 00:12:33,490
+some function.
+
+141
+00:12:33,630 --> 00:12:38,970
+The result is that this function will spits out the largest total value from these countries which is
+
+142
+00:12:38,970 --> 00:12:45,300
+in 2015 we're then using this to set the maximum wide main.
+
+143
+00:12:45,680 --> 00:12:51,320
+It's really useful to be able to do this with this chart because we simultaneously able to tell a story
+
+144
+00:12:51,320 --> 00:12:57,320
+about how global oil consumption has been on the rise and also to the degree to which countries have
+
+145
+00:12:57,320 --> 00:12:58,920
+contributed to that rise.
+
+146
+00:12:58,940 --> 00:13:00,970
+Not after this lecture.
+
+147
+00:13:00,980 --> 00:13:07,510
+You should understand had the D-3 stack Ladds is working to create a Stex area chart of your own.
+
+148
+00:13:08,000 --> 00:13:13,550
+You'll be making stacked area charts like this in your final class project as part of a data dashboard
+
+149
+00:13:13,550 --> 00:13:18,260
+which connects between different visualisations in the next lecture.
+
+150
+00:13:18,290 --> 00:13:23,480
+I'll be introducing you to some of the challenges that come with taking the right data structures to
+
+151
+00:13:23,480 --> 00:13:31,220
+use for your visualizations and showing you how to use D-3 handy nest function to group different categories
+
+152
+00:13:31,280 --> 00:13:32,160
+of data.
+

@@ -1,0 +1,308 @@
+1
+00:00:05,730 --> 00:00:11,140
+Now now you know a bit more about the design tools that you have at your disposal it's time to start
+
+2
+00:00:11,140 --> 00:00:14,960
+thinking about how he would apply them to your own projects.
+
+3
+00:00:15,040 --> 00:00:18,830
+Sketches are one of the most important parts of a designer's toolkit.
+
+4
+00:00:19,300 --> 00:00:24,190
+In this lecture I'm going to be teaching you huge create quick and simple drawings that you can use
+
+5
+00:00:24,190 --> 00:00:27,380
+to brainstorm some of the best ways to display data.
+
+6
+00:00:29,530 --> 00:00:34,750
+Sketching is a really important part of any design process as it lets you test out how things should
+
+7
+00:00:34,750 --> 00:00:38,620
+look before you leap into trying to build something with code.
+
+8
+00:00:39,160 --> 00:00:44,110
+As you start to sketch out different ideas you can get a feel for the type of data that you're working
+
+9
+00:00:44,110 --> 00:00:47,960
+with and you can test out some different options against each other.
+
+10
+00:00:48,820 --> 00:00:54,220
+Sketches are also really important to communicate your design ideas to anyone else that has a stake
+
+11
+00:00:54,220 --> 00:00:55,820
+in your projects.
+
+12
+00:00:55,900 --> 00:01:03,490
+It's a whole lot easier to discuss different options once they've been written out as a drawing.
+
+13
+00:01:03,500 --> 00:01:04,900
+Here are three quick rules.
+
+14
+00:01:04,910 --> 00:01:10,460
+I want you to follow whenever you make a sketch of a visualization you don't want to get too attached
+
+15
+00:01:10,460 --> 00:01:12,800
+to any one I did you come up with.
+
+16
+00:01:13,010 --> 00:01:17,150
+So you should make all of your sketches at disposable as possible.
+
+17
+00:01:17,150 --> 00:01:21,650
+There's something liberating about the idea that you can just scrunch up a sketch if you don't like
+
+18
+00:01:21,650 --> 00:01:26,260
+the way it's going and just throw it in the trash for that reason.
+
+19
+00:01:26,360 --> 00:01:30,180
+I recommend that you write your sketches on paper next.
+
+20
+00:01:30,200 --> 00:01:33,650
+All of your sketches should be as big and bold as possible.
+
+21
+00:01:33,980 --> 00:01:38,760
+It can be a problem if sketches are too small so that you can't see everything clearly.
+
+22
+00:01:38,810 --> 00:01:43,790
+So make sure that your sketches take up at least a half a side of a full paper.
+
+23
+00:01:43,830 --> 00:01:50,280
+Finally don't try to make your sketches a detailed representation of how your visualization should look.
+
+24
+00:01:50,280 --> 00:01:55,300
+The idea with sketches is that you're just trying to get your general point across.
+
+25
+00:01:55,350 --> 00:01:57,270
+They don't need to be drawn with a ruler.
+
+26
+00:01:57,450 --> 00:02:02,610
+You don't need to worry about making things to scale and you should only have enough detail so you can
+
+27
+00:02:02,610 --> 00:02:05,280
+convey the general idea.
+
+28
+00:02:05,280 --> 00:02:13,670
+You never want to be spending more than five minutes to create your first sketch of a visualization.
+
+29
+00:02:13,740 --> 00:02:19,130
+I'll take you through some examples of how the sketching process might look as an example.
+
+30
+00:02:19,170 --> 00:02:25,200
+Let's say that I want to visualize something about population and GDP per capita is of the different
+
+31
+00:02:25,200 --> 00:02:26,750
+continents in the world.
+
+32
+00:02:28,860 --> 00:02:34,160
+Here's all that I'm using to make my example sketches my sketchbook is fairly small.
+
+33
+00:02:34,170 --> 00:02:42,320
+So make sure that each of my sketches take up an entire page space an obvious choice to display this
+
+34
+00:02:42,340 --> 00:02:48,850
+data would be a world map by simply drawing out the constants with displaying positional data that shows
+
+35
+00:02:48,850 --> 00:02:51,520
+where each of these items are located.
+
+36
+00:02:51,550 --> 00:02:56,560
+We're also saying something about the size of each of the consonants and we can add data or on top of
+
+37
+00:02:56,560 --> 00:03:03,200
+this by changing the intensity of the colors to encode some continuous data so to quickly do that.
+
+38
+00:03:03,220 --> 00:03:09,650
+I'm going to add in some dots on each of these consonants which quickly articulate this.
+
+39
+00:03:09,690 --> 00:03:14,890
+So here we could say that the darkness of the color that we're using for these continents represents
+
+40
+00:03:14,910 --> 00:03:16,810
+their GDP per capita.
+
+41
+00:03:17,280 --> 00:03:22,620
+This is called a core uplift map which I'll show you had to make in Section 8.
+
+42
+00:03:22,680 --> 00:03:28,710
+You might notice this sketch isn't a particularly accurate representation of the consonants the sizes
+
+43
+00:03:28,710 --> 00:03:31,000
+and shapes are way off from what you'd expect.
+
+44
+00:03:31,050 --> 00:03:32,850
+But that's not the point.
+
+45
+00:03:32,850 --> 00:03:37,090
+The point is to make something quick and easy which expresses your basic idea.
+
+46
+00:03:39,060 --> 00:03:45,030
+For another example I've sketched out a sunbursts plot which is kind of like a pie chart except that
+
+47
+00:03:45,030 --> 00:03:49,260
+it allows for further breakdown of the data from was originally displayed.
+
+48
+00:03:49,440 --> 00:03:56,640
+We'll be building these in section 9 each of these rings represent 100 percent of the world's population.
+
+49
+00:03:56,770 --> 00:04:02,740
+Breaking it down into different regional categories as we move further out the size of each of these
+
+50
+00:04:02,800 --> 00:04:09,580
+arcs is encoding that population label just a few of these auks to let the reader know what this visualization
+
+51
+00:04:09,580 --> 00:04:11,320
+is talking about.
+
+52
+00:04:11,380 --> 00:04:17,890
+Again I'll add in some marks to show the GDP per capita of each of these UCS.
+
+53
+00:04:18,080 --> 00:04:23,490
+This time using crosses instead of dots to show how some dogs should be darker than others.
+
+54
+00:04:23,510 --> 00:04:28,280
+You'll notice that this graph isn't a tool to scale as it's being drawn terribly.
+
+55
+00:04:28,280 --> 00:04:33,650
+Again the point is just to communicate how the data is going to be displayed and come up with something
+
+56
+00:04:33,650 --> 00:04:35,330
+quick and easy to communicate.
+
+57
+00:04:35,320 --> 00:04:36,190
+All right does
+
+58
+00:04:39,020 --> 00:04:45,020
+finally image do more or less the same thing with the treatment instead of a sunbath a tree map basically
+
+59
+00:04:45,020 --> 00:04:50,900
+conveys the same information except that it comes in a rectangular shape instead of working with angles
+
+60
+00:04:51,800 --> 00:04:56,610
+the size of the rectangle should relate to each of these regions populations.
+
+61
+00:04:56,690 --> 00:05:03,090
+I boxed off the different consonants first and then I filled some of these in with a few example countries.
+
+62
+00:05:03,250 --> 00:05:07,900
+The scale is clearly way off since the U.S. is almost the same size as China.
+
+63
+00:05:08,110 --> 00:05:09,200
+But that's not the point.
+
+64
+00:05:10,090 --> 00:05:15,680
+You also see that I didn't bother adding labels for every country or even every continent because that
+
+65
+00:05:15,680 --> 00:05:17,080
+would have taken more time.
+
+66
+00:05:19,350 --> 00:05:25,670
+Again I'm linking the color intensity of each of these boxes to the GDP per capita.
+
+67
+00:05:25,670 --> 00:05:30,030
+I've also added in a legend here which explicitly tells us what the graph is saying.
+
+68
+00:05:31,900 --> 00:05:37,210
+After this lecture you should be prepared to start making sketches of your own to figure out how to
+
+69
+00:05:37,210 --> 00:05:38,920
+show your data.
+
+70
+00:05:38,920 --> 00:05:43,900
+I've gone through some basic rules that you should try to follow and show you how this process should
+
+71
+00:05:43,900 --> 00:05:45,400
+look.
+
+72
+00:05:45,410 --> 00:05:50,390
+Now that I've gone through a few different sketches to give you a general idea I want you to sketch
+
+73
+00:05:50,390 --> 00:05:52,910
+out some designs of your own.
+
+74
+00:05:52,910 --> 00:05:57,770
+I'll be giving you a Denno dataset to think about and you should use the design principles that you
+
+75
+00:05:57,770 --> 00:06:01,410
+learned in this lecture to come up with some ideas.
+
+76
+00:06:01,520 --> 00:06:07,160
+There really are lots of different ways to visualize data like this and I want to encourage you to really
+
+77
+00:06:07,160 --> 00:06:11,330
+think outside the box and see what fits best with this data.
+

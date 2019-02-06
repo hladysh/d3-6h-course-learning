@@ -1,0 +1,348 @@
+1
+00:00:06,210 --> 00:00:12,260
+In this lecture I'll be walking through an example of a treatment which is a really useful visualization
+
+2
+00:00:12,260 --> 00:00:18,150
+to know to compare data across different categories that fit into a hierarchy.
+
+3
+00:00:18,560 --> 00:00:25,220
+We'll be using the D-3 hierarchy lab for the first time together with D-3 is treatment plan to create
+
+4
+00:00:25,220 --> 00:00:26,440
+this specialization.
+
+5
+00:00:28,500 --> 00:00:32,520
+Tree maps are a really powerful tool for visualizing data.
+
+6
+00:00:33,060 --> 00:00:38,060
+Essentially they consist of nested squares with disgrace.
+
+7
+00:00:38,430 --> 00:00:44,730
+Essentially they consist of nested rectangles which display some kind of information based on the node
+
+8
+00:00:44,760 --> 00:00:47,040
+in the hierarchy that they represent.
+
+9
+00:00:47,900 --> 00:00:52,700
+This allows us to show how some different components of a hierarchy hold a different weight and the
+
+10
+00:00:52,700 --> 00:00:56,160
+contribution to some kind of metric that we care about.
+
+11
+00:00:56,860 --> 00:01:03,880
+For example on the left here we have a tree map that shows how each county in Florida voted in the 2016
+
+12
+00:01:03,940 --> 00:01:04,680
+election.
+
+13
+00:01:05,850 --> 00:01:13,330
+We're encoding counties that voted for Trump in red and counties that voted for Clinton blue a deep
+
+14
+00:01:13,330 --> 00:01:17,310
+shade of his color again represents a larger margin of victory.
+
+15
+00:01:18,320 --> 00:01:23,360
+The size of each of these rectangles represents the voting weights that each of these counties have
+
+16
+00:01:23,390 --> 00:01:25,400
+on the result of the race.
+
+17
+00:01:25,850 --> 00:01:31,970
+We can then tell a story for example of how only a couple of these large swing counties would need to
+
+18
+00:01:31,970 --> 00:01:36,940
+change their allegiance to completely change the result of the national election.
+
+19
+00:01:38,060 --> 00:01:44,700
+In the example on the right we have different countries splits according to their population these have
+
+20
+00:01:44,700 --> 00:01:50,550
+all been nicely separated into different continents by that position and that color.
+
+21
+00:01:50,550 --> 00:01:56,790
+The great thing about a tree map is that we can make some really quick and easy size comparisons based
+
+22
+00:01:56,790 --> 00:02:04,170
+on whatever metric that we're looking at in this example this team is talking about population but it
+
+23
+00:02:04,170 --> 00:02:10,170
+could just as easily have been talking about pollution or world GDP which would have given us a different
+
+24
+00:02:10,230 --> 00:02:11,090
+message.
+
+25
+00:02:12,920 --> 00:02:16,030
+Here's an example of me taking you through for this lecture.
+
+26
+00:02:16,480 --> 00:02:21,560
+It's yet another beautiful Mike Bostock example from Bloch's again.
+
+27
+00:02:21,650 --> 00:02:27,470
+This one is a nice example to use because it comes with an update function built into it already which
+
+28
+00:02:27,470 --> 00:02:31,560
+we can use to flick between seeing different metrics.
+
+29
+00:02:31,650 --> 00:02:35,030
+We're actually using the same data set that we had last time.
+
+30
+00:02:35,190 --> 00:02:41,490
+Except that this data comes in a format that we can using the D-3 hierarchy Latt rather than with the
+
+31
+00:02:41,490 --> 00:02:43,730
+D-3 stratify.
+
+32
+00:02:44,130 --> 00:02:49,920
+So each one of these rectangles represents a package of the flayer library and we're encoding the area
+
+33
+00:02:49,920 --> 00:02:55,680
+of these rectangles according to either the size of that package or the number of packages contained
+
+34
+00:02:55,680 --> 00:02:56,390
+within it.
+
+35
+00:02:57,690 --> 00:03:02,690
+Let's run through this code to see how everything is working in our team.
+
+36
+00:03:02,760 --> 00:03:09,220
+We're starting off with two radio buttons which let us choose which type of data we want to show for
+
+37
+00:03:09,220 --> 00:03:15,120
+a color scheme where we're using a map function together with this fade function to set the value of
+
+38
+00:03:15,120 --> 00:03:21,200
+each of our colors to 20 percent of the way between that color and white.
+
+39
+00:03:21,210 --> 00:03:27,210
+This just means that each of our colors appear a little bit lighter when we use them to fill in rectangles
+
+40
+00:03:29,580 --> 00:03:35,050
+where we're setting up our treatment plant passing in these four different fields.
+
+41
+00:03:35,490 --> 00:03:42,690
+The tile method sets the algorithm that D-3 were used to space out these tiles which D-3 gives us some
+
+42
+00:03:42,690 --> 00:03:49,780
+options for the size method is again dictating the height and width of the tree map which we're just
+
+43
+00:03:49,780 --> 00:03:57,310
+saying is the size of our canvas round is saying that all values should be worked with integers and
+
+44
+00:03:57,310 --> 00:04:04,090
+this padding in a value gives us a little bit of space between each of our different rectangles.
+
+45
+00:04:04,100 --> 00:04:06,850
+Next we have our data loading function.
+
+46
+00:04:07,040 --> 00:04:11,050
+I'm going to make some Konsole logs in here to show you what our lab is doing.
+
+47
+00:04:12,390 --> 00:04:17,850
+We can see here from our first log how our data looks when it's first loaded into our code.
+
+48
+00:04:18,770 --> 00:04:21,140
+It matches the format that we're looking for.
+
+49
+00:04:21,230 --> 00:04:27,990
+Since this is representing a root node with a set of children attached as an array since the data is
+
+50
+00:04:27,990 --> 00:04:34,690
+in a format like this we can pass this value onto a hierarchy layer so we can use it without treatment.
+
+51
+00:04:35,860 --> 00:04:43,030
+We're using each before to set custom ID on every element in our array which will make it easier for
+
+52
+00:04:43,030 --> 00:04:44,670
+us to work with them later.
+
+53
+00:04:45,640 --> 00:04:52,150
+For some method we're passing in these variables some by size which comes from a function that we define
+
+54
+00:04:52,150 --> 00:04:54,670
+at the bottom of a file.
+
+55
+00:04:54,670 --> 00:05:01,320
+This means our treatment will attach a value to each node in our hierarchy with each number coming from
+
+56
+00:05:01,330 --> 00:05:08,680
+adding up the size values each of that nodes to send its finally after this we're transforming the States
+
+57
+00:05:08,770 --> 00:05:17,400
+again by calling our tree map lay out on it and we using the leaves method again to perform a data joint.
+
+58
+00:05:17,410 --> 00:05:21,140
+So this is the array of data that we're using for a data join.
+
+59
+00:05:21,610 --> 00:05:29,110
+We can see that our treatment as attached as 0 x 1 Why is there and why one values which represent the
+
+60
+00:05:29,110 --> 00:05:35,990
+four corners of our rectangle where each of these nodes should be placed from this point on.
+
+61
+00:05:35,990 --> 00:05:39,700
+It's really simple for us to build up this treatment.
+
+62
+00:05:39,780 --> 00:05:45,570
+We're appending a group for each node in the network and shifting it to the top left position of where
+
+63
+00:05:45,570 --> 00:05:47,200
+each rectangle should be.
+
+64
+00:05:48,130 --> 00:05:52,090
+Next we're adding a rectangle for each of these groups setting the width.
+
+65
+00:05:52,090 --> 00:05:57,700
+There's a difference between the two x values and the height is a difference between the two y values.
+
+66
+00:05:58,550 --> 00:06:04,220
+We're also recursively setting the color of each of these circles depending on whatever color its parent
+
+67
+00:06:04,220 --> 00:06:05,180
+takes.
+
+68
+00:06:05,960 --> 00:06:11,570
+All of this code is doing is making sure that the labels for each of our rectangles opposition sensibly
+
+69
+00:06:12,230 --> 00:06:18,080
+and if they stretch over into the neighboring rectangle and we apply this clip path so that the label
+
+70
+00:06:18,110 --> 00:06:22,190
+only shows on the rectangle that it belongs to.
+
+71
+00:06:22,270 --> 00:06:29,090
+Again we're appending some simple tool tips by appending a title to each of them and we get to show
+
+72
+00:06:29,110 --> 00:06:31,910
+the name of the package plus its value on that line.
+
+73
+00:06:31,920 --> 00:06:38,070
+But let hey we're attaching an event list and then onto our radio buttons and we're triggering this
+
+74
+00:06:38,070 --> 00:06:40,540
+change function whenever it gets pressed.
+
+75
+00:06:41,380 --> 00:06:46,990
+With this data method we're passing in the name of one of these functions at the bottom here which will
+
+76
+00:06:46,990 --> 00:06:55,280
+appear as some argument and changed within remaking our team at play here using a different some function
+
+77
+00:06:55,760 --> 00:06:58,410
+depending on which radio button was pressed.
+
+78
+00:06:59,290 --> 00:07:06,100
+If we pressed the size button then we'll use the some by size function which adds up all the size values
+
+79
+00:07:06,100 --> 00:07:08,430
+at the roots those descendants.
+
+80
+00:07:08,440 --> 00:07:16,140
+However if we press the command button then we'll use the number of children a package has size it within
+
+81
+00:07:16,150 --> 00:07:21,810
+updating the size of each rectangle based on these new values using the transform attributes on that
+
+82
+00:07:21,820 --> 00:07:28,070
+group and by changing the width and height to rectangles after this lecture you can now add tree map
+
+83
+00:07:28,180 --> 00:07:33,490
+to your increasingly impressive arsenal of visualizations that you know have built.
+
+84
+00:07:33,970 --> 00:07:39,880
+This should hopefully have cemented your understanding of hierarchies as well as giving you more experience
+
+85
+00:07:39,880 --> 00:07:43,860
+dealing with a range of layouts in the next lecture.
+
+86
+00:07:43,870 --> 00:07:49,600
+I'll be introducing you to a pretty similar visualization to this except that we'll be encoding this
+
+87
+00:07:49,600 --> 00:07:54,100
+data with a set of nested circles rather than nested rectangles.
+

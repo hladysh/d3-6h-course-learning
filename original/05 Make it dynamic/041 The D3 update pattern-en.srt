@@ -1,0 +1,300 @@
+1
+00:00:06,520 --> 00:00:13,020
+In this lecture will be editing the size and position of rectangles within an update function to do
+
+2
+00:00:13,020 --> 00:00:17,970
+this we'll need to learn about the D-3 update pattern which is one of the most challenging parts of
+
+3
+00:00:17,970 --> 00:00:19,530
+the three.
+
+4
+00:00:19,710 --> 00:00:22,230
+It's hard to get your head around what exactly is happening.
+
+5
+00:00:22,240 --> 00:00:27,840
+I heard in the confusion that this causes can be frustrating if you can't get the data to update later
+
+6
+00:00:27,840 --> 00:00:34,750
+on you'll be using the D-3 update pattern in pretty much every visualization that you want to make.
+
+7
+00:00:34,760 --> 00:00:38,400
+So it's really important that you can get a good feel for what's going on.
+
+8
+00:00:39,390 --> 00:00:44,910
+Don't worry if the content of this lecture seems too complicated right now it'll become clear how the
+
+9
+00:00:44,910 --> 00:00:46,100
+update pattern works.
+
+10
+00:00:46,110 --> 00:00:53,520
+Once you've used a few times to understand how updates work in D-3 you should start by looking at our
+
+11
+00:00:53,530 --> 00:01:00,250
+data join the first section to recall that back then we just took it on faith that we're giving this
+
+12
+00:01:00,250 --> 00:01:07,100
+method called into the supply of all the elements that was supposed to screen what's actually happening
+
+13
+00:01:07,100 --> 00:01:13,850
+here is that when we call decrease select all passing in and read data the results gives us some handy
+
+14
+00:01:13,850 --> 00:01:18,070
+elements with some virtual selected built in.
+
+15
+00:01:18,110 --> 00:01:24,610
+Let's take a look at a repped variable that we defined earlier or start by taking a look at just the
+
+16
+00:01:24,610 --> 00:01:28,780
+variable after we make a data join.
+
+17
+00:01:28,970 --> 00:01:35,470
+We can see here the D-3 is attached three fields and to exit in groups.
+
+18
+00:01:36,770 --> 00:01:43,310
+And represents all of the elements in a data array that don't exist on the page.
+
+19
+00:01:43,310 --> 00:01:46,260
+These are the shapes that need to be entered onto the screen.
+
+20
+00:01:48,320 --> 00:01:55,550
+X it represents all the elements that are on the page that don't exist in the data array.
+
+21
+00:01:55,670 --> 00:01:58,700
+These are the elements that we need to remove from the screen.
+
+22
+00:01:59,830 --> 00:02:05,470
+And groups just representing all the elements that currently exist on the screen as we're logging out
+
+23
+00:02:05,480 --> 00:02:08,380
+wrecks before anything has been appended to the screen.
+
+24
+00:02:08,470 --> 00:02:11,560
+We can see that only enter has any elements in it.
+
+25
+00:02:12,630 --> 00:02:18,580
+This makes sense because we have seven items in our data array that don't exist on the screen.
+
+26
+00:02:19,440 --> 00:02:25,890
+If we then log our next variable after entering append function and work that magic will actually see
+
+27
+00:02:25,890 --> 00:02:33,560
+the enter field is empty but our groups field contains everything these rectangles in the array here
+
+28
+00:02:33,650 --> 00:02:36,220
+associate the bars and graphs.
+
+29
+00:02:36,690 --> 00:02:41,800
+Indeed we all want to use the same update pattern whenever our data changes.
+
+30
+00:02:42,230 --> 00:02:49,870
+Here's an example of how it might look with some Texas veejays first with the rolling of data join this
+
+31
+00:02:49,870 --> 00:02:54,970
+means that we are using Select all to grab hold of the SVGA that we care about and we're matching that
+
+32
+00:02:54,970 --> 00:02:57,430
+selection with an array of data.
+
+33
+00:02:57,730 --> 00:03:00,550
+This data array will be something different every time.
+
+34
+00:03:00,610 --> 00:03:07,460
+Visualization dates in this example we're expecting the data variable to be an array of strings.
+
+35
+00:03:07,480 --> 00:03:11,540
+Next we can get rid of all the elements that should be removed from the page.
+
+36
+00:03:11,800 --> 00:03:17,230
+Recall that exit method about D-3 selection returns all the elements that are on the page that don't
+
+37
+00:03:17,230 --> 00:03:20,140
+correspond to something in our data.
+
+38
+00:03:20,500 --> 00:03:26,860
+We can use the Remove method on the selection to delete these elements from the screen at that point
+
+39
+00:03:26,860 --> 00:03:33,340
+we can start thinking about the elements that are already on the screen but we need to update the regular
+
+40
+00:03:33,340 --> 00:03:35,230
+selection of a text variable here.
+
+41
+00:03:35,230 --> 00:03:40,960
+Essentially it turns everything into groups field but we just deleted all the text elements that needs
+
+42
+00:03:40,960 --> 00:03:46,600
+to be removed so we can think of changing these values is affecting all the elements that should be
+
+43
+00:03:46,600 --> 00:03:47,400
+updated.
+
+44
+00:03:48,300 --> 00:03:54,310
+Herem changing all the updating text SVGA is to have a color of red but it's more common to update the
+
+45
+00:03:54,310 --> 00:03:56,610
+position or size of the messages here.
+
+46
+00:03:57,700 --> 00:04:03,790
+Finally we'll add in all the elements in a new array of data but don't yet exist on the screen.
+
+47
+00:04:04,240 --> 00:04:08,100
+We're getting all the elements that need to be entered into Selecta.
+
+48
+00:04:08,590 --> 00:04:12,510
+We're using the append method to physically and these shapes to the screen.
+
+49
+00:04:13,350 --> 00:04:19,440
+And we can set a range of different attributes that should only apply to these newly added elements.
+
+50
+00:04:19,450 --> 00:04:24,210
+Note that updating elements should still have the same attributes for everything.
+
+51
+00:04:24,210 --> 00:04:28,250
+Other than that Phil that was said when they were first entered into data
+
+52
+00:04:31,920 --> 00:04:36,250
+with this in mind let's take another look at what we've been doing so far.
+
+53
+00:04:36,270 --> 00:04:41,030
+Select all here is returning a selection that still has no rectangles on the screen.
+
+54
+00:04:41,460 --> 00:04:47,330
+But since we've passed in an array of data we also had access to our virtual selectors.
+
+55
+00:04:47,540 --> 00:04:53,440
+We're using the virtual selector enter here to get all the egg the rectangles that exist data on the
+
+56
+00:04:53,440 --> 00:04:56,930
+screen and we're adding those with the pen method.
+
+57
+00:04:58,350 --> 00:05:02,310
+Let's write out our rectangles using the D-3 update pattern.
+
+58
+00:05:02,760 --> 00:05:07,700
+I've made a few comments here to help us to remember the structure of the update pattern.
+
+59
+00:05:07,860 --> 00:05:09,740
+First we have our data join.
+
+60
+00:05:10,080 --> 00:05:14,570
+So I'm going to put the power bar code where we select all the rights and tie it to our data array in
+
+61
+00:05:14,580 --> 00:05:15,110
+here.
+
+62
+00:05:16,460 --> 00:05:23,530
+Next we have the exit part where we're removing old elements that are no longer in data.
+
+63
+00:05:23,600 --> 00:05:27,760
+Here is as easy as just calling our move method on the exit selection.
+
+64
+00:05:32,160 --> 00:05:34,220
+Next we have the update pad.
+
+65
+00:05:34,650 --> 00:05:40,810
+So we're going to set the attributes of rectangles that should still be on the screen we'll be writing
+
+66
+00:05:40,810 --> 00:05:46,200
+pretty much the same code as an end function but we don't need to set the fill again.
+
+67
+00:05:48,600 --> 00:05:53,280
+Finally we have the ends at Pod's which is look exactly the same as before.
+
+68
+00:05:54,960 --> 00:06:00,210
+After this lecture you should hopefully have a much better idea of exactly how D-3 is working under
+
+69
+00:06:00,210 --> 00:06:00,900
+the hood.
+
+70
+00:06:01,840 --> 00:06:07,150
+Learning about the D-3 update pattern should hopefully have consolidated the knowledge you get so far
+
+71
+00:06:07,630 --> 00:06:11,850
+as well as helping you to become more familiar with the syntax that D-3 is using.
+
+72
+00:06:13,010 --> 00:06:17,450
+In the next lecture I want you to test your understanding of these concepts and the activity with a
+
+73
+00:06:17,450 --> 00:06:18,730
+short quiz.
+
+74
+00:06:19,220 --> 00:06:24,960
+Getting a firm grip on the have the D-3 update pattern is working well make it a lot easier to understand
+
+75
+00:06:25,110 --> 00:06:30,600
+visualizations of working later Ron when we start to add more features onto our visualizations.
+

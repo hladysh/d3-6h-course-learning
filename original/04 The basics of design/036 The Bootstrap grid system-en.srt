@@ -1,0 +1,212 @@
+1
+00:00:06,510 --> 00:00:11,130
+If you've had any experience with web development before that you should already be familiar with how
+
+2
+00:00:11,130 --> 00:00:15,160
+the bootstrap grid system works will be using bootstrap thread.
+
+3
+00:00:15,180 --> 00:00:22,500
+This cost Diala web pages into of different elements on the page you eventually already seen bootstrap
+
+4
+00:00:22,500 --> 00:00:24,410
+in action for the first project.
+
+5
+00:00:24,570 --> 00:00:31,970
+Since I designed the index page with a simple bootstrap design by adding certain bootstrap classes to
+
+6
+00:00:32,030 --> 00:00:36,450
+elements we can gradually split this page into various sections.
+
+7
+00:00:36,620 --> 00:00:41,990
+We can define how wide these sections should be on different screen sizes too which means that our site
+
+8
+00:00:41,990 --> 00:00:43,080
+will look good anywhere.
+
+9
+00:00:43,190 --> 00:00:50,120
+Salesian designing visualizations especially for visualisations surrounded by other elements you should
+
+10
+00:00:50,120 --> 00:00:51,990
+start to mentally box things up.
+
+11
+00:00:51,990 --> 00:00:53,960
+You would with the bootstrap grid.
+
+12
+00:00:54,530 --> 00:00:59,450
+You immediately start to think about how these elements should fold down at the screen size changes
+
+13
+00:00:59,850 --> 00:01:03,440
+and I would recommend using bootstrap to do this in future projects.
+
+14
+00:01:04,300 --> 00:01:09,430
+I'm going to explain the setup the bootstrap version 3 which we're using in this class.
+
+15
+00:01:09,430 --> 00:01:14,400
+Firstly we need to surround everything that uses the grid with a div with a class container.
+
+16
+00:01:14,800 --> 00:01:19,780
+This gives up page padding and it lets us define different roads inside it.
+
+17
+00:01:19,780 --> 00:01:25,360
+We can then add a div with a class of RO which we can add further dates with column classes inside of
+
+18
+00:01:28,220 --> 00:01:32,080
+hey you can see what bootstrap is doing bootstrap splits.
+
+19
+00:01:32,090 --> 00:01:37,820
+Each of the roads into pieces of 12 equal parts and you can define columns by how many parts these take
+
+20
+00:01:37,820 --> 00:01:40,320
+up in the top row here.
+
+21
+00:01:40,340 --> 00:01:41,880
+The divs have a class of code.
+
+22
+00:01:41,910 --> 00:01:49,100
+I'm the one which means they have a column with the 1 12 of them can fit into one row in the second
+
+23
+00:01:49,100 --> 00:01:49,340
+row.
+
+24
+00:01:49,340 --> 00:01:56,850
+We have one column with 8 and 1 with 4 in the third row we have three columns of four.
+
+25
+00:01:57,130 --> 00:02:03,070
+And in the last row we have two columns of with six.
+
+26
+00:02:03,280 --> 00:02:08,830
+If the total of all of these columns is larger than 12 then bootstrap will wrap the rest of the room
+
+27
+00:02:08,830 --> 00:02:10,060
+and derate new growth.
+
+28
+00:02:10,420 --> 00:02:16,930
+So in this example adding a column plan for next to a column with 9 would mean that the row would need
+
+29
+00:02:16,930 --> 00:02:21,180
+13 parts for everything to fit so the rest of our row gets put.
+
+30
+00:02:21,220 --> 00:02:24,870
+Nice it.
+
+31
+00:02:24,880 --> 00:02:29,980
+We can also combine multiple bootstrap classes to make the appearance of divs different for different
+
+32
+00:02:29,980 --> 00:02:37,950
+size Greenes we can use a class prefix call access followed by a number for how screen should be shown
+
+33
+00:02:37,960 --> 00:02:46,470
+for phones we can use the prefix s m for tablets we can use and the for normal sized laptops and we
+
+34
+00:02:46,470 --> 00:02:50,060
+can use LG for large desktops.
+
+35
+00:02:50,070 --> 00:02:54,030
+This will be really useful when you create visualizations of your own.
+
+36
+00:02:54,120 --> 00:02:58,260
+You want to make sure that your visualizations will look good on whichever screen someone is viewing
+
+37
+00:02:58,260 --> 00:03:05,040
+it from and you want to make sure that they won't break for phones or tablet.
+
+38
+00:03:05,040 --> 00:03:07,930
+Here's a look at using these different classes in action.
+
+39
+00:03:08,310 --> 00:03:12,770
+We've given the top rows columns different classes the and desktops.
+
+40
+00:03:13,350 --> 00:03:18,120
+If you're viewing this visualization a phone then the column on the left will take up the whole with
+
+41
+00:03:18,120 --> 00:03:24,120
+the screen with the column with 12 that resolution and the second column will wrap underneath with it
+
+42
+00:03:24,130 --> 00:03:26,510
+with half the screen.
+
+43
+00:03:26,520 --> 00:03:32,730
+However if it's viewed on the desktop then everything will fit onto the first row with the first column
+
+44
+00:03:32,730 --> 00:03:38,870
+taking up two thirds of the width and the second column filling in the rest.
+
+45
+00:03:38,900 --> 00:03:43,650
+We can also use offsets to provide layers of padding on either side of color.
+
+46
+00:03:44,090 --> 00:03:49,130
+Adding a class would be offset for the column size will define the number of columns that the cell should
+
+47
+00:03:49,130 --> 00:03:51,240
+have the left of it.
+
+48
+00:03:51,260 --> 00:03:55,760
+So here the column in the second row has a size of 3 and an offset 3.
+
+49
+00:03:56,050 --> 00:04:01,670
+So you can imagine three invisible spaces taken up to the left of it which comes from the upset here.
+
+50
+00:04:03,800 --> 00:04:09,050
+After all that you should hopefully be better able to navigate the template files giving you understand
+
+51
+00:04:09,050 --> 00:04:12,760
+why certain dates have been given certain classes.
+
+52
+00:04:12,800 --> 00:04:18,170
+You should also be starting to think about how new patzers science fits in with the bootstrap system.
+
+53
+00:04:18,470 --> 00:04:21,980
+I mean starting to split up your page in two different boxes in mind.
+

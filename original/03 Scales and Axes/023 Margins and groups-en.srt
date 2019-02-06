@@ -1,0 +1,256 @@
+1
+00:00:06,530 --> 00:00:12,990
+In this lecture I'll be talking about SVGA groups which are a type of invisible SVGA element for organizing
+
+2
+00:00:12,990 --> 00:00:18,750
+data which will be using to make up visualization conform with the D-3 Moggi convention which will be
+
+3
+00:00:18,750 --> 00:00:21,900
+needing to use age when we want to at accedes next lecture.
+
+4
+00:00:24,060 --> 00:00:31,170
+In 3 we tend to define a margin to round up visualization which can be tweaked within a maned of X-File
+
+5
+00:00:32,200 --> 00:00:39,940
+these margins are allowed to use threes inbuilt access generators to acces the top left bottom right
+
+6
+00:00:39,940 --> 00:00:42,040
+about visualization.
+
+7
+00:00:42,040 --> 00:00:47,440
+It also allows us to better tweak the dimensions of our visualizations directly from within our javascript
+
+8
+00:00:47,440 --> 00:00:55,340
+files the way that we implement the margin convention in D-3 is by attaching everything to an SPG group
+
+9
+00:00:55,430 --> 00:01:02,230
+element which we can translate into the central Canlis SPG group elements are containers for different
+
+10
+00:01:02,800 --> 00:01:10,240
+shapes as elements groups don't have any visual presence by themselves are they useful in the tree as
+
+11
+00:01:10,240 --> 00:01:15,770
+they can bundle graphical elements together and apply transformations to many shapes at once.
+
+12
+00:01:17,300 --> 00:01:21,730
+For example let's say that we have three squares on SVGA Kandace.
+
+13
+00:01:22,040 --> 00:01:27,770
+If we decide that we need to move each of these squares 200 pixels to the right then we could change
+
+14
+00:01:27,770 --> 00:01:30,720
+each of the X attributes by 200.
+
+15
+00:01:30,740 --> 00:01:37,290
+However if we needed to do this with 100 squares then this could get pretty tedious if all squares were
+
+16
+00:01:37,290 --> 00:01:42,860
+instead contained inside of an SPG group element and we could apply what's called the transformation
+
+17
+00:01:42,890 --> 00:01:48,780
+of the group a transformation allows us to alter the position of every element that is contained within
+
+18
+00:01:48,780 --> 00:01:49,270
+the group.
+
+19
+00:01:49,320 --> 00:01:57,550
+At the same time for instance we can use a translation to move the entire group 200 pixels to the right.
+
+20
+00:01:57,610 --> 00:02:04,510
+We apply a transformation with the groups transform intervened which takes a function for a translation
+
+21
+00:02:04,570 --> 00:02:10,570
+The function takes an X and a Y value which expresses how far the cube should be shifted in the positive
+
+22
+00:02:10,570 --> 00:02:12,090
+direction of our candidates.
+
+23
+00:02:13,020 --> 00:02:18,180
+If we want to move the group towards the top left of the screen then we can supply negative values to
+
+24
+00:02:18,180 --> 00:02:19,090
+this function.
+
+25
+00:02:20,140 --> 00:02:26,260
+We can also use a different kind of transformation on groups to rotate switches which we'll be doing
+
+26
+00:02:26,260 --> 00:02:34,650
+in the next lecture for a y axis label this code lays out the standard set up for our SPG canvas which
+
+27
+00:02:34,650 --> 00:02:36,610
+will be using from this point onwards.
+
+28
+00:02:37,390 --> 00:02:44,130
+We defined the margin here as an object pass to mean values to find the top right bottom and left margins
+
+29
+00:02:45,190 --> 00:02:51,630
+the entire SVGA Cambers will have a weight of 960 and the height of 500 in this example.
+
+30
+00:02:51,970 --> 00:02:57,340
+But we are deducting the margins from a height and width variables so that we can plug them into different
+
+31
+00:02:57,340 --> 00:03:02,930
+parts of the visualization without needing to worry about the margins.
+
+32
+00:03:02,930 --> 00:03:08,440
+Let's work this Margene convention into a bar chart to see how this looks like in practice.
+
+33
+00:03:08,720 --> 00:03:13,740
+At the end of the next lecture we should hopefully have a chart that looks something like this.
+
+34
+00:03:14,270 --> 00:03:19,820
+We will be appending all of our rectangles to a group element and we'll need to leave enough space in
+
+35
+00:03:19,820 --> 00:03:25,030
+the left and bottom margin for an x and y axes with this in mind.
+
+36
+00:03:25,030 --> 00:03:31,520
+All right my margin with 100 pixels on the left and bottom and 10 pixels at the top and the right.
+
+37
+00:03:31,980 --> 00:03:37,020
+We can always adjust these values later on if we end up needing a little more space than expected.
+
+38
+00:03:38,330 --> 00:03:44,780
+So I'm defining a margin as an object at the top of our main Jaspal passing in all of our different
+
+39
+00:03:44,780 --> 00:03:45,920
+values.
+
+40
+00:03:48,120 --> 00:03:53,790
+Then we want to set the height and width values for our visualisation these values are going to define
+
+41
+00:03:53,790 --> 00:03:59,350
+the size of the group that we're attaching everything to and won't include the space that we're leaving
+
+42
+00:03:59,370 --> 00:04:00,300
+for.
+
+43
+00:04:01,280 --> 00:04:07,610
+With that in mind I'm starting with a width of 600 pixels and the height of 400 pixels here and taking
+
+44
+00:04:07,610 --> 00:04:13,270
+off the horizontal and vertical margins from these numbers.
+
+45
+00:04:13,290 --> 00:04:19,040
+I'm also going to sub out the hard coded values for a width and height for setting on SVGA size and
+
+46
+00:04:19,190 --> 00:04:28,610
+domain the size of our SPG canvas actually wants to include our margins as well so that axes can render
+
+47
+00:04:28,610 --> 00:04:30,100
+properly on the canvas.
+
+48
+00:04:30,380 --> 00:04:32,150
+So I'm adding these back in here.
+
+49
+00:04:39,240 --> 00:04:43,890
+Now occurred is a lot more reusable because we can now just change the size of our visualization in
+
+50
+00:04:43,890 --> 00:04:48,650
+one place and not have to worry about changing values all across the file.
+
+51
+00:04:51,490 --> 00:04:57,160
+Next I want to append a group to our canvas which should have a transform attribute that translates
+
+52
+00:04:57,160 --> 00:04:58,870
+our visualization into the center
+
+53
+00:05:03,650 --> 00:05:11,710
+to do this we need to shift it to the left by the value of the left margin and shifted downwards by
+
+54
+00:05:11,710 --> 00:05:13,390
+the value of our top margin.
+
+55
+00:05:14,350 --> 00:05:20,140
+Then of course after I rename this variable i need to go in and update the code later on when we're
+
+56
+00:05:20,140 --> 00:05:24,430
+appending our rectangles to the screen.
+
+57
+00:05:24,510 --> 00:05:30,450
+Now that we have our margins set up we can see that our visualization is a little smaller and it's being
+
+58
+00:05:30,450 --> 00:05:32,870
+pushed a little into the center of the screen.
+
+59
+00:05:34,080 --> 00:05:39,840
+Let's take a look at our group using our browsers element inspect.
+
+60
+00:05:39,930 --> 00:05:44,720
+If I hover over this group element here and we can see what our margins are doing.
+
+61
+00:05:45,470 --> 00:05:50,390
+We now have some space for axes to live which will be adding in in the next lecture.
+
+62
+00:05:51,580 --> 00:05:56,070
+After this lecture our code is far more clean and reusable than before.
+
+63
+00:05:56,200 --> 00:06:02,490
+And we also have some margins where we'll be putting on x and y axes labels in the next lecture.
+
+64
+00:06:02,500 --> 00:06:07,690
+We'll be adding these pieces to a graph which will let our users see exactly what they're looking at.
+

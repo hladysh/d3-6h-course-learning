@@ -1,0 +1,164 @@
+1
+00:00:06,340 --> 00:00:12,010
+In this lecture be teaching about log scales and why we might need to use them instead of linear scales
+
+2
+00:00:12,020 --> 00:00:14,080
+in some situations.
+
+3
+00:00:14,230 --> 00:00:18,770
+I'll also run through the syntax which looks pretty familiar from the last lecture.
+
+4
+00:00:20,380 --> 00:00:24,970
+Sometimes you might find that you're working with a variable which is increasing exponentially over
+
+5
+00:00:24,970 --> 00:00:26,400
+time.
+
+6
+00:00:26,410 --> 00:00:32,650
+In this example because population is increasing so rapidly if you want to show population size much
+
+7
+00:00:32,650 --> 00:00:37,960
+further in time then it would seem like the population in the first half of the graph was basically
+
+8
+00:00:37,960 --> 00:00:39,410
+the same level.
+
+9
+00:00:39,490 --> 00:00:44,940
+In cases like these it becomes more useful to use a logarithmic scale rather than a linear scale.
+
+10
+00:00:47,010 --> 00:00:53,400
+For example for a second class project we want to show how different countries GDP per capita is changing
+
+11
+00:00:53,430 --> 00:00:55,080
+over time.
+
+12
+00:00:55,080 --> 00:00:59,710
+As you can see a linear scale doesn't express this data very well.
+
+13
+00:00:59,850 --> 00:01:07,890
+The domain of scale ranges from about $300 to $150000 which means that a lot of wasted space to fit
+
+14
+00:01:07,890 --> 00:01:13,440
+in the most extreme data points when we're looking at the countries in the year eighteen hundred.
+
+15
+00:01:13,490 --> 00:01:16,410
+They all seem to be about the same level of wealth.
+
+16
+00:01:16,490 --> 00:01:20,850
+In reality some of the countries are an order of magnitude better off than others.
+
+17
+00:01:22,210 --> 00:01:28,050
+We can see this in the image on the right of our screen when GDP per capita is around $4000 per year.
+
+18
+00:01:28,060 --> 00:01:35,100
+The richest countries and around $400 per year in the poorest countries are large scale is a much better
+
+19
+00:01:35,100 --> 00:01:39,220
+job using this space on our screen to show the difference between these countries.
+
+20
+00:01:40,610 --> 00:01:46,010
+Looking at this with our black box analogy again a large scale was pretty similar to what lineas go
+
+21
+00:01:47,180 --> 00:01:51,390
+we supply it with minimum and maximum values for its domain and range.
+
+22
+00:01:51,650 --> 00:01:55,190
+And we get an output when we give it an input.
+
+23
+00:01:55,190 --> 00:01:58,870
+We can also give it a base value which people tend.
+
+24
+00:01:59,210 --> 00:02:05,870
+This means that the output values of inputs are five hundred five thousand 50000 will be spaced equally
+
+25
+00:02:06,320 --> 00:02:09,540
+because that all factors of 10 part.
+
+26
+00:02:09,780 --> 00:02:17,460
+If we wanted to use a base value of two instead then this would mean that our values for 500 1000 2000
+
+27
+00:02:17,460 --> 00:02:21,840
+would be equally spaced because they'd all be factors of two of us.
+
+28
+00:02:22,260 --> 00:02:28,350
+We can play around with the base value as much as we like to make up visualizations as useful as possible.
+
+29
+00:02:28,830 --> 00:02:33,460
+A log scale with the base of one actually works out to be the same as the linear scale.
+
+30
+00:02:34,290 --> 00:02:40,170
+Something to note here is that the domain for a log scale need to be strictly positive or strictly negative
+
+31
+00:02:41,010 --> 00:02:43,870
+because the log of zero is always undefined.
+
+32
+00:02:44,130 --> 00:02:49,690
+If you try to make a log scale and D-3 that contain zero in its domain then the scale just simply won't
+
+33
+00:02:49,840 --> 00:02:50,350
+work.
+
+34
+00:02:51,730 --> 00:02:56,810
+To create a log scale we use D-3 scale log in terms of the syntax.
+
+35
+00:02:56,830 --> 00:03:02,120
+It's almost identical to a linear scale except that it uses an optional base method.
+
+36
+00:03:02,170 --> 00:03:07,390
+We're giving the scale a name of X this time because the scale is for x axis.
+
+37
+00:03:07,390 --> 00:03:10,810
+We can see the same inputs and outputs as a black box.
+
+38
+00:03:10,810 --> 00:03:18,110
+When we run these console logs and again we can use the invert method to go from a range back to a domain.
+
+39
+00:03:18,250 --> 00:03:21,850
+Now that you know how and when to use a large scale.
+
+40
+00:03:21,850 --> 00:03:27,760
+Next up will be running through time scales which are a special variation of linear scales that deal
+
+41
+00:03:27,760 --> 00:03:28,500
+with dates.
+

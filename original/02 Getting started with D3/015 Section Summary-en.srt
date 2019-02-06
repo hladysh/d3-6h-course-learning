@@ -1,0 +1,36 @@
+1
+00:00:06,360 --> 00:00:11,790
+In this section you set up your environment for programming in D-3 you learn West veejays are and how
+
+2
+00:00:11,790 --> 00:00:18,360
+to add them into the screen with both HDMI out and T-3 and you poor form your first data joint associate
+
+3
+00:00:18,360 --> 00:00:20,240
+these shapes with pieces of data.
+
+4
+00:00:20,990 --> 00:00:25,640
+With what you just created and the last activity you have the building blocks for real visualization
+
+5
+00:00:26,420 --> 00:00:33,440
+you can use this image to convey something numerical into something that people can picture for themselves.
+
+6
+00:00:33,440 --> 00:00:39,860
+There's not too much of a jump between what you just made now and in making a fully fledged bartk in
+
+7
+00:00:39,860 --> 00:00:43,250
+the next section I'll be teaching you how to do just that.
+
+8
+00:00:43,250 --> 00:00:48,830
+Introducing you to scales and axes and building up the visualization that we have now into something
+
+9
+00:00:48,830 --> 00:00:49,760
+more substantial.
+

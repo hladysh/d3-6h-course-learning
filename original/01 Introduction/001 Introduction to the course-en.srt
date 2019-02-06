@@ -1,0 +1,132 @@
+0
+00:06.290 --> 00:09.550
+Hello and welcome to mastering data visualization and D3.js.
+
+1
+00:09.620 --> 00:10.390
+. 
+
+2
+00:10.640 --> 00:15.100
+My name is Adam and I'll be the one to take you through the journey of learning D   3.
+
+3
+00:15.590 --> 00:21.400
+I work as a freelance data visualization engineer using my knowledge of D 3 to build complex Front-End
+
+4
+00:21.430 --> 00:23.150
+systems for businesses.
+
+5
+00:23.660 --> 00:28.790
+I've been living and working remotely for over a year now, picking up interesting projects from companies 
+
+6
+00:28.790 --> 00:30.670
+all around the world.
+
+7
+00:30.860 --> 00:36.800
+I designed and built data dashboards for successful startups including consulting roles teaching CEOs
+
+8
+00:36.800 --> 00:39.530
+about the best way to design their products.
+
+9
+00:39.650 --> 00:45.280
+I worked at a large NGO to communicate the results of a 20,000 person study of youths around the world
+
+10
+00:46.060 --> 00:47.420
+and I've been a coach and mentor
+
+11
+00:47.440 --> 00:51.300
+to new
+learners of D3 who are just starting off on the same path.
+
+12
+00:52.040 --> 00:57.580
+I first picked up my skills in data visualization at Harvard University where I was a computer science student
+
+13
+00:58.010 --> 01:01.250
+I first learned the material that I'll be teaching in this course. 
+
+14
+01:01.550 --> 01:06.780
+Although the bulk of what you'll learn will revolve around the finer points that D-3 library, the course
+
+15
+01:06.780 --> 01:11.980
+is also structured to give you a formal introduction to the principles of design.
+
+16
+01:12.080 --> 01:17.180
+I'll teach you how to effectively showcase your ideas justifying design decisions to your colleagues
+
+17
+01:17.650 --> 01:23.000
+and also teach you how to discern between good and bad visualizations and how to avoid the most common
+
+18
+01:23.000 --> 01:24.620
+pitfalls of design.
+
+19
+01:25.250 --> 01:30.260
+We'll be working through four exciting projects which are all relevant to the real world and you'll
+
+20
+01:30.260 --> 01:32.510
+be following along every step of the way.
+
+21
+01:32.660 --> 01:37.700
+As we gradually add complexity onto what we can do with D3. By the end of this course you'll
+
+22
+01:37.700 --> 01:43.150
+be able to create new and exciting visualizations of the web's premier visualization library.
+
+23
+01:43.220 --> 01:47.600
+You'll learn to design and build your own projects to work with the data that matters to you the most
+
+24
+01:48.200 --> 01:51.190
+and we'll be covering advanced topics in D-3 like brushes,  
+
+25
+01:51.200 --> 01:57.320
+choropleths and layouts. We'll also be using the latest version of D-3: version 5.
+
+26
+01:57.650 --> 02:02.150
+If you don't have much prior experience in web development then I suggest that you take a primer course
+
+27
+02:02.150 --> 02:08.420
+in both JavaScript and jQuery before launching into this course. You'll want to feel comfortable with selecting
+
+28
+02:08.420 --> 02:13.670
+elements on screen and interacting with the document object model in order to get the most out of
+
+29
+02:13.670 --> 02:15.680
+this experience.
+
+30
+02:15.680 --> 02:21.070
+This course is meant for you if you want to build user interfaces that can add real value right away.
+
+31
+02:21.350 --> 02:26.030
+If you want to stand there from the crowd and generate new and interesting ideas and if you want to
+
+32
+02:26.030 --> 02:28.760
+change the way that you see data in the world around you.

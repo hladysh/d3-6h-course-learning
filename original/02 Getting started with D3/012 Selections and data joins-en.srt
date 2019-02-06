@@ -1,0 +1,239 @@
+0
+00:05.330 --> 00:12.850
+Now that you know how to work with SVGs and JavaScript, it's time to actually do something with them.
+
+1
+00:13.010 --> 00:21.020
+The whole point of D-3 is that we need to tie these SVGs to data, giving us Data Driven Documents. Once we
+
+2
+00:21.020 --> 00:23.630
+can associate these elements with a piece of data,
+
+3
+00:23.670 --> 00:28.870
+this lets us tweak their attributes to show something about the data that they represent.
+
+4
+00:28.950 --> 00:35.430
+One of the key features behind the D-3 library is the ability to perform a data join. D-3 reads in an array
+
+5
+00:35.430 --> 00:38.750
+of data and associates each item of the array with an SVG.
+
+6
+00:38.770 --> 00:41.710
+Let's take a look at a simple example.
+
+7
+00:43.750 --> 00:47.300
+I'm looking at the code that we just used in the previous exercise. 
+
+8
+00:48.320 --> 00:54.760
+Now instead of attaching just one circle to the screen we're going to attach many of them at the same time.
+
+9
+00:55.990 --> 01:00.110
+I'm going to make a few edits for this code to get the behavior that we're looking for.
+
+10
+01:02.090 --> 01:07.580
+I've added in an array of integers  which D-3 will use for the data join.
+
+11
+01:07.620 --> 01:10.210
+The syntax becomes a little confusing here. 
+
+12
+01:11.150 --> 01:14.650
+Firstly we use 'Select All' to get all the circles on the screen.
+
+13
+01:15.590 --> 01:20.540
+Next we associate this selection with our array of data using this data method.
+
+14
+01:21.660 --> 01:30.190
+We pass the results onto a method called 'Enter' and then we pass the result of that on to 'Append'.
+
+15
+01:30.200 --> 01:36.110
+You might think that this 'Select All' call here won't return anything because there aren't yet any circles 
+
+16
+01:36.110 --> 01:37.020
+on the screen.
+
+17
+01:38.340 --> 01:44.610
+Then it looks like we're feeding this array of data into a selection of nothing. We're then using this
+
+18
+01:44.610 --> 01:52.690
+mysterious 'Enter'  method, together with the usual 'Append' and 'Attr" methods. D-3 is actually doing some
+
+19
+01:52.690 --> 01:55.160
+complicated stuff behind the scenes here.
+
+20
+01:55.270 --> 02:01.970
+We'll cover this in detail in section 5 when you'll learn about the D-3 update pattern. For now,
+
+21
+02:01.990 --> 02:06.240
+just take it on faith that using these lines together magically works.
+
+22
+02:07.690 --> 02:12.570
+The result is that we get a new circle on the screen for every item in our data array.
+
+23
+02:14.160 --> 02:19.830
+For each new circle we now have the option of setting attributes with an anonymous function instead
+
+24
+02:19.830 --> 02:21.940
+of an integer or a string.
+
+25
+02:22.740 --> 02:29.170
+If we do this then we can set the value of our  attributes based on the contents of each item in the array.
+
+26
+02:30.350 --> 02:36.100
+When we use a function instead of a value here we can give it one or two arguments. 
+
+27
+02:36.350 --> 02:39.600
+The first argument will represent an item in our array.
+
+28
+02:39.950 --> 02:43.950
+And the second argument represents its index in the array.
+
+29
+02:44.120 --> 02:48.160
+I'm going to add in a few console logs here to show you what's going on.
+
+30
+02:50.130 --> 02:53.910
+The function is running once for every item in our array.
+
+31
+02:54.180 --> 02:59.850
+First we're setting the cx attribute and the function is running for every value in the array.
+
+32
+03:01.680 --> 03:07.900
+The function starts with the first element in the array at position 0, then it moves to the second element
+
+33
+03:07.900 --> 03:08.950
+at position 1.
+
+34
+03:09.090 --> 03:10.170
+And so on.
+
+35
+03:10.770 --> 03:17.320
+Once the function is looped through every item in the array, the same thing happens for a radius function.
+
+36
+03:17.340 --> 03:22.100
+We can also see the values match up between our anonymous functions.
+
+37
+03:22.110 --> 03:26.130
+The item with the value of 25 is always at the index 0,
+
+38
+03:26.130 --> 03:33.030
+the first item in the array and the item with a value of 15 is always at index four, last item in
+
+39
+03:33.030 --> 03:35.270
+our array.
+
+40
+03:35.360 --> 03:40.960
+Since none of these functions return anything, we are basically setting all of these values to Null
+
+41
+03:41.180 --> 03:47.990
+So our circles won't render to the screen yet. To fix this and to see if our anonymous functions
+
+42
+03:47.990 --> 03:48.930
+are working,
+
+43
+03:49.190 --> 03:52.520
+I'm going to return the same value in each of our functions.
+
+44
+03:54.920 --> 04:00.770
+When we take a look at the browser it looks like we only have one circle, but actually all of the circles
+
+45
+04:00.770 --> 04:03.300
+just have the exact same size and position.
+
+46
+04:06.140 --> 04:11.960
+We can stagger these circles by returning a different cx attribute for each data point.
+
+47
+04:13.210 --> 04:21.430
+We can space these circles out uniformly by multiplying their indexes by a certain number.
+
+48
+04:21.600 --> 04:29.130
+I'm returning a value of i x 50 meaning that the centers will be 50 pixels apart and I'm adding
+
+49
+04:29.130 --> 04:33.020
+25 to the result to shift everything to fit on the screen.
+
+50
+04:34.410 --> 04:40.590
+I'm also going to do something similar with the radius attributes. For each of our circles,
+
+51
+04:40.620 --> 04:44.570
+the radius will equal the value of the piece of data that it represents.
+
+52
+04:45.800 --> 04:52.400
+I'm using the old fashioned anonymous function syntax from before ES6 in this course because most of the
+
+53
+04:52.410 --> 04:55.460
+D-3 community still writes its code like this.
+
+54
+04:56.340 --> 05:01.390
+For any of the functions that we'll write in this course, we can just as easily have written them as arrow
+
+55
+05:01.390 --> 05:04.860
+functions and everything will work out just the same way.
+
+56
+05:07.330 --> 05:09.320
+So now we're getting somewhere.
+
+57
+05:09.340 --> 05:14.860
+The shapes that we're rendering to the screen are actually representing something about the data. In the next
+
+58
+05:14.860 --> 05:15.260
+lecture
+
+59
+05:15.250 --> 05:19.980
+We'll be working with a more complex array of data and learning how to load that data from a file.

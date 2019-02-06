@@ -1,0 +1,48 @@
+1
+00:00:06,060 --> 00:00:10,650
+Over the course of this section you learn about some basic rules of thumb that should help you going
+
+2
+00:00:10,650 --> 00:00:14,930
+forward to design and build better visualizations.
+
+3
+00:00:15,000 --> 00:00:18,780
+I'll keep coming back to some of the lessons that you learned in this section throughout the rest of
+
+4
+00:00:18,780 --> 00:00:19,630
+the course.
+
+5
+00:00:21,440 --> 00:00:26,640
+In the next section we'll be improving on the bar chart that you made the Paullus coffee chain in Section
+
+6
+00:00:26,650 --> 00:00:27,460
+street.
+
+7
+00:00:27,830 --> 00:00:30,100
+Adding in some updating elements.
+
+8
+00:00:30,350 --> 00:00:35,990
+This is where things get really interesting with D-3 as we can start to create some unique visualizations
+
+9
+00:00:35,990 --> 00:00:38,830
+that we can't really express in any other form.
+
+10
+00:00:39,720 --> 00:00:45,150
+I'll also be explaining the D-3 update pattern which should hopefully clear things up with confusing
+
+11
+00:00:45,150 --> 00:00:46,130
+code that we saw.
+
+12
+00:00:46,130 --> 00:00:48,160
+Now the data join in section 2.
+

@@ -1,0 +1,540 @@
+1
+00:00:07,190 --> 00:00:12,360
+In this lecture we'll be adding three new interactive elements to our visualization which should all
+
+2
+00:00:12,360 --> 00:00:14,580
+improve by use as experience.
+
+3
+00:00:14,970 --> 00:00:20,340
+We'll be writing some lines of Jay queery to attach event listeners to these ailments and react to these
+
+4
+00:00:20,340 --> 00:00:22,850
+events to get the behavior that we're looking for.
+
+5
+00:00:23,800 --> 00:00:29,550
+To do this we'll need to take a step back and figure out exactly which actions each event should trigger.
+
+6
+00:00:32,830 --> 00:00:37,960
+As I mentioned in the last lecture one pretty annoying feature of our bubble chart right now is that
+
+7
+00:00:37,960 --> 00:00:43,750
+we can't pause the visualization to look at different countries in the same year to fix this will be
+
+8
+00:00:43,750 --> 00:00:49,620
+adding a pause button which allows users to stop or loop in a certain year.
+
+9
+00:00:49,630 --> 00:00:55,660
+It might also be helpful for our users to have a reset button which flicks the timer back to the 18:00
+
+10
+00:00:55,660 --> 00:00:56,440
+again.
+
+11
+00:00:56,860 --> 00:01:01,540
+This would mean that if someone's interested in looking at the world early on in the data then they
+
+12
+00:01:01,540 --> 00:01:05,950
+don't need to wait for a visualization to loop around again to replay the same period.
+
+13
+00:01:06,780 --> 00:01:12,310
+I will also be adding a constant filter to our visualization which will lead the use of filter out the
+
+14
+00:01:12,310 --> 00:01:18,290
+countries from just one continent which might make the graph less crowded and easier to understand.
+
+15
+00:01:20,710 --> 00:01:26,470
+Let's think about which events we need to listen to and consider what our event handlers should be doing
+
+16
+00:01:26,470 --> 00:01:29,750
+in response to get the behavior that we're looking for.
+
+17
+00:01:30,930 --> 00:01:37,780
+First of let's think about our butts for stopping and starting that visualization when a loop is running.
+
+18
+00:01:37,880 --> 00:01:39,920
+This button should be a pause button.
+
+19
+00:01:40,270 --> 00:01:45,340
+And once it gets clicked a loop should stop running and the button should become a play button.
+
+20
+00:01:46,270 --> 00:01:52,420
+When we press play this should restart our loop at the same point and the button should become a pause
+
+21
+00:01:52,420 --> 00:01:53,290
+button again.
+
+22
+00:01:54,610 --> 00:02:00,520
+To do this we'll need to think about both conditions the button could be in will have one response if
+
+23
+00:02:00,520 --> 00:02:03,570
+the button is a pause button and another response.
+
+24
+00:02:03,580 --> 00:02:11,460
+If the button is a play button for a reset button We'll also be listening to a click event this time
+
+25
+00:02:11,460 --> 00:02:16,470
+or event handler function should reset of visualization time the back to the start.
+
+26
+00:02:16,470 --> 00:02:24,230
+So the button started dating from the 18:00 again will also need to update a year label again to match
+
+27
+00:02:24,230 --> 00:02:28,960
+the year that we return to for our constant filter.
+
+28
+00:02:29,030 --> 00:02:34,820
+We'll be working with a select box to use it can choose a value from the event that we'll be listening
+
+29
+00:02:34,820 --> 00:02:41,030
+for will be the change event on the select box and again to add filter to our update function according
+
+30
+00:02:41,030 --> 00:02:46,850
+to the current value of our selection and I'll trigger an update visualization when the selection changes
+
+31
+00:02:47,270 --> 00:02:52,620
+which will update the chart at the current year in case the visualisations currently reports.
+
+32
+00:02:52,860 --> 00:02:56,200
+The visualization that we have at the moment has a problem.
+
+33
+00:02:56,200 --> 00:03:03,670
+We don't have the ability to stop and start our interval through decrease interval function as you might
+
+34
+00:03:03,670 --> 00:03:10,540
+recall from Section 5 will need to use javascript set interval method instead which allows us to pause
+
+35
+00:03:10,540 --> 00:03:12,620
+the loop using clear interval.
+
+36
+00:03:13,060 --> 00:03:18,640
+This will mean the pause button will use a clear interval method and play button when you use the set
+
+37
+00:03:18,640 --> 00:03:23,270
+interval method will need to store this interval as a global variable.
+
+38
+00:03:23,350 --> 00:03:27,010
+So the play button and the reset button will both have access to it.
+
+39
+00:03:28,390 --> 00:03:35,410
+Returning to our code I started off by adding three new components to index indexed HVM l file including
+
+40
+00:03:35,410 --> 00:03:38,130
+some bootstrap classes to give it some structure.
+
+41
+00:03:38,950 --> 00:03:44,330
+We'll start off with a play button when the page is first loaded so users can start the visualization
+
+42
+00:03:44,330 --> 00:03:45,390
+themselves.
+
+43
+00:03:46,060 --> 00:03:52,690
+For a select box the default selection has a value of all the values for each of the other options corresponds
+
+44
+00:03:52,690 --> 00:03:57,700
+to the consonant names from other data going back to our main js file here.
+
+45
+00:03:57,780 --> 00:04:04,810
+Or start by converting our D-3 interval function to javascript set interval function because I don't
+
+46
+00:04:04,810 --> 00:04:11,230
+want to start running as soon as visualization is loaded I'm going to put out interval code into a separate
+
+47
+00:04:11,230 --> 00:04:12,270
+function.
+
+48
+00:04:12,730 --> 00:04:19,060
+I'm going to call this function step and whenever it gets called it will add 1 to the value of the timer
+
+49
+00:04:19,210 --> 00:04:23,890
+resetting it to 0 if we're at the end of our data and update the visualization.
+
+50
+00:04:23,890 --> 00:04:29,400
+At the time I'm going to call this step function when the user presses play.
+
+51
+00:04:29,620 --> 00:04:32,940
+Next I'll write the code for a play button.
+
+52
+00:04:32,940 --> 00:04:38,850
+I'm grabbing hold of the button element here with Jay Querrey and I'm going to attach an event listener
+
+53
+00:04:38,920 --> 00:04:40,540
+using on method.
+
+54
+00:04:40,570 --> 00:04:46,890
+We're listening for a click of the button so Pasch click as the first argument here and I'll write out
+
+55
+00:04:46,920 --> 00:04:51,510
+the logic inside an anonymous function which will be our event handler.
+
+56
+00:04:51,850 --> 00:04:56,680
+We know that we'll have to write some separate logic for the case where the button is a play button
+
+57
+00:04:56,940 --> 00:05:03,190
+and this is a pause button but I'm just going to start off by implementing the button as a play button
+
+58
+00:05:04,320 --> 00:05:09,360
+once I click the button then all willing to do is start the interval loop running.
+
+59
+00:05:09,660 --> 00:05:16,030
+Here's the code that will use to do that all you are saying here is the loop should start executing
+
+60
+00:05:16,030 --> 00:05:20,940
+a step function repeatedly with the delay of 100 milliseconds.
+
+61
+00:05:21,340 --> 00:05:26,920
+Then with storing this interval in a variable called interval and I'll make this available throughout
+
+62
+00:05:26,920 --> 00:05:34,210
+my code by declaring it was a global function at the top of my file I also need to add the formatted
+
+63
+00:05:34,210 --> 00:05:38,350
+data variables like global so we can access this data from us.
+
+64
+00:05:38,350 --> 00:05:44,680
+That function which lies outside the data loading function or then makes sure that we're working with
+
+65
+00:05:44,680 --> 00:05:51,420
+this global in our data loading function rather than creating another variable with a local scope.
+
+66
+00:05:51,460 --> 00:05:57,040
+Once we flick back to our browser we can see that the button is doing what we are expecting it to.
+
+67
+00:05:57,070 --> 00:05:59,390
+So I'll move onto the next stage of making it work.
+
+68
+00:05:59,390 --> 00:06:01,650
+It's a pause button too.
+
+69
+00:06:01,720 --> 00:06:07,060
+Firstly I want the buttons text to say pause after we click it to do this.
+
+70
+00:06:07,060 --> 00:06:13,120
+I'll grab hold of the button element using j query on this which in this context represents the button
+
+71
+00:06:13,120 --> 00:06:14,780
+that we just clicked.
+
+72
+00:06:15,040 --> 00:06:21,430
+Next I'm going to set the buttons text to pause as a quick sanity check or refresh the page and test
+
+73
+00:06:21,430 --> 00:06:22,580
+this again.
+
+74
+00:06:23,140 --> 00:06:27,010
+And it looks like the button is behaving like we want it to.
+
+75
+00:06:27,030 --> 00:06:31,680
+Next I want to consider the case where we're pressing the button when it's meant to be a pause button
+
+76
+00:06:32,220 --> 00:06:32,850
+to do this.
+
+77
+00:06:32,850 --> 00:06:37,230
+I'm going to use an if else statement in the first case.
+
+78
+00:06:37,260 --> 00:06:42,200
+The buttons text says play them we want to run the code that we just wrote.
+
+79
+00:06:42,480 --> 00:06:47,070
+However if the text says pause then we want to run some different code.
+
+80
+00:06:47,090 --> 00:06:47,760
+Pauses.
+
+81
+00:06:47,850 --> 00:06:50,180
+Loop to study this case of.
+
+82
+00:06:50,190 --> 00:06:56,010
+I'm going to change the text of a button back to play when it gets pressed the way that we pause a set
+
+83
+00:06:56,010 --> 00:07:00,680
+interval loop is to use the clear interval function on the interval that we have running.
+
+84
+00:07:00,780 --> 00:07:04,480
+Can access the loop from the integral variable that we set earlier.
+
+85
+00:07:04,560 --> 00:07:10,740
+So the line that we end up with is clear interval of interval.
+
+86
+00:07:10,770 --> 00:07:16,440
+Now when we refresh the page we have a button that does the visualization when we press the play button
+
+87
+00:07:16,830 --> 00:07:18,690
+and then pauses the visualization.
+
+88
+00:07:18,680 --> 00:07:26,020
+When we press pause the next step is to add this reset button which is make a visualization jump back
+
+89
+00:07:26,020 --> 00:07:33,950
+to the 18:00 again our reset button should follow the same pattern that we just used for a play button.
+
+90
+00:07:34,170 --> 00:07:36,570
+Will you j where to get hold of it.
+
+91
+00:07:36,570 --> 00:07:42,670
+Using the ID reset button this time and again we're going to make an event handler for the Click event
+
+92
+00:07:44,610 --> 00:07:45,280
+Theresa.
+
+93
+00:07:45,440 --> 00:07:48,800
+Outside all that we need to do is to adjust our time variable.
+
+94
+00:07:48,800 --> 00:07:50,040
+Setting it to zero.
+
+95
+00:07:51,020 --> 00:07:53,230
+If we just leave it like this.
+
+96
+00:07:53,240 --> 00:07:59,510
+Then the visualization will continue to run if the loop is active and will stay paused if the loop isn't
+
+97
+00:07:59,510 --> 00:08:00,750
+running.
+
+98
+00:08:00,770 --> 00:08:07,370
+However if we try to hit our reset button while our visualization is paused then a chart won't update
+
+99
+00:08:07,400 --> 00:08:14,620
+until we press play again as a quick fix to this we're adding a quarter update with a data in its first
+
+100
+00:08:14,620 --> 00:08:15,270
+year.
+
+101
+00:08:16,960 --> 00:08:22,610
+Testing this out in our browser again we can see that the reset button is behaving as expected.
+
+102
+00:08:23,020 --> 00:08:25,660
+It's working here if the visualization is running.
+
+103
+00:08:25,900 --> 00:08:32,720
+And if we press pause and reset it then we can see the state of the world and the 18:00.
+
+104
+00:08:32,790 --> 00:08:39,080
+Finally for our constant filter I want to add a filter function at the start of the update function.
+
+105
+00:08:39,970 --> 00:08:46,820
+I'll start by grabbing the value of the continent select box using Jey query and use that value to filter
+
+106
+00:08:46,820 --> 00:08:48,360
+the data array.
+
+107
+00:08:48,560 --> 00:08:55,190
+If the select box has a value of all then I want every element in my array to pass the filter.
+
+108
+00:08:55,310 --> 00:08:57,020
+So it just returns true.
+
+109
+00:08:58,900 --> 00:09:04,630
+However if the select box has a value of something different a string that matches one of the consonant
+
+110
+00:09:04,630 --> 00:09:12,440
+names then I only want the filter to return the data points that belong to that consonant to do this
+
+111
+00:09:12,500 --> 00:09:18,200
+or return the expression where the consonant field of the object in the array is equal to the name of
+
+112
+00:09:18,200 --> 00:09:20,200
+the constant that was selected.
+
+113
+00:09:20,660 --> 00:09:23,090
+This expression will evaluate to true.
+
+114
+00:09:23,120 --> 00:09:27,980
+If we're looking at a country that matches the consonant which will mean that the filter keeps it in
+
+115
+00:09:27,980 --> 00:09:34,430
+an array and they'll return false if the country has a consonant with any other name which will excluded
+
+116
+00:09:34,460 --> 00:09:36,650
+from the array.
+
+117
+00:09:36,830 --> 00:09:43,100
+Looking back at the browser now we can see that our filter is already working as expected because our
+
+118
+00:09:43,100 --> 00:09:50,030
+filter is placed inside update function and the update function is running on every step of timer.
+
+119
+00:09:50,030 --> 00:09:55,030
+The visualization is constantly checking to see whether our selection has changed.
+
+120
+00:09:55,560 --> 00:10:01,580
+However just like with our reset button if we try to make a change when our visualization is paused
+
+121
+00:10:02,000 --> 00:10:04,790
+we won't see the effect until we press play again.
+
+122
+00:10:06,630 --> 00:10:12,780
+To fix this we just need to update our visualization at the current time whenever the selection changes
+
+123
+00:10:13,530 --> 00:10:15,180
+or grab hold of the select box.
+
+124
+00:10:15,180 --> 00:10:22,140
+With Jake we're again using the ID tag constant select and this time will listen on the Change event
+
+125
+00:10:22,530 --> 00:10:24,010
+instead of the Click event.
+
+126
+00:10:25,290 --> 00:10:30,610
+Once we have that over our event handler need to do is to update our visualization.
+
+127
+00:10:30,620 --> 00:10:37,440
+At the current time which we can access with the time variable now that we finished off our constant
+
+128
+00:10:37,440 --> 00:10:43,890
+filter we now have the ability to selectively look at just one constant at a time which makes it easier
+
+129
+00:10:43,890 --> 00:10:46,380
+to separate all the circles on the screen.
+
+130
+00:10:47,370 --> 00:10:53,010
+We added a lot of new functionality in this lecture which will make a visualization a lot more useful
+
+131
+00:10:53,010 --> 00:10:54,140
+to users.
+
+132
+00:10:54,930 --> 00:10:58,460
+At this point you should feel comfortable with the practice of grabbing elements.
+
+133
+00:10:58,530 --> 00:11:04,470
+Jake Querrey attaching events to them and figuring out what our event handler should do.
+
+134
+00:11:05,410 --> 00:11:11,290
+In the next lecture I'll be taking things one step further by adding a Querrey UI slider which will
+
+135
+00:11:11,290 --> 00:11:14,170
+allow users to pinpoint the gear that they want to look at.
+

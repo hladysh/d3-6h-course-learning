@@ -1,0 +1,39 @@
+0
+00:06.420 --> 00:09.490
+By now, I hope that you're ready for the challenge of learning D3,
+
+1
+00:09.550 --> 00:14.640
+and excited by the possibilities that this powerful JavaScript library has to offer.
+
+2
+00:14.730 --> 00:19.230
+You should now know a basic amount about visualizations, and you should understand why D3 is such a
+
+3
+00:19.230 --> 00:21.710
+great entry point for web development work.
+
+4
+00:22.630 --> 00:26.920
+You also know what to expect from the course as I've shown you what you'll be learning across three
+
+5
+00:26.920 --> 00:30.560
+different stages, and you've had a look at the four class projects that
+
+6
+00:30.580 --> 00:33.690
+you'll get to complete. In the next section,
+
+7
+00:33.700 --> 00:36.880
+I'll be helping you to get set up with your development environment,
+
+8
+00:36.970 --> 00:42.700
+using D3 by yourself, and I'll be introducing you to some of the most important concepts for the library.
+
+9
+00:43.030 --> 00:47.870
+You'll be writing your first lines of D3 code, and attaching your first SVGs to the screen.

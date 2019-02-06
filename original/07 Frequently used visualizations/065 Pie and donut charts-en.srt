@@ -1,0 +1,752 @@
+1
+00:00:06,870 --> 00:00:13,380
+In this lecture I'll be teaching you how to make pie charts and Donat charts with T-3 using two different
+
+2
+00:00:13,380 --> 00:00:21,240
+examples for this I'll be showing you how to use the D-3 PI lay out introducing you to trees ARC path
+
+3
+00:00:21,240 --> 00:00:28,260
+generator and shanking the trick tween method which we can call on transition's.
+
+4
+00:00:28,340 --> 00:00:35,200
+I'll also be taking you through the process of converting some code into E-3 version 3 version for as
+
+5
+00:00:35,450 --> 00:00:43,560
+our second example is adapted from Version 3 code pie charts and one of the most common visualizations
+
+6
+00:00:43,620 --> 00:00:50,340
+out there because they offer a really simple way to visualize ratios between different categories because
+
+7
+00:00:50,340 --> 00:00:51,710
+they're so common.
+
+8
+00:00:51,810 --> 00:00:53,360
+Everybody knows how to read them.
+
+9
+00:00:53,370 --> 00:01:00,930
+So they usually a really safe bet that displaying any kind of data on a per capita basis if you're wondering
+
+10
+00:01:00,990 --> 00:01:05,370
+a donut shop is just a pie chart with an area cuts are in the middle.
+
+11
+00:01:05,370 --> 00:01:11,130
+Personally I think these are a lot more aesthetically pleasing than the regular pie chart and it's really
+
+12
+00:01:11,130 --> 00:01:14,730
+simple switch to go between the two three.
+
+13
+00:01:14,940 --> 00:01:20,740
+I'll be taking you through these two examples in this lecture for a first example here.
+
+14
+00:01:20,750 --> 00:01:25,840
+I've once again found an example from Mike Bostock on Bloch's dot org.
+
+15
+00:01:25,880 --> 00:01:31,820
+This time we have a CSP file for our data and I've gone ahead and put all of this code into my project
+
+16
+00:01:31,820 --> 00:01:32,310
+files.
+
+17
+00:01:32,320 --> 00:01:39,900
+As usual Again I don't like the idea of using these labels for a pie slices because they could always
+
+18
+00:01:39,900 --> 00:01:44,620
+potentially overlap if one pie slice comes to small.
+
+19
+00:01:44,630 --> 00:01:48,840
+So for this example I've taken these out of our walkthrough code.
+
+20
+00:01:49,080 --> 00:01:55,180
+If I was making this chart for an actual project I would once again i'd to make a legend to sit alongside
+
+21
+00:01:55,180 --> 00:01:58,610
+the graph for another example.
+
+22
+00:01:58,610 --> 00:02:03,650
+I wanted to show you an updating version of the pie chart because the update pattern looks a little
+
+23
+00:02:03,650 --> 00:02:06,580
+different morphing between different paths.
+
+24
+00:02:07,800 --> 00:02:15,420
+There was a beautiful example here from Mike Bostock but unfortunately it's still in Version 3 this
+
+25
+00:02:15,420 --> 00:02:21,540
+code needed a few tweaks so that we could use it properly envision for this is a common problem that
+
+26
+00:02:21,540 --> 00:02:28,940
+you'll sometimes have as legacy code in Version 3 still needs to be updated with version 4.
+
+27
+00:02:28,940 --> 00:02:32,140
+So let's take a look at our first example pie chart here.
+
+28
+00:02:33,020 --> 00:02:38,030
+We're not using the margin convention here although that's less important if our graph doesn't have
+
+29
+00:02:38,030 --> 00:02:44,570
+an X with setting a height and with variables and with defining the radius value here which we'll keep
+
+30
+00:02:44,570 --> 00:02:52,900
+using with setting the radius as half of the value which ever number of smallest out of width and height.
+
+31
+00:02:52,990 --> 00:02:59,090
+Next we're setting an ordinal scale with an array of colors and we're declaring our generator.
+
+32
+00:03:00,380 --> 00:03:07,240
+Our generator just needs to be given an inner and outer radius value where we've said the inner radius
+
+33
+00:03:07,240 --> 00:03:09,720
+to zero which gives a picture.
+
+34
+00:03:10,030 --> 00:03:17,650
+But all we need to do to change this to be a donut char is to give some value as the radius for example
+
+35
+00:03:17,650 --> 00:03:21,910
+of set the inner radius to be 8000 pixels less the radius value.
+
+36
+00:03:23,220 --> 00:03:26,080
+So isn't that sandwich nicer.
+
+37
+00:03:26,090 --> 00:03:31,250
+Next we're setting up a pie layout function which will pass our data to.
+
+38
+00:03:31,490 --> 00:03:36,830
+And here we're adding an SPG canvas using a group to shift it into the middle of the screen.
+
+39
+00:03:38,220 --> 00:03:44,700
+Next we're loading in our data here with the D-3 CSP function and we're using this type function again
+
+40
+00:03:44,700 --> 00:03:51,550
+to clean up our population values into numbers that we can work with then we're converting our data
+
+41
+00:03:51,550 --> 00:03:58,750
+using up-I layout function giving the results onto our data join entering a new item in that array and
+
+42
+00:03:58,760 --> 00:04:01,170
+then appending a path for each item.
+
+43
+00:04:02,390 --> 00:04:05,030
+This is working similarly to stack area.
+
+44
+00:04:05,070 --> 00:04:06,450
+So it's working.
+
+45
+00:04:06,680 --> 00:04:12,710
+We're passing in a function with no arguments which will automatically get given the item of data that
+
+46
+00:04:12,710 --> 00:04:19,500
+it's associated with we're then setting the fill of each of these shapes with a color scale.
+
+47
+00:04:19,500 --> 00:04:24,960
+Let's take a look at what our lab function is doing with some console logs.
+
+48
+00:04:25,010 --> 00:04:30,470
+Again a log or data as it's loaded as well as when we call our pi function on it.
+
+49
+00:04:31,850 --> 00:04:39,050
+So here we have the structure the data needs to be in to work with the pie lay out each row need to
+
+50
+00:04:39,050 --> 00:04:42,120
+associate to a category that we want to display.
+
+51
+00:04:43,380 --> 00:04:49,680
+Then we're using this value method of Pi layouts as an access a function to tell the three where I can
+
+52
+00:04:49,680 --> 00:04:53,880
+find the value for the pie slice that the item should show.
+
+53
+00:04:54,040 --> 00:05:01,680
+After running this function on our data we can see the changes that this has for every item of Pylea
+
+54
+00:05:01,690 --> 00:05:08,560
+or has added in some attributes for start and end angles and the original data object is available in
+
+55
+00:05:08,560 --> 00:05:10,020
+this data field again.
+
+56
+00:05:10,970 --> 00:05:16,040
+There's also this padding angle which you could have set up as a method with the Pylea out to give some
+
+57
+00:05:16,040 --> 00:05:18,180
+space between each of the slices.
+
+58
+00:05:19,510 --> 00:05:26,050
+When we passed this data onto our generator the generator will automatically recognize these field names
+
+59
+00:05:26,140 --> 00:05:29,050
+and construct the path as pages accordingly.
+
+60
+00:05:30,240 --> 00:05:34,210
+Once again we didn't actually need to do that much to build this chart.
+
+61
+00:05:34,560 --> 00:05:39,930
+The magic of using layouts in D-3 that we just need to figure out the right format of the data that
+
+62
+00:05:39,930 --> 00:05:45,800
+D-3 expects and then pass the Right now used in those methods.
+
+63
+00:05:45,850 --> 00:05:48,900
+Here's the code for the second example that we're working through.
+
+64
+00:05:49,450 --> 00:05:55,720
+I'm just working with the same file from blocks except that I've switched from using D-3 version 3 to
+
+65
+00:05:55,720 --> 00:06:02,970
+Version 4 everything at the top of our code looks the same except for a few lines in Version 3 which
+
+66
+00:06:02,970 --> 00:06:04,920
+has changed.
+
+67
+00:06:05,130 --> 00:06:08,570
+This is to be what scales looked like in version 3.
+
+68
+00:06:09,060 --> 00:06:16,840
+We used to have nested name spaces where each of the scales belong inside the D-3 scale module inversion
+
+69
+00:06:16,920 --> 00:06:21,990
+for one of the main changes which was that each of these names were changed.
+
+70
+00:06:22,730 --> 00:06:30,880
+So now we have D-3 scale Timon's to the three scaled up time three scale linear and sort of T-3 scaled
+
+71
+00:06:30,890 --> 00:06:34,910
+up Linnea and so on for ordinal scales.
+
+72
+00:06:34,910 --> 00:06:39,650
+In particular the syntax is totally different in version 3.
+
+73
+00:06:39,650 --> 00:06:45,560
+There was a scale that came fitted with each color scheme already but now we need to create a generic
+
+74
+00:06:45,560 --> 00:06:50,300
+ordinal scale and then sets it with one of the color schemes that D-3 gives us.
+
+75
+00:06:50,720 --> 00:06:56,090
+As I mentioned already when I introduce you to lay out back in the day layouts also used to come in
+
+76
+00:06:56,120 --> 00:07:03,930
+the branch of D-3 But now we have a layout function for each graph that we want to make.
+
+77
+00:07:03,940 --> 00:07:09,100
+So getting back to our code of change these two lines here so that our graph will work with version
+
+78
+00:07:09,190 --> 00:07:14,230
+4 will loading in the data as before with a TSB function.
+
+79
+00:07:14,250 --> 00:07:18,960
+This time however our data isn't in the right format straight away.
+
+80
+00:07:19,810 --> 00:07:22,580
+I'll make some console logs to show you what's going on.
+
+81
+00:07:24,280 --> 00:07:27,740
+We're flicking between two different categories for this chart.
+
+82
+00:07:27,970 --> 00:07:31,670
+Apples and oranges for each category.
+
+83
+00:07:31,680 --> 00:07:35,890
+We have some different regions that we're showing in our own chart.
+
+84
+00:07:36,200 --> 00:07:42,260
+If we look at our data as it's loaded in then you'll notice that every row is a region fruit.
+
+85
+00:07:42,440 --> 00:07:49,360
+If we passed this data straight to our pilot now we would get back a pie chart with eight slices but
+
+86
+00:07:49,360 --> 00:07:55,750
+we only want to show either the regions associated with apples or the regions associated with oranges
+
+87
+00:07:55,930 --> 00:07:58,360
+depending on what I use it wants to see.
+
+88
+00:07:58,750 --> 00:08:02,030
+So we need to group our data according to these keys.
+
+89
+00:08:03,590 --> 00:08:07,600
+We're achieving this here with the use of this next function.
+
+90
+00:08:07,620 --> 00:08:09,430
+Let's check out what this is doing.
+
+91
+00:08:11,200 --> 00:08:15,580
+We're setting the key to mesh on the fruit value of each item in the array.
+
+92
+00:08:15,850 --> 00:08:21,130
+Meaning that this will spits out a two item array with the rows associated with apples in one group
+
+93
+00:08:21,700 --> 00:08:28,850
+and the rows associated with oranges in the other this code here is just adding in our radio buttons
+
+94
+00:08:29,180 --> 00:08:34,930
+and it's saying that whenever a selection changes between oranges and apples the change function should
+
+95
+00:08:34,940 --> 00:08:35,920
+get fired.
+
+96
+00:08:37,040 --> 00:08:40,550
+This is actually coded in a really interesting way.
+
+97
+00:08:40,830 --> 00:08:46,070
+We're using a data joint at each of these options in Fromont nested data.
+
+98
+00:08:46,070 --> 00:08:51,440
+And here in the change again we're passing in the data associated with each of our items to the change
+
+99
+00:08:51,440 --> 00:08:52,120
+method.
+
+100
+00:08:53,040 --> 00:08:59,460
+So every time this radio button gets changed to oranges it will fire the change function with the orange
+
+101
+00:08:59,460 --> 00:09:02,060
+is part of the nest that we made.
+
+102
+00:09:02,300 --> 00:09:08,730
+Then inside our change function we're passing these rows to our pilot function with this values field.
+
+103
+00:09:09,860 --> 00:09:12,160
+This code gets a little confusing here.
+
+104
+00:09:13,140 --> 00:09:14,960
+We're looking at two variables.
+
+105
+00:09:15,000 --> 00:09:22,960
+Data zero data one data zero is the data that the pie chart is currently set with data.
+
+106
+00:09:22,960 --> 00:09:27,510
+One is the new array of data that we're updating our chart to show.
+
+107
+00:09:27,730 --> 00:09:32,860
+We're keeping track of these two arrays because we will need to look between both of them to handle
+
+108
+00:09:32,860 --> 00:09:36,040
+the transitions.
+
+109
+00:09:36,060 --> 00:09:40,610
+You can see that we're using unusual D-3 update pattern for these arcs here.
+
+110
+00:09:41,580 --> 00:09:48,240
+We're starting out with our data join we're passing in data one which is showing the rows in our data
+
+111
+00:09:48,240 --> 00:09:55,560
+specific to the fruit that we look at this key variable is just an access a function defined at the
+
+112
+00:09:55,560 --> 00:10:02,980
+bottom of a file which is telling the data method to match array items based on that region value.
+
+113
+00:10:03,020 --> 00:10:08,340
+I'll start off by explaining our code for the entering arcs first because we're setting some values
+
+114
+00:10:08,340 --> 00:10:09,770
+that we'll use later on.
+
+115
+00:10:10,730 --> 00:10:17,550
+For every item in the array that we need to enter onto the screen or appending a path we're using this
+
+116
+00:10:17,640 --> 00:10:24,440
+each method here to run some code for every item we're starting up by calling this fine neighbor our
+
+117
+00:10:24,520 --> 00:10:27,110
+function which we have at the bottom of the file.
+
+118
+00:10:28,460 --> 00:10:34,220
+We passed this function our data zero array which is the current state of our data for the change function
+
+119
+00:10:34,220 --> 00:10:41,140
+fired and our data one array which is the data that our visualization is changing to.
+
+120
+00:10:41,210 --> 00:10:48,580
+We're also giving it the items index in the new array and it's key which will be a region name.
+
+121
+00:10:48,640 --> 00:10:55,920
+Here we are using two separate functions fine proceeding and find the following fine proceeding will
+
+122
+00:10:55,920 --> 00:11:02,530
+give us the element in our data 0 Obray that is 1 index for where this element is placed in our data
+
+123
+00:11:02,590 --> 00:11:03,470
+1 array.
+
+124
+00:11:04,530 --> 00:11:10,890
+Then fine following will give us the element in our data zero array which comes after this element in
+
+125
+00:11:10,890 --> 00:11:18,220
+our data 1 array this code here is finding the element that comes before the item in the data zero array
+
+126
+00:11:18,760 --> 00:11:25,090
+and returning an object with the same starting and ending angle which matches the end angle as the up
+
+127
+00:11:25,120 --> 00:11:25,800
+for it.
+
+128
+00:11:27,180 --> 00:11:32,610
+We basically have an ELSE IF condition here which deals with the case that the new item that we want
+
+129
+00:11:32,610 --> 00:11:40,090
+to add in our day to one array is added that index 0 7 be no preceding values in the data zero array.
+
+130
+00:11:41,560 --> 00:11:48,340
+In that case we look for the following elements in the array the item at index 0 in data 0 and return
+
+131
+00:11:48,340 --> 00:11:55,660
+an object of the same start and end angle at the start angle the arc that follows it.
+
+132
+00:11:55,730 --> 00:12:02,560
+If the function can find either of these then this means that the array in data zero must be empty.
+
+133
+00:12:02,660 --> 00:12:10,040
+So we can tell that we're adding odds for the first time so going back to our Enter method here we're
+
+134
+00:12:10,040 --> 00:12:15,730
+setting a private field for each of our paths using the name Current.
+
+135
+00:12:15,750 --> 00:12:20,850
+This is just going to be used within the code that we're writing here and I will keep track of the data
+
+136
+00:12:20,850 --> 00:12:23,710
+array that it's currently set to.
+
+137
+00:12:23,820 --> 00:12:29,850
+If this is the first run of a change function or we haven't entered any auks onto our canvas yet then
+
+138
+00:12:29,880 --> 00:12:34,780
+we're setting the current value of our object here to the value of the item that we're looking at.
+
+139
+00:12:35,830 --> 00:12:42,250
+However if we do find a neighboring arc then we're setting the current value of Arc equal to the object
+
+140
+00:12:42,250 --> 00:12:50,110
+that was returned so to clarify this will be an object with the same start and end angle which matches
+
+141
+00:12:50,110 --> 00:12:57,000
+the angle that it's going to appear from then here we're setting the args fill value with a color scale
+
+142
+00:12:58,240 --> 00:13:05,010
+here is the first time you've seen this method called a tween Etra tween is a method that you can use
+
+143
+00:13:05,010 --> 00:13:11,400
+on transitions to define a custom interpolator for transitioning an attribute.
+
+144
+00:13:11,450 --> 00:13:13,520
+Why do we need this.
+
+145
+00:13:13,550 --> 00:13:20,870
+Well for simple attributes like the width of an SPG D-3 is transition's we can pretty easily figure
+
+146
+00:13:20,870 --> 00:13:29,840
+out the right values to use however D-3 has a tougher time with pack's for transitioning between paths.
+
+147
+00:13:30,120 --> 00:13:37,130
+It's not as obvious where D-3 should be requiring each path with its transition to make this clear.
+
+148
+00:13:37,150 --> 00:13:43,000
+We have to set this behavior with Ettrick tween the first argument here contains the attribute that
+
+149
+00:13:43,000 --> 00:13:44,250
+we're twinning.
+
+150
+00:13:44,260 --> 00:13:50,350
+In this case the D attribute for a pair the second you mentioned return a function that will run in
+
+151
+00:13:50,410 --> 00:13:56,890
+every take of a transition clock which will update the path that should be displayed for each ugh.
+
+152
+00:13:57,700 --> 00:14:03,940
+Here's the function that we're using at the bottom of a file as usual we're allowed access to the item
+
+153
+00:14:03,950 --> 00:14:10,460
+in our data array that we're working with with this the argument this is the item in the data 1 array
+
+154
+00:14:10,460 --> 00:14:12,650
+that we want to enter onto the screen.
+
+155
+00:14:13,630 --> 00:14:19,540
+So this function that we're returning here is going to run on every take at the clock and it'll update
+
+156
+00:14:19,540 --> 00:14:21,500
+or attribute to this value.
+
+157
+00:14:22,720 --> 00:14:30,250
+This team variable turns out to be a number between 0 and 1 representing the time and this variable
+
+158
+00:14:30,250 --> 00:14:37,470
+here is giving as a custom interpolator to use when giving it two objects which is going to transition
+
+159
+00:14:37,470 --> 00:14:40,120
+between the current.
+
+160
+00:14:40,120 --> 00:14:45,970
+Is the value that we just set which is the object with the same startled end angle where arc is going
+
+161
+00:14:45,970 --> 00:14:47,960
+to appear from.
+
+162
+00:14:48,010 --> 00:14:54,400
+So when we pass a value between 0 and 1 to this and interpolate here it will spits out an object which
+
+163
+00:14:54,400 --> 00:14:59,650
+has some proportion of the way between the object that we're starting from and the one that we're ending
+
+164
+00:14:59,680 --> 00:15:00,340
+up with.
+
+165
+00:15:01,950 --> 00:15:10,290
+Once we have that set we're updating the current value to show the angles the arc has once it's transition.
+
+166
+00:15:10,320 --> 00:15:14,020
+We also have an update which is doing something similar.
+
+167
+00:15:14,100 --> 00:15:19,590
+We are using the same arc tween function and the bottom of the file to change the value of a D attributes
+
+168
+00:15:19,650 --> 00:15:21,300
+every take of the clock.
+
+169
+00:15:21,750 --> 00:15:27,930
+So once the arc enters we have it start and end angle from setting the current field.
+
+170
+00:15:27,960 --> 00:15:34,080
+So for updating we're transitioning between those angles and the ones that we get from the new data
+
+171
+00:15:34,110 --> 00:15:35,650
+array.
+
+172
+00:15:35,710 --> 00:15:42,160
+Finally for exiting elements we want to transition from our current value to an arc with the same start
+
+173
+00:15:42,160 --> 00:15:45,520
+and end goal which matches where its neighbor will be.
+
+174
+00:15:46,350 --> 00:15:52,130
+We're doing this by setting the data associated with the exciting element to this value here.
+
+175
+00:15:53,330 --> 00:15:58,110
+This time when using find neighbor with data arrays switched around.
+
+176
+00:15:58,670 --> 00:16:02,470
+This will return the position of the angle in our data one array.
+
+177
+00:16:02,480 --> 00:16:08,610
+The options shrink towards giving its neighbor in the data zero array.
+
+178
+00:16:08,670 --> 00:16:14,940
+After this lecture you've been introduced to making pie charts and D-3 you should know how the pie layout
+
+179
+00:16:14,940 --> 00:16:20,180
+works together with D-3 is our generator to quickly make a pie chart on your.
+
+180
+00:16:20,180 --> 00:16:25,790
+Now where the Attah tween method the transitions gibbers to handle path transitions.
+
+181
+00:16:26,100 --> 00:16:29,150
+There ended up being a pretty in-depth walkthrough.
+
+182
+00:16:29,430 --> 00:16:35,190
+Again don't worry if you didn't completely understand every single line in this file right away.
+
+183
+00:16:35,520 --> 00:16:39,860
+In the same way that you don't need to know how a car's engine works to drive.
+
+184
+00:16:40,080 --> 00:16:45,730
+You don't need to know how these particular help functions are working to successfully build the picture.
+
+185
+00:16:46,620 --> 00:16:51,540
+The important thing is that you know which code you need to change in order to fit the visualization
+
+186
+00:16:51,540 --> 00:16:53,020
+with your data.
+
+187
+00:16:53,980 --> 00:16:59,050
+In the next lecture I'll be running you through word classes which will represent an engaging way to
+
+188
+00:16:59,050 --> 00:17:00,630
+visualize lots of text.
+

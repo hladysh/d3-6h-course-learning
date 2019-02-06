@@ -1,0 +1,72 @@
+1
+00:00:07,250 --> 00:00:11,210
+Now you have a good amount of experience with using the D-3 library.
+
+2
+00:00:11,210 --> 00:00:15,720
+It should be pretty easy for you to understand what's going on in a D-3 file.
+
+3
+00:00:16,160 --> 00:00:21,350
+So for whenever you introduce you to a new visualization I've had to step you carefully through the
+
+4
+00:00:21,350 --> 00:00:27,050
+process and show you how to write everything at in the real world.
+
+5
+00:00:27,050 --> 00:00:32,630
+You should never do starting your projects with empty files in almost every visualization that you're
+
+6
+00:00:32,630 --> 00:00:34,130
+likely to create.
+
+7
+00:00:34,130 --> 00:00:38,700
+There's probably someone out there who's already created something similar.
+
+8
+00:00:39,380 --> 00:00:45,950
+The process of physically writing this code out for yourself was useful for making you more comfortable
+
+9
+00:00:45,950 --> 00:00:52,190
+with what different functions are doing in D-3 But now you should get used to adapting your code from
+
+10
+00:00:52,250 --> 00:00:52,990
+others.
+
+11
+00:00:54,490 --> 00:01:00,130
+In the next three sections I'll be introducing you to 11 new types of visualization.
+
+12
+00:01:00,130 --> 00:01:04,560
+Instead of writing these visualizations myself I did what you'll be doing now.
+
+13
+00:01:04,570 --> 00:01:10,930
+Going forward I looked up the visualization that I wanted online and they copied the files they wanted
+
+14
+00:01:10,960 --> 00:01:12,410
+onto my local machine.
+
+15
+00:01:13,400 --> 00:01:18,410
+By the end of this section you'll know how to read somebody else's D-3 code to get a quick overview
+
+16
+00:01:18,410 --> 00:01:19,670
+of what's going on.
+
+17
+00:01:20,030 --> 00:01:24,920
+You'll know where to look to search for the visualizations that you're looking for and you'll be aware
+
+18
+00:01:24,920 --> 00:01:28,760
+of some of the nuances that come with dealing with different versions of the three.
+

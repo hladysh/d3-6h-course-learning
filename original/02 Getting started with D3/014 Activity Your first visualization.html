@@ -1,0 +1,249 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>014 Activity Your first visualization</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>You now know how to load in data from another file with D3...</p>
+
+<pre class="prettyprint linenums">d3.csv("path/to/file.csv").then(function(data){
+    // code goes here
+});</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>You also know how to use D3 <code>selectAll()</code>  with the data, enter, and append methods to add multiple SVGs to the screen at once...</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">var circles = d3.selectAll("circle")
+    .data(data);
+
+circles.enter().append("circle")
+    .attr("cx", "100")...
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Using what you learned in the last two lectures, I want you to build this simple visualization:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p><img height="198" src="https://udemy-images.s3.amazonaws.com:443/redactor/raw/2018-02-20_15-54-07-a786c5b98d466c313d0df4d6436d6b31.png" width="178"></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol><li>Use D3 to read in the data from the <code>buildings.json</code>  file into your <code>main.js</code>  file. Log the data out to your console, and take a look at the format of your array.</li><li>Write a <code>forEach()</code> loop for your data array to convert the height values from strings to numbers.</li><li>Add an SVG to the <code>#chart-area</code>  div in the index.html file. Give it a width of 500px and a height of 500px.</li><li>Use a data join to add a rectangle for each building in the dataset to your SVG.</li><li>Stagger the rectangles by their x-coordinates, and make their heights equal to the “height” values from your JSON file.</li></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Again, you can find the template files for this lecture in the resources section of this activity.<br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Don't forget to run all of your code over a localhost server when programming in D3.</p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

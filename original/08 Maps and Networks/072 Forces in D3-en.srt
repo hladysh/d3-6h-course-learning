@@ -1,0 +1,344 @@
+1
+00:00:05,930 --> 00:00:13,130
+In this lecture I'll be introducing you to the D-3 for slabs which allows us to make visualizations
+
+2
+00:00:13,140 --> 00:00:19,200
+with shapes that move around the screen in a way that represents something about data.
+
+3
+00:00:19,410 --> 00:00:25,380
+This is a really good way to create custom interactive visualizations because it can add an element
+
+4
+00:00:25,380 --> 00:00:28,230
+of playfulness that helps to engage the user.
+
+5
+00:00:29,160 --> 00:00:32,710
+I'll be showing you the basic syntax for adding these forces to your ass.
+
+6
+00:00:32,720 --> 00:00:37,880
+Veejays and I'll show you a few examples which use of force lay out particularly well
+
+7
+00:00:40,880 --> 00:00:46,550
+the first layout allows us to create a physics simulator which we can use to visualize what it would
+
+8
+00:00:46,550 --> 00:00:52,760
+look like to assign the SPG some forces depending on the data that they represent.
+
+9
+00:00:53,000 --> 00:00:58,760
+Some examples of implantations could be to make elements or tracks or repel each other by a particular
+
+10
+00:00:58,760 --> 00:01:06,470
+strength to show that some elements are in some way connected by adding links between them containing
+
+11
+00:01:06,470 --> 00:01:12,800
+elements into a particular area of the screen or giving element some sense for positions that they're
+
+12
+00:01:12,800 --> 00:01:20,030
+spaced out to medically or show you a few examples that show us the kind of stuff that you can do with
+
+13
+00:01:20,030 --> 00:01:21,080
+a forced laugh.
+
+14
+00:01:22,570 --> 00:01:27,490
+Here's a map showing all of the different flight paths between different U.S. airports.
+
+15
+00:01:28,110 --> 00:01:33,130
+The map is updating to show how different flights have wiggled around these pets over time.
+
+16
+00:01:33,720 --> 00:01:41,590
+We're using links to illustrate these flight paths and updating them as our data changes.
+
+17
+00:01:41,800 --> 00:01:47,710
+Here's a different example where we're using forces to space out our data points into separate categories.
+
+18
+00:01:48,820 --> 00:01:55,690
+In this case we're visualizing MLS teams performances in different years and we're also using D-3 forces
+
+19
+00:01:55,690 --> 00:01:58,570
+to space them out to the right year.
+
+20
+00:01:58,570 --> 00:02:03,940
+This is important because if we did this as a normal scatterplot then we'd have overlapping circles
+
+21
+00:02:03,940 --> 00:02:06,420
+where teams scored the same number of points.
+
+22
+00:02:08,050 --> 00:02:13,490
+As one more example here's a version of a word cloud which is made with forces rather than the cloud
+
+23
+00:02:13,520 --> 00:02:14,620
+layer.
+
+24
+00:02:15,290 --> 00:02:21,020
+All of these words are flying in from the size of the canvas and eventually settled down in the middle
+
+25
+00:02:21,860 --> 00:02:29,580
+as a basic three step process that we need to follow whenever we want to add forces onto our visualization.
+
+26
+00:02:29,680 --> 00:02:36,580
+Firstly we need to make a call to D-3 for simulation to start running of physics simulator.
+
+27
+00:02:36,580 --> 00:02:43,110
+Next we need to add some forces that we want to visualize using some force function that D-3 gives us.
+
+28
+00:02:43,540 --> 00:02:50,660
+And finally we need to create an event handler which will run some carrots updates as Ficci positions.
+
+29
+00:02:50,860 --> 00:02:53,200
+Every time the simulation has a take
+
+30
+00:02:56,400 --> 00:02:59,930
+Here's a simple example of some D-3 forces action.
+
+31
+00:03:00,930 --> 00:03:04,830
+You'll often see the terms nodes and links used in this setting.
+
+32
+00:03:05,660 --> 00:03:12,950
+In this context a node is a piece of data within the system and the link represents a relationship between
+
+33
+00:03:12,980 --> 00:03:20,180
+two of these different nodes with defining and lists of nodes is an array of empty objects here which
+
+34
+00:03:20,180 --> 00:03:22,630
+we're passing into us simulation.
+
+35
+00:03:23,060 --> 00:03:29,660
+We're adding two forces setting the charge in the center point and then we're firing this take function
+
+36
+00:03:29,750 --> 00:03:34,760
+whenever the simulation updates inside the tick function.
+
+37
+00:03:34,760 --> 00:03:40,410
+We're appending our circles that relate to the same array of data that we're using with simulation.
+
+38
+00:03:41,210 --> 00:03:48,770
+What's happening here is that a simulation is attaching x and y fields to data objects which will update
+
+39
+00:03:48,860 --> 00:03:56,920
+on every tick of a clock within a dating circle positions appropriately whenever the tick function runs
+
+40
+00:03:57,980 --> 00:03:59,870
+once everything settles down.
+
+41
+00:03:59,870 --> 00:04:05,990
+The image on the right is what we're left with setting the charge force means that our circles repel
+
+42
+00:04:05,990 --> 00:04:12,170
+each other little and setting the sends a force means that they gravitate towards the middle of canvas
+
+43
+00:04:14,630 --> 00:04:21,910
+has a list of the different forces that T3 is forced lay out kids to play around with for center to
+
+44
+00:04:22,040 --> 00:04:28,260
+find the center point of gravity force many body defines the charge of each of these feet.
+
+45
+00:04:28,330 --> 00:04:37,430
+GS force Kalighat gives is a way to stop the elements from overlapping force x and y make elements point
+
+46
+00:04:37,430 --> 00:04:45,810
+towards a certain coordinate and force link causes linked SVGA to stay a fixed distance from one another.
+
+47
+00:04:47,120 --> 00:04:51,480
+We add in forces using the force method as shown here below.
+
+48
+00:04:51,770 --> 00:04:55,560
+The first arguments this method is a type of force that we're adding.
+
+49
+00:04:55,970 --> 00:05:02,360
+And the second argument is the force function that we want to use or go through each of these forces
+
+50
+00:05:02,360 --> 00:05:04,960
+one by one to show you how they work.
+
+51
+00:05:07,520 --> 00:05:08,760
+Full force sensor.
+
+52
+00:05:08,800 --> 00:05:14,530
+We just need to provide x and y coordinates to the function which will define the point that our nodes
+
+53
+00:05:14,530 --> 00:05:15,890
+will revolve around.
+
+54
+00:05:16,360 --> 00:05:22,810
+So here after using this all of us locals will be sucked into the points in the graph has an x value
+
+55
+00:05:22,810 --> 00:05:27,980
+of 100 and a Y value of 100.
+
+56
+00:05:28,270 --> 00:05:35,260
+Next we can set up elements have certain charges to attract or repel each other by using the force many
+
+57
+00:05:35,260 --> 00:05:36,790
+body functions.
+
+58
+00:05:37,300 --> 00:05:44,540
+We can pass in a strength value to set how this chart should look if we pass in a negative value here.
+
+59
+00:05:44,770 --> 00:05:51,790
+Our SVGA age will repel each other and if we pass in a positive value then will attract each other.
+
+60
+00:05:51,790 --> 00:05:58,120
+If we use a larger number then if change will pull each other with more strength if we don't specify
+
+61
+00:05:58,120 --> 00:05:59,200
+its strength value.
+
+62
+00:05:59,230 --> 00:06:06,190
+And D-3 will default to a value of minus 30 which should keep everything spread out neatly on the page.
+
+63
+00:06:09,080 --> 00:06:14,670
+Next we can set the collision force using the D-3 collide function.
+
+64
+00:06:14,670 --> 00:06:21,450
+The idea here is that we'll pass in a radius value which should match the radius of each circle and
+
+65
+00:06:21,520 --> 00:06:26,990
+circle won't be able to encroach on other circles past this invisible buffer.
+
+66
+00:06:28,140 --> 00:06:34,920
+In this example here we're setting some random radius values for each item in our array and we're giving
+
+67
+00:06:34,940 --> 00:06:41,250
+a fourth collide function access to this value when we're setting a collision radius on the right.
+
+68
+00:06:41,250 --> 00:06:47,510
+We can see how this might look if we didn't include a collision force and this would look a lot messier
+
+69
+00:06:48,080 --> 00:06:49,970
+as all of these circles would lap
+
+70
+00:06:53,430 --> 00:06:59,220
+the force acts and force wife functions can be really useful to grouping together different categories
+
+71
+00:06:59,220 --> 00:07:00,290
+on the page.
+
+72
+00:07:01,120 --> 00:07:07,150
+For example we're setting an X force here which we're setting based on the category of each of the circles
+
+73
+00:07:07,150 --> 00:07:08,690
+belong to.
+
+74
+00:07:09,550 --> 00:07:15,480
+This means that each circle will gravitate to an exposition that matches its category.
+
+75
+00:07:15,630 --> 00:07:21,780
+Again we can set the strength of this force using the strength method with a larger positive value meaning
+
+76
+00:07:21,810 --> 00:07:28,420
+the SVGA will be more firmly attached to the point that we pick.
+
+77
+00:07:28,460 --> 00:07:35,050
+Finally we can force certain nodes in our graph to be a certain distance apart by using the link for
+
+78
+00:07:35,050 --> 00:07:41,180
+us to do this we need to provide an array of objects that looks like this in the top left.
+
+79
+00:07:42,560 --> 00:07:48,350
+Each object should have a source and the target value which should match the idea that the two different
+
+80
+00:07:48,350 --> 00:07:56,320
+nodes in the system we can also set the distance these node should be separated by using the distance
+
+81
+00:07:56,320 --> 00:08:01,670
+method to this function and we can define the strength of this force using the strength method.
+
+82
+00:08:03,440 --> 00:08:09,320
+After this lecture you should have a good idea about how we can use forces and D-3 to make a host of
+
+83
+00:08:09,320 --> 00:08:13,340
+really cool effects and I've shown you some examples of how we can use this.
+
+84
+00:08:13,340 --> 00:08:17,390
+Lay out the data visualization in the next lecture.
+
+85
+00:08:17,390 --> 00:08:23,440
+We'll be exploring one of the most common uses of the force that I'll be introducing you to node link
+
+86
+00:08:23,480 --> 00:08:24,220
+diagrams.
+

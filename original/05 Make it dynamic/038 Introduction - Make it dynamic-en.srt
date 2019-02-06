@@ -1,0 +1,76 @@
+1
+00:00:06,330 --> 00:00:11,460
+At the end of section three we end up with a static bar chart to show how poor Pullens coffee chain
+
+2
+00:00:11,460 --> 00:00:14,530
+has been doing in its first six months.
+
+3
+00:00:14,580 --> 00:00:19,440
+We want to take that visualization and add some features onto it to make it more useful.
+
+4
+00:00:20,460 --> 00:00:25,830
+One of the benefits of using these three is that it gives us the ability to add beautiful transitions
+
+5
+00:00:25,830 --> 00:00:31,370
+to our charts allowing us to switch up the data that we're looking at in this section.
+
+6
+00:00:31,380 --> 00:00:37,230
+I'll be teaching you how to use the D-3 update pattern and you'll get to see what D-3 is doing behind
+
+7
+00:00:37,260 --> 00:00:38,150
+the scenes.
+
+8
+00:00:39,300 --> 00:00:44,430
+Using the files from a first class project will add the function that keeps updating the chart between
+
+9
+00:00:44,430 --> 00:00:45,970
+different sets of data.
+
+10
+00:00:46,800 --> 00:00:52,410
+Once we've turned towards botcher into a much slicker looking page for investors will then be able to
+
+11
+00:00:52,410 --> 00:00:55,740
+see how we can easily update this bocher into a scatterplot.
+
+12
+00:00:55,740 --> 00:01:01,740
+For us second class project by the end of this section you should feel comfortable with how the D-3
+
+13
+00:01:01,740 --> 00:01:08,570
+update pattern is working as you should know how to make a speed change react to a changing set of data.
+
+14
+00:01:08,570 --> 00:01:14,210
+This will give you a solid understanding of how the three works will make it a lot easier to design
+
+15
+00:01:14,210 --> 00:01:18,070
+and develop your own custom data visualisations from scratch.
+
+16
+00:01:19,090 --> 00:01:24,790
+You'll also have created a clone of a famous visualization from gapped mind which shows a bubble chart
+
+17
+00:01:24,820 --> 00:01:28,360
+displaying as different nations have evolved over time.
+
+18
+00:01:28,570 --> 00:01:33,640
+For this project you're actually creating something that looks really impressive as we start to unlock
+
+19
+00:01:33,640 --> 00:01:35,440
+the real power of these three.
+

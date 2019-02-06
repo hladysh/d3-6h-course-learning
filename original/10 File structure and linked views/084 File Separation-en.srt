@@ -1,0 +1,204 @@
+1
+00:00:07,450 --> 00:00:13,330
+Going back to code from project 3 You might think that things are starting to look a little messy.
+
+2
+00:00:13,360 --> 00:00:18,430
+There's so much going on in a manger file after we've added all of these different event listeners to
+
+3
+00:00:18,430 --> 00:00:21,460
+our visualization in this lecture.
+
+4
+00:00:21,470 --> 00:00:26,660
+I'll be presenting you with an alternative file structure which will make your code more usable for
+
+5
+00:00:26,660 --> 00:00:27,960
+larger projects.
+
+6
+00:00:31,120 --> 00:00:34,210
+Here's what we'll end up with at the end of this lecture.
+
+7
+00:00:34,390 --> 00:00:40,370
+Our main Jasc file will serve as a controller file which will handle events on the page and linked together
+
+8
+00:00:40,370 --> 00:00:43,730
+a common code that will spread across all files.
+
+9
+00:00:44,230 --> 00:00:50,560
+Then we'll create a new javascript file called Line J.S. which will contain everything that relates
+
+10
+00:00:50,560 --> 00:00:52,890
+to our line chart code.
+
+11
+00:00:52,930 --> 00:00:58,270
+As we start to add different types of visualizations to our page in this section We'll be including
+
+12
+00:00:58,270 --> 00:01:03,800
+more and more job script files for each type of visualization that we want to create.
+
+13
+00:01:03,800 --> 00:01:08,300
+I'll include both of these files with script tags inside of index file.
+
+14
+00:01:09,570 --> 00:01:15,180
+When we're trying to restructure a files like this it's important to have a good understanding of scope
+
+15
+00:01:15,270 --> 00:01:16,940
+in different parts of our code.
+
+16
+00:01:18,180 --> 00:01:23,700
+You'll see on this line that we've included another javascript file in our index page which at the moment
+
+17
+00:01:23,700 --> 00:01:26,870
+is just a blank file in our javascript directory.
+
+18
+00:01:27,900 --> 00:01:33,690
+Including two script tags like this basically just means the browser will copy and paste all of the
+
+19
+00:01:33,690 --> 00:01:34,960
+jast code to be right.
+
+20
+00:01:34,980 --> 00:01:42,960
+The first file stick it in here do the same with a second file including the main Jap's file after a
+
+21
+00:01:42,960 --> 00:01:49,140
+line of file so you can imagine that everything will write inside a line Choat file will be read by
+
+22
+00:01:49,140 --> 00:01:51,920
+a browser before anything in the main file.
+
+23
+00:01:54,070 --> 00:02:00,040
+So in the main file these variables that we're declaring at the top of the file will have a global scope
+
+24
+00:02:00,640 --> 00:02:05,210
+which is shared between the different files that we've included with script tags.
+
+25
+00:02:05,300 --> 00:02:11,210
+For instance we could easily access this selection in a file that was included after it.
+
+26
+00:02:11,290 --> 00:02:13,750
+However the file order matters here.
+
+27
+00:02:14,020 --> 00:02:19,320
+We try to access this variable in a file that we've included before it's then our code won't know what
+
+28
+00:02:19,320 --> 00:02:20,690
+we're talking about.
+
+29
+00:02:21,150 --> 00:02:26,110
+I'm going to shift as much of the line graph code that I can into this separate line chart.
+
+30
+00:02:26,170 --> 00:02:35,030
+X-File now in this file I have all the code that we'll be using to set up a line up where adding in
+
+31
+00:02:35,030 --> 00:02:43,280
+a SPG can this drawing a line setting up scales axes and labels and we're also defining update function
+
+32
+00:02:43,280 --> 00:02:43,940
+here.
+
+33
+00:02:45,200 --> 00:02:51,010
+In our main JSA file we now have event listeners and data loading function.
+
+34
+00:02:51,140 --> 00:02:57,290
+We can still access update function in this file since we're including a main file afterwhile line of
+
+35
+00:02:57,290 --> 00:02:58,740
+file.
+
+36
+00:02:58,900 --> 00:03:03,160
+We now have the building blocks of something that looks like a controller file.
+
+37
+00:03:03,400 --> 00:03:09,490
+Since all of the events on the page are handled in here this will start to make more sense as we add
+
+38
+00:03:09,490 --> 00:03:13,660
+more visualizations as it will become easier for us to group together.
+
+39
+00:03:13,660 --> 00:03:20,880
+Similar event handlers into the same functions will also be running the code to set up each of our visualizations
+
+40
+00:03:20,880 --> 00:03:21,560
+here.
+
+41
+00:03:21,670 --> 00:03:27,070
+Once we've written on visualisations in the object oriented style they'll be introducing in the next
+
+42
+00:03:27,070 --> 00:03:31,090
+two lectures after this lecture.
+
+43
+00:03:31,120 --> 00:03:34,360
+Our code is now a little bit more structured than before.
+
+44
+00:03:34,600 --> 00:03:40,600
+The file structure I've chosen to use is in no way canonical within the D-3 community but Elf has a
+
+45
+00:03:40,600 --> 00:03:43,280
+really simple structure that you can follow.
+
+46
+00:03:43,840 --> 00:03:48,020
+You might want to make a separate folder within your projects japes directory.
+
+47
+00:03:48,190 --> 00:03:53,950
+If you end up having a lot of different libraries to include in the next lecture you'll be talking about
+
+48
+00:03:53,950 --> 00:04:00,460
+the object orientated approach that I use for D3 development which will make it easy to create multiple
+
+49
+00:04:00,460 --> 00:04:04,660
+instances of the same kind of visualisation on the page.
+
+50
+00:04:04,660 --> 00:04:11,110
+This will also allow us to free up a global namespace making it easier for us to track variables across
+
+51
+00:04:11,110 --> 00:04:13,100
+more than one type of visualisation.
+

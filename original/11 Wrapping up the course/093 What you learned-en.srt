@@ -1,0 +1,87 @@
+0
+00:07.500 --> 00:12.790
+In this lecture, I want to give you a quick summary of what you learned in this course.
+
+1
+00:12.970 --> 00:19.960
+We covered a lot of content in D3, going all the way from complete novice level at the start, to a level
+
+2
+00:19.960 --> 00:23.330
+where you're able to build incredible data visualization pages.
+
+3
+00:23.340 --> 00:24.190
+at the end.
+
+4
+00:25.350 --> 00:30.120
+In the first few sections of the course, I taught you about the simplest components of D3 that would
+
+5
+00:30.120 --> 00:36.820
+keep coming up again and again as the material became more advanced. You learned about how SVGs and work
+
+6
+00:36.910 --> 00:44.680
+how to append them to the screen with D3, and you had a basic primer in the D3 data join. In Section 4, 
+
+7
+00:44.690 --> 00:51.440
+I introduced you to the fundamentals of visualization design. In section 5, we started adding updates
+
+8
+00:51.470 --> 00:53.200
+onto our visualizations.
+
+9
+00:53.510 --> 01:01.350
+And by the end of section 6, the user could directly interact with elements on the page. In Section 7, 8 and
+
+10
+01:01.350 --> 01:02.280
+9,
+
+11
+01:02.340 --> 01:08.700
+I gave you a quick run through of a whole host of different visualizations. On the way, we covered important
+
+12
+01:08.700 --> 01:17.270
+topics like layouts, nests, and Queues, which you'll see everywhere going forward in D3. Finally, in the
+
+13
+01:17.270 --> 01:24.560
+last section, I taught you the proper file structure to use to create a fully-fledged web app, where our visualizations
+
+14
+01:24.560 --> 01:30.190
+could communicate with each other through events in a control file. We gradually added complexity with
+
+15
+01:30.190 --> 01:32.810
+our projects as the course went on.
+
+16
+01:32.810 --> 01:39.070
+We started off with just a few rectangles in the page which turned into a bar chart. We added in updates
+
+17
+01:39.080 --> 01:40.150
+to make a clone of Gapminder's
+
+18
+01:40.160 --> 01:41.600
+bubble chart.
+
+19
+01:42.050 --> 01:45.370
+And then we added in events to make an interactive line chart.
+
+20
+01:46.240 --> 01:51.820
+Finally the final project represented the culmination of everything that you learned in the course,
+
+21
+01:51.820 --> 01:56.740
+as you created the professional data dashboard with many visualizations on the page at once.

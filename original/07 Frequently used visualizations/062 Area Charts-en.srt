@@ -1,0 +1,392 @@
+1
+00:00:05,920 --> 00:00:13,490
+In this lecture I'll be introducing you to every eight jobs in D-3 a walk through some example code
+
+2
+00:00:13,490 --> 00:00:17,100
+line by line introducing you to anything that we find.
+
+3
+00:00:17,120 --> 00:00:23,540
+You went have seen before the code in this lecture is really similar to the line graph code that I gave
+
+4
+00:00:23,540 --> 00:00:25,530
+you at the start of project three.
+
+5
+00:00:25,880 --> 00:00:34,600
+Except this time our path generates it will give us an area rather than a line just to be clear before
+
+6
+00:00:34,600 --> 00:00:36,230
+we get started.
+
+7
+00:00:36,310 --> 00:00:41,560
+An area chart is pretty similar to a line chart except that we have two lines that withdrawing an area
+
+8
+00:00:41,560 --> 00:00:42,250
+between.
+
+9
+00:00:42,400 --> 00:00:49,180
+Instead of just one we can use area charts and D-3 to make something quite advanced like the curve on
+
+10
+00:00:49,180 --> 00:00:54,970
+the right which is showing the difference between temperatures into different cities at different times
+
+11
+00:00:54,970 --> 00:00:56,490
+of the year.
+
+12
+00:00:56,680 --> 00:01:03,370
+If the area is green it means that one of them was warmer than the other and if it's red then it means
+
+13
+00:01:03,370 --> 00:01:05,090
+that the other one was water.
+
+14
+00:01:05,560 --> 00:01:10,780
+If you're interested in learning how to make this chart in D-3 you can actually find all the code for
+
+15
+00:01:10,780 --> 00:01:12,970
+this one on blocks.
+
+16
+00:01:12,970 --> 00:01:20,380
+However to start things off simply I'm going to show you the simple case on the left example that I'm
+
+17
+00:01:20,380 --> 00:01:26,560
+using for this lecture is coming from one of Mike Bostock's blocks which has a really simple static
+
+18
+00:01:26,560 --> 00:01:30,290
+implementation of an area of whenever you can.
+
+19
+00:01:30,300 --> 00:01:36,120
+I'd suggest trying to find one of the blocks by this author because all this code fits really well with
+
+20
+00:01:36,120 --> 00:01:41,910
+the D-3 conventions since he's one of the founders of D-3 and he makes sure that all the code he writes
+
+21
+00:01:41,910 --> 00:01:42,880
+works well.
+
+22
+00:01:43,850 --> 00:01:49,670
+You can see that this graph looks almost identical to our line chart except that the area beneath the
+
+23
+00:01:49,670 --> 00:01:52,070
+line has a field to it.
+
+24
+00:01:52,070 --> 00:01:56,070
+This example comes with an index to h g m l file as well as a TS.
+
+25
+00:01:56,080 --> 00:02:02,740
+The file containing two rows the first being a date and the second being number.
+
+26
+00:02:02,750 --> 00:02:06,800
+So here I copied this code into a folder at work from.
+
+27
+00:02:06,800 --> 00:02:10,750
+I've downloaded the data that was included into my data subdirectory.
+
+28
+00:02:12,030 --> 00:02:17,910
+If I was using this file in an actual project then my next step would be to transfer this javascript
+
+29
+00:02:17,940 --> 00:02:19,380
+into a separate maned.
+
+30
+00:02:19,410 --> 00:02:20,290
+Yes.
+
+31
+00:02:20,690 --> 00:02:25,890
+But for these examples I'll keep all my javascript in the script tags.
+
+32
+00:02:25,900 --> 00:02:30,850
+I've also added a nav bar to each of these examples to make the page look a little nicer.
+
+33
+00:02:31,710 --> 00:02:38,490
+In this example has already been SVGA on the page which app tweak to a size of 600 pixels by 400 pixels
+
+34
+00:02:39,210 --> 00:02:40,650
+looking at a javascript.
+
+35
+00:02:40,650 --> 00:02:44,410
+We can see the set up of our margins in the first two lines.
+
+36
+00:02:44,700 --> 00:02:50,910
+When getting hold of the SPG can this with this select tag then we're defining the size of our margins
+
+37
+00:02:50,910 --> 00:02:54,560
+here in the usual way for a width and height.
+
+38
+00:02:54,620 --> 00:03:00,380
+We're getting our values from the attributes of our existing as Candis meaning that to change these
+
+39
+00:03:00,380 --> 00:03:04,450
+values we just need to edit the HVM helpful.
+
+40
+00:03:04,470 --> 00:03:10,110
+Next we're adding on group element to the canvas and giving his usual translation into the center of
+
+41
+00:03:10,110 --> 00:03:11,860
+the page.
+
+42
+00:03:12,000 --> 00:03:18,250
+Here's the past function that we're using present day here maps to a two digit day of the month.
+
+43
+00:03:18,580 --> 00:03:23,190
+Person B maps to a three letter is shorthand for the month and percent.
+
+44
+00:03:23,200 --> 00:03:25,440
+Why is a four digit year.
+
+45
+00:03:26,170 --> 00:03:31,370
+We're setting on X scales a time scale and the y scale as a linear scale.
+
+46
+00:03:32,420 --> 00:03:38,060
+Something to know here is that we're using this range Rand method instead of our usual range method
+
+47
+00:03:38,060 --> 00:03:39,860
+for these scales.
+
+48
+00:03:39,860 --> 00:03:46,430
+What this means is that any output returned by this scale will be rounded to the nearest whole number.
+
+49
+00:03:46,820 --> 00:03:52,260
+For this graph we could easily just have written range and it wouldn't really have made much difference.
+
+50
+00:03:53,450 --> 00:03:56,610
+Here we're setting up a path generator.
+
+51
+00:03:56,660 --> 00:04:02,390
+This should look really similar to the line path generator that we saw in project 3 except that this
+
+52
+00:04:02,390 --> 00:04:10,040
+time we supply both the Y zero value and the y one value for this chart we're just saying the wise zero
+
+53
+00:04:10,040 --> 00:04:16,640
+value should always align with the bottom of Kandis to why there are line tracks the x axis you know
+
+54
+00:04:16,670 --> 00:04:21,330
+visualization and the y one line is varying according to the y axis value.
+
+55
+00:04:23,010 --> 00:04:28,980
+We're learning in our data with the D-3 TS We function since we're working with tab separated values
+
+56
+00:04:30,000 --> 00:04:35,940
+hey we're making use of an optional argument to the D-3 TS V function which lets us alter the attributes
+
+57
+00:04:35,940 --> 00:04:38,540
+of the data that we're loading in.
+
+58
+00:04:38,630 --> 00:04:43,280
+You can think of this as being equivalent to the for each loop that we've been writing so far.
+
+59
+00:04:43,560 --> 00:04:50,240
+But you might find this syntax to be a little more concise this function maps over our array of data
+
+60
+00:04:50,250 --> 00:04:58,490
+as soon as it's loaded and the result is passed on to our data as Ray within passing in the callback
+
+61
+00:04:58,490 --> 00:05:01,810
+function as usual we are using that era argument.
+
+62
+00:05:01,990 --> 00:05:07,940
+What data takes the second position of the argument list and here which is throwing an error if something
+
+63
+00:05:07,940 --> 00:05:14,920
+goes wrong when we try to read the file next we're setting that domains for axes as usual.
+
+64
+00:05:14,920 --> 00:05:22,040
+Since we now have access to our data array we using the extent to get minimum the maximum value for
+
+65
+00:05:22,070 --> 00:05:23,200
+x domain.
+
+66
+00:05:23,690 --> 00:05:28,650
+And the winds are Maina scaling between 0 and the largest value of a Y variable.
+
+67
+00:05:29,880 --> 00:05:36,980
+Next we're appending area path we using some syntax which is a little different here than we're using
+
+68
+00:05:36,980 --> 00:05:38,280
+for a line graph.
+
+69
+00:05:38,690 --> 00:05:39,740
+Here's how things look.
+
+70
+00:05:39,740 --> 00:05:46,900
+Between these two examples for a line graph we call the line function on our array of data.
+
+71
+00:05:46,940 --> 00:05:53,200
+This time we're passing our array of data to this data method and then passing up area generator to
+
+72
+00:05:53,200 --> 00:05:56,940
+what deam method without giving it an argument.
+
+73
+00:05:57,320 --> 00:06:03,620
+We can provide a data method like this when we want to perform a data join on just one element when
+
+74
+00:06:03,620 --> 00:06:07,340
+we provide an element with some data to use like this.
+
+75
+00:06:07,340 --> 00:06:13,340
+The attribute will automatically try to fit that array of data into the path generator that we provide
+
+76
+00:06:14,670 --> 00:06:21,090
+this syntax is useful when we want to think about how we might add multiple area paths to the same visualisation
+
+77
+00:06:21,950 --> 00:06:23,250
+to do that.
+
+78
+00:06:23,270 --> 00:06:29,570
+We're providing an array of arrays to the D-3 selection with the data method and then after calling
+
+79
+00:06:29,570 --> 00:06:35,570
+enter and depend on the selection we'd have access to each of these arrays when we're setting out the
+
+80
+00:06:35,570 --> 00:06:39,960
+attributes I'll be showing you how to do that in the next lecture.
+
+81
+00:06:41,470 --> 00:06:47,090
+Just to be clear the syntax that we right now is completely interchangeable with how we rotate that
+
+82
+00:06:47,160 --> 00:06:53,880
+line up if we change things up here we'll see that acha is working exactly the same as before.
+
+83
+00:06:55,220 --> 00:06:58,190
+Finally we're adding in both axes.
+
+84
+00:06:58,220 --> 00:07:03,590
+Generally speaking I would prefer to write the code that sets up groups outside of this data loading
+
+85
+00:07:03,590 --> 00:07:07,590
+function and then just call the access generators on this group.
+
+86
+00:07:07,910 --> 00:07:11,790
+But here Mike Bostock has chosen to add them both in the same time.
+
+87
+00:07:12,110 --> 00:07:14,020
+Both will work completely fine.
+
+88
+00:07:15,280 --> 00:07:22,150
+In this lecture I gave you a quick overview of some area code in the three I took you through the process
+
+89
+00:07:22,150 --> 00:07:27,730
+of interpreting someone else's code and introduce you to a couple of new things that you hadn't seen
+
+90
+00:07:27,730 --> 00:07:28,930
+so far.
+
+91
+00:07:29,380 --> 00:07:35,290
+I want you to think about what you would need to change to make this visualization update between different
+
+92
+00:07:35,290 --> 00:07:37,170
+sources of data.
+
+93
+00:07:37,240 --> 00:07:42,260
+Which parts of your code would crucially need to live in your update function.
+
+94
+00:07:42,460 --> 00:07:46,130
+And which part of your code would you want to keep at the top of the file.
+
+95
+00:07:47,000 --> 00:07:52,310
+When you think about this bear in mind that the code in this example wasn't really too different of
+
+96
+00:07:52,310 --> 00:07:56,890
+the code that you were using for project 3 in the next lecture.
+
+97
+00:07:56,900 --> 00:08:03,610
+Be you now be working with a similar file to this but this time I've been using the D-3 stack layouts
+
+98
+00:08:03,710 --> 00:08:08,510
+to create a stacked area chart which can be used in a slightly different way.
+

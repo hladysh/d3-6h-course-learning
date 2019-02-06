@@ -1,0 +1,40 @@
+1
+00:00:06,300 --> 00:00:10,580
+At the end of this section you now have five new types of visualization.
+
+2
+00:00:10,590 --> 00:00:16,070
+They are able to express with these three I've taken you through a quick tour of different people's
+
+3
+00:00:16,070 --> 00:00:20,060
+code covering a few topics that we've just glazed over before.
+
+4
+00:00:20,360 --> 00:00:25,880
+And at this point you should be starting to get the hang of the process of quickly understanding what
+
+5
+00:00:25,880 --> 00:00:31,550
+D-3 file fits together and you should feel like you could afford any of the visualizations that we've
+
+6
+00:00:31,550 --> 00:00:36,000
+covered already and adapt them into your own data.
+
+7
+00:00:36,740 --> 00:00:43,310
+Importantly you also learned about how lappets work in D-3 attaching a set of attributes onto the data
+
+8
+00:00:43,310 --> 00:00:44,800
+that we're trying to work with.
+
+9
+00:00:45,260 --> 00:00:49,580
+And I'll be showing you some more examples of these over the next two sections as they're making the
+
+10
+00:00:49,580 --> 00:00:53,550
+job of building more complex visualizations a whole lot easier.
+

@@ -1,0 +1,152 @@
+1
+00:00:07,060 --> 00:00:10,210
+Now that we can see what's going on with the D-3 update that's it.
+
+2
+00:00:10,600 --> 00:00:16,540
+We're finally ready to make the update function actually change between different pieces of data.
+
+3
+00:00:16,540 --> 00:00:20,970
+In this lecture we will be calling me up the function that we've been writing the last few lectures.
+
+4
+00:00:21,010 --> 00:00:27,670
+Every time interval loop runs we'll be doing this by setting a flag variable which will keep track of
+
+5
+00:00:27,670 --> 00:00:29,490
+which data source we're looking at.
+
+6
+00:00:31,290 --> 00:00:37,320
+Let's take a look at our data inside our data loading function by using a console log here.
+
+7
+00:00:37,330 --> 00:00:41,080
+We can see that the data is currently split into two sections.
+
+8
+00:00:41,180 --> 00:00:45,310
+The data are about profit and the data are about revenue.
+
+9
+00:00:45,490 --> 00:00:47,990
+The profit value is still a string right now.
+
+10
+00:00:48,370 --> 00:00:50,900
+So I'll add a line in here to clean up this data.
+
+11
+00:00:53,300 --> 00:00:57,740
+I want to be able to flick between seeing the revenue for the past six months and the profit for the
+
+12
+00:00:57,740 --> 00:00:58,910
+past six months.
+
+13
+00:00:59,800 --> 00:01:06,730
+We'll do this by declaring a flag variable that set to either true or false when the flag is set to
+
+14
+00:01:06,730 --> 00:01:14,310
+true we'll use the revenue data and when it sets of falls we'll use the profit data first.
+
+15
+00:01:14,510 --> 00:01:20,570
+I'm going to declare a variable called flag with a global scope and initially set it to true at each
+
+16
+00:01:20,570 --> 00:01:21,630
+run of the loop.
+
+17
+00:01:21,800 --> 00:01:23,590
+We're going to toggle the flag setting.
+
+18
+00:01:23,600 --> 00:01:27,970
+The truth is currently false or false that it's currently true.
+
+19
+00:01:28,170 --> 00:01:33,780
+Then we're going to declare a value variable that will be set according to the status of the flag.
+
+20
+00:01:33,800 --> 00:01:41,040
+The quickest way to write this is like this.
+
+21
+00:01:41,140 --> 00:01:48,010
+I'm using the turnaround operator in javascript here which is a really handy shorthand way to use it.
+
+22
+00:01:48,030 --> 00:01:55,930
+Elssler basically whatever's on the left hand side of the question mark should evaluate to TRUE or FALSE.
+
+23
+00:01:56,340 --> 00:02:01,580
+If it's true it returns the value on the left of the code long.
+
+24
+00:02:01,750 --> 00:02:07,840
+And if it's false it returns a value on the right after we've made this change.
+
+25
+00:02:07,840 --> 00:02:11,210
+We just need to make a few edits to make this work.
+
+26
+00:02:11,750 --> 00:02:18,190
+Or replace each of these revenue fields with the name of a value variable so that these values can alternate
+
+27
+00:02:18,190 --> 00:02:20,730
+between showing revenue and profit data.
+
+28
+00:02:22,490 --> 00:02:28,350
+Finally we'll change the value of a white label depending on what the flag says.
+
+29
+00:02:28,850 --> 00:02:35,060
+So here I'm using the term or the operator again to set the value of a label and then updating the label
+
+30
+00:02:35,060 --> 00:02:36,390
+text accordingly.
+
+31
+00:02:37,570 --> 00:02:43,680
+Now that we have all of this ready I'm going to refresh the page.
+
+32
+00:02:43,800 --> 00:02:49,270
+And finally we can see the visualization is updating every second as expected.
+
+33
+00:02:51,000 --> 00:02:55,680
+After this lecture you should feel comfortable going through a similar process to this day coming up
+
+34
+00:02:55,680 --> 00:02:59,670
+with a flag variable to flick between different data sources.
+
+35
+00:02:59,790 --> 00:03:05,990
+At this point we have a visualization that's starting to look more substantial and a dating automatically.
+
+36
+00:03:06,510 --> 00:03:11,830
+However it doesn't quite look as clean as we'd really like it to be in the next lecture.
+
+37
+00:03:11,840 --> 00:03:18,030
+I'll be introducing you to transitions in DS3 and by adding just a few simple lines of code I'll be
+
+38
+00:03:18,030 --> 00:03:22,980
+converting the visualization that we have now to something far more elegant and beautiful.
+

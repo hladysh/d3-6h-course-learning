@@ -1,0 +1,264 @@
+1
+00:00:06,620 --> 00:00:12,130
+In this lecture I'll be introducing you to your final project in this course where you'll be building
+
+2
+00:00:12,130 --> 00:00:16,990
+a data dashboard for a large American company as usual.
+
+3
+00:00:17,000 --> 00:00:21,890
+I'll be giving you some background on what the project involves in this lecture and I'll be taking you
+
+4
+00:00:21,890 --> 00:00:24,200
+through the files that I'll be starting off with
+
+5
+00:00:27,050 --> 00:00:28,400
+for your final project.
+
+6
+00:00:28,400 --> 00:00:34,370
+I'll be asking you to imagine that you've been headhunted by an executive from a freedom called one
+
+7
+00:00:34,370 --> 00:00:42,350
+of America's largest companies to build the data dashboard for their sales teams freedom Corp. specializes
+
+8
+00:00:42,350 --> 00:00:46,610
+in selling all kinds of wholesale goods to companies across the nation.
+
+9
+00:00:47,000 --> 00:00:52,760
+They sell raw materials like planks of wood and bags of cement to construction companies.
+
+10
+00:00:52,760 --> 00:00:59,150
+They sell TVs and computers to electronic stores they sell fridges and washing machines to household
+
+11
+00:00:59,150 --> 00:01:04,690
+appliance stores and they also sell a range of furniture to a few different outlets.
+
+12
+00:01:05,510 --> 00:01:10,190
+The company has been going through a tough phase over the past year or so and they want to find out
+
+13
+00:01:10,190 --> 00:01:13,910
+which parts of their business are doing better than others.
+
+14
+00:01:13,910 --> 00:01:19,940
+Their sales team is split between four different regions of the U.S. and for each region they want to
+
+15
+00:01:19,940 --> 00:01:22,820
+be able to see how their stats compare between them.
+
+16
+00:01:23,810 --> 00:01:29,630
+You've been given a file containing information every sales call that was completed by each team in
+
+17
+00:01:29,630 --> 00:01:30,920
+2017.
+
+18
+00:01:31,920 --> 00:01:39,690
+Freedom Corp. wants to see how you call duration revenue perk freedom Corp. wants to see how call duration
+
+19
+00:01:39,960 --> 00:01:45,110
+revenue per core and the number of units sold has been changing throughout the year.
+
+20
+00:01:46,450 --> 00:01:50,040
+Here is what you'll be building over the course of this project.
+
+21
+00:01:50,110 --> 00:01:55,600
+The main part of the dashboard will be this stacked area chards here which we can zoom in on by brushing
+
+22
+00:01:55,600 --> 00:01:58,880
+on the context graph at the bottom of the screen.
+
+23
+00:01:58,930 --> 00:02:05,190
+We also have four charts on the right which is showing summary data for the date range that we've selected.
+
+24
+00:02:05,200 --> 00:02:08,960
+This time your code wants to take an average of each of these metrics.
+
+25
+00:02:08,980 --> 00:02:17,290
+Every time the date selection changes let me take you through the code and starting with in your index
+
+26
+00:02:17,290 --> 00:02:22,030
+file I've set up the page as usual with a bootstrap grid.
+
+27
+00:02:22,150 --> 00:02:26,850
+Hey we have a label to display the date range that the user selected with the brush.
+
+28
+00:02:27,280 --> 00:02:31,720
+And here we have a select box where the user can choose the variable that should be shown on the main
+
+29
+00:02:31,720 --> 00:02:33,990
+graph.
+
+30
+00:02:34,000 --> 00:02:39,880
+Here are the divs that you'll be using to attach to your stacked area chart and your context chart and
+
+31
+00:02:39,880 --> 00:02:43,620
+here's where you'll be attaching the four other visualisations.
+
+32
+00:02:43,810 --> 00:02:51,710
+I've also included five javascript files which will need to build this site in the main file I've just
+
+33
+00:02:51,710 --> 00:02:54,690
+loaded in the data set that you'll be using for the project.
+
+34
+00:02:54,800 --> 00:03:02,330
+Logging this and that console as you can see we have 5000 rows of data showing all of Freedom Corp sales
+
+35
+00:03:02,330 --> 00:03:05,840
+calls from January to December 2017.
+
+36
+00:03:06,320 --> 00:03:12,860
+As usual you'll need to perform some operations on this data as soon as it gets loaded and this page
+
+37
+00:03:12,860 --> 00:03:15,400
+should handle all the data loading for the page.
+
+38
+00:03:15,500 --> 00:03:21,440
+Create new instances of each of our visualization objects and contain all the events and global variables
+
+39
+00:03:21,440 --> 00:03:22,860
+that your page will use.
+
+40
+00:03:24,660 --> 00:03:30,080
+For your donut charts I'm giving you the file that I created over the last two lectures which already
+
+41
+00:03:30,080 --> 00:03:37,080
+counted in Opie's style you want to convert this code so that you can make a stacked area chart object
+
+42
+00:03:37,080 --> 00:03:38,360
+in your main file.
+
+43
+00:03:38,760 --> 00:03:42,640
+And again you'll need to make a few changes so that it fits with your data.
+
+44
+00:03:44,230 --> 00:03:46,520
+Similarly I've included the time line.
+
+45
+00:03:46,590 --> 00:03:50,040
+Yes file that I was using in the last lecture.
+
+46
+00:03:50,050 --> 00:03:53,450
+You also need to make a few edits to this to use it for this project.
+
+47
+00:03:54,650 --> 00:03:59,510
+For your stacked area chards I'm stuffing you up with the code that I watch through back in Section
+
+48
+00:03:59,510 --> 00:04:00,100
+7.
+
+49
+00:04:01,380 --> 00:04:06,610
+You want to convert this code so that you can make a stacked area chart object in your main file.
+
+50
+00:04:06,930 --> 00:04:10,840
+And again you'll need to make a few changes so that it fits with your data.
+
+51
+00:04:12,760 --> 00:04:18,670
+I've done the same with your batch file taking an example implementation from Mike busto that I've found
+
+52
+00:04:18,670 --> 00:04:20,550
+on blocks.
+
+53
+00:04:20,790 --> 00:04:25,560
+After this lecture you should be ready to get started with this final project which should help you
+
+54
+00:04:25,560 --> 00:04:29,590
+to cement your understanding of all the different topics that we've covered.
+
+55
+00:04:30,000 --> 00:04:34,950
+If you're feeling a little uneasy or any of the syntax that you'll need to build the dashboard then
+
+56
+00:04:34,950 --> 00:04:40,830
+you can always flick back to earlier in the course and re watch some of the lectures you might find
+
+57
+00:04:40,830 --> 00:04:46,620
+that re watching the lecture about stack area charts and Section 7 will be particularly helpful for
+
+58
+00:04:46,620 --> 00:04:51,130
+getting started with the main graph that you'll be building if you get stuck.
+
+59
+00:04:51,140 --> 00:04:56,220
+And as always you can either leave questions in the comments section or check out my solution on get
+
+60
+00:04:56,220 --> 00:04:57,380
+up.
+
+61
+00:04:57,390 --> 00:05:02,880
+However as always I would always recommend that you should try to solve these problems yourself first
+
+62
+00:05:03,480 --> 00:05:06,660
+using any resources that you can.
+
+63
+00:05:06,690 --> 00:05:12,870
+However as always I would recommend that you should try to solve these problems yourself using any resources
+
+64
+00:05:12,870 --> 00:05:16,470
+that you can find online to help you on this project.
+
+65
+00:05:16,470 --> 00:05:23,580
+You'll often find yourself using both the D-3 API reference as well as community code from Brox to figure
+
+66
+00:05:23,580 --> 00:05:25,790
+out exactly what's going wrong with your code.
+

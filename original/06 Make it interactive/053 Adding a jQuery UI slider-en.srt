@@ -1,0 +1,276 @@
+1
+00:00:06,800 --> 00:00:13,220
+At this point although users can pause a visualization on this year it can be annoying to have to wait
+
+2
+00:00:13,220 --> 00:00:17,420
+for a whole year to roll around to view the world at a certain point in time.
+
+3
+00:00:20,170 --> 00:00:25,930
+By the end of this lecture we'll introduce a slider where users can pick up the exact year they want
+
+4
+00:00:25,930 --> 00:00:28,860
+to look at.
+
+5
+00:00:29,120 --> 00:00:34,120
+I've decided to use the j where you find library from slider in this project.
+
+6
+00:00:34,280 --> 00:00:39,680
+This library has a plugin library that works on top of Jey query and it allows you to add a few different
+
+7
+00:00:39,680 --> 00:00:41,850
+features on a separate page.
+
+8
+00:00:41,990 --> 00:00:47,900
+We didn't need to use j where you slide this project and we can just easily abused that bootstraps it
+
+9
+00:00:48,550 --> 00:00:53,120
+that this slider also gives you the option to select a range of two different values instead of just
+
+10
+00:00:53,120 --> 00:00:54,010
+one.
+
+11
+00:00:54,440 --> 00:00:56,960
+This will come in handy for a third class project.
+
+12
+00:00:56,990 --> 00:00:59,340
+So I will introduce it to you in this lecture.
+
+13
+00:01:02,180 --> 00:01:05,550
+Here's what the syntax looks like to create a slide.
+
+14
+00:01:05,780 --> 00:01:11,420
+After we select an element with J Querrey we can add a slide to it by running the slide method which
+
+15
+00:01:11,420 --> 00:01:13,970
+initializes the slide on the page.
+
+16
+00:01:14,330 --> 00:01:16,670
+We can pass in a variety of different options.
+
+17
+00:01:16,670 --> 00:01:20,740
+Here is the object which gives the slide as some initial setting.
+
+18
+00:01:22,770 --> 00:01:28,950
+Here with setting the max option is hundred men option 0 meaning that slider will be arranged between
+
+19
+00:01:28,950 --> 00:01:30,370
+zero and 100.
+
+20
+00:01:31,690 --> 00:01:39,560
+The step option hand means the slide it goes up into the corner and so one the range option determines
+
+21
+00:01:39,560 --> 00:01:42,680
+whether or not we want the slider to be a range slider.
+
+22
+00:01:42,950 --> 00:01:48,470
+If it's set to true then I slide it will have two pointers which can be dragged to set two different
+
+23
+00:01:48,470 --> 00:01:49,320
+values.
+
+24
+00:01:51,310 --> 00:01:55,840
+The value option sets the initial value that the slider is set to.
+
+25
+00:01:55,940 --> 00:02:01,760
+If we were using a range like that here and would want to use the values option instead which would
+
+26
+00:02:01,760 --> 00:02:05,420
+take an array of two different numbers.
+
+27
+00:02:05,420 --> 00:02:10,400
+Finally we can add event listeners to us light up by setting a value for the different slider events
+
+28
+00:02:10,400 --> 00:02:13,840
+that we had to choose from the start of and fire.
+
+29
+00:02:13,850 --> 00:02:20,090
+When the slide first begins that new the stop event fires when the slider is released and the slide
+
+30
+00:02:20,090 --> 00:02:20,890
+event fires.
+
+31
+00:02:20,900 --> 00:02:23,250
+Every time slight changes.
+
+32
+00:02:23,810 --> 00:02:29,350
+We could also use the change event which would find it when the slide moves to something different.
+
+33
+00:02:30,920 --> 00:02:35,620
+We can use a function head to dictate what should happen when the event is fired.
+
+34
+00:02:35,660 --> 00:02:41,150
+These two arguments that the function takes is access the event that find that function as well as the
+
+35
+00:02:41,150 --> 00:02:47,580
+State of the slider through this UI variable we can access the current value of the slider which will
+
+36
+00:02:47,580 --> 00:02:52,330
+be used to update of visualization.
+
+37
+00:02:52,410 --> 00:02:55,660
+Now that we've seen how the syntax for us slide should look.
+
+38
+00:02:55,960 --> 00:02:59,290
+I'm going to add one to our bubble chart.
+
+39
+00:02:59,380 --> 00:03:05,130
+I started off by adding a couple of lines to a DML file which will give us some where to put the slider
+
+40
+00:03:05,140 --> 00:03:11,760
+on the screen I've also added a label which will display the year which should match the Year at the
+
+41
+00:03:11,760 --> 00:03:12,960
+bottom of the screen.
+
+42
+00:03:14,390 --> 00:03:19,490
+I've also added Jay Querrey UI library here which I downloaded into my drafts folder.
+
+43
+00:03:20,900 --> 00:03:27,630
+Now in our main file I'm going to initialize the slider on a date slider div using Jake where query
+
+44
+00:03:27,640 --> 00:03:29,580
+wise slide a method.
+
+45
+00:03:29,960 --> 00:03:37,780
+I know that our data ranges between 8500 in 2014 so use these values to set the min and max from the
+
+46
+00:03:37,790 --> 00:03:44,110
+slider I want our users to be able to select any year in the dataset.
+
+47
+00:03:44,130 --> 00:03:51,390
+So we'll set the step to one and we want to update our visualization whenever the slider moves.
+
+48
+00:03:51,390 --> 00:03:57,240
+So we'll set a handler on the slide event in the event handler function here.
+
+49
+00:03:57,340 --> 00:04:02,480
+Although we want to do is to change the value of a timer to match the data we use and move the slider
+
+50
+00:04:02,540 --> 00:04:09,980
+to we can get a hold of the year that the user selected using the value method this variable and we
+
+51
+00:04:09,980 --> 00:04:14,700
+can minus 8900 from it translate it to the index of our data array.
+
+52
+00:04:16,270 --> 00:04:22,900
+For example if we said eighteen hundred here then we'll set the time to zero which will show the data
+
+53
+00:04:22,900 --> 00:04:30,370
+from the first year in our dataset will also run update function at this new time of value in case we
+
+54
+00:04:30,370 --> 00:04:33,500
+want to move the slider when the visualization is paused.
+
+55
+00:04:35,050 --> 00:04:39,810
+We also want to update the slider label whenever the visualization updates.
+
+56
+00:04:40,030 --> 00:04:45,640
+So we'll just add in a quick line at the end of the function so that the label always gets the same
+
+57
+00:04:45,640 --> 00:04:48,430
+value as the label at the bottom of the chart.
+
+58
+00:04:48,430 --> 00:04:55,090
+Finally as the visualization updates we want the position of the slider to gradually slide to the right.
+
+59
+00:04:55,180 --> 00:05:01,390
+So a Adeline at the bottom of the function to do this recall that we can change the value of the slider
+
+60
+00:05:01,420 --> 00:05:03,660
+using the value method like this.
+
+61
+00:05:03,700 --> 00:05:11,580
+And again we're just passing in the same time variable the same as label after we've added in these
+
+62
+00:05:11,580 --> 00:05:12,240
+changes.
+
+63
+00:05:12,240 --> 00:05:18,240
+We can see that we can select any data we want manually and we can see that this behavior works whether
+
+64
+00:05:18,240 --> 00:05:22,900
+or not the visualisation is running at the end of this lecture.
+
+65
+00:05:22,930 --> 00:05:28,850
+We've once again improved our user interface allowing users to look at the world in any of the data
+
+66
+00:05:28,850 --> 00:05:30,260
+set.
+
+67
+00:05:30,330 --> 00:05:36,240
+You should now be able to add a J query slider to your own projects which you'll get the chance to do
+
+68
+00:05:36,240 --> 00:05:39,430
+in project 3 in the next lecture.
+
+69
+00:05:39,430 --> 00:05:42,430
+I'll be teaching you how to build a line charge in D3.
+

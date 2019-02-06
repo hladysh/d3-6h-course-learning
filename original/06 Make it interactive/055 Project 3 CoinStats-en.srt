@@ -1,0 +1,152 @@
+1
+00:00:06,600 --> 00:00:12,010
+In this lecture I'll be introducing you to a third class project where you'll be making a line chart
+
+2
+00:00:12,100 --> 00:00:16,640
+display historical cryptic parts of prices for different coins.
+
+3
+00:00:16,870 --> 00:00:21,160
+I'm going to take you through the template files that I'll be giving you know show you what you should
+
+4
+00:00:21,160 --> 00:00:25,400
+end up with the End of Project.
+
+5
+00:00:25,580 --> 00:00:31,250
+You have some friends who are thinking about getting into cryptocurrency trading looking for any excuse
+
+6
+00:00:31,250 --> 00:00:34,750
+to show off your dazzling new data visualization skills.
+
+7
+00:00:34,830 --> 00:00:39,620
+You decide to help them out by creating a visualization to show them how different coins have changed
+
+8
+00:00:39,620 --> 00:00:41,310
+price over time.
+
+9
+00:00:41,780 --> 00:00:46,910
+You want them to flick between the five biggest coins in the market in terms of market capitalization
+
+10
+00:00:48,960 --> 00:00:55,500
+you find some historical dates or a line they've already converted it into a useful folder for each
+
+11
+00:00:55,500 --> 00:01:00,540
+coin you have data for every day that's been trading showing you its price in dollars.
+
+12
+00:01:00,540 --> 00:01:06,310
+The trading volume of the past day and its current total market cap.
+
+13
+00:01:06,520 --> 00:01:11,750
+I want you to make a line graph that can show any of these metrics for any of these coins.
+
+14
+00:01:11,830 --> 00:01:17,260
+The graph should also let the user narrow down on a specific date range with the graph automatically
+
+15
+00:01:17,260 --> 00:01:19,900
+adjusting so that it takes up the whole screen.
+
+16
+00:01:21,280 --> 00:01:26,740
+Here's where your project should look like once you're finished I can look at stats for any of the different
+
+17
+00:01:26,740 --> 00:01:32,760
+coins with the drop down on the left and I can set the y axis to the price in dollars.
+
+18
+00:01:32,800 --> 00:01:40,140
+Total market capitalization or 24 hour trading volume using the dropdown on the right.
+
+19
+00:01:40,330 --> 00:01:44,440
+I can also choose to look at a specific date range using this Jake Query.
+
+20
+00:01:44,490 --> 00:01:47,450
+I slide it on the left.
+
+21
+00:01:47,480 --> 00:01:53,570
+Notice that this time we're using a range slider so that we can choose the interval between two different
+
+22
+00:01:53,570 --> 00:01:58,590
+dates both the line and the access transitions smoothly.
+
+23
+00:01:58,730 --> 00:02:05,990
+Whenever the graph gets updated Here's the code I'll be giving you to start off with for this project.
+
+24
+00:02:05,990 --> 00:02:12,500
+As usual I've taken care of the basic set up for your index to H.T. M-L file including all the libraries
+
+25
+00:02:12,500 --> 00:02:14,850
+that you might need to use.
+
+26
+00:02:14,850 --> 00:02:21,360
+I've also written in a div to put your slide into with a date label on top of it and I've given you
+
+27
+00:02:21,360 --> 00:02:26,670
+two select boxes one to select the coin that the visualization should show.
+
+28
+00:02:26,850 --> 00:02:31,290
+And the other to select the variable on the y axis.
+
+29
+00:02:31,330 --> 00:02:35,450
+I've also made some changes to the C S file that comes with the project.
+
+30
+00:02:35,650 --> 00:02:39,950
+So just changing the color of the garish purple line that came with the original code.
+
+31
+00:02:41,320 --> 00:02:47,830
+In your data folder you'll find one file that came with your example in this example that Jason File
+
+32
+00:02:48,520 --> 00:02:54,100
+and the coins data that you'll be using in the Coinstar js file.
+
+33
+00:02:54,340 --> 00:02:59,410
+Since you've already had the experience of writing everything from scratch in your previous two projects
+
+34
+00:02:59,890 --> 00:03:05,710
+I'm starting you off with the community written line graph code that I showed you in the last lecture.
+
+35
+00:03:06,820 --> 00:03:13,210
+In this project your main goals should be to adapt this starting code changing the source of data and
+
+36
+00:03:13,210 --> 00:03:17,450
+figuring out how it should update when our selections change.
+
+37
+00:03:17,470 --> 00:03:23,950
+This will mirror the kind of work that you'll be doing in real world D-3 development as it is extremely
+
+38
+00:03:23,950 --> 00:03:27,220
+rare that you'll ever need to write this kind of code from scratch.
+

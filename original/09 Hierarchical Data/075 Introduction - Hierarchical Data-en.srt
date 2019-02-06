@@ -1,0 +1,72 @@
+1
+00:00:07,420 --> 00:00:12,300
+In this section I'll be rambling off the second part of the course which involves plowing through a
+
+2
+00:00:12,300 --> 00:00:19,880
+whole range of different visualizations each of the visualizations and this section involves hierarchical
+
+3
+00:00:19,880 --> 00:00:20,850
+data.
+
+4
+00:00:21,320 --> 00:00:26,500
+What this means is that we'll be communicating something about a system where different elements in
+
+5
+00:00:26,500 --> 00:00:29,740
+our data that can be thought of as belonging to others.
+
+6
+00:00:31,140 --> 00:00:36,720
+So for instance we might want to communicate the structure of the business.
+
+7
+00:00:36,830 --> 00:00:43,670
+There's a chain of command stretching from every lowly employee way up to the company's CEO using the
+
+8
+00:00:43,670 --> 00:00:49,760
+visualizations in this section we could compare how individual employees are adding to the overall performance
+
+9
+00:00:49,760 --> 00:00:54,360
+of that teams as well as to the civilians of the company as a whole.
+
+10
+00:00:55,810 --> 00:01:03,370
+Another good example of hierarchical data could be geographical entities such as continents nation states
+
+11
+00:01:03,400 --> 00:01:05,160
+and districts.
+
+12
+00:01:05,200 --> 00:01:07,190
+Every district belongs to a state.
+
+13
+00:01:07,210 --> 00:01:12,250
+Every state belongs to a nation and every nation belongs to a constant.
+
+14
+00:01:12,270 --> 00:01:17,840
+We can make some interesting visualizations that play on this hierarchical structure compared between
+
+15
+00:01:17,840 --> 00:01:19,860
+these separate entities.
+
+16
+00:01:19,860 --> 00:01:26,740
+By the end of this section you'll be able to format your data properly to work with these lay outs and
+
+17
+00:01:26,740 --> 00:01:33,290
+you'll also be able to add tree diagrams treatment circle packs and sunburst plots of growing visualization
+
+18
+00:01:33,290 --> 00:01:34,010
+toolbox.
+

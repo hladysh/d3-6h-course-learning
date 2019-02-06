@@ -1,0 +1,276 @@
+1
+00:00:06,480 --> 00:00:11,420
+In this lecture I'm going to be talking about changes that came with the latest version of the three
+
+2
+00:00:11,650 --> 00:00:14,990
+version five we'll be showing you how to deal with them.
+
+3
+00:00:15,370 --> 00:00:19,990
+We'll be taking you through a quick example of the visualization that we've already seen to show you
+
+4
+00:00:19,990 --> 00:00:23,640
+exactly what we need to do to convert any file to version 5.
+
+5
+00:00:24,500 --> 00:00:27,880
+When this course was first published we were working with version 4.
+
+6
+00:00:28,100 --> 00:00:33,610
+So all of the videos in the next three sections assume that we're still running on that version.
+
+7
+00:00:33,800 --> 00:00:39,020
+Since this code block building still won't be updated for a while now I figured that it's easier and
+
+8
+00:00:39,020 --> 00:00:45,470
+more useful for me just to take you through the process of switching code over rather than redoing all
+
+9
+00:00:45,470 --> 00:00:47,300
+these videos from scratch.
+
+10
+00:00:49,910 --> 00:00:54,500
+The good news is that there's very little that we need to worry about with the switch over to version
+
+11
+00:00:54,500 --> 00:00:57,290
+5 for what we cover in this course.
+
+12
+00:00:57,290 --> 00:01:03,910
+We only really need to worry about two major changes which can cause version of apps to break.
+
+13
+00:01:03,920 --> 00:01:08,630
+Firstly we had a restructuring of D-3 data loading functions.
+
+14
+00:01:08,630 --> 00:01:14,430
+These functions now use promises rather than asynchronous callbacks to load in data.
+
+15
+00:01:14,480 --> 00:01:20,420
+We covered this already back in Section 2 and this change also meant that we don't need to use QS in
+
+16
+00:01:20,420 --> 00:01:23,090
+D-3 for loading multiple sets of data.
+
+17
+00:01:23,120 --> 00:01:25,160
+More on that later.
+
+18
+00:01:25,180 --> 00:01:31,780
+Secondly one of the old color schemes was removed with the D-3 chromatic library being installed in
+
+19
+00:01:31,780 --> 00:01:34,780
+the core build of the three instead.
+
+20
+00:01:34,870 --> 00:01:41,140
+Apparently some of the colors and D-3 scheme catch twenty scale with two similar and that might make
+
+21
+00:01:41,140 --> 00:01:45,310
+it seem like it was some relationship between categories that wasn't really there.
+
+22
+00:01:46,440 --> 00:01:51,510
+Let me take you through a quick example on block builder of how we would go about converting some version
+
+23
+00:01:51,510 --> 00:01:54,380
+for code to version 5.
+
+24
+00:01:54,420 --> 00:02:00,110
+Here we have a pretty contrived example of a simple but John blocks with everybody getting a different
+
+25
+00:02:00,120 --> 00:02:00,700
+color.
+
+26
+00:02:01,700 --> 00:02:07,040
+This gives me a good opportunity to really show off the power of this online tool and actually use the
+
+27
+00:02:07,040 --> 00:02:10,420
+editor which I won't be using for the rest of the course.
+
+28
+00:02:10,550 --> 00:02:15,470
+We can actually view this code side by side with what gets rendered in the browser window which is a
+
+29
+00:02:15,470 --> 00:02:17,180
+really nice feature.
+
+30
+00:02:17,360 --> 00:02:20,160
+We can see here that the script is using version 4.
+
+31
+00:02:20,220 --> 00:02:26,200
+Instead include in the script tags if we change this line right here it's come from the latest version
+
+32
+00:02:26,740 --> 00:02:31,190
+then we'll immediately see page breaks but nothing showing up on the screen.
+
+33
+00:02:32,370 --> 00:02:37,740
+Notice that block build up automatically updates this browser whenever we make a change which is also
+
+34
+00:02:37,740 --> 00:02:38,870
+really nice.
+
+35
+00:02:39,750 --> 00:02:46,410
+The first step for updating code to version 5 needs to be to look for any data loading functions and
+
+36
+00:02:46,410 --> 00:02:49,790
+convert the syntax that we've been using for promises.
+
+37
+00:02:49,830 --> 00:02:55,350
+We also have some error handling here in case something goes wrong when we try to load in a file we
+
+38
+00:02:55,430 --> 00:03:00,270
+are using this optional first argument in version forth to do that which will handle differently in
+
+39
+00:03:00,270 --> 00:03:02,450
+version 5.
+
+40
+00:03:02,680 --> 00:03:05,560
+We'll get rid of it now and we'll come back to it at the end.
+
+41
+00:03:07,790 --> 00:03:11,100
+First of we just need to tuck this callback function here.
+
+42
+00:03:11,140 --> 00:03:15,090
+The argument for the then method and suddenly we can see a buzz again.
+
+43
+00:03:15,160 --> 00:03:17,100
+They're turning it black.
+
+44
+00:03:17,150 --> 00:03:18,310
+What's happening here.
+
+45
+00:03:19,350 --> 00:03:22,330
+We're going to see that right here on line 22.
+
+46
+00:03:22,350 --> 00:03:28,560
+We're making a call to D-3 scheme catch 20 which no longer exists in the D-3 library.
+
+47
+00:03:28,560 --> 00:03:34,200
+We just need to replace this color scheme with any one of the three other color schemes to get it to
+
+48
+00:03:34,200 --> 00:03:35,130
+work properly.
+
+49
+00:03:36,730 --> 00:03:43,720
+If we go to the D-3 API reference which is a vast resource for anything about D-3 then we can find this
+
+50
+00:03:43,720 --> 00:03:47,330
+page on color schemes that we have to choose from.
+
+51
+00:03:47,360 --> 00:03:51,780
+You can see that the category 10 schemes still exists in version 5.
+
+52
+00:03:51,920 --> 00:03:56,540
+And in general we have a huge selection of options to choose from.
+
+53
+00:03:56,570 --> 00:04:02,450
+I'm going to go for D-3 scheme past the one which looks nice and then we just need to go back and change
+
+54
+00:04:02,450 --> 00:04:05,030
+this line right here to get it to work.
+
+55
+00:04:05,670 --> 00:04:07,360
+Finally the error handling.
+
+56
+00:04:07,380 --> 00:04:12,560
+We just need to define a catch method for a promise in case a promise is rejected.
+
+57
+00:04:13,520 --> 00:04:19,280
+I'm just passing in an anonymous function here and we'll just log out whatever the error message is
+
+58
+00:04:19,280 --> 00:04:20,680
+say to the console.
+
+59
+00:04:21,340 --> 00:04:22,260
+And that's it.
+
+60
+00:04:22,270 --> 00:04:26,200
+This is all we need to do to get our visualizations to work with version 5.
+
+61
+00:04:26,230 --> 00:04:29,820
+We already have them in version 4.
+
+62
+00:04:29,870 --> 00:04:35,030
+After this lecture you should now be able to take a walk cruise over the last three sections one step
+
+63
+00:04:35,030 --> 00:04:38,480
+further to they work with version 5.
+
+64
+00:04:38,480 --> 00:04:42,030
+You'll need to do this with your own projects at the D-3 eco system.
+
+65
+00:04:42,030 --> 00:04:46,370
+It can be quite Sloat de-tox example to the latest version.
+
+66
+00:04:46,400 --> 00:04:51,620
+This isn't too much of a process especially considering how tough it was when converting from Version
+
+67
+00:04:51,740 --> 00:04:54,770
+3 in the next lecture.
+
+68
+00:04:54,770 --> 00:05:01,970
+I'll be introducing you to the concepts of layouts and D-3 these functions and a set of different fields
+
+69
+00:05:01,970 --> 00:05:07,760
+that the data that we're working with which we can use to quickly build a certain type of visualization.
+

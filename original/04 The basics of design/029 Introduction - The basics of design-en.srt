@@ -1,0 +1,48 @@
+1
+00:00:06,370 --> 00:00:10,130
+Now they know how to make some simple visualizations in D3.
+
+2
+00:00:10,270 --> 00:00:15,300
+I want you to start to think about how you might apply this knowledge in your own field of work.
+
+3
+00:00:16,160 --> 00:00:21,650
+Unlike most of the projects in this class your own projects will require you to create your own new
+
+4
+00:00:21,650 --> 00:00:26,280
+and exciting ways to express the data that you're working with.
+
+5
+00:00:26,530 --> 00:00:31,020
+Although the D-3 library really allows you to build anything that you can imagine.
+
+6
+00:00:31,120 --> 00:00:37,880
+There are some best practices that you should be aware of to make it good fishless station in this section
+
+7
+00:00:37,940 --> 00:00:43,550
+I'll take you through the process of sketching out your ideas before launching into coding something
+
+8
+00:00:44,640 --> 00:00:50,400
+I'll help you to understand the different types of data and how to visualize them and I'll introduce
+
+9
+00:00:50,400 --> 00:00:54,650
+you to the bootstrap grid system for making responsive pages.
+
+10
+00:00:54,810 --> 00:01:00,240
+By the end of this section you'd have the knowledge to constructively critique existing data visualizations
+
+11
+00:01:00,810 --> 00:01:06,690
+and you should have the confidence to be able to challenge other stakeholders who have an interest in
+
+12
+00:01:06,690 --> 00:01:09,210
+influencing the design of your projects.
+

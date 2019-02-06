@@ -1,0 +1,56 @@
+1
+00:00:06,630 --> 00:00:13,430
+In this section I'll be giving you a broad overview of how we can draw maps in D-3 maybe sharing everything
+
+2
+00:00:13,430 --> 00:00:15,860
+that you'll need to take into consideration.
+
+3
+00:00:16,250 --> 00:00:21,230
+You learn about the different projection algorithms that we can use and will be introducing you to the
+
+4
+00:00:21,230 --> 00:00:23,830
+D-3 Jiyu path generator.
+
+5
+00:00:23,990 --> 00:00:31,220
+You'll also be learning how to work with MAT files in D-3 also be showing you how to use D-3.
+
+6
+00:00:31,230 --> 00:00:37,080
+Q module to load multiple datasets at once which will be really important going forward whenever you
+
+7
+00:00:37,080 --> 00:00:40,110
+want to switch sources of data together.
+
+8
+00:00:40,110 --> 00:00:45,840
+Finally I'll be teaching you the ins and outs of the D-3 force that will be using it to create one of
+
+9
+00:00:45,840 --> 00:00:49,310
+the coolest visualizations that you can make with D-3.
+
+10
+00:00:49,320 --> 00:00:55,710
+When I have a node linked diagrams at the end of the section again the focus of this section is all
+
+11
+00:00:55,710 --> 00:01:02,410
+about running through community code and building up understanding of how the D-3 files fit together.
+
+12
+00:01:02,880 --> 00:01:05,660
+I'll be moving through the examples pretty quickly.
+
+13
+00:01:05,850 --> 00:01:10,740
+Just aiming to give you a breadth of knowledge that you'll need to quickly pick up any visualisation
+
+14
+00:01:10,760 --> 00:01:12,380
+that you can find online.
+

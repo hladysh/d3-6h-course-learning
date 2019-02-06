@@ -1,0 +1,39 @@
+0
+00:05.880 --> 00:13.110
+Great job! After the finishing up that last class project you're now able to do some really impressive stuff
+
+1
+00:13.110 --> 00:19.770
+with D3. You've show that you're able to handle complex interactions between many different components
+
+2
+00:19.830 --> 00:25.830
+on the page and you've built something that could easily be adapted to form the building blocks of any
+
+3
+00:25.830 --> 00:26.970
+data dashboard.
+
+4
+00:28.150 --> 00:33.880
+Beyond that you should now feel comfortable with exploring new data visualizations by yourself, and even
+
+5
+00:33.880 --> 00:39.520
+designing and building your own you know had to search for what the D3 community is already put together
+
+6
+00:39.520 --> 00:44.470
+with most visualizations and you should be comfortable with flicking through someone else's code to
+
+7
+00:44.470 --> 00:45.920
+figure out what's going on.
+
+8
+00:47.700 --> 00:52.410
+In this section I'll be running you through everything we've covered in this course and I'll leave you
+
+9
+00:52.410 --> 00:54.190
+with a few final thoughts.

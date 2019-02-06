@@ -1,0 +1,281 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>027 Activity Project 1</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>In this section, I introduced you to the syntax for creating scales in D3...</p>
+
+<pre class="prettyprint linenums">var x = d3.scaleLinear()
+    .domain(0, 5000)    // INPUT!
+    .range(0, height);  // OUTPUT!</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>We added in the margin convention that we'll be using going forward...</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">var margin = { left:40, right:20, top:10, bottom:30 };
+var width = 600 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom;
+    
+var g = d3.select("#chart-area")
+    .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+            .attr("transform", "translate(" + margin.left 
+                + ", " + margin.top + ")");</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>And I taught you how to use D3's axis generators for your visualizations...</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">var topAxisCall = d3.axisTop(x)
+
+g.append("g")
+    .attr("class", "top axis")
+    .call(topAxisCall);</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>You should now be ready to build your own bar chart using what you’ve learned so far. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Start by downloading the files attached to this activity, and open the project directory in your favorite text editor. By the end of this project, you should hopefully end up with a bar chart that looks something like this: </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure><img height="395" src="https://udemy-images.s3.amazonaws.com:443/redactor/raw/2018-02-20_16-25-56-9d55ca9cff6d0ba06efae2b50a60a2cc.png" width="673"></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>For any project in D3, it makes sense to “Divide and Conquer” a complex task like this into manageable chunks. Follow along with these instructions, and make sure that you understand how each step works:<br></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol>
+<li>Load the data into your <code>main.js</code>  file using the <code>d3.csv()</code>  function. Make sure that you format the data, so that you can work with values as integers. Make a console log so that you can see the output of the data in the browser.</li>
+<li>Add an SVG canvas to the <code>#chart-area</code>  div element with a width of 600px and a height of 400px. Add a group for our SVG elements, and define some suitable margins for an x and y axis.</li>
+<li>Create the scales for our visualization. The x-axis should be an band scale, whilst our y-axis will be a linear scale.</li>
+<li>Using D3 selectAll with the data, enter, and append methods, add a rectangle for each month of data that we have. </li>
+<li> Scale the rectangles to have the correct width and height. Choose the right y-values so that they sit at the bottom of the visualization area.</li>
+<li>Add in axes and labels, so that we can tell what the visualization is showing us.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>If you have any problems with any of these steps, you can check out my solution on the course GitHub page <a href="https://github.com/adamjanes/udemy-d3/tree/master/03/3.13.1" rel="nofollow">here</a>.<br></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

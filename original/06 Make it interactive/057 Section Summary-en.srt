@@ -1,0 +1,64 @@
+1
+00:00:06,290 --> 00:00:10,880
+Well then at the end of this section you've built something pretty substantial.
+
+2
+00:00:10,880 --> 00:00:15,940
+You've made a production quality line graph which updates seamlessly when they use that place around
+
+3
+00:00:16,030 --> 00:00:16,330
+it.
+
+4
+00:00:17,690 --> 00:00:23,510
+You can now configure a host of different elements to trigger updates on a graph.
+
+5
+00:00:23,510 --> 00:00:27,530
+Now you've had experience of doing this with some common examples.
+
+6
+00:00:27,530 --> 00:00:33,080
+You should hopefully be confident of wiring any kind of interactive elements up to a visualization like
+
+7
+00:00:33,110 --> 00:00:34,710
+this.
+
+8
+00:00:34,900 --> 00:00:40,300
+The process gets a little trickier when we have to worry about multiple visualizations on the page updating
+
+9
+00:00:40,310 --> 00:00:42,910
+at once in Section 10.
+
+10
+00:00:42,920 --> 00:00:48,530
+Once we separate our code into different files and to start thinking about visualizations as javascript
+
+11
+00:00:48,620 --> 00:00:54,950
+objects will start to introduce some more robust event handlers which will be triggered by multiple
+
+12
+00:00:54,950 --> 00:00:56,160
+events.
+
+13
+00:00:56,390 --> 00:01:01,730
+In this section you also had your first taste of things to come where I took you on a crash course of
+
+14
+00:01:01,730 --> 00:01:07,940
+line graphs and D-3 although we don't have time to go through every visualization that we can imagine
+
+15
+00:01:08,330 --> 00:01:12,710
+over the course of the next three sections I'll be giving you the tools for finding pre-written cared
+
+16
+00:01:12,710 --> 00:01:18,150
+for what you want to build your self and how to understand how this code works.
+

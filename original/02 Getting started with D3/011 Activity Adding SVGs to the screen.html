@@ -1,0 +1,153 @@
+<html>
+                <head>
+                <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+                <title>011 Activity Adding SVGs to the screen</title>
+                </head>
+                <body>
+                <div class="container">
+                <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <p class="lead"><p>Recall that you can select elements on the page with D3 select...</p>
+
+<p><code>d3.select("#css-selector") </code> <br></p>
+
+
+
+
+
+
+
+
+
+
+
+<p>Then you can add elements onto a selection with the D3 append method...</p>
+
+
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">d3.select("#css-selector")
+    .append("circle")  </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>And you can use the Attr method to set attributes of these elements...</p>
+
+
+
+
+
+
+
+
+
+
+
+<pre class="prettyprint linenums">d3.select("#css-selector")
+    .append("circle") 
+        .attr("cx", 100)  </pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Now it’s time to try adding your own SVGs to the page. Using what you learned in the previous lecture:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol><li> Add an SVG canvas with a <code>width</code>  of 500px and a <code>height</code>  of 400px to the screen. </li><li> Add some SVG shapes to the canvas. Try adding a line, a rectangle, and an ellipse to the screen. Make sure that none of these shapes overlap, and that they all stay inside the canvas.</li><li>Play around with the color, size and position of the shapes. Make sure you understand how the SVGs are working.</li></ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>Use the template folder attached to this activity to get started. You'll need to unzip this file to start coding with it.<br></p></p>
+                </div>
+                </div>
+                </div>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+                </body>
+                </html>

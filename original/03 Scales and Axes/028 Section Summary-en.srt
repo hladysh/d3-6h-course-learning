@@ -1,0 +1,44 @@
+1
+00:00:06,250 --> 00:00:12,110
+In this section you learn how to work with scales axes and margins to transform some basic shapes on
+
+2
+00:00:12,110 --> 00:00:15,530
+the screen into a fully fledged bartk.
+
+3
+00:00:15,970 --> 00:00:20,680
+This visualization was pretty basic but it should have helped you to learn some of the key concepts
+
+4
+00:00:20,680 --> 00:00:24,730
+in D-3 which will keep coming up throughout the course.
+
+5
+00:00:24,880 --> 00:00:29,860
+The bar chart that we made the pool isn't actually much of an improvement on just the roll figures in
+
+6
+00:00:29,860 --> 00:00:33,600
+terms of explaining what's going on in section 5.
+
+7
+00:00:33,600 --> 00:00:38,720
+We'll take this bartk to the next level by making it flick between different data sources.
+
+8
+00:00:39,730 --> 00:00:45,520
+In the next section you'll be learning about data visualization design which will be critical for more
+
+9
+00:00:45,520 --> 00:00:47,590
+complex projects.
+
+10
+00:00:47,620 --> 00:00:52,960
+You'll learn how to tell what kind of visualization you should use for a particular set of data and
+
+11
+00:00:52,960 --> 00:00:57,500
+you'll be learning how to constructively critique existing visualizations to make them better.
+

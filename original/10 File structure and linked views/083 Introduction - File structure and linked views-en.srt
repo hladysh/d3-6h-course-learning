@@ -1,0 +1,52 @@
+1
+00:00:07,280 --> 00:00:12,350
+In this section I'll be introducing you to some best practices to help you to structure your code for
+
+2
+00:00:12,350 --> 00:00:13,630
+large projects.
+
+3
+00:00:14,770 --> 00:00:19,260
+I'll be taking you through the process of splitting up your code into different sections.
+
+4
+00:00:20,500 --> 00:00:26,830
+And show you how to write each of your visualizations in an object orientated style.
+
+5
+00:00:26,830 --> 00:00:33,160
+This will make it possible to add many visualizations onto the page at once but keeping your code understandable
+
+6
+00:00:34,090 --> 00:00:39,520
+and it'll also help you to start writing more reusable code that can copy into future projects.
+
+7
+00:00:40,310 --> 00:00:44,870
+Over the course of this section I'll be improving on I coin's that site we've made for a third class
+
+8
+00:00:44,870 --> 00:00:51,440
+project adding in some visualizations to complement what our graph is showing at the end of this section.
+
+9
+00:00:51,440 --> 00:00:57,090
+You'll be putting together what you learn throughout the whole course to build your final project.
+
+10
+00:00:57,140 --> 00:01:02,570
+I'll be starting off with some template community code you can find on line and you'll be going through
+
+11
+00:01:02,570 --> 00:01:08,200
+the process of gradually building up a powerful interconnected page.
+
+12
+00:01:08,210 --> 00:01:13,550
+This will be a production quality data dashboard which is designed to be used by a manager to assess
+
+13
+00:01:13,550 --> 00:01:16,070
+the performance of a company's sales team's.
+

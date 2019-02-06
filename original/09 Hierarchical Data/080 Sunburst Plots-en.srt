@@ -1,0 +1,400 @@
+1
+00:00:06,400 --> 00:00:11,400
+In this lecture I'll be introducing you to the final crash course in data visualization.
+
+2
+00:00:11,410 --> 00:00:18,010
+I'll be running you through I'll be showing you how to use the partition lay out in D-3 to create a
+
+3
+00:00:18,040 --> 00:00:20,450
+sunburst plot.
+
+4
+00:00:20,560 --> 00:00:27,310
+We'll be using D-3 as our path generator again to add different nodes to the screen and I'll be showing
+
+5
+00:00:27,310 --> 00:00:33,380
+you another example of the D-3 hierarchy layout for getting our data into the right format.
+
+6
+00:00:35,290 --> 00:00:41,020
+Sunders plots are actually a really unique type of visualization that you can use for communicating
+
+7
+00:00:41,020 --> 00:00:44,610
+data about values within a hierarchy.
+
+8
+00:00:44,860 --> 00:00:51,070
+We're essentially communicating the same kind of data that we're using in the past two lectures except
+
+9
+00:00:51,070 --> 00:00:51,770
+this time.
+
+10
+00:00:51,790 --> 00:00:56,900
+We can easily compare groups with other items at that level in the tree.
+
+11
+00:00:58,280 --> 00:01:04,740
+We can see how the structure looks from this image on the left the root node is placed at the center
+
+12
+00:01:05,220 --> 00:01:07,660
+essentially conveying that 100 percent.
+
+13
+00:01:07,680 --> 00:01:10,660
+The chair of the value rests with the root.
+
+14
+00:01:10,710 --> 00:01:18,970
+At this level next going and level out of the tree we can see that the portion is split in two by the
+
+15
+00:01:18,990 --> 00:01:26,650
+two children and the node then even further out we can see that these values are split in the same way
+
+16
+00:01:26,860 --> 00:01:35,300
+to show leaf nodes every layer of this chart represents 100 percent of the system.
+
+17
+00:01:35,350 --> 00:01:41,980
+For example let's imagine the graph on the right is showing how population is split between different
+
+18
+00:01:41,980 --> 00:01:44,980
+regions in the middle.
+
+19
+00:01:44,980 --> 00:01:51,710
+We have the world a root node which contains 100 percent of the world's population.
+
+20
+00:01:52,840 --> 00:02:01,720
+Lay it out we might have continents would separate the world further route this ring still adds up to
+
+21
+00:02:01,720 --> 00:02:07,600
+100 percent of the world's population but it's showing another way for us to think about it.
+
+22
+00:02:08,710 --> 00:02:14,750
+Another layer out we might have regions within the continent which still includes 100 percent the world's
+
+23
+00:02:14,750 --> 00:02:16,560
+population.
+
+24
+00:02:16,850 --> 00:02:23,630
+We can follow any of these arcs outwards to see the proportion of regions population relative to a said
+
+25
+00:02:23,690 --> 00:02:25,660
+region.
+
+26
+00:02:25,660 --> 00:02:31,390
+It's also interesting to note that we can show hierarchies with different numbers of levels with this
+
+27
+00:02:31,390 --> 00:02:32,690
+plot.
+
+28
+00:02:32,710 --> 00:02:39,700
+For example we might want to show States Districts and Counties in the US but these groupings might
+
+29
+00:02:39,700 --> 00:02:42,280
+not exist in every country.
+
+30
+00:02:42,460 --> 00:02:49,740
+In this case the size of the Ark is still relative to 100 percent the world's population to 100 percent
+
+31
+00:02:49,750 --> 00:02:52,780
+the world doesn't have that categorical distinction.
+
+32
+00:02:54,980 --> 00:02:58,940
+Here's the example they'll be taking you through in this section.
+
+33
+00:02:58,940 --> 00:03:02,490
+Once again the data we're using is all about the flashlight.
+
+34
+00:03:02,780 --> 00:03:07,720
+So each of these arcs around a sunburst plot represents a package within the library.
+
+35
+00:03:08,490 --> 00:03:13,670
+For us color coding we're just giving every arc its own color unless it turns out that we're looking
+
+36
+00:03:13,670 --> 00:03:19,830
+at leaf node in which case the color will come from the color that we just gave to its parent node the
+
+37
+00:03:19,860 --> 00:03:26,100
+inner circle here represents flesh as a whole then we can see that this video package contains maybe
+
+38
+00:03:26,100 --> 00:03:28,090
+two thirds of the whole thing.
+
+39
+00:03:28,200 --> 00:03:35,380
+The next level down we see that this operator package comprises about a third of the size of the package.
+
+40
+00:03:35,620 --> 00:03:41,200
+You can compare X directly beside each other or we can compare them to the size of the whole library
+
+41
+00:03:41,650 --> 00:03:47,490
+by comparing its size to the ring that belongs to to make things even clearer.
+
+42
+00:03:47,540 --> 00:03:52,490
+This sunburst plot will we adjust to rent one of our packages whenever we click on it.
+
+43
+00:03:52,520 --> 00:03:59,520
+So here after clicking on this visit package we can see the packages inside it more clearly and we can
+
+44
+00:03:59,520 --> 00:04:03,180
+keep drilling down further to go back up a level.
+
+45
+00:04:03,210 --> 00:04:07,520
+We just need to click the point in the center of a chart.
+
+46
+00:04:07,640 --> 00:04:10,960
+So let's run through how this code is working.
+
+47
+00:04:10,970 --> 00:04:17,220
+This scale here is actually going to be used to set the number of degrees for UCS since it's just spitting
+
+48
+00:04:17,210 --> 00:04:25,190
+out a value between 0 and 2 pi which is equivalent to a full 360 degrees of a circle within using the
+
+49
+00:04:25,190 --> 00:04:28,810
+Y scale to set the width of each of the rings of a chart.
+
+50
+00:04:29,210 --> 00:04:31,880
+We'll be updating the domains for both of these scales.
+
+51
+00:04:31,880 --> 00:04:39,530
+Whenever we click on one of these running's this line here is setting up a petition which the lad will
+
+52
+00:04:39,540 --> 00:04:42,860
+be using to generate us on those plot values.
+
+53
+00:04:43,250 --> 00:04:47,240
+And then here's the generator which will be using to draw charts.
+
+54
+00:04:48,320 --> 00:04:54,020
+All of these next functions are just making sure that we never try to draw a circle with negative angles
+
+55
+00:04:54,020 --> 00:04:58,420
+or radiuses and we'll be using the scales that we just defined position.
+
+56
+00:04:58,430 --> 00:05:05,630
+Each of us of these calls to math don't mean are also making sure that none of our angles will ever
+
+57
+00:05:05,630 --> 00:05:08,070
+exceed 360 degrees.
+
+58
+00:05:09,230 --> 00:05:14,950
+I'm making some console logs as usual inside out data loading function to show you what's going on with
+
+59
+00:05:14,950 --> 00:05:15,730
+that data.
+
+60
+00:05:17,440 --> 00:05:23,680
+When we first load in our data to a file when given the root node of a hierarchy connected to an array
+
+61
+00:05:23,680 --> 00:05:25,960
+of all its children.
+
+62
+00:05:26,090 --> 00:05:30,770
+So we're using the hierarchy lay out to format it into something that we can use with the politicians
+
+63
+00:05:30,880 --> 00:05:33,800
+that we're passing into some method.
+
+64
+00:05:33,860 --> 00:05:41,010
+So all of those will give value field according to the sum of the size of all the fields and their descendants.
+
+65
+00:05:41,100 --> 00:05:49,140
+Once we pass the result onto a partition Lau we now have an x 0 x 1 1 0 and white 1 values attached
+
+66
+00:05:49,140 --> 00:05:51,530
+to every node in a hierarchy.
+
+67
+00:05:52,020 --> 00:05:58,530
+If we take a closer look at these values we can see the y values ranging from 0 to 1 depending on the
+
+68
+00:05:58,530 --> 00:06:04,590
+nodes depth and the hierarchy and the x values seem to add up to one for each level.
+
+69
+00:06:05,550 --> 00:06:12,910
+We're then calling the descendants method on this data which will pass onto this data join his descendants
+
+70
+00:06:13,090 --> 00:06:17,950
+giving us 252 nodes that exist within a hierarchy.
+
+71
+00:06:18,100 --> 00:06:21,550
+We want to append an arc in a sunbursts for each of them.
+
+72
+00:06:21,640 --> 00:06:23,920
+So that's why we're doing a data join on that.
+
+73
+00:06:23,930 --> 00:06:31,520
+Ray for every item in this array we're appending a path and passing in the array item to a function
+
+74
+00:06:31,580 --> 00:06:33,500
+to set the attribute.
+
+75
+00:06:33,770 --> 00:06:38,750
+We're also giving it a fill with the color scale which will give us a new color.
+
+76
+00:06:38,780 --> 00:06:44,890
+Unless we're looking at leafnode in which case it just inherit from the color of its parent.
+
+77
+00:06:45,070 --> 00:06:51,610
+When using this click listen it updates all charge whenever the nut gets clicked before adding a simple
+
+78
+00:06:51,610 --> 00:06:52,320
+tool tips.
+
+79
+00:06:52,320 --> 00:06:56,790
+Again let's look at what's happening inside this click function.
+
+80
+00:06:57,960 --> 00:07:03,330
+We're using a few different twins again to define some custom transitions when our selection changes
+
+81
+00:07:04,230 --> 00:07:09,480
+the tween method of a transition is slightly different from the answer tween method since it can be
+
+82
+00:07:09,480 --> 00:07:12,680
+used old and multiple values once.
+
+83
+00:07:12,990 --> 00:07:18,110
+It's not really important what we decide to call the first argument here since it's just a name for
+
+84
+00:07:18,180 --> 00:07:19,830
+reference.
+
+85
+00:07:19,840 --> 00:07:25,600
+The second argument or attend a function that will run on every take of our transition's clock these
+
+86
+00:07:25,590 --> 00:07:32,470
+inter-relate is running on the domain of x and y scales as well as the range of a Y scale.
+
+87
+00:07:32,890 --> 00:07:38,800
+The values on the right are showing the values that should take on once the transition is finished.
+
+88
+00:07:38,850 --> 00:07:44,550
+The function that was spitting out will update x and y scales repeatedly according to the interpolated
+
+89
+00:07:44,550 --> 00:07:45,100
+values.
+
+90
+00:07:45,130 --> 00:07:52,430
+Each moment in time then we're updating the attribute of each of our paths with the actual Queen function
+
+91
+00:07:52,430 --> 00:07:58,670
+down here which is spitting out the path that should be showing at every point of the transition making
+
+92
+00:07:58,670 --> 00:08:01,860
+use of updating scales.
+
+93
+00:08:01,990 --> 00:08:09,010
+After this lecture you should now know how to set up a sunburst plot in D-3 by combining the D-3 partition
+
+94
+00:08:09,010 --> 00:08:12,980
+lay out with D-3 is arc path generator.
+
+95
+00:08:13,020 --> 00:08:17,240
+Since this is one of the last war trees I'll be giving you this course.
+
+96
+00:08:17,280 --> 00:08:22,320
+I hope that you're now at a stage where you can quickly understand any piece of data from community
+
+97
+00:08:22,320 --> 00:08:26,130
+code all by yourself in the next lecture.
+
+98
+00:08:26,130 --> 00:08:32,310
+I'll be asking you to find a visualization by yourself which we haven't covered in this course.
+
+99
+00:08:32,490 --> 00:08:38,760
+I want you to find an example on line that somebody else has written copy into your workspace and play
+
+100
+00:08:38,760 --> 00:08:42,910
+around with the file until you can explain everything that's going on.
+

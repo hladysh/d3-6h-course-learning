@@ -1,0 +1,219 @@
+0
+00:06.190 --> 00:10.750
+In this lecture I'll be helping you to set up your development environment for programming in D-3 
+
+1
+00:11.170 --> 00:14.930
+I'll show you the web browser and text editor that I'll be using in this course, 
+
+2
+00:14.980 --> 00:20.410
+I'll introduce you to the template files you'll be working from and I'll help you to get set up with an HTTP server
+
+3
+00:20.710 --> 00:21.880
+for your local machine.
+
+4
+00:23.770 --> 00:29.140
+For a web browser, I recommend that you use Google Chrome because it has a really nice set of developer
+
+5
+00:29.140 --> 00:31.350
+tools and it's fast.
+
+6
+00:31.420 --> 00:35.560
+It'll make it easier for you to follow along with my examples if we're looking at files in the same
+
+7
+00:35.560 --> 00:36.430
+browser.
+
+8
+00:36.630 --> 00:40.030
+But you're free to use whichever browser you feel most comfortable with.
+
+9
+00:41.310 --> 00:46.410
+You'll also want to get yourself a simple text editor for this course. For all the project that we'll
+
+10
+00:46.410 --> 00:46.960
+cover,
+
+11
+00:47.000 --> 00:54.500
+I'll be using Sublime Text 3, which is a basic text editor that works across Windows Mac OS and Linux.
+
+12
+00:54.570 --> 00:59.310
+You can get a trial version of this software for free on Sublime's website or you can actually pay for
+
+13
+00:59.310 --> 01:02.530
+the software to stop it bugging you with pop ups every now and then.
+
+14
+01:04.160 --> 01:06.970
+It doesn't take much to get started with D-3.
+
+15
+01:07.190 --> 01:11.680
+We'll be using D-3 version 5, which you can find in the D-3 GitHub page
+
+16
+01:11.690 --> 01:17.960
+by following this link right here. You just need to include the D-3 library somewhere in your HTML
+
+17
+01:18.260 --> 01:24.140
+in the same way that you'd include any other JavaScript library like jQuery or Underscore. You'll often
+
+18
+01:24.150 --> 01:30.150
+see these script tags are used to include D-3 in an HTML file, but we'll actually be downloading the file
+
+19
+01:30.350 --> 01:37.830
+into our template folders, which is a good habit to develop in case anything changes with the copy online. To keep
+
+20
+01:37.830 --> 01:41.820
+things simple so that you don't need to worry about getting the right versions of the different scripts
+
+21
+01:41.820 --> 01:43.640
+that we'll be using in this course,
+
+22
+01:43.640 --> 01:45.360
+I'll include everything that you'll need
+
+23
+01:45.360 --> 01:51.460
+in the template folder for each project. I'm keeping all my files in this directory here which is organized
+
+24
+01:51.460 --> 01:57.560
+into the different sections that we'll cover. Here we can see all the files from this section which is organized
+
+25
+01:57.560 --> 01:59.280
+by lecture.
+
+26
+01:59.300 --> 02:03.460
+I'm going to open up this whole folder in Sublime so I can show you how everything's structured.
+
+27
+02:04.690 --> 02:08.000
+Let's take a look at a file from later on in this section.
+
+28
+02:08.370 --> 02:14.970
+Here we are looking at an index.html file, which we'll be running in a web browser. Here I'm including Bootstrap
+
+29
+02:14.970 --> 02:16.820
+to help structure the page.
+
+30
+02:17.300 --> 02:23.970
+Here is a CSS file that I'll sometimes use to add some custom styling. Here we're including the D-3 library, which I
+
+31
+02:24.050 --> 02:32.840
+downloaded to the .js directory and here's the file that we'll be writing all D-3 code in. For most
+
+32
+02:32.840 --> 02:37.610
+of the visualizations that we'll be creating in this course, it is important to note that they'll need to run
+
+33
+02:37.620 --> 02:44.080
+over a local HTTP server because our page will be sharing files between different folders.
+
+34
+02:44.090 --> 02:49.070
+There are a few different programs that you can use for this but for this cause I'll be using the HTTP
+
+35
+02:49.070 --> 02:52.620
+server that comes in built with Python.
+
+36
+02:52.680 --> 02:57.070
+If you have Python already installed on your machine then it's super easy to get started.
+
+37
+02:57.390 --> 03:02.940
+If not, then just download Python from the official website and make sure that you can get the latest version
+
+38
+03:02.960 --> 03:04.540
+for whichever operating system you use.
+
+39
+03:04.560 --> 03:09.480
+Use once you have Python installed,
+
+40
+03:09.480 --> 03:15.550
+fire up your terminal in the folder that you want to run your server and run the command 
+
+41
+03:15.550 --> 03:20.970
+python3 -n http.server
+
+42
+03:23.660 --> 03:27.130
+So here we can see that the server is working on port 8000
+
+43
+03:27.350 --> 03:32.750
+So if we navigate to our browser to local host 8000, then we should be able to see the files from
+
+44
+03:32.750 --> 03:34.770
+the directory that we're looking at.
+
+45
+03:35.300 --> 03:40.430
+I'm running my terminal from the root directory of all my project files so I can click through to whichever
+
+46
+03:40.430 --> 03:42.150
+directory that I want to look at.
+
+47
+03:43.510 --> 03:48.000
+This folder here for 2.6 should be the same as the one we have in the Sublime window.
+
+48
+03:48.670 --> 03:53.350
+As long as you're always looking at your page through a local host server, then your visualization should
+
+49
+03:53.350 --> 03:54.190
+show up here.
+
+50
+03:55.640 --> 04:00.470
+So hopefully by now you should have everything that you need to start programming in D-3.
+
+51
+04:00.600 --> 04:05.550
+If you have any problems setting this stuff up then leave me a comment in this video and I'll try to help
+
+52
+04:05.550 --> 04:07.000
+out what's going wrong.
+
+53
+04:07.710 --> 04:12.200
+Now that we're finished with set up we're ready to start learning about SVGs and how to add them into
+
+54
+04:12.220 --> 04:12.770
+the screen.

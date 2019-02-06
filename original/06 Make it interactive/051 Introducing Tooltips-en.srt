@@ -1,0 +1,448 @@
+1
+00:00:06,480 --> 00:00:11,790
+Although a graph now has a legend that lets you see the consonant that each of us relates to.
+
+2
+00:00:11,950 --> 00:00:16,900
+It might be useful for our users to view the broad data from a given country in a given year.
+
+3
+00:00:17,690 --> 00:00:22,910
+It would be nice if the user had some way of following one of the circles over time and finding out
+
+4
+00:00:22,910 --> 00:00:24,720
+which country it represents.
+
+5
+00:00:25,660 --> 00:00:31,130
+In this lecture we'll be adding some tool tips to a graph what this means is that the users will be
+
+6
+00:00:31,130 --> 00:00:36,650
+able to hover over one's circles with their mouse and the box will appear giving all the information
+
+7
+00:00:36,680 --> 00:00:38,870
+to relate to that particular data point.
+
+8
+00:00:40,370 --> 00:00:46,040
+To do this we'll be making use of the D3 type library which is the third party plug in that somebody
+
+9
+00:00:46,040 --> 00:00:50,310
+from the D-3 community is designed to work with these three.
+
+10
+00:00:50,540 --> 00:00:55,770
+We'll also be putting on newfound knowledge about formatting into practice to make our data appear in
+
+11
+00:00:55,770 --> 00:00:57,460
+a tween and readable way.
+
+12
+00:00:59,560 --> 00:01:05,360
+At the end of this lecture we should have a tool kit that looks something like this hovering over Italy
+
+13
+00:01:05,380 --> 00:01:12,580
+here the user can see a nice clean display which shows country name continent life expectancy.
+
+14
+00:01:12,580 --> 00:01:18,130
+GDP per capita population in the current year.
+
+15
+00:01:18,310 --> 00:01:22,370
+Here we can see the sin taxes involved in adding a tool to it.
+
+16
+00:01:22,390 --> 00:01:29,000
+Firstly we are calling the D-3 tip function D-3 tip libraries giving us which instantiates our tool
+
+17
+00:01:28,990 --> 00:01:33,040
+tip element we're adding a class called D-3 tip.
+
+18
+00:01:33,080 --> 00:01:39,020
+The aftermath which will take care of styling and then we're saying the constants of our two tape and
+
+19
+00:01:39,030 --> 00:01:45,540
+the AGM element we're using a function head to separate email which is going to get past that piece
+
+20
+00:01:45,540 --> 00:01:49,260
+of data from the shape that we want to look at later on.
+
+21
+00:01:49,770 --> 00:01:56,160
+In Step 2 we are using the cool method on our visualization to let our Page know that we want to attach
+
+22
+00:01:56,160 --> 00:01:58,420
+a tool tip to our visualization area.
+
+23
+00:01:59,760 --> 00:02:05,700
+Finally we're adding to event listeners to ask veejays which is saying that the torture should be shown
+
+24
+00:02:05,700 --> 00:02:09,530
+when the mouse moved over the shape and the tool tip should be hidden.
+
+25
+00:02:09,540 --> 00:02:16,050
+When the mouse moves outside of the area of the shape tip show is actually relaying the piece of data
+
+26
+00:02:16,050 --> 00:02:20,860
+associated with the Eski G to the h t m l function from step 1.
+
+27
+00:02:21,090 --> 00:02:23,120
+Whenever the mouse over event is triggered
+
+28
+00:02:25,800 --> 00:02:32,850
+this is a good point to mention the on method in D-3 which is used for attaching events to the cheese.
+
+29
+00:02:32,910 --> 00:02:39,600
+The method takes two arguments an event type to listen for the function to run whenever that event is
+
+30
+00:02:39,600 --> 00:02:40,280
+fired.
+
+31
+00:02:41,870 --> 00:02:47,510
+The tooltip uses the mouse over and makes out events but there are a huge number of different events
+
+32
+00:02:47,510 --> 00:02:53,700
+that we can listen for the functions that we're using for a tortured tool to hide and tooltip those
+
+33
+00:02:53,720 --> 00:03:01,420
+show which are methods that the D-3 library gives is to effect the elements display we'll be introducing
+
+34
+00:03:01,450 --> 00:03:06,850
+a number of other event listeners in the next few lectures as we continue to make our visualization
+
+35
+00:03:06,940 --> 00:03:08,550
+more and more interactive.
+
+36
+00:03:10,290 --> 00:03:16,840
+The D-3 temp library also comes with some simple examples C Ss which will be using to give us some quick
+
+37
+00:03:16,870 --> 00:03:21,000
+and easy styles for taught it.
+
+38
+00:03:21,060 --> 00:03:26,850
+Now that we've seen the syntax for creating a tooltip in the three I'm going to walk through the example
+
+39
+00:03:26,850 --> 00:03:30,240
+of how we would go about adding a tortilla to a bubble chart.
+
+40
+00:03:31,460 --> 00:03:38,210
+As D-3 tape has a plugin library for D-3 it doesn't come included with the regular D-3 library.
+
+41
+00:03:38,300 --> 00:03:43,310
+She will normally need to download it from its repository and get her include included in your ingenius
+
+42
+00:03:43,310 --> 00:03:43,930
+folder.
+
+43
+00:03:45,620 --> 00:03:51,650
+As I mentioned I'll also be grabbing the examples C S S file from the same repository so that we don't
+
+44
+00:03:51,650 --> 00:03:55,360
+need to worry about making anything look pretty.
+
+45
+00:03:55,460 --> 00:04:00,350
+I've already gone ahead and added these files into my project folder and I included them here and in
+
+46
+00:04:00,350 --> 00:04:03,420
+my index to H.T. mail file.
+
+47
+00:04:03,580 --> 00:04:10,340
+Going back to a manger file here we add a tool tutor to our visualization for the first that we need
+
+48
+00:04:10,340 --> 00:04:14,690
+to initialize the tooltip by calling the D-3 test function.
+
+49
+00:04:14,690 --> 00:04:16,660
+Here's what this code will look like.
+
+50
+00:04:17,940 --> 00:04:24,870
+I'm giving it the class of D-3 test which matches the CSSA name for an AC SS file and I'm going to set
+
+51
+00:04:24,870 --> 00:04:27,380
+the mail with a function.
+
+52
+00:04:27,600 --> 00:04:32,480
+For now I'll just return the object that we're looking at and I'll come back to setting the HDMI out
+
+53
+00:04:32,490 --> 00:04:33,150
+later.
+
+54
+00:04:34,890 --> 00:04:44,030
+Next I'm going to use D-3 is called method on our visualization group to set the context for our Toltec.
+
+55
+00:04:44,050 --> 00:04:50,830
+Finally I'm adding in the two event listeners that we need to use the tools to work properly.
+
+56
+00:04:50,880 --> 00:04:56,520
+First there's the mouse over events where we need to show the tool tip by providing the tip top show
+
+57
+00:04:56,520 --> 00:04:58,860
+method as the function.
+
+58
+00:04:58,910 --> 00:05:04,430
+And secondly we need the mouse out-of-band which we use to fire the Tip-Top hide method.
+
+59
+00:05:05,840 --> 00:05:11,510
+I should note that we're attaching these events before we merge into selection with the update selection
+
+60
+00:05:11,990 --> 00:05:19,010
+because we only want to attach these event listeners once for every circle that we enter onto our.
+
+61
+00:05:19,070 --> 00:05:24,930
+Now when we go back to our browser we can see the tooltip appears when we hover over one of these circles.
+
+62
+00:05:25,040 --> 00:05:31,480
+However we still need to format the content of our tool tips age Jamail so we can actually see the contents
+
+63
+00:05:31,490 --> 00:05:33,610
+of this object.
+
+64
+00:05:33,660 --> 00:05:41,360
+I'm going to go back to when we first initialize the it and write out some HDMI code for us to display.
+
+65
+00:05:41,410 --> 00:05:47,170
+We're actually going to make a fairly long string hit output inside out towards it because we have so
+
+66
+00:05:47,170 --> 00:05:54,440
+many fields that we want to display to make our structure clearer and making a variable called text
+
+67
+00:05:54,530 --> 00:05:56,930
+and adding to it one line at a time.
+
+68
+00:05:58,130 --> 00:06:00,610
+I'm starting out with a country name here.
+
+69
+00:06:00,950 --> 00:06:05,320
+I want all of my variable names to appear older than the pieces of data.
+
+70
+00:06:05,510 --> 00:06:10,600
+So I'm surrounding each of them with a strong tag for other pieces of data.
+
+71
+00:06:10,600 --> 00:06:11,970
+I'm coloring them in red.
+
+72
+00:06:12,040 --> 00:06:19,210
+So they really stand out with this span tag and setting the text color with an inline C says when it
+
+73
+00:06:19,210 --> 00:06:21,100
+comes to actually including the data.
+
+74
+00:06:21,130 --> 00:06:26,920
+We're using some string concatenation here for the first row we can access the country name using the
+
+75
+00:06:26,920 --> 00:06:29,890
+key of the country from our data object.
+
+76
+00:06:29,890 --> 00:06:31,860
+We're also adding a brake tag here.
+
+77
+00:06:31,870 --> 00:06:37,070
+So every piece of data it will display on its own line.
+
+78
+00:06:37,150 --> 00:06:39,540
+Next we're doing the same thing for the continent.
+
+79
+00:06:39,550 --> 00:06:41,860
+The data point belongs to.
+
+80
+00:06:41,860 --> 00:06:48,720
+I just copied and pasted the same line for my country field replacing the word country with consonant.
+
+81
+00:06:48,730 --> 00:06:54,080
+Again I've done the same thing with life expectancy using the life XP field.
+
+82
+00:06:54,280 --> 00:07:02,000
+GDP per capita with the income field and population with the population field finally and returning
+
+83
+00:07:02,130 --> 00:07:08,570
+this long text variable which is what actual tape is going to display when we refresh the page.
+
+84
+00:07:08,570 --> 00:07:11,770
+Now it looks like a tooltip is doing what we want it to.
+
+85
+00:07:12,150 --> 00:07:15,090
+However these figures look a little messy as they are.
+
+86
+00:07:15,300 --> 00:07:19,050
+So we'll use some format functions to clean them up.
+
+87
+00:07:19,050 --> 00:07:25,680
+First off I want to capsulized the names of our continents so I use the same text transform trick that
+
+88
+00:07:25,680 --> 00:07:28,980
+we used for our legend to capitalize these names.
+
+89
+00:07:28,980 --> 00:07:37,090
+Next I'm going to add a D-3 format call for life expectancy data or life expectancy data is sometimes
+
+90
+00:07:37,090 --> 00:07:42,400
+given to one decimal point and sometimes given to two decimal points in our data.
+
+91
+00:07:42,660 --> 00:07:44,940
+To clean this up or make a specifier.
+
+92
+00:07:44,950 --> 00:07:51,730
+To format this figure as a floating point value to two decimal points from the D-3 documentation I can
+
+93
+00:07:51,730 --> 00:07:57,730
+figure out that we need to provide the precision before the type for a format and specify that we're
+
+94
+00:07:57,760 --> 00:08:05,900
+ultimately looking for the string of point to an I'll do something similar if the GDP per capita.
+
+95
+00:08:06,140 --> 00:08:13,610
+Except this time I'll use the specifier dollar column as the rope and the Dollar Sign here tells the
+
+96
+00:08:13,610 --> 00:08:15,630
+three that are using a currency.
+
+97
+00:08:15,770 --> 00:08:21,950
+The comma adds a thousand separator and the zero error gives as a fixed point number with no decimal
+
+98
+00:08:21,950 --> 00:08:23,480
+points.
+
+99
+00:08:23,480 --> 00:08:28,580
+Finally for population I'm going to use the specifier comma 0.
+
+100
+00:08:28,760 --> 00:08:31,700
+This should do the same thing as the last format function.
+
+101
+00:08:31,700 --> 00:08:37,850
+Except here with not formatting a number as a currency once you refresh the page and take another look
+
+102
+00:08:37,850 --> 00:08:43,570
+at tooltip again we can see that our data is showing up in a much nicer format than before.
+
+103
+00:08:44,470 --> 00:08:49,510
+One thing that's pretty annoying is that the circles are constantly moving so it's hard to get a clear
+
+104
+00:08:49,510 --> 00:08:54,530
+look at a certain country but will be introducing a fix for that in the next lecture.
+
+105
+00:08:55,940 --> 00:09:01,400
+After this lecture you should now be able to add your own tool tips to your visualizations using the
+
+106
+00:09:01,400 --> 00:09:07,850
+three step process of initializing metod it calling it in the context of your visualization and adding
+
+107
+00:09:07,850 --> 00:09:09,580
+its event handlers to us.
+
+108
+00:09:09,610 --> 00:09:16,220
+Geez you also got your first look at event listeners in this course when we added listeners for Mansingh
+
+109
+00:09:16,250 --> 00:09:23,080
+over the way from the SVGA circles in the next lecture we're going to be adding in 3 new interactive
+
+110
+00:09:23,080 --> 00:09:28,980
+features to a graph including a pause button so that users can take a look at the visualization in a
+
+111
+00:09:28,980 --> 00:09:34,090
+set and yet because we'll be listening to so many different events at once.
+
+112
+00:09:34,180 --> 00:09:38,080
+We'll also be introducing an event handlers to simplify our logic.
+

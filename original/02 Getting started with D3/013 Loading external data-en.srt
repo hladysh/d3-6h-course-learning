@@ -1,0 +1,431 @@
+0
+00:06.930 --> 00:11.520
+Now that we can see how D-3 binds data to SVGs on a basic level,
+
+1
+00:11.650 --> 00:16.660
+I'm going to show you how to do the same thing with a real dataset so that we don't have to store everything
+
+2
+00:16.660 --> 00:18.070
+in a variable.
+
+3
+00:18.070 --> 00:24.700
+I'll be teaching you to load data from CSV, TSV, and JSON files and I'll be setting the properties of
+
+4
+00:24.700 --> 00:25.570
+our SVGs
+
+5
+00:25.600 --> 00:26.860
+according to the data.
+
+6
+00:29.550 --> 00:34.250
+D-3 has a variety of different functions to handle data from external sources.
+
+7
+00:34.320 --> 00:39.510
+If you want to get more advanced with this then you can use an Ajax request to load data from a completely
+
+8
+00:39.510 --> 00:43.610
+different source like an SQL server or a Google Docs spreadsheet. 
+
+9
+00:43.840 --> 00:49.480
+But for this course we'll be dealing with static data held in the data folder of our project.
+
+10
+00:49.690 --> 00:55.040
+For this lecture I've included a data folder in our project files with three different example datasets
+
+11
+00:55.040 --> 00:55.900
+.
+
+12
+00:55.990 --> 01:04.580
+We have one CSV file, one TSV file and one JSON File. CSV stands for Comma Separated Values
+
+13
+01:04.770 --> 01:08.400
+and TSV stands for Tab Separated Values.
+
+14
+01:08.400 --> 01:13.740
+You can think of these files as  analogous to a spreadsheet with each of the columns being separated
+
+15
+01:13.740 --> 01:19.710
+by a tab or a comma and each of the rows being separated by a newline character.
+
+16
+01:19.710 --> 01:26.610
+Finally. JSON stands for JavaScript Object Notation, which should look fairly familiar as it's basically
+
+17
+01:26.620 --> 01:34.040
+just a large JavaScript object. D-3 gives us these three functions at the bottom of the screen to load in
+
+18
+01:34.040 --> 01:40.260
+these files as an array. We'll be using D3 CSV, TSV and D-3
+
+19
+01:40.280 --> 01:40.940
+JSON.
+
+20
+01:40.940 --> 01:43.820
+to grab data throughout the course.
+
+21
+01:43.930 --> 01:49.940
+The functions all work in just the same way. We're passing in the relative path to the file that we're
+
+22
+01:49.940 --> 01:51.080
+looking at.
+
+23
+01:51.080 --> 01:56.960
+And since these functions are all written as promises we're using the then method to execute an anonymous
+
+24
+01:56.960 --> 01:57.630
+function.
+
+25
+01:57.650 --> 02:04.450
+Once the data has been loaded in. We can then access this data using the data arguments of this anonymous
+
+26
+02:04.450 --> 02:07.550
+function.
+
+27
+02:07.580 --> 02:11.590
+As a side note, here's what the syntax used to look like before version 5.
+
+28
+02:11.630 --> 02:16.960
+You might sometimes see these functions written like this online, but you'll need to use the 'then'
+
+29
+02:16.990 --> 02:22.220
+syntax with promises to get things that work in the latest version of the library.
+
+30
+02:22.470 --> 02:28.350
+Since this course was written in Version 4 you might see the syntax in my examples but just be aware
+
+31
+02:28.350 --> 02:32.280
+of the subtle difference here between the two versions to get your code to work.
+
+32
+02:34.570 --> 02:39.390
+Let me take you through an example. Starting with the code that we had from last section.
+
+33
+02:39.410 --> 02:41.280
+I'll get rid of this data array and
+
+34
+02:41.370 --> 02:49.790
+I'm going to load in this age data with the D-3 CSV function. The result from calling this code
+
+35
+02:49.790 --> 02:56.020
+right here is a promise which could either be fulfilled, rejected or pending.
+
+36
+02:56.030 --> 03:01.790
+The great thing about using a promise here is that we can pass this value around in our code without 
+
+37
+03:01.880 --> 03:04.520
+actually needing to wait for it to evaluate.
+
+38
+03:04.590 --> 03:07.420
+Here we're saying that we want to grab the file called ages.CSV 
+
+39
+03:07.460 --> 03:12.830
+inside our data folder and then I'm going to define a function that we want to run once it's 
+
+40
+03:12.830 --> 03:13.790
+been loaded in
+
+41
+03:13.850 --> 03:20.570
+with this 'then' method. Now that we have access to this data inside this function let's take a look at
+
+42
+03:20.570 --> 03:23.100
+what D-3 has prepared for us. 
+
+43
+03:23.120 --> 03:28.510
+I always recommend starting off by logging whatever data you are working with to the console before
+
+44
+03:28.520 --> 03:33.220
+you write any code with it so that you can get a clear idea of the format that you're working with.
+
+45
+03:34.410 --> 03:39.130
+I'll also comment out this code for now just so that we don't have any errors that we need to worry about.
+
+46
+03:41.150 --> 03:45.760
+We can see that D-3 is read in the data as an array of JSON objects.
+
+47
+03:45.880 --> 03:49.190
+Here we simply have a list of names with their ages attached to them.
+
+48
+03:50.090 --> 03:58.570
+For CSV and TSV files D-3 interprets the object keys of name and age from the first row of our data as a
+
+49
+03:58.570 --> 03:59.600
+quick sanity check,
+
+50
+03:59.620 --> 04:06.580
+I'm just going to show you that D-3 does the same thing for our JSON File with d3.json,
+
+51
+04:06.690 --> 04:11.370
+so that's the same. And with our TSV file with d3.tsv
+
+52
+04:16.970 --> 04:19.010
+something to note about these age values
+
+53
+04:19.010 --> 04:22.000
+here is they're listed as strings rather than numbers.
+
+54
+04:23.260 --> 04:27.940
+Since I'm interested in working with these values as integers I'm going to need to convert them before
+
+55
+04:27.940 --> 04:29.150
+I do anything else.
+
+56
+04:30.030 --> 04:33.380
+This is a common task that you'll need to perform after reading in data,
+
+57
+04:33.420 --> 04:37.410
+as data is often read in from text files. To do this,
+
+58
+04:37.410 --> 04:43.080
+I'm going to write a simple for each function which will take every element in a data array and convert
+
+59
+04:43.080 --> 04:44.820
+the age values into integers. 
+
+60
+04:46.420 --> 04:52.070
+If you haven't had much experience in JavaScript before, then what this function is doing is that it's looping
+
+61
+04:52.070 --> 04:53.990
+over the array that we're passing it.
+
+62
+04:54.130 --> 04:59.390
+And for every item in the array we're converting the age value of the object to an integer with this
+
+63
+04:59.390 --> 05:02.280
+plus sign.
+
+64
+05:02.450 --> 05:09.230
+If we log this data out to the console now, we can see the age values are now integers as we expected.
+
+65
+05:10.200 --> 05:11.840
+Now that we have data formatted,
+
+66
+05:11.850 --> 05:17.160
+let's take those circles from our previous example using external data with them instead of just using
+
+67
+05:17.160 --> 05:23.510
+an array. We'll also need to update our anonymous function here because this de-value is going to return
+
+68
+05:23.510 --> 05:25.280
+an object instead of an integer now.
+
+69
+05:25.280 --> 05:31.430
+I'll just make a quick console log to show you what each of our attr functions is working with now.
+
+70
+05:34.090 --> 05:37.720
+We see that we have access to a name field and an age field
+
+71
+05:37.750 --> 05:39.690
+for each item in the array.
+
+72
+05:39.980 --> 05:42.320
+Keep the cx function the same as before
+
+73
+05:42.340 --> 05:44.510
+just to make sure the circles don't overlap.
+
+74
+05:44.920 --> 05:50.940
+But this time I'm going to set our radius as two times the age of each person.
+
+75
+05:51.140 --> 05:56.570
+We can refresh the page here and it looks about right for the numbers in the dataset.
+
+76
+05:56.600 --> 06:00.830
+I'm also going to use an IF statement to set the fill of our circles.
+
+77
+06:00.830 --> 06:07.420
+Let's say that we want to color Tony's circle in blue and every other circle in red
+
+78
+06:11.310 --> 06:16.790
+Refreshing the page we can see that this is working as expected. As a final step
+
+79
+06:16.790 --> 06:22.400
+I'm just going to show you have error handling works in D-3. In the old version we used to handle errors
+
+80
+06:22.400 --> 06:23.450
+like this.
+
+81
+06:24.320 --> 06:29.420
+Here we have an optional first argument that defines an error message if something goes wrong when our
+
+82
+06:29.420 --> 06:31.260
+code tries to read the file.
+
+83
+06:32.330 --> 06:35.320
+And then we're throwing this error inside of our callback function
+
+84
+06:35.330 --> 06:43.160
+if something goes wrong. With promises we can handle this a little more succinctly by using the catch
+
+85
+06:43.160 --> 06:43.900
+method.
+
+86
+06:45.180 --> 06:50.480
+Here we're dealing with the event that our promise turned out to be rejected and we're using the error argument
+
+87
+06:50.480 --> 06:52.890
+to this function to tell us what went wrong.
+
+88
+06:54.290 --> 07:00.910
+As an example let's say that we accidentally misspelled the path to the data that we want to load here
+
+89
+07:00.910 --> 07:04.780
+There isn't a file called age.tsv in our data folder. 
+
+90
+07:04.780 --> 07:08.670
+So our promise is going to get rejected.
+
+91
+07:08.870 --> 07:14.570
+Once we refresh the page we can see that on this line right here we are guessing a console log of exactly
+
+92
+07:14.570 --> 07:15.850
+what went wrong.
+
+93
+07:16.250 --> 07:18.730
+Error handling is a great habit to get into.
+
+94
+07:18.770 --> 07:22.900
+But it won't be that important for any of the projects that we'll cover in this course.
+
+95
+07:24.020 --> 07:30.380
+D-3 has given us the power to selectively edit the SVGs on the screen depending on what each data point
+
+96
+07:30.380 --> 07:36.410
+is saying. We'll be expanding on this going forward in a whole host of different applications to generate
+
+97
+07:36.410 --> 07:40.330
+all kinds of different charts. In the next activity,
+
+98
+07:40.330 --> 07:45.310
+I want you to work with a JSON file, which will be in the data section of your template folder, and
+
+99
+07:45.310 --> 07:48.220
+make a really simple visualization.
+
+100
+07:48.280 --> 07:53.840
+The file contains a list of the five tallest buildings in the world with some values representing their
+
+101
+07:53.890 --> 07:54.490
+heights.
+
+102
+07:56.460 --> 07:59.850
+I want you to make a rectangle for each of them like this.
+
+103
+08:00.610 --> 08:06.190
+The first rectangle is representing the Burj Khalifa, the second rectangle is representing the Shanghai
+
+104
+08:06.190 --> 08:06.840
+Tower.
+
+105
+08:06.940 --> 08:08.250
+And so on.
+
+106
+08:08.500 --> 08:13.750
+This will be your first step towards creating something that actually looks like a real visualization.
+
+107
+08:13.800 --> 08:18.210
+And we'll using it as a jumping off point to make a bar chart in the next section.

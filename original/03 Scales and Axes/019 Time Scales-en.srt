@@ -1,0 +1,80 @@
+1
+00:00:06,220 --> 00:00:12,740
+In this lecture I'll be covering timescales which you'll often want to use in your visualizations a
+
+2
+00:00:13,010 --> 00:00:19,550
+time scale is actually a type of linear scale and D-3 but his domain works with javascript data objects
+
+3
+00:00:19,580 --> 00:00:21,040
+instead of integers.
+
+4
+00:00:22,660 --> 00:00:28,070
+His domain is between the first of January 2000 and the first of January 2002.
+
+5
+00:00:28,150 --> 00:00:34,360
+One if we put in the date around the middle of these two dates we get a value that's in the middle of
+
+6
+00:00:34,360 --> 00:00:35,820
+our range.
+
+7
+00:00:35,860 --> 00:00:42,280
+So here we can see that the time scale is mapping the first of July 2000 to a value of 200 which makes
+
+8
+00:00:42,280 --> 00:00:48,220
+sense because we're giving it the midpoint of our domain and we getting back the midpoint of our range.
+
+9
+00:00:48,580 --> 00:00:51,730
+In case you haven't used javascript data objects before.
+
+10
+00:00:52,000 --> 00:00:58,660
+We're creating new data objects here by passing in the year month and day that we want.
+
+11
+00:00:58,840 --> 00:01:00,010
+It shouldn't surprise you.
+
+12
+00:01:00,040 --> 00:01:03,250
+The syntax here is identical to our linear scale.
+
+13
+00:01:03,280 --> 00:01:07,960
+As the time scale is just a special version of it that deals with dates.
+
+14
+00:01:07,960 --> 00:01:13,720
+If you want to do this with actual data rather than just creating a dummy data object you will need
+
+15
+00:01:13,720 --> 00:01:18,630
+to convert a string representation of a data to a javascript data object.
+
+16
+00:01:18,700 --> 00:01:23,270
+You will learn how to do this in section 6 when I'll be taking you through parsing and formatting into
+
+17
+00:01:23,360 --> 00:01:25,620
+three.
+
+18
+00:01:25,670 --> 00:01:31,530
+Hopefully you're getting the hang of scales by now and you can see how the syntax is working.
+
+19
+00:01:31,550 --> 00:01:36,830
+Next lecture will be covering ordinal scales to use for assigning color schemes to categories where
+
+20
+00:01:36,830 --> 00:01:39,860
+the syntax will be a little different when we're setting the domain.
+

@@ -1,0 +1,48 @@
+1
+00:00:07,240 --> 00:00:08,260
+Congratulations.
+
+2
+00:00:08,260 --> 00:00:09,280
+Great job.
+
+3
+00:00:09,520 --> 00:00:15,730
+After finishing your final project you're now at an advanced level with D-3 where you can handle complex
+
+4
+00:00:15,730 --> 00:00:19,700
+data visualization projects all by yourself.
+
+5
+00:00:19,790 --> 00:00:25,820
+The data dashboard that you just built wouldn't look out of place on a real companies web site you'd
+
+6
+00:00:25,820 --> 00:00:31,430
+synthesize the knowledge that you've been gradually building up throughout the course which is culminated
+
+7
+00:00:31,430 --> 00:00:39,050
+in a really impressive set of base ations this section was focused on the challenge of handling multiple
+
+8
+00:00:39,050 --> 00:00:46,230
+visualizations on the page which introduced you to writing your visualizations as objects using the
+
+9
+00:00:46,230 --> 00:00:51,360
+project structure that we've been using together with this object oriented approach.
+
+10
+00:00:51,500 --> 00:00:56,980
+It should serve you well going forward whenever you start to tackle visualization projects of your own.
+
+11
+00:00:58,300 --> 00:01:03,820
+In the next section of your wrapping up the course running through a broad overview of everything that
+
+12
+00:01:03,820 --> 00:01:07,650
+we've covered and summing up with a few final thoughts.
+

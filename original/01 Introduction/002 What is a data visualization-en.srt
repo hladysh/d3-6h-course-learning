@@ -1,0 +1,187 @@
+0
+00:06.930 --> 00:11.280
+In this lecture, I'm going to be giving a quick introduction to data visualization.
+
+1
+00:11.420 --> 00:16.320
+I'll be showing you how we can split up visualizations into three distinct types, and I'll be showing
+
+2
+00:16.320 --> 00:19.710
+you a few examples of each.
+
+3
+00:19.730 --> 00:22.710
+So what exactly is a visualization?
+
+4
+00:22.760 --> 00:28.640
+A quick search on Google gives us these two definitions. For this class, we'll be interested in the first definition,
+
+5
+00:28.880 --> 00:33.660
+which involves representing some kind of abstract information in a visual form.
+
+6
+00:34.100 --> 00:38.990
+If you're looking for a class on visualization that covers the second definition here, then this might
+
+7
+00:38.990 --> 00:40.470
+not be the right course for you.
+
+8
+00:42.200 --> 00:48.710
+Data visualization is a pretty broad discipline which can cover all sorts of different things. For the
+
+9
+00:48.710 --> 00:50.180
+purposes of this course,
+
+10
+00:50.270 --> 00:56.690
+we can split up the most common uses of visualization between exploring data - helping us discover something
+
+11
+00:56.690 --> 01:04.820
+new; analyzing data - testing a theory about the state of the world; or presenting data - which involves communicating
+
+12
+01:04.820 --> 01:14.020
+something to others. For exploring data, visualizations can be used to find some kind of unknown. A classic
+
+13
+01:14.020 --> 01:19.750
+example here is the work of Edward Muybridge, who was tasked with settling a bet by finding out whether
+
+14
+01:19.750 --> 01:23.430
+galloping horses ever have all four hooves off the ground
+
+15
+01:23.440 --> 01:27.380
+at once. This isn't something that we can tell by the naked eye,
+
+16
+01:27.710 --> 01:32.070
+so Muybridge used a series of experiments with photographs to find this
+
+17
+01:32.120 --> 01:33.430
+out for sure.
+
+18
+01:33.530 --> 01:39.290
+The result from these pictures proved the matter once and for all, as you can see here in the top few frames that
+
+19
+01:39.290 --> 01:42.670
+the horse is completely in mid-air for a good part of its stride.
+
+20
+01:44.180 --> 01:50.210
+For a more practical example, for your final project in this course, you'll be building a data dashboard that
+
+21
+01:50.210 --> 01:54.520
+lets a manager compare the sales performance of different teams in his workforce.
+
+22
+01:55.600 --> 02:01.930
+Here, the goal is to provide a visual tool to determine how these groups compare side by side, exploring
+
+23
+02:01.930 --> 02:05.770
+the raw numbers to see how this has changed over time.
+
+24
+02:05.830 --> 02:11.540
+The manager can then determine which groups are causing the most problems in his business and act accordingly.
+
+25
+02:12.610 --> 02:17.800
+For analyzing data, visualizations are made to test the hypothesis that we have about the state of the
+
+26
+02:17.800 --> 02:18.620
+world.
+
+27
+02:18.990 --> 02:23.320
+A classic example here is from the 19th century Docor John Snow.
+
+28
+02:23.320 --> 02:25.030
+Not this one.
+
+29
+02:25.300 --> 02:30.640
+He used a heat map of cholera cases in an area of London to prove his hypothesis that these deaths
+
+30
+02:30.640 --> 02:34.540
+were spread by water pumps in the area, rather than by decaying organic matter,
+
+31
+02:34.590 --> 02:40.350
+as other people had thought. For visualizations focused on presenting data,
+
+32
+02:40.380 --> 02:45.920
+the goal is to communicate some kind of story, and hopefully to inspire people to take action.
+
+33
+02:45.940 --> 02:51.520
+The most common examples here are from the New York Times, who often run interactive data visualizations
+
+34
+02:51.520 --> 02:53.210
+on their website.
+
+35
+02:53.230 --> 02:58.750
+These visualizations appear within a block of text that communicates a certain story, and the visualizations
+
+36
+02:58.750 --> 03:00.020
+are built to support it.
+
+37
+03:01.630 --> 03:06.670
+Now that you've learned a little bit about what visualizations look like, I want you to look for the
+
+38
+03:06.670 --> 03:10.200
+best visualization that you can find online.
+
+39
+03:10.300 --> 03:17.110
+Some great places to start are on Reddit at the subreddit "data is beautiful", flowingdata.com, which
+
+40
+03:17.110 --> 03:22.900
+has a lot of visualizations built with D3, or you can just start looking for visualizations on
+
+41
+03:22.960 --> 03:29.380
+Google. A great thing about Udemy is that you can take this class alongside many other students who
+
+42
+03:29.380 --> 03:32.060
+are going through the same learning process as you.
+
+43
+03:32.470 --> 03:37.810
+I want you to share your favorite visualizations in the comments to the next activity, so that we can
+
+44
+03:37.810 --> 03:40.930
+crowd-fund some of the best visualizations out there.
+
+45
+03:41.860 --> 03:47.320
+See what your other classmates have come up with and really get a feel for how varied displays of data
+
+46
+03:47.320 --> 03:47.960
+can be.

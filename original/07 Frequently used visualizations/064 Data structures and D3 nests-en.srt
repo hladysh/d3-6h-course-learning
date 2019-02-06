@@ -1,0 +1,316 @@
+1
+00:00:06,170 --> 00:00:11,730
+In this lecture I'll be talking about how we should work with different data structures that we might
+
+2
+00:00:11,730 --> 00:00:18,810
+find ourselves using in D-3 will often find that our code comes in a certain format and that we need
+
+3
+00:00:18,810 --> 00:00:25,490
+to coerce that data in some way to use it with D-3 I'll be demonstrating the difference between storing
+
+4
+00:00:25,490 --> 00:00:33,020
+data in arrays versus storing them in objects and also be introducing age at the D-3 nest function which
+
+5
+00:00:33,020 --> 00:00:36,880
+allows us to group arrays of objects into different categories.
+
+6
+00:00:39,730 --> 00:00:46,420
+Whenever we use a layout in DS 3 the function will expect our data to appear in a certain way.
+
+7
+00:00:47,350 --> 00:00:51,730
+We'll often need to juggle our data around a bit so that works as expected.
+
+8
+00:00:52,690 --> 00:00:58,720
+As you begin to make larger and larger visualizations You can also improve the performance of a visualization
+
+9
+00:00:58,720 --> 00:01:03,800
+considerably by picking the right data structure to use in the first place.
+
+10
+00:01:06,580 --> 00:01:13,300
+There are two main data structures that we have to work with on the one hand we have arrays.
+
+11
+00:01:13,750 --> 00:01:21,340
+Every element in the array can be stored at an index which we can then use to get its content the advantage
+
+12
+00:01:21,700 --> 00:01:27,390
+is that we can loop through these arrays pretty easily with a map function or a For Each loop.
+
+13
+00:01:27,710 --> 00:01:33,700
+43 is also especially useful that we can pass an array is that data method to a selection to use it
+
+14
+00:01:33,700 --> 00:01:35,940
+for a data join.
+
+15
+00:01:36,030 --> 00:01:41,690
+On the other hand we have objects or maps which are pretty similar for objects.
+
+16
+00:01:41,710 --> 00:01:44,720
+Our data is stored in key value pairs.
+
+17
+00:01:45,210 --> 00:01:51,210
+The advantage here is that we can immediately fetch the value stored inside one of these keys without
+
+18
+00:01:51,210 --> 00:01:54,580
+having to search through the entire data set.
+
+19
+00:01:54,600 --> 00:01:56,300
+Right.
+
+20
+00:01:56,340 --> 00:02:00,590
+This is especially useful if we repeatedly need to access the value.
+
+21
+00:02:00,720 --> 00:02:03,810
+For example every time a visualization updates
+
+22
+00:02:06,920 --> 00:02:13,880
+in G-3 will often find ourselves handling arrays of objects for example every time that we load in a
+
+23
+00:02:13,880 --> 00:02:21,630
+data file with D-3 we get back an array where every item is an object representing a row in that table.
+
+24
+00:02:22,700 --> 00:02:28,350
+Here's a situation that might seem a little challenging if we have an array like this.
+
+25
+00:02:28,430 --> 00:02:34,700
+We want to find the size of the item with the ID of Homer then we'll need to search through the entire
+
+26
+00:02:34,760 --> 00:02:39,880
+array checking to see whether each item's ID is equal to home.
+
+27
+00:02:40,160 --> 00:02:43,720
+And then we'll need to return the size of that item.
+
+28
+00:02:43,790 --> 00:02:46,830
+This is what's known as a brute force search.
+
+29
+00:02:47,630 --> 00:02:53,390
+It's not really a problem for this array because it only has two items search between there when we
+
+30
+00:02:53,390 --> 00:02:56,780
+need to do this for a data set with thousands of rows.
+
+31
+00:02:56,990 --> 00:03:01,580
+Then our visualization can start to get overloaded pretty quickly.
+
+32
+00:03:01,580 --> 00:03:09,710
+In this case a more elegant solution could be to convert data into a different format.
+
+33
+00:03:09,730 --> 00:03:16,570
+Here's another way that we could have written data on the right data has been stored as an object instead
+
+34
+00:03:16,570 --> 00:03:18,240
+of an array.
+
+35
+00:03:18,250 --> 00:03:26,180
+Now whenever anyone wants to know the size of Homer all they need to do is use the home key in the object.
+
+36
+00:03:26,190 --> 00:03:31,060
+This can be really useful if we'll need to look up the value repeatedly.
+
+37
+00:03:31,170 --> 00:03:36,900
+We can also do something similar to group rows of data into different category names so that we can
+
+38
+00:03:36,900 --> 00:03:40,740
+immediately access each of these categories by different keys.
+
+39
+00:03:42,580 --> 00:03:50,350
+D-3 comes with a really useful function to make this kind of conversion easy for us called a D-3 nest.
+
+40
+00:03:50,360 --> 00:03:55,010
+This allows us to group the rows of our data according to different keys.
+
+41
+00:03:55,010 --> 00:03:58,150
+We can even do this on multiple different levels.
+
+42
+00:03:58,160 --> 00:04:02,930
+For example let's say that we have a data set with Baali yields for different sites in Minnesota for
+
+43
+00:04:02,930 --> 00:04:05,500
+different years with this yields variable.
+
+44
+00:04:05,570 --> 00:04:08,280
+We were just reading in from a C S V file.
+
+45
+00:04:08,690 --> 00:04:11,810
+Let's imagine that we're working with a huge set of data.
+
+46
+00:04:12,230 --> 00:04:17,060
+Let's say that we want to make a pie chart comparing the yields of the different varieties of barley
+
+47
+00:04:17,370 --> 00:04:22,940
+and we want to use it to be able to choose a year to look at so each of these are to representing a
+
+48
+00:04:22,940 --> 00:04:31,070
+different strain of barley in the year 1931 the way that our data is structured right now our code would
+
+49
+00:04:31,070 --> 00:04:38,000
+need to loop over every single element in the yields array check if it's year matches the year the user
+
+50
+00:04:38,000 --> 00:04:39,180
+selected.
+
+51
+00:04:39,350 --> 00:04:45,180
+And if it does we need to add it to the total for the variety that belongs to.
+
+52
+00:04:45,590 --> 00:04:51,260
+This ends up creating a lot of different operations that our code needs to run through in order to make
+
+53
+00:04:51,260 --> 00:04:54,420
+a really simple update to a graph.
+
+54
+00:04:54,420 --> 00:04:59,240
+If the array that we're searching through is large enough then this could cause some serious lag for
+
+55
+00:04:59,260 --> 00:05:02,430
+our visualization.
+
+56
+00:05:02,590 --> 00:05:07,840
+We can improve on this by using D-3 as Nest function to use D-3 nest.
+
+57
+00:05:07,840 --> 00:05:13,320
+We just need to provide it with an access function using the key method which will point on that to
+
+58
+00:05:13,320 --> 00:05:16,030
+the values they should be grouping by.
+
+59
+00:05:16,270 --> 00:05:21,510
+If we provide more than one of these key methods and be grouping our data by more than one category.
+
+60
+00:05:21,910 --> 00:05:27,760
+So here we're pointing out first key method to look at the year of each item and our second key method
+
+61
+00:05:27,760 --> 00:05:30,330
+is looking at the variety of each item.
+
+62
+00:05:30,820 --> 00:05:34,960
+Then we pass in our array of data with this entry's method.
+
+63
+00:05:34,960 --> 00:05:41,410
+This means that DS3 will restructure the array of data that we're passing in returning an array of objects
+
+64
+00:05:41,580 --> 00:05:48,340
+one for every distinct year in data and within that array 3 has broken it down further.
+
+65
+00:05:48,340 --> 00:05:54,770
+Returning an array for all of the different varieties in our data the output of this entry is variable.
+
+66
+00:05:54,770 --> 00:05:57,460
+It's given here at the bottom.
+
+67
+00:05:57,460 --> 00:06:02,770
+Now we can calculate the yields in each of these different years when we first load in our data.
+
+68
+00:06:03,190 --> 00:06:08,260
+And then if we wanted to switch between different years all that we need to do is pass in the object
+
+69
+00:06:08,710 --> 00:06:11,440
+with a different key of the year that we're looking for.
+
+70
+00:06:11,980 --> 00:06:17,110
+This means that we don't have to search through nearly as many lines of code to find the relevant pieces
+
+71
+00:06:17,110 --> 00:06:19,090
+of data for a selection.
+
+72
+00:06:19,090 --> 00:06:22,430
+So a visualization should update with far less lag.
+
+73
+00:06:24,310 --> 00:06:29,170
+After this lecture you should understand some of the considerations you'll need to take into account
+
+74
+00:06:29,620 --> 00:06:32,640
+when you want to get your data in the right structure.
+
+75
+00:06:33,400 --> 00:06:39,590
+You should also know why we might need to use nest in D-3 to group Avro is by different fields.
+
+76
+00:06:41,060 --> 00:06:45,710
+You'll find yourself needing to worry about this more and more as your projects become more and more
+
+77
+00:06:45,710 --> 00:06:49,860
+complex requiring data in multiple formats.
+
+78
+00:06:50,270 --> 00:06:56,090
+And as you begin to work with the greater volume of data in the next lecture I'll be showing you how
+
+79
+00:06:56,090 --> 00:06:58,920
+to create PI and donut charts in three.
+

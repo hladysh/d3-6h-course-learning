@@ -1,0 +1,151 @@
+0
+00:06.290 --> 00:10.860
+In this lecture, I'll be giving you a general overview of how this course will look.
+
+1
+00:10.870 --> 00:15.970
+I'll be talking about how the course is split into three different parts, and I'll introduce you to the
+
+2
+00:15.970 --> 00:19.350
+four class projects that you complete at different stages.
+
+3
+00:21.450 --> 00:26.550
+In each of the first few sections of the course, I'll be teaching new concepts that should add onto the
+
+4
+00:26.550 --> 00:33.450
+previous sections to give you a strong foundation in D3. You'll learn how to render SVGs to the screen
+
+5
+00:33.450 --> 00:35.050
+to express data.
+
+6
+00:35.130 --> 00:40.250
+You learn how to use scales and axes for some common visualizations like bar charts and scatterplots.
+
+7
+00:41.160 --> 00:47.460
+You'll be making visualizations that dynamically update to changing data, and you'll be making interactive
+
+8
+00:47.460 --> 00:50.740
+visualizations that react to user input.
+
+9
+00:50.760 --> 00:56.280
+Importantly, I'll be helping you to thoroughly understand the D3 update pattern, teaching you what's
+
+10
+00:56.280 --> 01:01.010
+going on behind the scenes, which will allow you to make any visualization that you can imagine.
+
+11
+01:02.790 --> 01:09.240
+In sections 7, 8, and 9, I'll be giving you a crash course in a range of different visualizations, showing
+
+12
+01:09.240 --> 01:13.650
+you how the principles that we learned in the first phase of the course can help us to quickly pick
+
+13
+01:13.650 --> 01:18.290
+up any type of visualization. I'll be stepping you through sunburst plots,
+
+14
+01:18.310 --> 01:20.640
+node-link diagrams, choropleth maps,
+
+15
+01:20.640 --> 01:21.340
+treemaps,
+
+16
+01:21.340 --> 01:28.300
+trees, area charts, and more, and I'll be teaching you the process of finding, interpreting, and adapting
+
+17
+01:28.750 --> 01:32.240
+any kind of visualization by yourself.
+
+18
+01:32.320 --> 01:39.130
+Finally, in Section 10, you'll be writing complex linked views, where visualizations on the page communicate
+
+19
+01:39.130 --> 01:41.860
+to each other through a controller file.
+
+20
+01:41.860 --> 01:47.050
+At this point, your page will be handling updates for several different charts at once, which will be
+
+21
+01:47.050 --> 01:53.230
+rendering as javascript objects, which will also make code more reusable for future projects.
+
+22
+01:54.280 --> 01:59.230
+You'll complete four different class projects in this course, which will gradually become more complex as
+
+23
+01:59.230 --> 02:03.520
+your skill level increases. For your first project,
+
+24
+02:03.520 --> 02:06.920
+you'll be making a simple bar chart for a friend's business.
+
+25
+02:06.970 --> 02:12.160
+You can see that at this point, the visualization will be fairly simple and won't really exceed anything
+
+26
+02:12.160 --> 02:17.400
+that you could whip up in Microsoft Excel. For your second project,
+
+27
+02:17.440 --> 02:23.500
+You'll be making an updating scatterplot, based on a famous visualization from Gapminder, showing how
+
+28
+02:23.500 --> 02:27.110
+countries' incomes have increased with life expectancy over time.
+
+29
+02:28.120 --> 02:33.730
+Here, we already have a complex visualization, with data coming from positional attributes as well as
+
+30
+02:33.730 --> 02:39.240
+from the size and color of the circles. In your third project,
+
+31
+02:39.240 --> 02:45.030
+you'll be creating a line chart that tracks cryptocurrency data over time, which can show different coins
+
+32
+02:45.090 --> 02:51.690
+with different metrics like price and trading volume, and can be filtered based on a date range.
+
+33
+02:51.690 --> 02:57.460
+At this point, you'll be able to manage a complex system that is updating automatically, and you'll develop
+
+34
+02:57.460 --> 03:05.110
+a production quality interface, working with real data. Finally, for your last project,
+
+35
+03:05.130 --> 03:11.010
+you'll be building a data dashboard to keep tabs on different sales teams' performance at a large conglomerate
+
+36
+03:11.010 --> 03:17.840
+company. Here, your data will be split across different files and you'll simultaneously be rendering
+
+37
+03:17.840 --> 03:20.280
+six separate visualizations to the screen.

@@ -1,0 +1,220 @@
+1
+00:00:06,350 --> 00:00:11,440
+In this lecture I'm going to be talking about free Hendee functions but D-3 gets us to automatically
+
+2
+00:00:11,440 --> 00:00:12,670
+set the domains for us.
+
+3
+00:00:12,670 --> 00:00:18,870
+Galles I'll also be talking about map functions in javascript which are useful for setting domains for
+
+4
+00:00:18,880 --> 00:00:21,960
+categorical data.
+
+5
+00:00:21,990 --> 00:00:28,150
+It's pretty annoying to have to write in new values for their main whenever we update a data.
+
+6
+00:00:28,240 --> 00:00:32,500
+It wasn't too bad when we're just adding two new buildings in the last lecture.
+
+7
+00:00:32,980 --> 00:00:36,350
+But what if we needed to add hundreds of items to our domain.
+
+8
+00:00:36,370 --> 00:00:45,100
+Once we might have the same problem with Y-axis to for instance what if we had 10 new buildings at the
+
+9
+00:00:45,110 --> 00:00:50,350
+two adjacent file and we weren't sure whether any of them would be taller than our tallest building.
+
+10
+00:00:51,350 --> 00:00:57,490
+We'd need to manually search through our data and check for us selves and then update the Y scale domain
+
+11
+00:00:57,530 --> 00:00:59,390
+if necessary.
+
+12
+00:00:59,420 --> 00:01:06,920
+Ideally we want to write functions that will automatically set our domains Fouras G-3 provides three
+
+13
+00:01:06,920 --> 00:01:11,170
+useful functions that we'll be using all the time to do just that.
+
+14
+00:01:11,340 --> 00:01:16,360
+The three men did three max and D-3 extend.
+
+15
+00:01:16,460 --> 00:01:20,960
+Here we have an example dataset we shouldn't look too different from our buildings data.
+
+16
+00:01:21,200 --> 00:01:28,290
+We have an array of three objects which each have a grade and about property minimax and extends all
+
+17
+00:01:28,290 --> 00:01:35,970
+work in more or less the same way they take into arguments an array of data and the callback function
+
+18
+00:01:37,050 --> 00:01:42,960
+the callback function will loop over every item in the array for each item we need to return the piece
+
+19
+00:01:42,960 --> 00:01:49,020
+of data that we're interested in and the men nag's or extent function we'll compare these values and
+
+20
+00:01:49,020 --> 00:01:50,660
+return the relevant data.
+
+21
+00:01:51,520 --> 00:01:57,250
+For example the main function here is taking out great data and we're providing it with each of the
+
+22
+00:01:57,250 --> 00:01:58,200
+grade values.
+
+23
+00:01:58,230 --> 00:02:00,340
+This callback function.
+
+24
+00:02:00,340 --> 00:02:05,980
+The result is that it looks at three numbers that we're staring into and it spits out the number two
+
+25
+00:02:06,130 --> 00:02:13,050
+which is the smallest the max function is doing the same thing except it'll spit out the largest value
+
+26
+00:02:13,200 --> 00:02:19,980
+for if we provide the extent function with the same two arguments then it will return an array of the
+
+27
+00:02:19,980 --> 00:02:22,030
+minimum maximum values.
+
+28
+00:02:22,110 --> 00:02:29,990
+In this case the array of 2 for with discrete data we can use a map functional data right to come up
+
+29
+00:02:29,990 --> 00:02:32,120
+with an array of names.
+
+30
+00:02:32,120 --> 00:02:37,310
+This will be useful when we want to write and scales and ordinal scales as it can save us from having
+
+31
+00:02:37,310 --> 00:02:43,540
+to hard code a long list of categories springs into javascript code on the right of the screen as you
+
+32
+00:02:43,540 --> 00:02:50,070
+can see how we'll be using minimax and extend our scales when we're using minimax.
+
+33
+00:02:50,110 --> 00:02:55,360
+It's important to bear in mind that our domain takes an array of values.
+
+34
+00:02:55,870 --> 00:02:58,910
+So we need to enclose these values in square brackets.
+
+35
+00:03:00,450 --> 00:03:03,000
+Which will give you an array of 2 and 4.
+
+36
+00:03:03,150 --> 00:03:11,440
+First example this would mean an input value of will be scaled to output zero and a value for Biscoe
+
+37
+00:03:11,530 --> 00:03:17,850
+to 400 with doing the same thing using D-3 extent in our second example.
+
+38
+00:03:17,850 --> 00:03:25,130
+We say US space finally you know third example we using a map function pass in an array of string to
+
+39
+00:03:25,130 --> 00:03:33,380
+our domain which will associate each of these values with a band position between 0 and 400 pixels.
+
+40
+00:03:33,430 --> 00:03:38,770
+If we use these X and Y scales to create a bar chart then it would look something like the image of
+
+41
+00:03:38,770 --> 00:03:43,280
+the bottom of the screen going back to our code.
+
+42
+00:03:43,300 --> 00:03:47,900
+This section I'm going to incorporate these functions into us scales.
+
+43
+00:03:48,250 --> 00:03:54,010
+First we can get rid of this messy array of names here and we can use the map function to generate this
+
+44
+00:03:54,010 --> 00:03:54,990
+array for us
+
+45
+00:03:58,380 --> 00:03:59,570
+for each element.
+
+46
+00:03:59,580 --> 00:04:05,130
+This map function should return the building name that relates to giving us the complete list of buildings
+
+47
+00:04:05,130 --> 00:04:12,690
+for our domain for our linear scale we still want to use 0 for the minimum about domain.
+
+48
+00:04:12,930 --> 00:04:16,780
+So we'll just use D-3 max for this.
+
+49
+00:04:16,890 --> 00:04:20,670
+I'm passing in an array of data and the first argument to D-3 Max
+
+50
+00:04:24,160 --> 00:04:30,840
+and for the second argument our anonymous function is pointing towards the buildings Heidfeld you.
+
+51
+00:04:30,870 --> 00:04:36,030
+So if we fire this up now in the browser that we can see that everything is still working as expected
+
+52
+00:04:38,190 --> 00:04:43,560
+at this point our scales are getting pretty much all of that information from the data which makes our
+
+53
+00:04:43,560 --> 00:04:47,270
+code really usable in the next activity.
+
+54
+00:04:47,310 --> 00:04:51,710
+I want you to make sure that you have a good handle on different scales that you covered.
+
+55
+00:04:52,230 --> 00:04:54,900
+So you're ready to start using them in your first project.
+

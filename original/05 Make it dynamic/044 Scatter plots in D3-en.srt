@@ -1,0 +1,100 @@
+1
+00:00:06,380 --> 00:00:11,410
+Pross second class project we're essentially going to be using a jazzed up version of a scatterplot
+
+2
+00:00:11,890 --> 00:00:16,630
+where the size of our circles will change depending on the time that we're looking at.
+
+3
+00:00:16,660 --> 00:00:20,180
+This is technically referred to as a bubble chart.
+
+4
+00:00:20,200 --> 00:00:25,450
+In this lecture I'm going to be making a few small tweaks to the visualization that we have now to make
+
+5
+00:00:25,450 --> 00:00:27,850
+it into a scatterplot.
+
+6
+00:00:28,000 --> 00:00:34,710
+It's actually really simple to convert the bartk we have to a moment into a working scatterplot all
+
+7
+00:00:34,720 --> 00:00:39,480
+that we really need to do is switch our rectangles circles.
+
+8
+00:00:39,500 --> 00:00:44,640
+So first rename what we're appending to be circles rather than Rechts.
+
+9
+00:00:44,790 --> 00:00:50,730
+And you'll recall that SVGA circles get their position from C X and see y attributes instead of x and
+
+10
+00:00:50,730 --> 00:00:52,590
+y attributes.
+
+11
+00:00:52,700 --> 00:00:57,250
+We can make these changes was keeping everything else the same.
+
+12
+00:00:57,290 --> 00:01:03,170
+Next we also need to get rid of the width and height attributes instead replacing them with a radius
+
+13
+00:01:03,200 --> 00:01:06,380
+attribute for a simple scatterplot.
+
+14
+00:01:06,390 --> 00:01:09,750
+We'll just give them a radius of five pixels when we enter them
+
+15
+00:01:13,380 --> 00:01:18,750
+if we refresh the screen now we'll see that we suddenly have a working scatterplot.
+
+16
+00:01:18,960 --> 00:01:25,260
+You might notice here the circles are skewed a little bit to the left because of bend scale was positioning
+
+17
+00:01:25,260 --> 00:01:29,430
+our rectangle at the start of our bar rather than in the middle.
+
+18
+00:01:30,290 --> 00:01:39,630
+To fix this or add in half the length of bandwidth to the x value.
+
+19
+00:01:39,700 --> 00:01:45,130
+Now this looks like a real scatterplot for making a bubble chart.
+
+20
+00:01:45,340 --> 00:01:50,700
+The radius of the circles will also want to change depending on the data that you give it.
+
+21
+00:01:50,830 --> 00:01:56,890
+You'll be writing a new scale to do this and you'll need to remember to associate the area of the circles
+
+22
+00:01:56,890 --> 00:02:01,470
+with the country's populations rather than the radius of these circles.
+
+23
+00:02:02,550 --> 00:02:07,650
+Now they can see how a scatterplot should work indeed 3 three you should be prepared to take on your
+
+24
+00:02:07,650 --> 00:02:10,620
+second class project in the next lecture.
+
+25
+00:02:10,620 --> 00:02:15,530
+I'll be introducing you to a second class project and taking you through everything that you'll be needing.
+

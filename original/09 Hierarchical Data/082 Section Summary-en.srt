@@ -1,0 +1,64 @@
+1
+00:00:06,840 --> 00:00:13,080
+Congratulations the step that you just took in the last activity should hopefully have given you a lot
+
+2
+00:00:13,080 --> 00:00:15,450
+of confidence going forward.
+
+3
+00:00:15,450 --> 00:00:20,010
+You can now apply the skills that you first developed in the first six quiet sections of the Course
+
+4
+00:00:20,430 --> 00:00:22,880
+to understand adapt and improve.
+
+5
+00:00:22,920 --> 00:00:30,150
+Any kind of visualization in this section I introduce you to a range of different visualizations revolving
+
+6
+00:00:30,150 --> 00:00:32,750
+around hierarchical systems.
+
+7
+00:00:33,270 --> 00:00:38,450
+These visualizations are some of the most eye opening displays of data out there because they give us
+
+8
+00:00:38,460 --> 00:00:45,290
+a broad overview of how a different part of the system fits together in the next section.
+
+9
+00:00:45,300 --> 00:00:49,370
+I'll be returning to the visualization that we made for a third class project.
+
+10
+00:00:49,560 --> 00:00:52,990
+We were visualizing cryptocurrency prices over time.
+
+11
+00:00:54,120 --> 00:00:58,770
+We'll be restructuring our project files to clean up our code.
+
+12
+00:00:58,870 --> 00:01:03,120
+I'll be rewriting visualisations as objects to make them more usable.
+
+13
+00:01:04,630 --> 00:01:10,660
+And I'll be adding multiple visualizations to the page at once which will all connect together through
+
+14
+00:01:10,660 --> 00:01:12,950
+common events Hanlon's.
+
+15
+00:01:13,600 --> 00:01:20,680
+This will pay you for your final project where you'll be making a fancy data dashboard for a large conglomerate
+
+16
+00:01:20,680 --> 00:01:21,180
+company.
+

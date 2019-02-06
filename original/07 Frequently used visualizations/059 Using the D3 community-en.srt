@@ -1,0 +1,192 @@
+1
+00:00:06,420 --> 00:00:11,940
+One of the best things about the D-3 library is the buzzing ecosystem of developers though already using
+
+2
+00:00:11,940 --> 00:00:13,780
+it in this lecture.
+
+3
+00:00:13,800 --> 00:00:18,900
+I'm going to show you two of the best sites to check out to find helpful boilerplate code that can get
+
+4
+00:00:18,900 --> 00:00:22,330
+you started writing visualisations.
+
+5
+00:00:22,460 --> 00:00:29,010
+I'll be using these sites myself over the next three sections to find the different example implementations.
+
+6
+00:00:29,030 --> 00:00:36,360
+I'll be walking you through the reason why I've structured these next few sections as a series of crash
+
+7
+00:00:36,360 --> 00:00:42,420
+courses in different visualizations that you never really want to be writing all of your code from scratch
+
+8
+00:00:43,200 --> 00:00:48,000
+unless you're coming up with a new kind of visualization which is totally revolutionary to anything
+
+9
+00:00:48,000 --> 00:00:49,300
+that's come before.
+
+10
+00:00:49,650 --> 00:00:54,780
+Then you can be completely certain that some other code exists on line that you can adapt for your own
+
+11
+00:00:54,780 --> 00:00:56,350
+visualizations.
+
+12
+00:00:56,520 --> 00:01:04,350
+For D-3 we have two great Web sites blogs dot org and block build a dot org which make it easy to appropriate
+
+13
+00:01:04,350 --> 00:01:08,460
+small useful chunks of other people's code for your own projects.
+
+14
+00:01:10,480 --> 00:01:12,750
+I'm going to show you blocks first.
+
+15
+00:01:13,070 --> 00:01:19,220
+The idea behind blocks is that you can share snippets of D-3 code on line showing the code and the output
+
+16
+00:01:19,220 --> 00:01:26,720
+in your browser blocks is maintained by Mike Bostock who is one of the creators of D-3 and he's uploaded
+
+17
+00:01:26,720 --> 00:01:29,760
+many of the most commonly used visualizations out there.
+
+18
+00:01:30,670 --> 00:01:36,520
+On the home page you can see a list of the most popular blogs and generally speaking if you Google something
+
+19
+00:01:36,520 --> 00:01:43,060
+like bar chart code D-3 an implementation in blocks will probably come up near the top of your search
+
+20
+00:01:43,060 --> 00:01:44,380
+results.
+
+21
+00:01:44,380 --> 00:01:50,050
+So for example here we have a blog with the code building and tree map which will cover in section 9
+
+22
+00:01:51,330 --> 00:01:57,510
+on the top of blocks is another site called block building org which lets you edit someone else's blog
+
+23
+00:01:57,520 --> 00:02:04,650
+with an online editor meaning that you can basically make a fork of someone else's visualizations because
+
+24
+00:02:04,650 --> 00:02:09,690
+of this you'll find lots of code snippets on block builder that take something that's already been done
+
+25
+00:02:09,750 --> 00:02:13,400
+with blogs but has a slightly different twist to it.
+
+26
+00:02:13,860 --> 00:02:20,070
+So for example if we use the same you around that we would just on except with block build it instead
+
+27
+00:02:20,660 --> 00:02:27,210
+then we can edit it like Bostock's code directly in this window and things will just automatically update.
+
+28
+00:02:27,210 --> 00:02:35,640
+So for example I can change the width from 960 pixels to 500 pixels and the graph changes accordingly.
+
+29
+00:02:35,640 --> 00:02:38,000
+Did you sign up with an accountant block Builder.
+
+30
+00:02:38,040 --> 00:02:46,300
+Then he can also save the changes that you make inside the editor and you can force changes into a repository.
+
+31
+00:02:46,310 --> 00:02:50,960
+The best thing about block builder is that you're able to search through the catalog of code snippets
+
+32
+00:02:50,960 --> 00:02:57,140
+that users have upload a lot of times if you're looking for a fairly unique visualization.
+
+33
+00:02:57,160 --> 00:03:04,150
+Many of the best implementations might still only exist in older versions where you can do here is only
+
+34
+00:03:04,150 --> 00:03:10,870
+search for visualizations that use D-3 version for for example let's say that we want to find a bar
+
+35
+00:03:10,900 --> 00:03:20,030
+or in Version 4 we just type what we're looking for in the search box and we find one that we like.
+
+36
+00:03:20,050 --> 00:03:26,050
+So here's an interesting visualization where we have a diverging scale depending on where the data is
+
+37
+00:03:26,050 --> 00:03:29,180
+positive or negative as you can see.
+
+38
+00:03:29,240 --> 00:03:35,260
+Most of these files just have everything on the page a male page rather than splitting things up into
+
+39
+00:03:35,260 --> 00:03:36,750
+different javascript files.
+
+40
+00:03:36,760 --> 00:03:43,480
+As we've been doing your first step finding the visualization that you're looking for should be to separate
+
+41
+00:03:43,480 --> 00:03:49,940
+things out a bit into the files and from that you want to adapt the visualization to fit with your own
+
+42
+00:03:49,950 --> 00:03:56,650
+data using what you know about the D-3 update pattern and then handling from Section 5 and 6 in this
+
+43
+00:03:56,650 --> 00:04:02,560
+course and then be able to make static graphs of data based on the events that you care about.
+
+44
+00:04:03,970 --> 00:04:08,680
+After this lecture you should be aware of the different sites that you can use to find new types of
+
+45
+00:04:08,680 --> 00:04:15,220
+visualizations or be using these two sides repeatedly over the next few sections to source our example
+
+46
+00:04:15,220 --> 00:04:15,860
+code.
+
+47
+00:04:16,090 --> 00:04:21,370
+And I'd highly recommend that you take a look at then to check out the wide variety of prepared code
+
+48
+00:04:21,400 --> 00:04:22,920
+which you can download for free.
+

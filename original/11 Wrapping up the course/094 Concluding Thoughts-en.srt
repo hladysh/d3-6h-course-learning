@@ -1,0 +1,88 @@
+1
+00:00:06,840 --> 00:00:08,400
+So that's it.
+
+2
+00:00:08,430 --> 00:00:12,490
+This is as far as I can take you in the world of T-3.
+
+3
+00:00:12,590 --> 00:00:17,420
+Like most things with programming courses like these can only take you so far.
+
+4
+00:00:17,450 --> 00:00:22,460
+The way for you to take your skills to the next level is by practicing with more and more real world
+
+5
+00:00:22,460 --> 00:00:24,410
+projects.
+
+6
+00:00:24,430 --> 00:00:28,600
+I don't know what your main motivation will have been when you first set out that journey of learning
+
+7
+00:00:28,640 --> 00:00:34,450
+to but there are endless possibilities the kinds of fascinating visualizations that you are now able
+
+8
+00:00:34,450 --> 00:00:35,270
+to create.
+
+9
+00:00:36,220 --> 00:00:40,540
+There are lots of places out there where you can find open source data sets for a range of different
+
+10
+00:00:40,540 --> 00:00:42,510
+purposes.
+
+11
+00:00:42,530 --> 00:00:48,780
+My favorite one is here at Kaggle dot com where users can upload data on just about anything.
+
+12
+00:00:49,010 --> 00:00:54,380
+All of the data sets are rated according to how interesting they are and they cover a huge range of
+
+13
+00:00:54,380 --> 00:00:55,690
+different topics.
+
+14
+00:00:56,900 --> 00:01:01,940
+I hope that by now you're used to the process of appropriating other people's code and figuring out
+
+15
+00:01:01,940 --> 00:01:04,630
+how to use these snippets in your projects.
+
+16
+00:01:05,340 --> 00:01:11,040
+Don't be afraid to give back to this community as well by sharing the code that you write for others
+
+17
+00:01:11,040 --> 00:01:12,420
+to use.
+
+18
+00:01:12,420 --> 00:01:18,800
+You can contribute to the vibrant community that makes the three best visualization library out there.
+
+19
+00:01:19,410 --> 00:01:21,670
+I hope that you enjoy taking this course.
+
+20
+00:01:21,810 --> 00:01:23,640
+It's been a pleasure to teach you.
+
+21
+00:01:24,000 --> 00:01:28,560
+I've learned a lot by creating these lectures and it's been a fantastic experience for me to get to
+
+22
+00:01:28,560 --> 00:01:30,390
+share this knowledge with you.
+

@@ -1,0 +1,368 @@
+1
+00:00:06,880 --> 00:00:13,320
+For most types of chod it's important to have some kind of axes that give us a reference point to interpret
+
+2
+00:00:13,450 --> 00:00:16,350
+data from our.
+
+3
+00:00:16,540 --> 00:00:22,720
+The moment isn't particularly useful if our users don't already know what these bars are meant to represent.
+
+4
+00:00:22,720 --> 00:00:24,780
+We can't tell which building is which.
+
+5
+00:00:24,820 --> 00:00:28,420
+And our chart only expresses relative heights between the buildings.
+
+6
+00:00:29,820 --> 00:00:37,630
+In this lecture we'll be adding an X in the y axis to our chart and we'll be adding in some labels indiscreet
+
+7
+00:00:37,740 --> 00:00:45,070
+version before we can use one of four different axes generators to create axes for this example we'll
+
+8
+00:00:45,070 --> 00:00:53,140
+be using D-3 access left and D-3 X's bottom but we could also have used D-3 access right and D-3 access
+
+9
+00:00:53,170 --> 00:00:54,050
+top.
+
+10
+00:00:54,070 --> 00:00:59,080
+It's important to know that each of these scale the rended the origin point device weekenders when we
+
+11
+00:00:59,080 --> 00:01:04,630
+first add them to the screen that's fine if the axis is on the left or at the top.
+
+12
+00:01:05,020 --> 00:01:11,420
+But if we want the axes on the bottom or on the right of our graph we want to attach our access to a
+
+13
+00:01:11,420 --> 00:01:14,620
+group and give it a translation for the button.
+
+14
+00:01:14,630 --> 00:01:21,330
+This will once you give it a translation of the height of visualization and the y direction for an axis
+
+15
+00:01:21,330 --> 00:01:22,340
+on the rides.
+
+16
+00:01:22,410 --> 00:01:27,850
+We need to shift it by the width about visualization in the x direction.
+
+17
+00:01:27,860 --> 00:01:29,670
+Let's take a look at the syntax here.
+
+18
+00:01:29,690 --> 00:01:37,430
+Follow the X generators working we're making a call to one of these Xs generators passing in the relevant
+
+19
+00:01:37,430 --> 00:01:38,140
+scales.
+
+20
+00:01:38,160 --> 00:01:45,090
+Our only argument then we're attaching SPG group to our visualization giving it a translation if necessary.
+
+21
+00:01:45,260 --> 00:01:48,630
+And then we use the call method to run the Xs generator.
+
+22
+00:01:49,550 --> 00:01:55,370
+D-3 also gives us some methods that we can use on axes generators to customize how the text should look.
+
+23
+00:01:57,350 --> 00:02:00,920
+We can change the length of our text using these three methods here.
+
+24
+00:02:02,390 --> 00:02:08,680
+To take salaries out of method will only affect the outermost takes the take sides in a method will
+
+25
+00:02:08,680 --> 00:02:09,470
+any effect.
+
+26
+00:02:09,520 --> 00:02:14,500
+It takes and the regular tick size method will affect them all equally.
+
+27
+00:02:14,890 --> 00:02:20,650
+If you use the tick size method alongside one of the other two methods and the last one that gets called
+
+28
+00:02:20,650 --> 00:02:23,930
+will be the one that counts.
+
+29
+00:02:23,930 --> 00:02:28,340
+We can also define how many takes should be shown on the axes by using the ticks method.
+
+30
+00:02:29,120 --> 00:02:36,610
+Here we giving an argument of 10 meaning the axis should try to show roughly 10 ticks because D-3 uses
+
+31
+00:02:36,610 --> 00:02:40,340
+a special algorithm to make the ticks values as neat as possible.
+
+32
+00:02:40,630 --> 00:02:44,760
+The X is often one containing exactly the right number of takes that we ask for.
+
+33
+00:02:45,070 --> 00:02:49,490
+But at least try to be fairly close.
+
+34
+00:02:49,580 --> 00:02:54,970
+We can use the take format method to choose how we want to display or take values.
+
+35
+00:02:54,980 --> 00:03:01,370
+We can do this with D-3 format which will cover in section 5 or we can use just use an anonymous function
+
+36
+00:03:01,370 --> 00:03:04,660
+which gives us access to the point that the tick is showing.
+
+37
+00:03:04,820 --> 00:03:11,010
+We can then apply some kind of transformation to it which will do for this section.
+
+38
+00:03:11,020 --> 00:03:16,290
+Finally if you get annoyed by the finicky nature of these tick generators then you can just pass in
+
+39
+00:03:16,300 --> 00:03:22,300
+the specific values that you want to display as an array with the take values function if you use take
+
+40
+00:03:22,300 --> 00:03:27,790
+values as well as tick format then the access generator will pass the values that you supply onto the
+
+41
+00:03:27,790 --> 00:03:31,260
+tape format method so that you can format these accordingly.
+
+42
+00:03:33,380 --> 00:03:35,150
+Let me take you through how this looks.
+
+43
+00:03:35,150 --> 00:03:45,470
+In the case of our chart first a right to access generators will use D-3 access button for x axis passing
+
+44
+00:03:45,470 --> 00:03:52,310
+and X scale and D-3 X is left for a y axis passing in a Y scale.
+
+45
+00:03:52,310 --> 00:03:56,460
+Next I'm going to group elements to our visualization area.
+
+46
+00:03:56,690 --> 00:04:03,110
+One for each axis for our x axis we're going to need to remember to translate this group by the height
+
+47
+00:04:03,120 --> 00:04:04,100
+of our visualization
+
+48
+00:04:09,990 --> 00:04:12,700
+and a Y axis will be in the right position already.
+
+49
+00:04:12,750 --> 00:04:14,420
+So we don't need to worry about shifting it
+
+50
+00:04:17,920 --> 00:04:30,240
+finally Arcola access generators on both of these elements with the Coleman.
+
+51
+00:04:30,400 --> 00:04:34,990
+So now we have two axes rendering on the screen as we expected.
+
+52
+00:04:34,990 --> 00:04:41,560
+Something to note here is that on our x axis our take values are overlapping each other to fix this.
+
+53
+00:04:41,560 --> 00:04:49,840
+I'm going to apply a rotation to all of the text elements in the x axis group I'm using Select all here
+
+54
+00:04:49,970 --> 00:04:58,110
+on x axis group to get a hold of all the text SVGA that are Xs generators appendant for us for each
+
+55
+00:04:58,110 --> 00:05:01,600
+of the text SVGA inside that Access Group.
+
+56
+00:05:01,680 --> 00:05:05,020
+I'm adding a transform attribute to rotate them.
+
+57
+00:05:05,080 --> 00:05:07,700
+We're applying a rotation transformation here.
+
+58
+00:05:08,040 --> 00:05:14,510
+In a similar way to the translations that you've already seen the rotate function just takes one arguments
+
+59
+00:05:14,960 --> 00:05:20,560
+which should be the number of degrees that the SVGA should be rotated in a clockwise direction.
+
+60
+00:05:20,580 --> 00:05:26,880
+So here I'm passing in a value of minus 40 means that all these text elements are rotated 40 degrees
+
+61
+00:05:26,970 --> 00:05:30,170
+anti-clockwise.
+
+62
+00:05:30,180 --> 00:05:33,960
+I've also moved these SVGA around with the x and y attributes.
+
+63
+00:05:34,080 --> 00:05:39,030
+So they line up with take marks and said that text and gets and is.
+
+64
+00:05:39,060 --> 00:05:40,970
+They all line up.
+
+65
+00:05:41,000 --> 00:05:46,370
+I'm also going to fiddle around with the takes on the y axis to show you how a few of these methods
+
+66
+00:05:46,370 --> 00:05:50,500
+are working hair I'm telling otic generator.
+
+67
+00:05:50,520 --> 00:05:56,610
+I only want it to be three ticks and I'm using a special format function to show all the values and
+
+68
+00:05:56,610 --> 00:05:57,750
+metas.
+
+69
+00:05:57,990 --> 00:06:04,610
+All I'm doing is using this function to edit and character after age of odd numbers you can see that
+
+70
+00:06:04,610 --> 00:06:07,670
+D-3 reduced the number of takes to five here.
+
+71
+00:06:07,970 --> 00:06:13,530
+But it wasn't able to make the numbers work out with only three ticks for completeness.
+
+72
+00:06:13,530 --> 00:06:16,720
+I'm also going to add in some labels to our visualization.
+
+73
+00:06:16,920 --> 00:06:25,340
+So the user can clearly see what we're displaying or just do this with some text SVGA for both axes.
+
+74
+00:06:25,390 --> 00:06:28,410
+Here's the code I'm using for X label.
+
+75
+00:06:28,720 --> 00:06:30,300
+I'm giving an x coordinate.
+
+76
+00:06:30,320 --> 00:06:37,400
+They'll put it in the center of the axis I'm putting is y coordinates 150 pixels past the end of our
+
+77
+00:06:37,400 --> 00:06:43,150
+visualization area so that it sits under our x axis take labels.
+
+78
+00:06:43,270 --> 00:06:47,140
+I'm also saying the font size and I'm giving text anger middle.
+
+79
+00:06:47,170 --> 00:06:49,360
+So it's a with the center of the page.
+
+80
+00:06:50,260 --> 00:06:58,180
+Finally I'm passing in the text of the SVGA should display using the text method for a wine label.
+
+81
+00:06:58,180 --> 00:07:02,950
+I've rotated it by 90 degrees so it's in line with the y axis.
+
+82
+00:07:03,640 --> 00:07:11,850
+I'm passing in a value of minus 19 which represents a shift of 90 degrees and the anti-clockwise direction.
+
+83
+00:07:11,860 --> 00:07:19,140
+I'm also tweeting the x and y values so fit in the middle of axis because we're rotating the label the
+
+84
+00:07:19,150 --> 00:07:19,850
+same time.
+
+85
+00:07:19,870 --> 00:07:21,820
+Setting these values.
+
+86
+00:07:21,820 --> 00:07:28,480
+They look a little strange because we're reversing the X and Y positions of our label.
+
+87
+00:07:28,540 --> 00:07:33,350
+After this lecture you should feel comfortable with how the different access generators work.
+
+88
+00:07:33,820 --> 00:07:36,560
+And you now know about different commands that we have to edit.
+
+89
+00:07:36,630 --> 00:07:42,450
+Access takes you might notice that access seem to be upside down at the moment.
+
+90
+00:07:42,470 --> 00:07:45,010
+Can you figure out why this is happening.
+
+91
+00:07:45,080 --> 00:07:50,990
+We just have a few tweaks to make in the next lecture to fix a y scale at that point we'll have completely
+
+92
+00:07:50,990 --> 00:07:54,750
+finished the bcher you be ready to take on your first class project.
+

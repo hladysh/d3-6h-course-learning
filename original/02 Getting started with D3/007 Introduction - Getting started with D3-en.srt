@@ -1,0 +1,43 @@
+0
+00:06.210 --> 00:10.330
+In this section, I'll be helping you to get set up with everything that you'll need for the course, and
+
+1
+00:10.330 --> 00:13.350
+you'll get your first real taste of programming in D3.
+
+2
+00:14.510 --> 00:19.780
+I'll start off by helping you set up your development environment, showing you all of the basic software
+
+3
+00:19.790 --> 00:22.880
+that I currently use for D3 development.
+
+4
+00:23.680 --> 00:28.620
+Next, I'll introduce you to what SVGs are, and how they work with D3.
+
+5
+00:28.780 --> 00:32.820
+I'll show you how to use some of the basic D3 commands to write shapes the screen,
+
+6
+00:33.130 --> 00:37.360
+and I'll take you through how we can associate these shapes with pieces of data.
+
+7
+00:38.410 --> 00:43.370
+By the end of this section, you'll have created something that actually looks like a real visualization.
+
+8
+00:44.530 --> 00:50.650
+You'll be using rectangles to represent the heights of the world's tallest buildings, which will be a
+
+9
+00:50.650 --> 00:53.680
+precursor for our first real visualization,
+
+10
+00:53.680 --> 00:56.680
+when you be making a bar chart at the end of section three.

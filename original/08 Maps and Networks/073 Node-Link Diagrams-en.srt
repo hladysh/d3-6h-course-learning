@@ -1,0 +1,384 @@
+1
+00:00:07,160 --> 00:00:13,040
+In this lecture I'll be walking you through an implementation of a node link diagram which uses the
+
+2
+00:00:13,040 --> 00:00:14,650
+forced laugh that you learned the back.
+
+3
+00:00:14,650 --> 00:00:19,890
+The last lecture to show connections between different nodes in a network.
+
+4
+00:00:20,120 --> 00:00:25,580
+This type of visualization is a common use case with the D-3 forced out you just learned about in The
+
+5
+00:00:25,580 --> 00:00:27,980
+Last Lecture.
+
+6
+00:00:28,010 --> 00:00:33,000
+It's also one of those visualizations that will really impress people if you know how to make it properly
+
+7
+00:00:35,880 --> 00:00:39,360
+known link diagrams present a completely different format.
+
+8
+00:00:39,410 --> 00:00:42,350
+All of the visualizations that we've seen so far.
+
+9
+00:00:43,140 --> 00:00:47,760
+They're really useful to share the interaction of different parts of the network.
+
+10
+00:00:47,910 --> 00:00:54,450
+We can show connections of different strengths by linking notes like this together and we can encode
+
+11
+00:00:54,450 --> 00:01:00,330
+information about every node and circle size and we can add in some cool features by making use of different
+
+12
+00:01:00,330 --> 00:01:03,350
+forces on the left.
+
+13
+00:01:03,390 --> 00:01:08,270
+We have an example where this diagram is showing the sales performance of different members of the team
+
+14
+00:01:09,170 --> 00:01:15,110
+a link here shows the team member that recruited a given employee the size of the circle represents
+
+15
+00:01:15,110 --> 00:01:21,770
+the sales volume that the rep is dealing with and the color of a circle represents the rep's job title
+
+16
+00:01:23,330 --> 00:01:24,170
+on the right.
+
+17
+00:01:24,200 --> 00:01:30,000
+This labeling diagram is displaying all of somebodies friends on Facebook.
+
+18
+00:01:30,140 --> 00:01:36,860
+The graph is separated into distinct community groups which tend to know each other and everything feeds
+
+19
+00:01:36,860 --> 00:01:41,390
+back to the node at the center which spawned the whole Grath.
+
+20
+00:01:41,450 --> 00:01:47,570
+This is a classic example of the type of visualisation that we want to use and link diagrams for because
+
+21
+00:01:47,570 --> 00:01:52,370
+it highlights the relationships that exist within a complex and connected system.
+
+22
+00:01:55,440 --> 00:02:00,780
+This is the example they'll be walking through over the course of this section which I found that blocks
+
+23
+00:02:01,780 --> 00:02:07,900
+each node in this graph is a character in Les Miserables with thicker lines meaning the characters appeared
+
+24
+00:02:07,900 --> 00:02:15,340
+together more often these nodes are spaced out so that unrelated characters are further apart and the
+
+25
+00:02:15,340 --> 00:02:20,520
+color of the circles were laid to the group that each character belongs to.
+
+26
+00:02:20,520 --> 00:02:24,880
+Let's take a look at this code nab it's been copied into my working directory.
+
+27
+00:02:25,860 --> 00:02:31,200
+After setting up our canvas making our color scale here we're initializing the forces that we'll be
+
+28
+00:02:31,200 --> 00:02:33,280
+using for our graphic.
+
+29
+00:02:33,500 --> 00:02:38,360
+Firstly we're using the sense of force to make sure that all on there it's a balanced random middle
+
+30
+00:02:38,360 --> 00:02:40,260
+of our canvas.
+
+31
+00:02:40,270 --> 00:02:45,520
+Next we're applying a negative charge between our notes nicely spread out from each other.
+
+32
+00:02:46,470 --> 00:02:51,020
+Then we're applying the force collide to keep us from overlapping.
+
+33
+00:02:51,150 --> 00:02:56,880
+We can just passing the radius of our circles as an argument here rather than explicitly setting it
+
+34
+00:02:56,880 --> 00:02:58,640
+with a radius method.
+
+35
+00:02:58,650 --> 00:03:02,950
+So here we're setting up both 10 pixels.
+
+36
+00:03:03,080 --> 00:03:07,620
+Finally we're setting some length forces within our visualization.
+
+37
+00:03:07,760 --> 00:03:13,430
+We're using this optional ID method here which lets us simulation know that it should look at the ID
+
+38
+00:03:13,430 --> 00:03:17,860
+field at the node object to find the element that it should connect to.
+
+39
+00:03:17,900 --> 00:03:23,510
+We still need to define our array of different lengths with the length method which will do once we
+
+40
+00:03:23,510 --> 00:03:25,330
+have access to data.
+
+41
+00:03:26,460 --> 00:03:32,680
+Once we have this initialized appending our links and notes within our data loading function.
+
+42
+00:03:32,770 --> 00:03:35,740
+Let's take a look at the data that we're working with here.
+
+43
+00:03:37,140 --> 00:03:43,380
+We can see that our data is conveniently split up into two different parts in the node part.
+
+44
+00:03:43,380 --> 00:03:48,490
+We have an array of objects with each item representing a different character.
+
+45
+00:03:49,660 --> 00:03:56,690
+Then in the links part we have an array of all of the different connections that exist between characters.
+
+46
+00:03:56,710 --> 00:04:01,220
+So here we have the format that links method is expecting.
+
+47
+00:04:01,340 --> 00:04:07,160
+Looking back it carried the next step is to add a line for every link that we want our graphs to show
+
+48
+00:04:07,580 --> 00:04:15,780
+and a node for every character in our data we're passing in our array of links into our data join appending
+
+49
+00:04:15,810 --> 00:04:22,370
+one line for every connection in our dataset within setting the stroke with these lines according to
+
+50
+00:04:22,430 --> 00:04:24,850
+the value of each connection.
+
+51
+00:04:24,860 --> 00:04:30,490
+So this means that characters occur together in more scenes will have thicker line than others.
+
+52
+00:04:30,690 --> 00:04:35,670
+We're taking the square root of this world value so that none of these lines are massively thicker than
+
+53
+00:04:35,670 --> 00:04:36,420
+others.
+
+54
+00:04:37,650 --> 00:04:43,830
+Once we have the links appended for the first time the next step is to add a circle of every node in
+
+55
+00:04:43,840 --> 00:04:44,700
+our diagram.
+
+56
+00:04:45,790 --> 00:04:53,200
+This time we're using nodes that right in our data for our data join appending a circle for each we're
+
+57
+00:04:53,200 --> 00:04:59,060
+giving each of them a radius of five and we're setting fill based in the group that they belong to.
+
+58
+00:05:00,010 --> 00:05:07,200
+This quarter D-3 drag here allows us to drag these elements around with a Fiji canvas.
+
+59
+00:05:07,340 --> 00:05:13,470
+We can use this call any D-3 selection that we want in any of our visualisations.
+
+60
+00:05:13,620 --> 00:05:18,990
+We're also setting three event listeners which will fire at different stage of the node being dragged
+
+61
+00:05:20,460 --> 00:05:25,980
+this line here is just adding in some simple tool tips again which will show the name of the character
+
+62
+00:05:25,980 --> 00:05:33,300
+that we're looking at when we hover over one of these nodes then we're telling us simulation to run
+
+63
+00:05:33,300 --> 00:05:37,850
+on the same array of objects that we use to draw circles.
+
+64
+00:05:37,890 --> 00:05:44,220
+We're also adding an event listener so we can run a function that will update our visualization on every
+
+65
+00:05:44,220 --> 00:05:46,290
+tick of our force simulation.
+
+66
+00:05:47,640 --> 00:05:54,270
+Then here we're finishing off our links forced by feeding in our array of associations between our different
+
+67
+00:05:54,270 --> 00:05:56,210
+nodes.
+
+68
+00:05:56,220 --> 00:06:02,020
+Here's our take function which is going to execute repeatedly on every tick of us simulation.
+
+69
+00:06:03,120 --> 00:06:08,800
+All that we're doing here is to update the position of our circles and lines in our chart.
+
+70
+00:06:08,920 --> 00:06:15,220
+Remember they're on every tick of our simulation our force layer is adding different positional attributes
+
+71
+00:06:15,220 --> 00:06:20,450
+to both links and race for our lines.
+
+72
+00:06:20,450 --> 00:06:26,450
+This means that we can have access to the two points of our line using the source and target field which
+
+73
+00:06:26,450 --> 00:06:29,630
+are populated with x and y values.
+
+74
+00:06:29,820 --> 00:06:35,130
+Then for us circle's we can update the x and y position by using x and y values.
+
+75
+00:06:35,130 --> 00:06:40,990
+The simulation adds on for us when we put all of this together.
+
+76
+00:06:41,110 --> 00:06:44,910
+This visualization unfolds itself properly.
+
+77
+00:06:44,950 --> 00:06:51,590
+The last thing to talk about is how our drag functions are working calling this restart method together
+
+78
+00:06:51,590 --> 00:06:57,210
+with the alpha target call here reheats the simulation whenever a node gets dragged.
+
+79
+00:06:57,440 --> 00:07:04,550
+So all of the notes will keep changing position to react with the position of the mouse the alpha.
+
+80
+00:07:04,560 --> 00:07:12,220
+The simulation represents have tempered all of the forces should be initially our Grath starts off with
+
+81
+00:07:12,220 --> 00:07:13,620
+an alpha one.
+
+82
+00:07:14,020 --> 00:07:17,740
+And as time goes on the value decreases to zero.
+
+83
+00:07:18,680 --> 00:07:25,520
+Setting our alpha target to 0.7 here means that once we restart the simulation causing everything to
+
+84
+00:07:25,520 --> 00:07:32,180
+move around again the simulation will only decay to have an alpha value of nought point seven as a minimum
+
+85
+00:07:32,680 --> 00:07:39,600
+meaning of the know which will continue to be repositioned automatically as we move them around.
+
+86
+00:07:39,700 --> 00:07:45,550
+After doing that with setting the force x force y value of the note that we're looking at to its current
+
+87
+00:07:45,550 --> 00:07:48,880
+position so that it doesn't immediately fly that way.
+
+88
+00:07:50,080 --> 00:07:56,320
+Next every time we moved the node to a different position the nerd gets pulled up to match the position
+
+89
+00:07:56,320 --> 00:08:01,420
+of the cursor again by setting its f x and x y values.
+
+90
+00:08:02,470 --> 00:08:08,230
+Finally when we let go of the circle that we're driving we're setting out the target back to zero.
+
+91
+00:08:08,260 --> 00:08:14,200
+So eventually the graph will come down again and we're clearing the force x and force y values that
+
+92
+00:08:14,200 --> 00:08:19,960
+we set so that the note doesn't stay pegged to the position of the cursor.
+
+93
+00:08:20,260 --> 00:08:26,360
+After this lecture you should understand how a node linked diagram fits together in D-3.
+
+94
+00:08:26,420 --> 00:08:33,020
+Hopefully this lecture has also solidified your understanding of the D-3 lamp function meaning you can
+
+95
+00:08:33,020 --> 00:08:40,420
+use it to create interesting visualizations on your again I'll be capping off this section with a quick
+
+96
+00:08:40,420 --> 00:08:45,470
+quiz just to make sure that you have a good understanding of the new topics that we've covered.
+

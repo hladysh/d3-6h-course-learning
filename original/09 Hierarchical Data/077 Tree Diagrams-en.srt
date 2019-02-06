@@ -1,0 +1,236 @@
+1
+00:00:05,770 --> 00:00:11,730
+In this lecture I'll be introducing you to tree diagrams which we can use to illustrate the structure
+
+2
+00:00:11,730 --> 00:00:13,530
+of a hierarchical system.
+
+3
+00:00:14,460 --> 00:00:18,840
+I'll be walking through a simple implementation using the T-3 tree layout.
+
+4
+00:00:19,320 --> 00:00:23,140
+And we'll also be using the D-3 stratify lab for the first time
+
+5
+00:00:25,890 --> 00:00:32,580
+tree diagrams are most often used to give a broad overview of the complex system showing how everything
+
+6
+00:00:32,580 --> 00:00:33,620
+fits together.
+
+7
+00:00:34,540 --> 00:00:38,270
+Here we have a couple of different examples on the left.
+
+8
+00:00:38,270 --> 00:00:44,520
+This visualization is illustrating the chain of command in a company the root node here at the top of
+
+9
+00:00:44,520 --> 00:00:50,910
+the diagram shows the person in charge of the whole company and then we can see the company structure
+
+10
+00:00:50,970 --> 00:00:56,690
+based on which members of staff are managed by which executive on the right.
+
+11
+00:00:56,690 --> 00:01:02,540
+We have a famous visualization from the New York Times which shows the number of paths to victory for
+
+12
+00:01:02,540 --> 00:01:06,990
+presidential candidates depending on who wins each swing state.
+
+13
+00:01:07,880 --> 00:01:13,610
+This visualization is actually interactive so you can play through different scenarios and the graph
+
+14
+00:01:13,610 --> 00:01:17,330
+will update the root node to show how this changes the shape of the tree.
+
+15
+00:01:19,680 --> 00:01:23,730
+Here's the example that will be taking you through for this lecture.
+
+16
+00:01:23,730 --> 00:01:29,850
+This is just a really simple implementation of a static tree diagram which you might use just provide
+
+17
+00:01:29,850 --> 00:01:36,040
+some simple information about hierarchy the data that we're looking at here is showing the structure.
+
+18
+00:01:36,070 --> 00:01:43,420
+Another visualization library called flare just like the three flares split up into different modules
+
+19
+00:01:43,720 --> 00:01:46,960
+which each have different packages that you can call inside of them.
+
+20
+00:01:48,470 --> 00:01:55,910
+So here's the code that I copied into my workspace and some basic setup we're creating a tree out by
+
+21
+00:01:55,910 --> 00:02:03,150
+passing in the size that we wanted to take up this size method just takes two arguments to wait from
+
+22
+00:02:03,150 --> 00:02:09,710
+the height that we want our tree to be spread across then we're setting up the D-3 stratified function
+
+23
+00:02:10,120 --> 00:02:17,840
+which were used data in the right format for a hierarchy layout this parent IDM method here is just
+
+24
+00:02:17,840 --> 00:02:20,840
+retaining the name of each item the parent node.
+
+25
+00:02:21,110 --> 00:02:27,600
+Since we're displaying methods which are nicely stored into different modules we're reading the data
+
+26
+00:02:27,610 --> 00:02:33,540
+in as usual and we're setting up our root node by passing in our data to a stratified function.
+
+27
+00:02:34,530 --> 00:02:39,040
+We're also providing a sort according to the depth of each node in the tree.
+
+28
+00:02:40,010 --> 00:02:45,770
+Within passing this value onto what tree layout function which gives a few different fields that we
+
+29
+00:02:45,770 --> 00:02:47,550
+can use.
+
+30
+00:02:47,570 --> 00:02:51,790
+Let's take a look at this data in the console to see how everything is working.
+
+31
+00:02:53,160 --> 00:02:59,430
+First we have the data as it looks when we first load it into what PSP file as you can see.
+
+32
+00:02:59,430 --> 00:03:03,430
+This just gives each Aitken's ID and its value.
+
+33
+00:03:03,660 --> 00:03:09,450
+This data isn't yet in the right format to display as a hierarchy which is why we're passing it on to
+
+34
+00:03:09,450 --> 00:03:12,080
+our stratified function.
+
+35
+00:03:12,290 --> 00:03:18,780
+Next time logging the contents of this root variable which is the stratified version of this array.
+
+36
+00:03:18,940 --> 00:03:24,940
+Now we can see that our data is neatly formatted so that we can display as a hierarchy.
+
+37
+00:03:24,940 --> 00:03:28,300
+Each node is flittered where it belongs into this object.
+
+38
+00:03:28,450 --> 00:03:35,700
+And for every node we can see its height depth ID children and parent.
+
+39
+00:03:35,880 --> 00:03:40,380
+Then we have the result of passing the stratified data into a tree layer.
+
+40
+00:03:40,770 --> 00:03:47,820
+This gives us from the same hierarchy that we just defined except this time each node has an x and y
+
+41
+00:03:47,820 --> 00:03:51,660
+value that represents where it should be placed on the screen.
+
+42
+00:03:52,750 --> 00:03:58,870
+Finally I'm showing you what gets returned after we called the links method on this object.
+
+43
+00:03:59,080 --> 00:04:06,490
+We now have an array of 251 items with each item corresponding to a link that we need to draw between
+
+44
+00:04:06,520 --> 00:04:11,190
+two nodes in a network flicking back to our code.
+
+45
+00:04:11,190 --> 00:04:15,180
+Now let's see how we're setting up tree.
+
+46
+00:04:15,330 --> 00:04:20,440
+Firstly we're performing a data join on this array of links that we got from our tree labs.
+
+47
+00:04:21,700 --> 00:04:28,300
+We're passing in this D-3 link horizontal function here for id attribute so that we can attach a custom
+
+48
+00:04:28,300 --> 00:04:33,980
+path for each link that we need to draw for every item in our array.
+
+49
+00:04:33,980 --> 00:04:38,620
+This will draw a line between the coordinates of the source node and the target node.
+
+50
+00:04:40,250 --> 00:04:46,040
+Next we're using descendants method on a tree layout to return every node that we need to enter into
+
+51
+00:04:46,040 --> 00:04:51,500
+our tree lay out and we're attaching a group to each of them and giving them a translation depending
+
+52
+00:04:51,500 --> 00:04:54,510
+on the x and y coordinates.
+
+53
+00:04:54,590 --> 00:05:00,590
+Finally for each of these groups we're attaching a circle and the text label to them to finish off the
+
+54
+00:05:00,590 --> 00:05:04,440
+tree diagram at the end of this lecture.
+
+55
+00:05:04,470 --> 00:05:09,600
+You should feel comfortable with working with tree layouts to visualize the structure of hierarchical
+
+56
+00:05:09,600 --> 00:05:10,800
+system.
+
+57
+00:05:11,280 --> 00:05:16,520
+You also had your first look at how D-3 stratify works in a really simple example.
+
+58
+00:05:17,450 --> 00:05:23,930
+In the next lecture I'll be showing you how to use tree maps which also allow us to convey hierarchy's.
+
+59
+00:05:24,290 --> 00:05:28,350
+But this time they allow us to show something about the size of each component.
+

@@ -1,0 +1,176 @@
+1
+00:00:06,560 --> 00:00:13,040
+Although Tufters principles have been influential to many data visualization engineers there's still
+
+2
+00:00:13,040 --> 00:00:18,040
+a lot of debate about whether it's actually better to eliminate elements that they would consider it
+
+3
+00:00:18,040 --> 00:00:19,250
+as challenging.
+
+4
+00:00:19,790 --> 00:00:25,460
+In this lecture I'll be taking a closer look at this argument and providing some balance to his opinions
+
+5
+00:00:25,460 --> 00:00:27,370
+on data visualization design.
+
+6
+00:00:29,500 --> 00:00:35,590
+When we think about what visualizations are used for our most important goal might not always be just
+
+7
+00:00:35,590 --> 00:00:39,230
+to communicate data in the most efficient way.
+
+8
+00:00:39,280 --> 00:00:44,260
+Sometimes the most memorable visualizations are the ones that really grab the attention of the reader
+
+9
+00:00:44,620 --> 00:00:46,370
+and make them take a closer look.
+
+10
+00:00:47,440 --> 00:00:51,160
+Especially when the visualization wants to tell a compelling story.
+
+11
+00:00:51,160 --> 00:00:55,050
+This could be especially important as the goal could be to the reader.
+
+12
+00:00:55,980 --> 00:01:02,010
+The best way to do this might not be with a completely dull line or a bar chart that might use aesthetically
+
+13
+00:01:02,010 --> 00:01:05,800
+pleasing supportive elements compay what the data is showing.
+
+14
+00:01:06,270 --> 00:01:11,880
+This could call for a new and imaginative types of visualizations that people have never seen before.
+
+15
+00:01:12,300 --> 00:01:21,070
+All of these factors aren't caught by his own estimation of what makes a well-designed visualization.
+
+16
+00:01:21,080 --> 00:01:26,510
+For example here we have a visualization of countries that spend the most on military spending every
+
+17
+00:01:26,510 --> 00:01:27,190
+year.
+
+18
+00:01:27,890 --> 00:01:30,940
+There are certainly a few things wrong with this graph.
+
+19
+00:01:30,950 --> 00:01:36,590
+The graph is really a histogram rather than a bar chart which is generally a poor design decision to
+
+20
+00:01:36,590 --> 00:01:41,660
+make as our minds are bad at telling between different area sizes.
+
+21
+00:01:41,660 --> 00:01:46,910
+However this visualization looks far more interesting than if it was displayed as a minimalist but chose
+
+22
+00:01:49,630 --> 00:01:55,030
+another famous example here shows a creative adaptation to a line graph showing diamond prices.
+
+23
+00:01:55,060 --> 00:02:02,140
+Over time the graph has a terrible data to ink ratio and it's not even totally clear where the individual
+
+24
+00:02:02,140 --> 00:02:10,250
+data points are but how much less interesting with this specialization have been it being simpler.
+
+25
+00:02:10,280 --> 00:02:15,130
+Finally here we have a visualization about campaign spending in the US.
+
+26
+00:02:15,320 --> 00:02:20,630
+The visualization on the left screams Chad junk and might even have a bit of a life factor due to the
+
+27
+00:02:20,630 --> 00:02:22,260
+slanting x axis.
+
+28
+00:02:22,700 --> 00:02:28,280
+But would it be better or worse at drawing attention to the issue than the graph on the right.
+
+29
+00:02:28,280 --> 00:02:33,680
+All of these charts so far a static infographics and not the sort of thing that you'd be able to create
+
+30
+00:02:33,680 --> 00:02:35,090
+with D-3.
+
+31
+00:02:35,090 --> 00:02:41,000
+But there is still some visualizations that give of a unique kind of interactivity which you can replicate
+
+32
+00:02:41,000 --> 00:02:49,010
+with D-3 For example this is a node linked diagram which is a really popular and interactive visualization
+
+33
+00:02:49,240 --> 00:02:52,020
+D-3 makes it really easy to create.
+
+34
+00:02:52,040 --> 00:02:55,020
+I'll be showing you how to build these in Section 8.
+
+35
+00:02:55,190 --> 00:02:58,340
+The bounce some of these circles could be seen as pretty distracting.
+
+36
+00:02:58,690 --> 00:03:04,250
+But what makes this type of visualization appealing is precisely the kind of quirky interactivity that
+
+37
+00:03:04,250 --> 00:03:05,520
+it offers.
+
+38
+00:03:05,600 --> 00:03:11,510
+It encourages further exploration of the data and it creates a novelty that will intrigue the user to
+
+39
+00:03:11,510 --> 00:03:13,020
+find out more about it.
+
+40
+00:03:14,940 --> 00:03:20,130
+With these examples in mind it's good to know that took these principles aren't always hard and fast
+
+41
+00:03:20,130 --> 00:03:22,700
+rules for data visualizations.
+
+42
+00:03:22,830 --> 00:03:29,070
+Design is a highly subjective field but you should still use your intuition to judge that element should
+
+43
+00:03:29,070 --> 00:03:34,990
+add to a visualization or whether it takes something at what in the next lecture I want you to critique
+
+44
+00:03:35,010 --> 00:03:40,140
+some visualizations that get to show you using what you know about the best practices for design.
+

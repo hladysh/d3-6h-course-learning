@@ -1,0 +1,404 @@
+1
+00:00:06,040 --> 00:00:12,070
+In this lecture I'll be introducing you to chloroplast maps which are helpful to show how different
+
+2
+00:00:12,070 --> 00:00:15,330
+data differs across geographic regions.
+
+3
+00:00:16,210 --> 00:00:23,350
+Abusing the D-3 Geo path generator again together with D-3 3Q to stitch together two different sources
+
+4
+00:00:23,350 --> 00:00:29,020
+of data and I'll be using a color scale to display data in a visual format
+
+5
+00:00:31,930 --> 00:00:38,410
+a color Plath is a fancy name for a map that shows how a variable differs across geographical regions
+
+6
+00:00:38,980 --> 00:00:42,010
+by showing different color coatings.
+
+7
+00:00:42,020 --> 00:00:49,010
+The most obvious case that you'll tend to see with these maps they use heavily in elections they often
+
+8
+00:00:49,010 --> 00:00:54,560
+aren't particularly helpful in explaining underlying data but they do give a good overview of how a
+
+9
+00:00:54,560 --> 00:00:56,800
+situation looks.
+
+10
+00:00:56,870 --> 00:01:04,190
+So here on the left we have a visualization from 5:38 during the 2016 election which is showing some
+
+11
+00:01:04,190 --> 00:01:08,730
+predictions across different states that which party is likely to win the election.
+
+12
+00:01:09,630 --> 00:01:15,600
+States are colored either red or blue with darker colors representing a higher chance of that candidate
+
+13
+00:01:15,630 --> 00:01:23,270
+winning on the right we have a different map which is color coded according to population density across
+
+14
+00:01:23,270 --> 00:01:24,610
+different areas.
+
+15
+00:01:25,370 --> 00:01:30,890
+Chloroplasts one of those awesome tools to have in your toolbox because they really present a dazzling
+
+16
+00:01:30,890 --> 00:01:34,630
+showcase of what you can do with these three.
+
+17
+00:01:34,820 --> 00:01:35,680
+Here's an example.
+
+18
+00:01:35,700 --> 00:01:38,850
+I'll be walking three blocks.
+
+19
+00:01:38,920 --> 00:01:44,800
+This is another great example from Mike Bostock which is showing the unemployment rate for every U.S.
+
+20
+00:01:44,800 --> 00:01:46,280
+county.
+
+21
+00:01:46,360 --> 00:01:52,000
+We have a legend up here that lets us see what each of these colors represent and we can use that legend
+
+22
+00:01:52,000 --> 00:01:55,610
+to see the parts of the US that have the highest rates of unemployment.
+
+23
+00:01:56,490 --> 00:02:01,800
+I'll copy this code into my workplace and I'll take you through everything that you want seen already.
+
+24
+00:02:03,180 --> 00:02:09,980
+Starting from the top we can say the usual D-3 set up in this example we're not worrying about margins
+
+25
+00:02:09,980 --> 00:02:16,190
+for that this line here could be quite confusing especially since we're writing code for a map.
+
+26
+00:02:16,220 --> 00:02:23,510
+In this example did the map is just creating a data structure called Map which is pretty similar to
+
+27
+00:02:23,510 --> 00:02:25,940
+an object job script.
+
+28
+00:02:25,940 --> 00:02:35,340
+This lets us set and find items by that key using the maps set and get methods we are using this linear
+
+29
+00:02:35,340 --> 00:02:41,900
+scale to create a legend a little further down the file which will work together with these colors.
+
+30
+00:02:42,900 --> 00:02:48,840
+This time we're using a threshold scale which means that any value that goes into it will be rounded
+
+31
+00:02:48,840 --> 00:02:51,110
+to a specific color.
+
+32
+00:02:51,120 --> 00:02:56,850
+This means that we're able to have one color between one and two percent unemployment then another color
+
+33
+00:02:56,850 --> 00:02:58,190
+from 2 to 3 percent.
+
+34
+00:02:58,230 --> 00:03:05,600
+And so we're using D-3 range here to create an array of numbers from two to 10 which will give us the
+
+35
+00:03:05,600 --> 00:03:09,320
+different values that our scale will run between.
+
+36
+00:03:09,380 --> 00:03:14,980
+If you're wondering where this scheme Bleus variable is coming from it's been included with this D-3
+
+37
+00:03:15,010 --> 00:03:21,160
+scale kinetic library which gives us a few more standard options for setting color scales.
+
+38
+00:03:22,030 --> 00:03:29,490
+This will basically just spits out an array of color hexes for us scale to use this code here is performing
+
+39
+00:03:29,490 --> 00:03:36,340
+a data join on each of the colors that we want to show on legit with setting D values to be an array
+
+40
+00:03:36,340 --> 00:03:42,240
+of two numbers representing the minimum and maximum values that this color should apply for.
+
+41
+00:03:43,320 --> 00:03:48,450
+For each of these values we're appending a rectangle with the fill of the color that we're associating
+
+42
+00:03:48,450 --> 00:03:49,170
+it with.
+
+43
+00:03:49,620 --> 00:03:57,750
+Using our scale to position and equally in the top right hand corner of Kandace then we're calling an
+
+44
+00:03:57,750 --> 00:04:03,880
+axis generator to add the ticks beneath the weight getting the percentage values that we want to show
+
+45
+00:04:03,880 --> 00:04:06,210
+using the tick values on a color scale.
+
+46
+00:04:06,250 --> 00:04:14,520
+Their main and with formatting each of our take labels with a percentage sign using a stick format.
+
+47
+00:04:16,500 --> 00:04:22,860
+Noticed that all of this character has been working on this variable called G which is just the legend
+
+48
+00:04:23,730 --> 00:04:28,730
+when we want to add our paths and later we'll be appended them directly to the SVGA.
+
+49
+00:04:28,730 --> 00:04:35,670
+Candace next we're using a queue to load in both of our different datasets.
+
+50
+00:04:35,840 --> 00:04:39,250
+We getting a map file from the D-3 website.
+
+51
+00:04:39,260 --> 00:04:45,240
+This one is just a map of the US and we're getting some data about unemployment figures from this TSB
+
+52
+00:04:45,260 --> 00:04:47,340
+file inside our data folder.
+
+53
+00:04:48,460 --> 00:04:55,300
+As you'll recall this q is going to wait until 3 three Jason and D-3 ts the functions are what their
+
+54
+00:04:55,300 --> 00:05:02,930
+magic before executing this ready function the low you might notice here that were an argument short
+
+55
+00:05:02,960 --> 00:05:09,920
+in this ready function when not passing in unemployment figures here but instead we're just saying each
+
+56
+00:05:09,920 --> 00:05:16,730
+of our pieces of data into the maps that we defined earlier we can do this with a set method of a map
+
+57
+00:05:17,510 --> 00:05:21,980
+which is running inside optional initialize method.
+
+58
+00:05:21,980 --> 00:05:28,970
+Let's take a look at the data that we have to work with this first log here sharing the data that we
+
+59
+00:05:28,970 --> 00:05:33,460
+loaded for my Toppo Jason mat file in this object field.
+
+60
+00:05:33,450 --> 00:05:39,410
+We can see that we have geometries for counties and states and in this nation field we have everything
+
+61
+00:05:39,410 --> 00:05:46,830
+that we need to draw the U.S. as a whole this second log here shows the map that we made for unemployment
+
+62
+00:05:46,830 --> 00:05:54,210
+data each of these keys represents a different country which is set in using an ID that matches up with
+
+63
+00:05:54,210 --> 00:06:03,110
+an ID from our map file this call to Toppo Jason doc feature gives Jason a collection of counties and
+
+64
+00:06:03,110 --> 00:06:04,480
+then accessing this feature.
+
+65
+00:06:04,490 --> 00:06:11,430
+I feel that this collection gives an array with every county in the U.S. we're using append and ends
+
+66
+00:06:11,610 --> 00:06:19,260
+as a separate path for each county we using our color scale to set the field for each county depending
+
+67
+00:06:19,260 --> 00:06:23,770
+on its unemployment rate in the same anonymous function here.
+
+68
+00:06:23,840 --> 00:06:30,170
+We're also giving each item a field called rate which we're setting to this unemployment rate value
+
+69
+00:06:31,510 --> 00:06:33,380
+then for each country.
+
+70
+00:06:33,520 --> 00:06:38,890
+Our path generator will be fed the item in the array that we're looking at which will add the shape
+
+71
+00:06:38,890 --> 00:06:42,050
+of that county to screen.
+
+72
+00:06:42,100 --> 00:06:47,670
+You might notice that we didn't set the projection that we wanted to use for you that generated this
+
+73
+00:06:47,670 --> 00:06:48,150
+time.
+
+74
+00:06:49,230 --> 00:06:54,730
+This is because this time our map has already had a projection applied to it.
+
+75
+00:06:54,790 --> 00:07:00,800
+You'll often find that this happens from map files that you'll find on line if you want to use a custom
+
+76
+00:07:00,800 --> 00:07:06,380
+projection in your code then you'll need to make sure that you're using a roll top or adjacent file
+
+77
+00:07:06,650 --> 00:07:09,460
+that hasn't had a projection applied to it already.
+
+78
+00:07:11,000 --> 00:07:17,320
+Finally we're adding a title element here which will display the rate value that we just set.
+
+79
+00:07:17,420 --> 00:07:23,420
+This is a really easy way to add two steps to your visualization as this figure will just pop up whenever
+
+80
+00:07:23,420 --> 00:07:26,930
+you hover over this particular county.
+
+81
+00:07:26,980 --> 00:07:33,910
+Then underneath all that we're adding in a path that the state borders in the US we're using the same
+
+82
+00:07:33,920 --> 00:07:37,620
+Toppo Jason Dharmesh function at less time to get borders.
+
+83
+00:07:37,900 --> 00:07:42,910
+But this time we're passing in our state field instead of our counties field.
+
+84
+00:07:42,910 --> 00:07:48,970
+We've set some simple styles for us state borders and our counties which give us thick lines for separating
+
+85
+00:07:48,970 --> 00:07:52,910
+States then the lines for separating counties.
+
+86
+00:07:53,040 --> 00:07:55,740
+Here's how you'd want to write this code in version 5.
+
+87
+00:07:55,770 --> 00:08:02,660
+Since we can't use the D-3 Q module anymore we're setting out to data loading functions as usual.
+
+88
+00:08:02,670 --> 00:08:08,610
+Then again we're only making use of our map data inside out ready function since we're setting our unemployment
+
+89
+00:08:08,610 --> 00:08:10,470
+data using methadose set.
+
+90
+00:08:10,830 --> 00:08:16,530
+We're calling our ready function within the then module and we're passing the first item the array of
+
+91
+00:08:16,530 --> 00:08:19,960
+data sets that we get back as it's arguments.
+
+92
+00:08:20,050 --> 00:08:26,950
+We can then catch any errors using the catch module as usual and this gives us back the same graph for
+
+93
+00:08:28,620 --> 00:08:29,690
+after this lecture.
+
+94
+00:08:29,730 --> 00:08:36,870
+You should know how to stitch together a metafile using D-3 top O.J.'s library with some kind of external
+
+95
+00:08:36,870 --> 00:08:38,410
+dataset.
+
+96
+00:08:38,430 --> 00:08:43,520
+This will be crucial if you ever want to make one of these particular visualisations yourself.
+
+97
+00:08:43,890 --> 00:08:48,810
+But it should also have given you some practice at working with multiple files which you'll be doing
+
+98
+00:08:48,810 --> 00:08:50,500
+a lot more going forward.
+
+99
+00:08:51,370 --> 00:08:58,000
+In the next lecture I'll be introducing the D-3 force layer which can be used to create all kinds of
+
+100
+00:08:58,090 --> 00:08:59,830
+interesting visualizations.
+
+101
+00:09:00,130 --> 00:09:02,910
+What elements are moving around on the page.
+

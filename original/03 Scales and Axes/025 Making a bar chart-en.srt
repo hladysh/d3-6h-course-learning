@@ -1,0 +1,236 @@
+1
+00:00:06,450 --> 00:00:12,310
+We just have a couple of tasks left to complete the turn of visualization and do a real job.
+
+2
+00:00:12,430 --> 00:00:17,370
+Our access is upside down at the moment and we also need to make our bodies rise up from the bottom
+
+3
+00:00:17,370 --> 00:00:20,060
+of the screen instead of hanging down from the top.
+
+4
+00:00:20,760 --> 00:00:26,970
+This will be tricky because we need to think about how the SPG coordinate system is working for us to
+
+5
+00:00:26,970 --> 00:00:32,310
+give our rectangles the right y coordinates and height values.
+
+6
+00:00:32,330 --> 00:00:39,350
+The reason why our Y axis is upside down is our scale is currently running from a value of zero to a
+
+7
+00:00:39,350 --> 00:00:43,480
+value of 828 in the positive direction.
+
+8
+00:00:43,940 --> 00:00:46,940
+As you remember from the SVGA coordinate system.
+
+9
+00:00:47,120 --> 00:00:52,820
+What this actually means is that the values will increase towards the bottom of the screen because the
+
+10
+00:00:52,820 --> 00:00:58,080
+zero point of a white grid is at the top of the canvas.
+
+11
+00:00:58,080 --> 00:01:04,230
+Let's take another look at the linear scale that we're using for our y axis at the moment our scale
+
+12
+00:01:04,230 --> 00:01:12,720
+transforms an input of 0 to an output zero and an input of 820 A to an output of 400.
+
+13
+00:01:12,720 --> 00:01:18,340
+So here us scale is placing the take for 4:0 meet and mark at the top of the screen.
+
+14
+00:01:18,660 --> 00:01:24,880
+Because when it uses a scale calling y with an argument of zero gives a value zero.
+
+15
+00:01:24,900 --> 00:01:30,920
+Similarly calling y with an argument of eight hundred twenty eight gives a value of four hundred.
+
+16
+00:01:31,050 --> 00:01:38,420
+So it places the take for 828 meters 400 pixels down our canvas.
+
+17
+00:01:38,470 --> 00:01:45,160
+Here's how the axis should really work passing in an argument of 0 2 Alwi scale need to return a value
+
+18
+00:01:45,160 --> 00:01:52,510
+of 400 pixels and passing in an argument of a hundred twenty eight needs to return a value of zero.
+
+19
+00:01:53,320 --> 00:01:59,710
+This means that putting a higher value into a scale should give us y coordinate on a normal grid starting
+
+20
+00:01:59,710 --> 00:02:03,910
+from 0 0 in the bottom left of the canvas.
+
+21
+00:02:04,010 --> 00:02:10,430
+The fixed will need to use Prus scale involves going from this to this.
+
+22
+00:02:10,430 --> 00:02:20,990
+So now a value of zero maps the bottom of the Canlis at 400 pixels down the grid and 828 maps to 0 which
+
+23
+00:02:20,990 --> 00:02:27,070
+is at the top of our canvas after we reversed the direction of a wide scale.
+
+24
+00:02:27,070 --> 00:02:29,530
+Things are going to look even worse.
+
+25
+00:02:29,530 --> 00:02:31,380
+What exactly is going on here.
+
+26
+00:02:31,780 --> 00:02:37,090
+From our code these bars height values are coming from a wide scale interpretation of the height of
+
+27
+00:02:37,090 --> 00:02:38,650
+the building.
+
+28
+00:02:38,650 --> 00:02:45,970
+So now the age of 28 maps to zero in our scale our tallest bar has a height of zero.
+
+29
+00:02:46,450 --> 00:02:49,630
+Let's think about what we need to change to fix this chart.
+
+30
+00:02:51,220 --> 00:02:51,690
+The height.
+
+31
+00:02:51,740 --> 00:02:56,210
+We actually want to display adjust the heights under the bars that we have now.
+
+32
+00:02:56,530 --> 00:03:00,220
+So what do we need to plug in for a hight values to get this behavior.
+
+33
+00:03:01,980 --> 00:03:08,850
+Here's what we want to look like the heights that a wide scale gives us for up should lie underneath.
+
+34
+00:03:10,480 --> 00:03:13,550
+We need to find this mystery Lent for an new buzz.
+
+35
+00:03:15,220 --> 00:03:20,560
+Since we know the heights of our visualization and we also know the space that we need under these bars
+
+36
+00:03:21,100 --> 00:03:22,660
+we can work this value out.
+
+37
+00:03:23,660 --> 00:03:29,910
+We just need to take off the Y scale interpretation of building heights from the height of the visualization.
+
+38
+00:03:30,440 --> 00:03:35,960
+We still have a problem here because Abaza hanging down from the top of the screen at the moment we're
+
+39
+00:03:35,960 --> 00:03:40,390
+just saying each of us has why attributes to the wrong value zero.
+
+40
+00:03:40,430 --> 00:03:46,230
+So they're sitting at the top of the page as you remember the space above these bars should be the y
+
+41
+00:03:46,230 --> 00:03:48,500
+scales value for the building heights.
+
+42
+00:03:48,540 --> 00:03:54,620
+If we plug this value in when we set Y attributes then this should work as expected.
+
+43
+00:03:54,620 --> 00:04:01,740
+So looking back at our code for this section I'll put these changes into action to fix our chart first
+
+44
+00:04:01,740 --> 00:04:07,950
+of reversing the range for a linear scale set that zero maps to the bottom of the SPG the top
+
+45
+00:04:13,010 --> 00:04:13,390
+next.
+
+46
+00:04:13,400 --> 00:04:18,260
+I'm going to change the height entropy about bars to the height of visualization minus the height that
+
+47
+00:04:18,260 --> 00:04:19,730
+we get from a wide scale.
+
+48
+00:04:22,210 --> 00:04:27,460
+Then finally I'm going to shift these bars the bottom of the screen by setting that y attribute is the
+
+49
+00:04:27,460 --> 00:04:29,070
+value from y scale.
+
+50
+00:04:33,440 --> 00:04:35,080
+And there we have it.
+
+51
+00:04:35,090 --> 00:04:39,890
+So now we finally have a finished product of a beautiful bocher on the screen.
+
+52
+00:04:40,310 --> 00:04:45,040
+Hopefully this lecture gave you a good refresher on how the coordinate system is working for us.
+
+53
+00:04:45,030 --> 00:04:50,070
+Fiji's you'll often find these SVGA aren't being placed in the way they should be.
+
+54
+00:04:50,210 --> 00:04:55,850
+So a great idea is just to write out a little grid and think about where exactly each of the x and y
+
+55
+00:04:55,850 --> 00:05:00,130
+values should be placed graphically next lecture.
+
+56
+00:05:00,140 --> 00:05:05,450
+I'll be introducing the first class project where you'll be making a batch of your own using what you
+
+57
+00:05:05,450 --> 00:05:07,310
+learned in this section.
+
+58
+00:05:07,370 --> 00:05:12,800
+Feel free to flick back to previous lectures if you can't remember the writes in text to use and get
+
+59
+00:05:12,800 --> 00:05:16,360
+your head around the process of setting up a new visualization.
+

@@ -1,0 +1,344 @@
+1
+00:00:07,620 --> 00:00:13,680
+In this lecture I'll be giving you an introduction to drawing maps but D-3 code which we can then use
+
+2
+00:00:13,680 --> 00:00:19,920
+to visualize data or be running through the two different types of map files that were once used with
+
+3
+00:00:19,930 --> 00:00:27,150
+D-3 and they'll be showing you how to use D-3 G.O. path generator for visualizing geographical paths
+
+4
+00:00:27,540 --> 00:00:32,250
+such as sharing different countries borders.
+
+5
+00:00:32,290 --> 00:00:38,410
+The first step towards creating a visualization of the world involves finding a map file to use which
+
+6
+00:00:38,410 --> 00:00:43,450
+contains information about the borders of country states or regions.
+
+7
+00:00:43,450 --> 00:00:48,880
+There are a few places online that we can create our own files for this purpose although I'll be using
+
+8
+00:00:48,890 --> 00:00:55,520
+the map that Mike Buster is using blocks simplicity map files tend to come in geo.
+
+9
+00:00:55,550 --> 00:00:56,720
+Jason.
+
+10
+00:00:57,430 --> 00:01:03,490
+This is a special type of Jason File which D-3 knows how to convert into a set of patternist Fiji's
+
+11
+00:01:03,940 --> 00:01:06,980
+using its gybe path generator.
+
+12
+00:01:07,160 --> 00:01:13,830
+A lot of times you'll see people using Toppo adjacent files instead of just adjacent files a chopper
+
+13
+00:01:13,840 --> 00:01:21,500
+adjacent file includes information about topology of a map as well as things like Borders amazingly
+
+14
+00:01:21,550 --> 00:01:28,220
+Chapa adjacent files tend to be way smaller than just adjacent files even though they encode more data
+
+15
+00:01:29,300 --> 00:01:30,080
+because of this.
+
+16
+00:01:30,080 --> 00:01:35,870
+I'd always recommend you to use top or adjacent files where possible and it also means that we need
+
+17
+00:01:35,870 --> 00:01:40,150
+to convert into Gier Jason format to be used with the three.
+
+18
+00:01:40,610 --> 00:01:47,210
+We can do this easily by including Toppo Jason jast library which gives us a couple of functions to
+
+19
+00:01:47,210 --> 00:01:48,610
+make this easier.
+
+20
+00:01:48,800 --> 00:01:55,620
+Chopper Jason does feature and top OJs and mash.
+
+21
+00:01:55,630 --> 00:02:01,320
+Have you ever seen this visualization before they show the real size of Africa.
+
+22
+00:02:01,330 --> 00:02:07,030
+It turns out that all of these countries which appear huge on our maps could actually fit inside of
+
+23
+00:02:07,030 --> 00:02:09,790
+Africa in terms of area.
+
+24
+00:02:09,850 --> 00:02:14,880
+This isn't something that looks obvious from the standard map that you'll see in school classrooms.
+
+25
+00:02:17,030 --> 00:02:24,590
+The reason why this happens is that when you once visualize a 3-D sphere a 2-D plane we need to apply
+
+26
+00:02:24,590 --> 00:02:26,880
+some kind of projection to it.
+
+27
+00:02:27,720 --> 00:02:33,540
+The result is that we essentially need to stretch the world out one way or another so that it fits properly
+
+28
+00:02:33,540 --> 00:02:34,680
+onto the screen.
+
+29
+00:02:34,950 --> 00:02:41,730
+So for instance here we have the Murcutt to a projection on the right which is by far the most common
+
+30
+00:02:41,730 --> 00:02:49,380
+type of projection that exists to make everything fit into the surface areas near each of the poles
+
+31
+00:02:49,380 --> 00:02:51,380
+looked larger than they actually are.
+
+32
+00:02:51,720 --> 00:02:55,640
+And areas close to the equator will appear smaller.
+
+33
+00:02:55,650 --> 00:03:01,740
+This is extremely obvious whenever you look at Antarctica on a globe which is hugely blown up by the
+
+34
+00:03:01,740 --> 00:03:05,290
+Meckstroth projection Indie's 3.
+
+35
+00:03:05,300 --> 00:03:10,700
+We have the flexibility to choose which ever projection we want to use without Max.
+
+36
+00:03:10,760 --> 00:03:15,710
+This can come in handy if we want to make a more advanced visualization where it's really important
+
+37
+00:03:15,710 --> 00:03:20,750
+to keep a fair perspective between different country sizes.
+
+38
+00:03:20,780 --> 00:03:26,990
+Here's an image on Bloch's where we have every projection that's available in D3 for some of these if
+
+39
+00:03:26,990 --> 00:03:29,150
+we need to include an add on library.
+
+40
+00:03:29,270 --> 00:03:35,900
+But it's really easy to switch up our projection to any of these different options.
+
+41
+00:03:35,910 --> 00:03:40,100
+I found this carried on blogs from Mike Bostock's for a few years ago.
+
+42
+00:03:40,500 --> 00:03:46,720
+It was written in D-3 version 3 but I was able to update it to version four really easily.
+
+43
+00:03:46,830 --> 00:03:53,250
+The main change is here with the D-3 module has been lumped in the main D-3 library.
+
+44
+00:03:53,440 --> 00:04:04,300
+So we have D-3 Geographic and version 3 which is now 83 reticule 3-G path is now the 3-G path and D-3
+
+45
+00:04:04,300 --> 00:04:12,590
+that you plus a projection is now just the 3-G projection to output a map onto the screen.
+
+46
+00:04:12,590 --> 00:04:16,510
+We first need to define the projection that we can use.
+
+47
+00:04:16,610 --> 00:04:20,890
+I'm using a classic schoolroom Murcutt or projection to start off with.
+
+48
+00:04:21,050 --> 00:04:27,830
+To demonstrate how it works in our projection function I'm setting how far zoomed in we want to map
+
+49
+00:04:27,830 --> 00:04:35,210
+to be using this scale method and I'm setting the center of our map with this translate method.
+
+50
+00:04:35,210 --> 00:04:41,920
+Next we define the path generator that we want to use which just takes our projection as its arguments.
+
+51
+00:04:42,040 --> 00:04:48,790
+Then we load in the data and the path to our SPG canvas with the datum attribute coming from a path
+
+52
+00:04:48,790 --> 00:04:49,660
+generator.
+
+53
+00:04:50,950 --> 00:04:57,650
+We want to open paths for the land lines country borders and Gretsch cool lines of map.
+
+54
+00:04:57,800 --> 00:05:02,290
+We need to provide a Jew Jason object to up your path generator.
+
+55
+00:05:02,630 --> 00:05:07,510
+So we using chords to our top or adjacent library to make these conversions for us.
+
+56
+00:05:08,400 --> 00:05:11,690
+Let's take a look at what's going on here inside the console.
+
+57
+00:05:12,920 --> 00:05:19,530
+The first load here is showing a map file looks like when it first gets loaded into a file.
+
+58
+00:05:19,570 --> 00:05:23,680
+The second log is showing the value that we're passing into our data and method.
+
+59
+00:05:23,830 --> 00:05:30,700
+When we want to append our land borders this top log here is in a top or adjacent format as we can see
+
+60
+00:05:30,700 --> 00:05:37,540
+because the type of an object is a topology because a geo path generator expects to be handed something
+
+61
+00:05:37,540 --> 00:05:44,560
+in a geo Jason format we're calling the top Jason doc Feagin method on this before passing it to our
+
+62
+00:05:44,560 --> 00:05:51,620
+data join the object that get Spatz out is now in angio Jason format.
+
+63
+00:05:51,810 --> 00:05:57,360
+We can see from this geometry field that we have a large array of coordinates that you can generate
+
+64
+00:05:57,410 --> 00:06:04,050
+will be using each of these items here represents a different path that our generator will need to drop
+
+65
+00:06:04,630 --> 00:06:07,460
+in order to mark out the land borders for a map.
+
+66
+00:06:08,840 --> 00:06:14,240
+In this block of code here we're going through the same thing again but this time we're using the top
+
+67
+00:06:14,260 --> 00:06:21,710
+adjacent mesh function which is taking in a list of different countries and spitting out a path of all
+
+68
+00:06:21,710 --> 00:06:23,940
+the borders between them.
+
+69
+00:06:24,050 --> 00:06:29,160
+We're passing an apology this time giving a list of countries.
+
+70
+00:06:29,270 --> 00:06:34,910
+And finally this filter function is making sure that we only add one border between each country.
+
+71
+00:06:36,670 --> 00:06:42,910
+Finally this chromatic secure variable here comes from calling D-3 geographic cure which we can pass
+
+72
+00:06:42,910 --> 00:06:49,550
+straight to your path generator which will add engrafted fuel lines for Matt.
+
+73
+00:06:49,580 --> 00:06:55,550
+Now if we change the type projection that we using an up projection variable we'll see a completely
+
+74
+00:06:55,550 --> 00:06:58,220
+different map gets outputted to the screen.
+
+75
+00:06:59,100 --> 00:07:03,630
+So here let's say that we want to use an equal area map in the shape of the curve.
+
+76
+00:07:04,480 --> 00:07:10,480
+D-3 gives us this projection called D-3 Geo conic equal area.
+
+77
+00:07:10,670 --> 00:07:12,870
+We can see the difference that this has.
+
+78
+00:07:13,010 --> 00:07:17,660
+And you can play around with any kind of different projection that you want to show by changing this
+
+79
+00:07:17,660 --> 00:07:24,320
+one line here after this lecture you should understand the challenges that go along with trying to visualize
+
+80
+00:07:24,330 --> 00:07:30,790
+a 3-D sphere onto a 2D plane you now know how to create paths of countries from Geo.
+
+81
+00:07:30,810 --> 00:07:37,330
+Jason ON-TOPIC Jason files and add them onto the screen using D-3 is Jiyu path generators.
+
+82
+00:07:37,770 --> 00:07:40,730
+Now do we know how to render these shapes on the screen.
+
+83
+00:07:40,740 --> 00:07:46,180
+It's not a huge step to associate these shapes with data as we usually want to do in 83.
+
+84
+00:07:46,560 --> 00:07:51,870
+However this will involve the need for us to load in a separate set of data from a different file in
+
+85
+00:07:51,870 --> 00:07:52,700
+the next lecture.
+
+86
+00:07:52,710 --> 00:07:57,460
+I'll be introducing you to the syntax that we need you to do this in the most efficient way possible.
+

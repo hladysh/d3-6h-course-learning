@@ -1,0 +1,276 @@
+1
+00:00:06,460 --> 00:00:10,700
+Now do we have an idea of what a good data visualization should look like.
+
+2
+00:00:10,720 --> 00:00:16,760
+We can start to think about the different tools that we can use to display data in this lecture.
+
+3
+00:00:16,760 --> 00:00:22,490
+We'll be looking at the various options that we have open to visualize data we'll consider color scheme
+
+4
+00:00:22,490 --> 00:00:27,100
+selection and we'll look at the different data types that exist and how to deal with them.
+
+5
+00:00:29,660 --> 00:00:34,180
+How do we think about the options that we have available for displaying data.
+
+6
+00:00:34,570 --> 00:00:39,950
+Jack betime propose a visual design space for us to consider the different design choices that we can
+
+7
+00:00:39,950 --> 00:00:48,800
+make for visualizations where we can choose between physician size gray value texture color orientation
+
+8
+00:00:48,800 --> 00:00:52,320
+and shape to convey different data on a page.
+
+9
+00:00:52,820 --> 00:01:00,600
+We can see examples of how these channels can be used to produce graphically differentiated images.
+
+10
+00:01:00,620 --> 00:01:05,990
+It turns out the we humans are better at judging between some of these channels than others.
+
+11
+00:01:05,990 --> 00:01:08,650
+Let me take you through an example hit.
+
+12
+00:01:08,820 --> 00:01:14,150
+I'm going to flesh some shapes on the screen and I want you to come up with a quick gut reaction answer
+
+13
+00:01:14,160 --> 00:01:16,970
+to the different questions that I'm going to ask.
+
+14
+00:01:17,100 --> 00:01:21,360
+You don't need to pause the video and I'll tell you the answers after about five seconds.
+
+15
+00:01:23,470 --> 00:01:27,160
+First up how much longer is Line B in line a
+
+16
+00:01:35,030 --> 00:01:37,570
+line B is four times longer.
+
+17
+00:01:37,610 --> 00:01:41,180
+That wasn't too difficult right.
+
+18
+00:01:41,210 --> 00:01:51,920
+How much steeper is lying a than Line B.
+
+19
+00:01:51,960 --> 00:01:55,650
+The answer is also four times that one was a little trickier.
+
+20
+00:01:55,670 --> 00:01:56,230
+Right.
+
+21
+00:01:58,180 --> 00:02:00,930
+How much larger is circle B in circle.
+
+22
+00:02:00,930 --> 00:02:01,210
+A
+
+23
+00:02:09,180 --> 00:02:12,090
+circle B is five times larger.
+
+24
+00:02:12,120 --> 00:02:18,300
+It's particularly challenging for our brains to pick apart the difference between areas.
+
+25
+00:02:18,490 --> 00:02:21,600
+How much darker circle be than circle a
+
+26
+00:02:28,200 --> 00:02:31,980
+circle B is two times darker a little bit easier.
+
+27
+00:02:33,920 --> 00:02:40,920
+Finally how much greater is the value of circle B and the value of Circle K using this legend underneath
+
+28
+00:02:48,260 --> 00:02:54,950
+circle B actually has a value of four times greater than Circle A because Circle A has a value of two
+
+29
+00:02:55,490 --> 00:02:58,650
+and circle B has a value of eight.
+
+30
+00:02:58,670 --> 00:03:03,710
+This is a really tough one for us to figure out because we have a color scheme that diverges between
+
+31
+00:03:03,710 --> 00:03:06,180
+two completely different colors.
+
+32
+00:03:06,290 --> 00:03:12,850
+We have to put in a lot more mental effort to figure this out than if we were just looking at Douglas.
+
+33
+00:03:12,960 --> 00:03:16,410
+So from these examples we can see that makes a big difference.
+
+34
+00:03:16,410 --> 00:03:19,970
+Which type of visual channel we use to display our data.
+
+35
+00:03:20,130 --> 00:03:25,140
+Some of these data types will be easier for the reader to interpret that others and others will be far
+
+36
+00:03:25,140 --> 00:03:26,120
+more difficult.
+
+37
+00:03:28,080 --> 00:03:36,620
+Every piece of data falls into one of three categories qualitative ordinal categorical quantitative
+
+38
+00:03:36,620 --> 00:03:44,280
+data involves numbers of different sizes that just somebodies height weight IQ score or income categorical
+
+39
+00:03:44,280 --> 00:03:49,770
+data places distinct categories on each data point allowing us to compare between factors that we're
+
+40
+00:03:49,770 --> 00:03:52,900
+interested in ordinal data.
+
+41
+00:03:52,900 --> 00:03:58,670
+It's similar to categorical data except that these categories can be ordered by size.
+
+42
+00:03:58,720 --> 00:04:05,860
+So for example big medium and small are all distinct categories but they can be boarded so we classed
+
+43
+00:04:05,860 --> 00:04:10,500
+them as ordinal as opposed to categorical.
+
+44
+00:04:10,510 --> 00:04:15,370
+Here we have a simple cheat sheet to guide you in selecting the right channels to use the whatever data
+
+45
+00:04:15,370 --> 00:04:16,530
+you are using.
+
+46
+00:04:17,050 --> 00:04:23,080
+Typically we're best at judging position and length for quantitative data but worth the judging slope
+
+47
+00:04:23,210 --> 00:04:26,590
+angles and intensity for ordinal data.
+
+48
+00:04:26,590 --> 00:04:32,710
+It's best to stick to area bigger shapes stick out smaller shapes and we can find patterns in between.
+
+49
+00:04:33,260 --> 00:04:39,520
+For categorical data we should only ever break it down by shape or color as this emphasizes the fact
+
+50
+00:04:39,520 --> 00:04:41,770
+that each category is distinctly different.
+
+51
+00:04:43,460 --> 00:04:49,310
+In terms of selecting the right colors to using your visualizations you should stick to a fairly small
+
+52
+00:04:49,310 --> 00:04:51,810
+number of colors for categories.
+
+53
+00:04:51,860 --> 00:04:56,870
+If you're using more than 8 different colors then these colors will start to overlap and it will start
+
+54
+00:04:56,870 --> 00:05:00,810
+to get hard to pick them apart for quantitative data.
+
+55
+00:05:00,950 --> 00:05:07,190
+It's best not to use diverging color scheme such as going from red to white to green because then you
+
+56
+00:05:07,190 --> 00:05:09,440
+need to define a point as the white value.
+
+57
+00:05:09,640 --> 00:05:13,270
+And it's not as easy to tell points apart that are centered around that point.
+
+58
+00:05:14,240 --> 00:05:19,950
+Also you might want to consider selecting a color scheme that's easy to read for colourblind uses as
+
+59
+00:05:19,980 --> 00:05:25,400
+is a pretty simple fix and it should mean that about 1 in 20 users will now be able to make use of your
+
+60
+00:05:25,400 --> 00:05:32,470
+visualization a really simple tool that's free to use on line for selecting color schemes.
+
+61
+00:05:32,620 --> 00:05:38,050
+Killebrew which offers a variety of nice color schemes depending on the number of data points that you
+
+62
+00:05:38,050 --> 00:05:39,260
+have.
+
+63
+00:05:39,280 --> 00:05:44,500
+You can select for different types of data and you can also see a range of color blind friendly color
+
+64
+00:05:44,500 --> 00:05:48,950
+schemes for your visualization.
+
+65
+00:05:48,970 --> 00:05:53,170
+After this lecture you should understand the difference between the different Batal channels that you
+
+66
+00:05:53,170 --> 00:05:58,630
+can use visualisation and you should be aware of which channels best express the data you're working
+
+67
+00:05:58,630 --> 00:06:00,970
+with in the next lecture.
+
+68
+00:06:00,970 --> 00:06:05,290
+I'll be introducing you to the process of sketching where I'll be showing you some tips to get your
+
+69
+00:06:05,290 --> 00:06:08,160
+ideas expressed to something concrete on paper.
+

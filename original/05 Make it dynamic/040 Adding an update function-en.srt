@@ -1,0 +1,216 @@
+1
+00:00:06,490 --> 00:00:11,990
+In this lecture I'll be taking you through the process of how we move from a static visualization where
+
+2
+00:00:11,990 --> 00:00:18,200
+all the code is only running once to a dynamic visualization where a portion of our code is constantly
+
+3
+00:00:18,200 --> 00:00:20,170
+executing in an interval function.
+
+4
+00:00:20,990 --> 00:00:26,000
+To do this I'll be making an update function which is going to be called Inside the interval Colback
+
+5
+00:00:26,000 --> 00:00:28,050
+that I wrote in The Last Lecture.
+
+6
+00:00:28,130 --> 00:00:32,080
+This is going to require us to think about exactly which parts of our code should run.
+
+7
+00:00:32,090 --> 00:00:39,960
+Every time our data changes and which parts of our code should just run once we can to write down an
+
+8
+00:00:39,960 --> 00:00:44,310
+update function which we use at the callback function from A identical loop.
+
+9
+00:00:44,760 --> 00:00:49,740
+This will mean that everything outside of update function will run just once when our visualization
+
+10
+00:00:49,740 --> 00:00:55,410
+is loaded and everything inside the update function will be run repeatedly.
+
+11
+00:00:55,430 --> 00:00:59,710
+Let's think about which elements need to update to get the effect that we're looking for.
+
+12
+00:01:00,560 --> 00:01:06,020
+Will need to change all scales and axes so that they update based on the data that we're looking at.
+
+13
+00:01:06,020 --> 00:01:11,380
+This means that if the chart changes to show more data points or if the maximum y value changes and
+
+14
+00:01:11,400 --> 00:01:13,640
+a visualization will scale accordingly.
+
+15
+00:01:14,300 --> 00:01:19,430
+We'll also need to update the label on a y axis to show the variable that we're looking at.
+
+16
+00:01:19,430 --> 00:01:25,140
+And finally we want to change the size and position of rectangles according to the new data.
+
+17
+00:01:25,270 --> 00:01:31,310
+We'll tackle the first two components here before we go on to update the rectangles in our next lecture.
+
+18
+00:01:32,720 --> 00:01:37,170
+I'm going to write up the function here at the end of mange s file.
+
+19
+00:01:39,310 --> 00:01:46,340
+This function will take a data argument which lets us pass in the data array that we loaded in earlier.
+
+20
+00:01:46,360 --> 00:01:51,750
+I'm going to call this function from within an interval loop so it fires once every second.
+
+21
+00:01:52,210 --> 00:01:54,320
+Let's start by moving all this code.
+
+22
+00:01:54,490 --> 00:02:02,260
+Adding scales axes and rectangles into update function.
+
+23
+00:02:02,280 --> 00:02:03,480
+For now I'm going to come in.
+
+24
+00:02:03,520 --> 00:02:07,310
+These rectangles because we'll be updating those in the next section.
+
+25
+00:02:07,770 --> 00:02:10,310
+Let's think about what actually needs to update.
+
+26
+00:02:11,470 --> 00:02:16,930
+The only thing that should change with scales is that the main cause is the only part that relies on
+
+27
+00:02:17,050 --> 00:02:17,700
+data.
+
+28
+00:02:18,680 --> 00:02:24,350
+I'm going to move my scales code to the top of a file but I'll keep the code that sets that domains
+
+29
+00:02:24,350 --> 00:02:25,730
+inside update function
+
+30
+00:02:37,600 --> 00:02:39,640
+with find to set up scales like this.
+
+31
+00:02:39,820 --> 00:02:43,510
+As long as we're only actually using them after the domain has been set
+
+32
+00:02:47,940 --> 00:02:52,230
+once we refresh the page we can see that we have a problem.
+
+33
+00:02:52,230 --> 00:02:59,440
+Each time the visualization updates we're adding new axes on top of our visualization.
+
+34
+00:02:59,450 --> 00:03:06,020
+The problem is that we're appending a separate group to our visualization every time the loop runs and
+
+35
+00:03:06,020 --> 00:03:09,480
+we're adding a new access onto each of these newsgroups.
+
+36
+00:03:11,020 --> 00:03:17,370
+We can fix this by appending all access groups just once at the top of the file and then by calling
+
+37
+00:03:17,430 --> 00:03:22,050
+access generators on them in update function.
+
+38
+00:03:22,120 --> 00:03:25,970
+I'll stall these groups in variables so that we can access them.
+
+39
+00:03:25,990 --> 00:03:33,560
+I'll call this one X X group and this one Y-axis group.
+
+40
+00:03:33,590 --> 00:03:39,320
+Next we're going to move these call methods which run Access generators into our update function
+
+41
+00:03:47,650 --> 00:03:53,830
+after we make these fixes the calls to access generators updating the current axes rather than adding
+
+42
+00:03:53,830 --> 00:03:55,380
+a new one every time.
+
+43
+00:03:58,530 --> 00:04:04,870
+We can also see that there's a delay here where we have no axes on the page.
+
+44
+00:04:04,870 --> 00:04:09,610
+This is because the first line of loop has to wait for the delay to start.
+
+45
+00:04:10,190 --> 00:04:17,780
+Although we need to do is add in another call to update function after interval.
+
+46
+00:04:17,930 --> 00:04:22,380
+Now US scale should be updated and axes should be refreshing.
+
+47
+00:04:22,450 --> 00:04:29,240
+Every time the loop runs at this point you should understand exactly why our scales and axes need to
+
+48
+00:04:29,240 --> 00:04:30,960
+be refreshed in this way.
+
+49
+00:04:31,400 --> 00:04:35,390
+You should also have a feel for deciding which parts of the code should be updating.
+
+50
+00:04:35,570 --> 00:04:40,010
+And we now have a visualization that's one step closer to something that updates forth to magic the
+
+51
+00:04:41,120 --> 00:04:45,770
+next lecture will be finishing off this process by updating the size and position of our rectangles
+
+52
+00:04:45,800 --> 00:04:47,060
+too.
+
+53
+00:04:47,090 --> 00:04:51,830
+This process will be a little less intuitive because we'll finally be learning about the D-3 update
+
+54
+00:04:51,900 --> 00:04:55,870
+at which reveals a lot about what d3 is doing behind the scenes.
+

@@ -1,0 +1,400 @@
+1
+00:00:06,960 --> 00:00:13,090
+In this lecture I'll be taking a file restructuring process to the next level by writing a line chart
+
+2
+00:00:13,150 --> 00:00:19,770
+is a javascript object like we saw in the last lecture rather than just keeping it in its current form.
+
+3
+00:00:20,590 --> 00:00:24,450
+I'll be running you through all of the changes that I'll be making to do this.
+
+4
+00:00:24,580 --> 00:00:29,680
+And at the end of the lecture I'll demonstrate what this allows us to do by adding a new line chart
+
+5
+00:00:29,680 --> 00:00:37,110
+for every coin in a project three data recall from last lecture that we need to stitch together.
+
+6
+00:00:37,130 --> 00:00:43,500
+Each of these different parts of our visualization object in order to properly set up the construct
+
+7
+00:00:43,500 --> 00:00:49,460
+a function will be executed as soon as we use the new keyword in the name of our visualisations class.
+
+8
+00:00:50,230 --> 00:00:56,940
+That function will set up a new visualization object which we'll call its own and it is method that
+
+9
+00:00:56,940 --> 00:01:02,600
+method will set up the static parts of our visualization before triggering the Wrangel data method.
+
+10
+00:01:02,850 --> 00:01:08,730
+And then finally at the end of the Rangle data the object will trigger the update is method which will
+
+11
+00:01:08,730 --> 00:01:13,970
+affect our scaled axes and as piccies starts off.
+
+12
+00:01:13,980 --> 00:01:18,870
+I've copied the basic structure that we'll be using for official position objects at the top of our
+
+13
+00:01:18,870 --> 00:01:20,890
+line of file.
+
+14
+00:01:20,950 --> 00:01:26,380
+This is a constructor function here which will be calling whenever we create a new instance of a line
+
+15
+00:01:26,390 --> 00:01:28,270
+shop class.
+
+16
+00:01:28,360 --> 00:01:34,650
+Remember the syntax here we are using up a camel case to show that we're talking about a class and the
+
+17
+00:01:34,650 --> 00:01:39,490
+argument to construct a function here has an underscore in front of its name.
+
+18
+00:01:40,210 --> 00:01:45,550
+Inside the construct the function with just passing the field that we're setting in with the property
+
+19
+00:01:45,550 --> 00:01:47,170
+of this new object.
+
+20
+00:01:47,170 --> 00:01:53,860
+And then with triggering our net this method inside this first method with setting this variable is
+
+21
+00:01:53,910 --> 00:01:56,970
+as the value of the object that we're looking at.
+
+22
+00:01:57,070 --> 00:02:01,950
+It's a good idea to do this straight away at the start of each prototype that you write.
+
+23
+00:02:02,200 --> 00:02:08,550
+Since the value of this can shift according to where you're trying to access it within calling Rangle
+
+24
+00:02:08,710 --> 00:02:16,440
+data method here which is just doing the same thing right now before handing off to a statement.
+
+25
+00:02:16,450 --> 00:02:24,680
+So I want to start by moving this code down here so that it fits inside a new class in it.
+
+26
+00:02:24,710 --> 00:02:29,460
+This method should contain all of the static elements that we need to set.
+
+27
+00:02:29,510 --> 00:02:32,550
+This will include all of this code down here.
+
+28
+00:02:32,960 --> 00:02:35,870
+We're setting up our margins we're attaching SVGA.
+
+29
+00:02:35,890 --> 00:02:43,000
+Can this adding up path for the first time adding labels for axes and setting up scales.
+
+30
+00:02:43,540 --> 00:02:49,390
+Or make a change here so that SPG canvas will get appended to which ever argument we provide in our
+
+31
+00:02:49,390 --> 00:02:51,310
+construct to function.
+
+32
+00:02:51,400 --> 00:02:58,290
+We stored this in our visualizations parent element property earlier so I'll pass it to a select function.
+
+33
+00:02:58,300 --> 00:03:04,030
+This means that if we pass a C selector that matches an element on the screen we'll add a line chart
+
+34
+00:03:04,060 --> 00:03:05,280
+to the elements.
+
+35
+00:03:06,550 --> 00:03:12,580
+Next this Rangle data method wants to contain anything that we're doing to reformat or filter the data
+
+36
+00:03:12,580 --> 00:03:14,080
+that we're looking at.
+
+37
+00:03:14,440 --> 00:03:20,380
+In this case I'll put this block of code here into this prototype since we're using it to change the
+
+38
+00:03:20,380 --> 00:03:24,640
+coin y value and time range that we're looking at.
+
+39
+00:03:24,640 --> 00:03:30,520
+Finally I'm going to move all of this code in our update function into update this method.
+
+40
+00:03:31,060 --> 00:03:37,600
+So now all of this code should be in the right place but we still have a pretty tedious task to accomplish
+
+41
+00:03:37,630 --> 00:03:40,490
+before we can call this object for the first time.
+
+42
+00:03:41,870 --> 00:03:47,900
+Every time that we using a variable that used to have a global scope we'll now need to edit it so that
+
+43
+00:03:47,900 --> 00:03:52,000
+we're accessing as a property of a visualization object.
+
+44
+00:03:52,370 --> 00:03:58,130
+If we don't do this then all of the variables that we declare inside each of these methods won't be
+
+45
+00:03:58,130 --> 00:04:00,890
+available to the rest of our line graph code.
+
+46
+00:04:02,150 --> 00:04:10,000
+So here starting off at the top I'm going to set these variables as properties of a variable which represents
+
+47
+00:04:10,010 --> 00:04:12,500
+the object that we're looking at.
+
+48
+00:04:12,500 --> 00:04:17,510
+This is a pretty tedious process and you probably find that you'll miss some of these variables out
+
+49
+00:04:18,170 --> 00:04:22,330
+but ultimately you should end up with a new version that finally works.
+
+50
+00:04:24,550 --> 00:04:26,610
+So here we have the finished product.
+
+51
+00:04:26,900 --> 00:04:32,980
+We're now using this fizz object to store each of our global variables and each time we want to access
+
+52
+00:04:32,980 --> 00:04:36,320
+these variables we're looking at the properties of this object.
+
+53
+00:04:37,460 --> 00:04:42,240
+Going back to our main Jasc file here I'll show you how we would add one of these line graphs to our
+
+54
+00:04:42,260 --> 00:04:50,650
+code all starts off by creating a new instance of one of our line objects using the javascript new keyword
+
+55
+00:04:50,770 --> 00:04:56,670
+and storing it as a variable I'm passing in the name of the div that we want to append it to.
+
+56
+00:04:56,770 --> 00:05:04,200
+So in this case we're using our charts areata we can get rid of our called update here since the object
+
+57
+00:05:04,200 --> 00:05:07,580
+calls its own update method when it first gets created.
+
+58
+00:05:08,570 --> 00:05:13,380
+Next will need to change up the update functions that we using for our event handlers.
+
+59
+00:05:13,520 --> 00:05:16,470
+Since this function doesn't exist anymore.
+
+60
+00:05:17,420 --> 00:05:24,930
+Instead of firing the update function we'll be firing the Wrangel data method of a new line sheet.
+
+61
+00:05:25,250 --> 00:05:29,900
+Finally we'll also need to declare this line chart variable with a global scope.
+
+62
+00:05:29,920 --> 00:05:36,680
+The top of our file so that our code has access to it within these event handlers.
+
+63
+00:05:36,720 --> 00:05:41,670
+Now when we refresh the page we can see the same visualization that we had before.
+
+64
+00:05:41,940 --> 00:05:45,910
+But this time a visualization is coming from an object.
+
+65
+00:05:46,060 --> 00:05:51,610
+I'm going to make a few quick changes to this code to demonstrate why this change is such a powerful
+
+66
+00:05:51,610 --> 00:05:53,670
+one for us to have made.
+
+67
+00:05:53,780 --> 00:06:01,180
+I'm going to adapt our code so that we can now show five line charts at the same time.
+
+68
+00:06:01,290 --> 00:06:03,390
+I've had a few edits to a line chart.
+
+69
+00:06:03,470 --> 00:06:10,190
+Yes file I'm passing in a new value to construct a function which was saving this coin property for
+
+70
+00:06:10,190 --> 00:06:16,630
+each object that we create a Rangle data method is then just looking at the data for the coin that is
+
+71
+00:06:16,630 --> 00:06:18,550
+set to.
+
+72
+00:06:18,760 --> 00:06:23,740
+I've also decreased the height and width for visualization so that we can fit many of them on the page.
+
+73
+00:06:23,770 --> 00:06:32,120
+Once next I've changed the contents of the index file creating 5 new device where I'll be attaching
+
+74
+00:06:32,180 --> 00:06:34,430
+five new line shots.
+
+75
+00:06:34,460 --> 00:06:40,690
+I've also gotten rid of the coin select box since I want to show a new chart for each coin.
+
+76
+00:06:40,730 --> 00:06:47,570
+Finally in our main Jasc file I'm creating a different line of every coin that exists in our data.
+
+77
+00:06:47,570 --> 00:06:51,800
+I'm passing the parents element for each of these charts so the constructor function.
+
+78
+00:06:52,000 --> 00:06:57,820
+And I'm also giving it the name of the coin that this graph should show since I want each of these charts
+
+79
+00:06:58,150 --> 00:07:01,210
+date when we change selections.
+
+80
+00:07:01,220 --> 00:07:07,130
+I'm also creating one event handler that fires the Rangle data method for each of our line charts and
+
+81
+00:07:07,130 --> 00:07:11,690
+calling that method from Whenever I use it does something.
+
+82
+00:07:11,870 --> 00:07:15,650
+Once we refresh the page we can see how this is working.
+
+83
+00:07:15,650 --> 00:07:22,240
+We've automatically created 5 different charts which each show the same thing for each coin.
+
+84
+00:07:22,290 --> 00:07:27,260
+We can change the way value we want to show here and we can adjust the date range.
+
+85
+00:07:27,260 --> 00:07:34,860
+Up here you can see how important it was for us to split our code into objects for us to do this.
+
+86
+00:07:34,860 --> 00:07:40,650
+Imagine if we had to copy and paste the same code again and again each time we wanted to update this
+
+87
+00:07:41,520 --> 00:07:44,070
+once we have a visualization written as objects.
+
+88
+00:07:44,070 --> 00:07:50,460
+It becomes so much simpler to repeat the same basic format again and again.
+
+89
+00:07:50,500 --> 00:07:55,300
+You should now understand the process which is involved when trying to restructure your code into an
+
+90
+00:07:55,390 --> 00:07:57,310
+object orientated format.
+
+91
+00:07:58,090 --> 00:08:02,860
+You should try to go through this process whenever you can when you want to make and do visualization
+
+92
+00:08:04,160 --> 00:08:08,560
+even if you only need to make one instance of a particular visualization.
+
+93
+00:08:08,630 --> 00:08:14,540
+Writing as an object will still make your code a lot more reusable and will also make it easy for you
+
+94
+00:08:14,540 --> 00:08:17,640
+to recreate this specialization in another project.
+
+95
+00:08:18,630 --> 00:08:23,770
+For your final class project at the end of this section you'll need to write your code in this format
+
+96
+00:08:24,250 --> 00:08:28,890
+since your data dashboard will be communicating between multiple files at once.
+
+97
+00:08:30,060 --> 00:08:35,830
+In the next lecture I'll be adding on to this code again adding some donut charts alongside a main line
+
+98
+00:08:35,830 --> 00:08:36,850
+graph.
+
+99
+00:08:37,110 --> 00:08:42,670
+Then be talking about how we can communicate between these complex visualization objects by using some
+
+100
+00:08:42,670 --> 00:08:44,500
+well-designed event handlers.
+

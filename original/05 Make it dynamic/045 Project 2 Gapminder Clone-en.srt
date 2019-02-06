@@ -1,0 +1,176 @@
+1
+00:00:06,730 --> 00:00:11,680
+In this lecture I'll be providing an introduction to your second class project taking you through the
+
+2
+00:00:11,680 --> 00:00:16,150
+project files that you'll be working with and I'll give you that look at what the finished project should
+
+3
+00:00:16,150 --> 00:00:17,010
+look like.
+
+4
+00:00:18,980 --> 00:00:23,990
+At this point in the course you should have a rough understanding of how D-3 update pattern is working
+
+5
+00:00:24,320 --> 00:00:26,490
+to handle updates on the page.
+
+6
+00:00:26,870 --> 00:00:32,060
+If you're a second class project you'll be able to put this knowledge into practice and get a good feel
+
+7
+00:00:32,060 --> 00:00:33,490
+for what you should be doing.
+
+8
+00:00:34,330 --> 00:00:39,800
+The second class project involves making a clone of a famous visualization from Gap minder which is
+
+9
+00:00:39,800 --> 00:00:45,860
+an organization dedicated to challenging conceptions between how we think the world is and how the world
+
+10
+00:00:45,920 --> 00:00:46,520
+really is.
+
+11
+00:00:46,520 --> 00:00:52,380
+According to statistics you should take a look at the YouTube video which is linked to the start of
+
+12
+00:00:52,380 --> 00:00:57,550
+the next lecture to get a feel for the context behind the visualization you'll be creating.
+
+13
+00:00:59,260 --> 00:01:03,800
+You'll find the starting carried in the zip file attached to the next lecture.
+
+14
+00:01:04,000 --> 00:01:09,970
+Again I've already set up the index to aged email file and provided you with all the files that you
+
+15
+00:01:09,970 --> 00:01:10,540
+should need.
+
+16
+00:01:10,570 --> 00:01:16,140
+This project you should work in the main js file in the JSE directory.
+
+17
+00:01:17,000 --> 00:01:23,640
+I've also included copies of the D-3 NJ queried libraries and your JS folder.
+
+18
+00:01:23,650 --> 00:01:27,660
+Let's take a quick look at the data set for our project.
+
+19
+00:01:27,730 --> 00:01:33,010
+Since the file is so big I'm just writing a quick Consolo get the data once it's been read into the
+
+20
+00:01:33,010 --> 00:01:36,070
+main jast file.
+
+21
+00:01:36,240 --> 00:01:42,690
+What we have here is an array of each of the different years of data you can access the year that you're
+
+22
+00:01:42,700 --> 00:01:49,390
+looking through this year value and the country's contains an array of objects representing each country
+
+23
+00:01:49,390 --> 00:01:52,360
+in that year for each of these countries.
+
+24
+00:01:52,360 --> 00:01:58,990
+We then have it's consonant its name is GDP per capita life expectancy and population.
+
+25
+00:01:59,000 --> 00:02:05,440
+The year that we're looking at I'm going to provide you with some instructions for how to get started
+
+26
+00:02:05,440 --> 00:02:07,070
+with this.
+
+27
+00:02:07,110 --> 00:02:12,570
+I recommend starting off with just making the visualization in the first year of your data and then
+
+28
+00:02:12,570 --> 00:02:15,070
+worrying about adding an update after that.
+
+29
+00:02:16,970 --> 00:02:21,690
+Once you have completed this project you should have something that looks like this.
+
+30
+00:02:21,690 --> 00:02:28,400
+The data is updating continuously on a cycle between all the different years in our dataset at each
+
+31
+00:02:28,400 --> 00:02:29,670
+point in time.
+
+32
+00:02:29,780 --> 00:02:35,530
+The size of our circles is changing to reflect the country's populations and the position of the circles
+
+33
+00:02:35,530 --> 00:02:43,180
+are changing to reflect the GDP per capita life expectancy as we mentioned back in S. history when using
+
+34
+00:02:43,180 --> 00:02:44,290
+a log scale here.
+
+35
+00:02:44,350 --> 00:02:50,760
+So you can see we're looking at Ballys for 400 then 4000 than 40000.
+
+36
+00:02:50,850 --> 00:02:56,510
+We're also using an ordinal scale here to separate circles by their constant.
+
+37
+00:02:56,530 --> 00:03:00,330
+If you find yourself still trying to find figure out any of the syntax.
+
+38
+00:03:00,640 --> 00:03:05,720
+Then once again you can absolutely flick between different lectures in previous sections.
+
+39
+00:03:05,740 --> 00:03:11,710
+You need to review the process of working through issues by yourself can really help you to understand
+
+40
+00:03:11,710 --> 00:03:13,420
+what's going on a lot better.
+
+41
+00:03:13,660 --> 00:03:20,470
+And again I'd strongly recommend you to make console logs whenever you can and claim what's going on.
+
+42
+00:03:20,480 --> 00:03:25,070
+Finally if you have any problems that you can't resolve by yourself and providing my solution of the
+
+43
+00:03:25,090 --> 00:03:32,000
+cost and you can check your work against it you can also post questions in the comments section of the
+
+44
+00:03:32,000 --> 00:03:35,810
+assignment page to ask questions to me or to any of the students.
+

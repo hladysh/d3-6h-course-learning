@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document 1</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <p>hello 1</p>
+    <p>hello 2</p>
+    <p>hello 3</p>
+    <p>hello 4</p>
+    <!--<p>hello 5</p>-->
+    <!--<p>hello 6</p>-->
+    <!--<p>hello 7</p>-->
+    <!--<p>hello 8</p>-->
+    <!--<p>hello 9</p>-->
+    <!--<p>hello 10</p>-->
+    <!--<p>hello 11</p>-->
+    <!--<p>hello 12</p>-->
+    <!--<p>hello 13</p>-->
+    <!--<p>hello 14</p>-->
+    <!--<p>hello 15</p>-->
+</div>
+<script>
+    console.log('hello');
+
+    // var paragraphs = document.getElementsByTagName("p");
+    // for (var i = 0; i < paragraphs.length; i++) {
+    //     var paragraph = paragraphs.item(i);
+    //     paragraph.style.setProperty("color", "red", null);
+    // }
+    // d3.selectAll('p').style('color', 'red');
+
+    // d3.selectAll("p").style("color", function() {
+    //     return "hsl(" + Math.random() * 360 + ",100%,50%)";
+    // });
+
+    // d3.selectAll('p')
+    //     .style('color', function (d, i) {
+    //         return i % 2 ? '#aaa' : '#eee';
+    //     });
+
+    // d3.selectAll('p')
+    //     .data([4, 8, 15, 16, 23, 42])
+    //     .style('font-size', function(d) { return d + 'px'});
+
+    // d3
+    //     .select('.wrapper')
+    //     .selectAll('p')
+    //     .data([4, 8, 15, 16, 23, 42])
+    //     .style('font-size', function(d) { return d + 'px'});
+
+    // d3.select('.wrapper')
+    //   .selectAll('p')
+    //   .data([4, 8, 15, 16, 23, 42])
+    //   .enter().append('p')
+    //      .text((d) => `I'm number ${d}!`);
+
+    // Doesn't work
+    // d3.select(".wrapper")
+    //     .selectAll("p")
+    //     .data([4, 8, 15, 16, 23, 42])
+        // .text(function(d) { return "I’m number " + d + "!"; });
+
+    // Update…
+    var p = d3.select("body")
+        .selectAll("p")
+        .data([4, 8, 15, 16, 23, 42])
+        .text(function(d) { return d; });
+
+    // Enter…
+    p.enter().append("p")
+        .text(function(d) { return '--' + d; });
+
+    // Exit…
+    // p.exit().remove();
+
+</script>
+</body>
+</html>

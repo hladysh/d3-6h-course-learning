@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+<div id="chart-area"></div>
+
+<script>
+    const svg = d3.select('#chart-area')
+        .append('svg')
+            .attr('width', 600)
+            .attr('height', 400)
+    ;
+
+    svg.append('circle')
+        .attr('cx', 100)
+        .attr('cy', 100)
+        .attr('r', 50)
+        .attr('fill', 'orange')
+    ;
+</script>
+<!--
+<svg width="400" height="400" style="border: 1px solid">
+    <rect class="outside" x="0" y="0" width="50" height="50" fill="green"></rect>
+    <rect id="center" x="60" y="0" width="50" height="50" fill="green"></rect>
+    <rect class="outside" x="120" y="0" width="50" height="50" fill="green"></rect>
+</svg>
+
+<script>
+// Select
+// d3.select('rect').style('fill', 'red');
+// d3.select('#center').style('fill', 'red');
+// d3.selectAll('rect').style('fill', 'red');
+// d3.selectAll('.outside').style('fill', 'red');
+
+// Append
+// const svg = d3.select('svg');
+// const rect = svg.append('rect');
+// rect.attr('x', 25);
+// rect.attr('y', 100);
+// rect.attr('width', 150);
+// rect.attr('height', 60);
+// rect.attr('fill', 'blue');
+
+// Chaining
+
+const svg = d3.select('svg');
+const rect = svg
+    .append('rect')
+        .attr('x', 25)
+        .attr('y', 100)
+        .attr('width', 150)
+        .attr('height', 60)
+        .attr('fill', 'orange')
+    ;
+</script>
+-->
+</body>
+</html>

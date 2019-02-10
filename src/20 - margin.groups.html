@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+<div id="chart-area"></div>
+
+<script>
+
+const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+const chartW = 1900 - margin.left - margin.right;
+const chartH = 950 - margin.top - margin.bottom;
+
+const svg = d3.select('#chart-area')
+    .append('svg')
+    .attr('width', chartW + margin.left + margin.right)
+    .attr('height', chartH + margin.top + margin.bottom)
+    .style('border', '1px solid');
+
+const g = svg.append('g')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+function gen() {
+
+    let start  = 100;
+    const step = start * .01;
+    const data = Array(500)
+              .fill(0)
+              .map(() => start += Math.random() * step * (Math.random() > 0.5 ? 1 : -1))
+          // .filter((v, i) => i % 20 === 0)
+    ;
+
+    const x = d3.scaleBand()
+        .domain(data)
+        .range([ 0, chartW ])
+        .paddingInner(0.2)
+        .paddingOuter(0.2)
+    ;
+
+    const y = d3.scaleLinear()
+        // .domain([ d3.min(data), d3.max(data) ])
+        .domain(d3.extent(data))
+        .range([ 0, chartH ]);
+
+
+    const rects = g.selectAll('rect')
+        .data(data)
+        .attr('x', (d, i) => x(d))
+        .attr('y', d => chartH - y(d))
+        .attr('width', x.bandwidth)
+        .attr('height', d => y(d))
+        .attr('fill', 'red')
+    ;
+
+    rects.enter()
+        .append('rect')
+            .attr('x', (d, i) => x(d))
+            .attr('y', d => chartH - y(d))
+            .attr('width', x.bandwidth)
+            .attr('height', d => y(d))
+            .attr('fill', 'red');
+
+    rects.exit()
+        .remove()
+    ;
+    console.log('done');
+}
+
+setInterval(() => gen(), 2000);
+</script>
+
+</body>
+</html>

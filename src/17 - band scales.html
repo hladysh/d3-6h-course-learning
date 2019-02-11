@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+<div id="chart-area"></div>
+
+<script>
+    // const svg = d3.select('#chart-area')
+    //     .append('svg')
+    //     .attr('width', 800)
+    //     .attr('height', 400)
+    // ;
+
+    // let y = d3.scaleLinear()
+    //     .domain([0, 828])
+    //     .range([0, 400]);
+
+    // console.log(y(100));
+    // console.log(y(414));
+    // console.log(y(700));
+    // console.log(y(828));
+    // console.log(y(1000));
+
+    // console.log(y.invert(48.3));
+    // console.log(y.invert(200));
+    // console.log(y.invert(338.2));
+
+</script>
+
+<script>
+const chartW = 1900;
+const chartH = 950;
+
+const svg = d3.select('#chart-area')
+    .append('svg')
+    .attr('width', chartW)
+    .attr('height', chartH)
+    .style('border', '1px solid');
+
+function gen() {
+
+    let start  = 100;
+    const step = start * .01;
+    const data = Array(500)
+              .fill(0)
+              .map(() => start += Math.random() * step * (Math.random() > 0.5 ? 1 : -1))
+          // .filter((v, i) => i % 20 === 0)
+    ;
+
+    const x = d3.scaleBand()
+        .domain(data)
+        .range([ 0, chartW ])
+        .paddingInner(0.2)
+        .paddingOuter(0.2)
+    ;
+
+    const y = d3.scaleLinear()
+        .domain([ Math.min(...data), Math.max(...data) ])
+        .range([ 0, chartH ]);
+
+
+    const rects = svg.selectAll('rect')
+        .data(data)
+        .attr('x', (d, i) => x(d))
+        .attr('y', d => chartH - y(d))
+        .attr('width', x.bandwidth)
+        .attr('height', d => y(d))
+        .attr('fill', 'red')
+    ;
+
+    rects.enter()
+        .append('rect')
+            .attr('x', (d, i) => x(d))
+            .attr('y', d => chartH - y(d))
+            .attr('width', x.bandwidth)
+            .attr('height', d => y(d))
+            .attr('fill', 'red');
+
+    rects.exit()
+        .remove()
+    ;
+    console.log('done');
+}
+
+setInterval(() => gen(), 2000);
+</script>
+
+</body>
+</html>

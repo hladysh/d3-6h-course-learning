@@ -10,22 +10,19 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
-<div id="chart-area"></div>
-
 <script>
-    const svg = d3.select('#chart-area')
-        .append('svg')
-        .attr('width', 800)
-        .attr('height', 400)
-    ;
+const color = d3.scaleOrdinal()
+    .domain(['Africa', 'N. America', 'Europe', 'S. America', 'Asia', 'Australasia'])
+    // .range(['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'grey'])
+    // .range(d3.schemeCategory10)
+;
 
-    d3.csv('/11-test.csv').then(
-        (data) => console.log('data', data),
-        err => console.log('err', err),
-    );
+console.log(color('Africa'));
+console.log(color('Asia'));
+console.log(color('Antarctica'));
+console.log(color('Pangaea'));
 
 
 </script>
-
 </body>
 </html>

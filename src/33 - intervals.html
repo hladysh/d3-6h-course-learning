@@ -43,26 +43,44 @@ const yAxesGroup = g.append('g')
               .attr('class', 'y-axis')
 ;
 
+// X Label
+const xLabel = g.append('text')
+    .attr('class', 'x-axis-label')
+    .attr('x', chartW / 2)
+    .attr('y', chartH + 80)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '20px')
+;
+
+// Y Label
+const yLabel = g.append('text')
+    .attr('class', 'y-axis-label')
+    .attr('x', -(chartH / 2))
+    .attr('y', -40)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '15px')
+    .attr('transform', 'rotate(-90)');
+
 function update() {
     const data = getData();
 
     x.domain(data.map(d => d.l));
     y.domain(d3.extent(data.map(d => d.q)));
 
-    // function rectAttrs(rect) {
-    //     rect
-    //         .attr('x', (d, i) => x(d))
-    //         .attr('y', d => chartH - y(d))
-    //         .attr('width', x.bandwidth)
-    //         .attr('height', d => y(d))
-    //         .attr('fill', 'red')
-    //     ;
-    // }
+    function rectAttrs(rect) {
+        rect
+            .attr('x', (d, i) => x(d.l))
+            .attr('y', d => chartH - y(d.q))
+            .attr('width', x.bandwidth)
+            .attr('height', d => y(d.q))
+            .attr('fill', 'red')
+        ;
+    }
 
-    // g.selectAll('rect').data(data).call(rectAttrs)
-    //     .enter().append('rect').call(rectAttrs)
-    //     .exit().remove()
-    // ;
+    g.selectAll('rect').data(data).call(rectAttrs)
+        .enter().append('rect').call(rectAttrs)
+        .exit().remove()
+    ;
 
     const xAxisCall = d3.axisBottom(x).ticks(20).tickFormat(d => (+d).toFixed(0));
     xAxesGroup
@@ -80,37 +98,17 @@ function update() {
         .call(yAxisCall)
     ;
 
-    // // X Label
-    // g.append('text')
-    //     .attr('class', 'x-axis-label')
-    //     .attr('x', chartW / 2)
-    //     .attr('y', chartH + 80)
-    //     .attr('text-anchor', 'middle')
-    //     .attr('font-size', '20px')
-    //     .text('Some label')
-    // ;
-    //
-    // // Y Label
-    // g.append('text')
-    //     .attr('class', 'y-axis-label')
-    //     .attr('x', -(chartH / 2))
-    //     .attr('y', -40)
-    //     .attr('text-anchor', 'middle')
-    //     .attr('font-size', '15px')
-    //     .attr('transform', 'rotate(-90)')
-    //     .text('Vertical Label')
-    // ;
+    xLabel.text('Some label');
+    yLabel.text(`Vertical Label [${d3.min(data.map(v => v.q)).toFixed(0)}, ${d3.max(data.map(v =>
+        v.q)).toFixed(0)}]`);
 
-
-    // console.log(data[1], y(data[1]), chartH, );
-    // console.log('done');
 }
 
 
 function getData() {
     let start  = 1000;
     const step = start * .05;
-    const data = Array(20)
+    const data = Array(100)
               .fill(0)
               .map((v, i) => ({
                   q: start += i * Math.random() * step * (Math.random() > 0.5 ? 1 : -1),
@@ -121,7 +119,7 @@ function getData() {
 }
 
 update();
-setInterval(() => update(), 1000);
+d3.interval(() => update(), 1000);
 </script>
 
 </body>

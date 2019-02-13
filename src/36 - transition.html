@@ -61,40 +61,45 @@ const yLabel = g.append('text')
     .attr('font-size', '15px')
     .attr('transform', 'rotate(-90)');
 
+const t = d3.transition().duration(1000);
+
 function update() {
     const data = getData();
 
     x.domain(data.map(d => d.l));
-    y.domain(d3.extent(data.map(d => d.q)));
+    const yScaler = d3.extent(data.map(d => d.q));
+    y.domain([0, 2000]);
 
     function rectAttrs(rect) {
         rect
             .attr('x', (d, i) => x(d.l))
             .attr('y', d => chartH - y(d.q))
+            .attr('fill', 'red')
             .attr('width', x.bandwidth)
             .attr('height', d => y(d.q))
-            .attr('fill', 'red')
         ;
     }
 
-    g.selectAll('rect').data(data).call(rectAttrs)
-        .enter().append('rect').call(rectAttrs)
-        .exit().remove()
-    ;
+    const rects = g.selectAll('rect').data(data);
+    rects.transition(t).call(rectAttrs);
+    rects.enter().append('rect').transition(t).call(rectAttrs);
+    rects.exit().remove();
 
     const xAxisCall = d3.axisBottom(x).ticks(20).tickFormat(d => (+d).toFixed(0));
     xAxesGroup
+        .transition(t)
         .call(xAxisCall)
         .selectAll('text')
             .attr('x', -4)
             .attr('y', 7)
-            .attr('font-size', '10px')
+            .attr('font-size', '8px')
             .attr('text-anchor', 'end')
-            .attr('transform', 'rotate(-40)')
+            .attr('transform', 'rotate(-60)')
     ;
 
     const yAxisCall = d3.axisLeft(y).ticks(10);
     yAxesGroup
+        .transition(t)
         .call(yAxisCall)
     ;
 
@@ -106,12 +111,13 @@ function update() {
 
 
 function getData() {
+    const count = 90 + parseInt(Math.random() * 10);
     let start  = 1000;
     const step = start * .05;
-    const data = Array(100)
+    const data = Array(count)
               .fill(0)
               .map((v, i) => ({
-                  q: start += i * Math.random() * step * (Math.random() > 0.5 ? 1 : -1),
+                  q: start += Math.random() * step * (Math.random() > 0.5 ? 1 : -1),
                   l: i,
               }))
     ;

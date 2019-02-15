@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+<div id="chart-area"></div>
+<script>
+
+// // Number
+// log('.0%', .123);
+// log('.2%', .123);
+// log('($.2f', -3.5);
+// log('$.2f', -3.5);
+// log('+20', 42);
+// log('.^20', 42);
+// log('.2s', 42e6);
+// log('#x', 48879);
+// log(',.2r', 4223);
+//
+// function log(format, num) {
+//     console.log(`${format.padEnd(10)}${String(num).padEnd(10)}`, d3.format(format)(num));
+// }
+
+// Date
+const formatTime = d3.timeFormat('%B %d, %Y');
+console.log(formatTime(new Date()));
+
+const parseTime = d3.timeParse('%B %d, %Y');
+console.log(parseTime('June 30, 2015'));
+</script>
+
+
+
+</body>
+</html>

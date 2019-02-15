@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+<div id="chart-area"></div>
+<script>
+    const margin = { top: 10, right: 10, bottom: 10, left: 10, };
+    const chartW = 900 - margin.left - margin.right;
+    const chartH = 500 - margin.top - margin.bottom;
+    const svg = d3.select('#chart-area').append('svg')
+        .attr('width', chartW + margin.left + margin.right)
+        .attr('height', chartH + margin.top + margin.bottom)
+    ;
+
+    const chart = svg.append('g')
+        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+
+    const circles = chart.selectAll('circle')
+        .data(Array(7).fill(true));
+
+    const r = 15;
+    const space = 50;
+    circles.enter().append('circle')
+        .attr('r', r)
+        .attr('cx', (d, i) => (i+1) * r + (i * space))
+        .attr('cy', (d, i) => 15)
+        .attr('stroke', 'gray')
+        .attr('stroke-width', '3px')
+        .attr('fill', '#aaa')
+
+        .transition()
+        .attr('delay', (d, i) => 1000 * i)
+        .attr('duration', (d, i) => 1000 * i)
+        .attr('cy', (d, i) => (i + 1) * r + i * space )
+    ;
+
+// @todo: animation doesn't work correctly
+
+</script>
+</body>
+</html>
